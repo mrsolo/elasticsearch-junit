@@ -4,4 +4,5 @@ Gem::Specification.new do |gem|
 
   # Core dependencies
   gem "elasticsearch"
+  gem 'rspec', :require => 'spec'
 end
