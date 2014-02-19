@@ -1,0 +1,466 @@
+<testsuite errors="2" failures="0" tests="13" skipped="0" name="org.elasticsearch.get.GetActionTests" hostname="nohost.nodomain" time="5.162" timestamp="2014-02-18T15:49:37">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testMultiGetWithVersion" time="0.562"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="simpleGetTests" time="0.413"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testGetDocWithMultivaluedFields" time="0.421"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="simpleMultiGetTests" time="0.63"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testGetWithVersion" time="0.483"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testGetFields_nonLeafField" time="0.177"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testThatGetFromTranslogShouldWorkWithInclude" time="0.198"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testThatGetFromTranslogShouldWorkWithIncludeExcludeAndFields" time="0.442"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="getFieldsWithDifferentTypes" time="0.388"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testGetFields_metaData" time="0.025">
+      <error message="No node available" type="org.elasticsearch.client.transport.NoNodeAvailableException">org.elasticsearch.client.transport.NoNodeAvailableException: No node available
+	at org.elasticsearch.client.transport.TransportClientNodesService.execute(TransportClientNodesService.java:219)
+	at org.elasticsearch.client.transport.support.InternalTransportIndicesAdminClient.execute(InternalTransportIndicesAdminClient.java:85)
+	at org.elasticsearch.client.support.AbstractIndicesAdminClient.delete(AbstractIndicesAdminClient.java:265)
+	at org.elasticsearch.action.admin.indices.delete.DeleteIndexRequestBuilder.doExecute(DeleteIndexRequestBuilder.java:68)
+	at org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:85)
+	at org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:59)
+	at org.elasticsearch.action.ActionRequestBuilder.get(ActionRequestBuilder.java:67)
+	at org.elasticsearch.test.hamcrest.ElasticsearchAssertions.assertAcked(ElasticsearchAssertions.java:79)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.wipeIndices(ElasticsearchIntegrationTest.java:340)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.before(ElasticsearchIntegrationTest.java:192)
+	at sun.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.invoke(RandomizedRunner.java:1558)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.access$600(RandomizedRunner.java:79)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$7.evaluate(RandomizedRunner.java:770)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$8.evaluate(RandomizedRunner.java:786)
+	at org.apache.lucene.util.TestRuleSetupTeardownChained$1.evaluate(TestRuleSetupTeardownChained.java:50)
+	at org.apache.lucene.util.TestRuleFieldCacheSanity$1.evaluate(TestRuleFieldCacheSanity.java:51)
+	at org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+	at com.carrotsearch.randomizedtesting.rules.SystemPropertiesInvariantRule$1.evaluate(SystemPropertiesInvariantRule.java:55)
+	at org.apache.lucene.util.TestRuleThreadAndTestName$1.evaluate(TestRuleThreadAndTestName.java:49)
+	at org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+	at org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$StatementRunner.run(ThreadLeakControl.java:358)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl.forkTimeoutingTask(ThreadLeakControl.java:782)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$3.evaluate(ThreadLeakControl.java:442)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.runSingleTest(RandomizedRunner.java:745)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$3.evaluate(RandomizedRunner.java:647)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$4.evaluate(RandomizedRunner.java:681)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$5.evaluate(RandomizedRunner.java:692)
+	at org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+	at org.apache.lucene.util.TestRuleStoreClassName$1.evaluate(TestRuleStoreClassName.java:42)
+	at com.carrotsearch.randomizedtesting.rules.SystemPropertiesInvariantRule$1.evaluate(SystemPropertiesInvariantRule.java:55)
+	at com.carrotsearch.randomizedtesting.rules.NoShadowingOrOverridesOnMethodsRule$1.evaluate(NoShadowingOrOverridesOnMethodsRule.java:39)
+	at com.carrotsearch.randomizedtesting.rules.NoShadowingOrOverridesOnMethodsRule$1.evaluate(NoShadowingOrOverridesOnMethodsRule.java:39)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at org.apache.lucene.util.TestRuleAssertionsRequired$1.evaluate(TestRuleAssertionsRequired.java:43)
+	at org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+	at org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+	at org.apache.lucene.util.TestRuleIgnoreTestSuites$1.evaluate(TestRuleIgnoreTestSuites.java:55)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$StatementRunner.run(ThreadLeakControl.java:358)
+	at java.lang.Thread.run(Thread.java:744)
+</error>
+      <error message="No node available" type="org.elasticsearch.client.transport.NoNodeAvailableException">org.elasticsearch.client.transport.NoNodeAvailableException: No node available
+	at org.elasticsearch.client.transport.TransportClientNodesService.execute(TransportClientNodesService.java:219)
+	at org.elasticsearch.client.transport.support.InternalTransportIndicesAdminClient.execute(InternalTransportIndicesAdminClient.java:85)
+	at org.elasticsearch.client.support.AbstractIndicesAdminClient.deleteTemplate(AbstractIndicesAdminClient.java:540)
+	at org.elasticsearch.action.admin.indices.template.delete.DeleteIndexTemplateRequestBuilder.doExecute(DeleteIndexTemplateRequestBuilder.java:41)
+	at org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:85)
+	at org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:59)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.wipeTemplates(ElasticsearchIntegrationTest.java:372)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.after(ElasticsearchIntegrationTest.java:243)
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.invoke(RandomizedRunner.java:1558)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.access$600(RandomizedRunner.java:79)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$8.evaluate(RandomizedRunner.java:794)
+	at org.apache.lucene.util.TestRuleSetupTeardownChained$1.evaluate(TestRuleSetupTeardownChained.java:50)
+	at org.apache.lucene.util.TestRuleFieldCacheSanity$1.evaluate(TestRuleFieldCacheSanity.java:51)
+	at org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+	at com.carrotsearch.randomizedtesting.rules.SystemPropertiesInvariantRule$1.evaluate(SystemPropertiesInvariantRule.java:55)
+	at org.apache.lucene.util.TestRuleThreadAndTestName$1.evaluate(TestRuleThreadAndTestName.java:49)
+	at org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+	at org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$StatementRunner.run(ThreadLeakControl.java:358)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl.forkTimeoutingTask(ThreadLeakControl.java:782)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$3.evaluate(ThreadLeakControl.java:442)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.runSingleTest(RandomizedRunner.java:745)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$3.evaluate(RandomizedRunner.java:647)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$4.evaluate(RandomizedRunner.java:681)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$5.evaluate(RandomizedRunner.java:692)
+	at org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+	at org.apache.lucene.util.TestRuleStoreClassName$1.evaluate(TestRuleStoreClassName.java:42)
+	at com.carrotsearch.randomizedtesting.rules.SystemPropertiesInvariantRule$1.evaluate(SystemPropertiesInvariantRule.java:55)
+	at com.carrotsearch.randomizedtesting.rules.NoShadowingOrOverridesOnMethodsRule$1.evaluate(NoShadowingOrOverridesOnMethodsRule.java:39)
+	at com.carrotsearch.randomizedtesting.rules.NoShadowingOrOverridesOnMethodsRule$1.evaluate(NoShadowingOrOverridesOnMethodsRule.java:39)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at org.apache.lucene.util.TestRuleAssertionsRequired$1.evaluate(TestRuleAssertionsRequired.java:43)
+	at org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+	at org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+	at org.apache.lucene.util.TestRuleIgnoreTestSuites$1.evaluate(TestRuleIgnoreTestSuites.java:55)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$StatementRunner.run(ThreadLeakControl.java:358)
+	at java.lang.Thread.run(Thread.java:744)
+</error>
+   </testcase>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testGetFields_complexField" time="0.396"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="realtimeGetWithCompress" time="0.513"/>
+   <testcase classname="org.elasticsearch.get.GetActionTests" name="testThatGetFromTranslogShouldWorkWithExclude" time="0.494"/>
+   <system-out><![CDATA[[2014-02-18 15:49:37,945][INFO ][test                     ] Test testMultiGetWithVersion(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:37,948][INFO ][get                      ] [GetActionTests#testMultiGetWithVersion]: before test
+[2014-02-18 15:49:37,958][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:49:38,260][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:38,468][INFO ][get                      ] [GetActionTests#testMultiGetWithVersion]: cleaning up after test
+[2014-02-18 15:49:38,470][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:38,506][INFO ][get                      ] [GetActionTests#testMultiGetWithVersion]: cleaned up after test
+[2014-02-18 15:49:38,507][INFO ][test                     ] Test testMultiGetWithVersion(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:38,507][INFO ][test                     ] Test simpleGetTests(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:38,510][INFO ][get                      ] [GetActionTests#simpleGetTests]: before test
+[2014-02-18 15:49:38,520][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:49:38,809][INFO ][get                      ] --> index doc 1
+[2014-02-18 15:49:38,812][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:38,818][INFO ][get                      ] --> realtime get 1
+[2014-02-18 15:49:38,819][INFO ][get                      ] --> realtime get 1 (no source, implicit)
+[2014-02-18 15:49:38,820][INFO ][get                      ] --> realtime get 1 (no source, explicit)
+[2014-02-18 15:49:38,820][INFO ][get                      ] --> realtime get 1 (no type)
+[2014-02-18 15:49:38,821][INFO ][get                      ] --> non realtime get 1
+[2014-02-18 15:49:38,821][INFO ][get                      ] --> realtime fetch of field (requires fetching parsing source)
+[2014-02-18 15:49:38,822][INFO ][get                      ] --> realtime fetch of field & source (requires fetching parsing source)
+[2014-02-18 15:49:38,823][INFO ][get                      ] --> flush the index, so we load it from it
+[2014-02-18 15:49:38,872][INFO ][get                      ] --> realtime get 1 (loaded from index)
+[2014-02-18 15:49:38,873][INFO ][get                      ] --> non realtime get 1 (loaded from index)
+[2014-02-18 15:49:38,874][INFO ][get                      ] --> realtime fetch of field (loaded from index)
+[2014-02-18 15:49:38,875][INFO ][get                      ] --> realtime fetch of field & source (loaded from index)
+[2014-02-18 15:49:38,876][INFO ][get                      ] --> update doc 1
+[2014-02-18 15:49:38,880][INFO ][get                      ] --> realtime get 1
+[2014-02-18 15:49:38,880][INFO ][get                      ] --> update doc 1 again
+[2014-02-18 15:49:38,884][INFO ][get                      ] [GetActionTests#simpleGetTests]: cleaning up after test
+[2014-02-18 15:49:38,885][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:38,918][INFO ][get                      ] [GetActionTests#simpleGetTests]: cleaned up after test
+[2014-02-18 15:49:38,920][INFO ][test                     ] Test simpleGetTests(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:38,921][INFO ][test                     ] Test testGetDocWithMultivaluedFields(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:38,925][INFO ][get                      ] [GetActionTests#testGetDocWithMultivaluedFields]: before test
+[2014-02-18 15:49:38,937][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1, type2]
+[2014-02-18 15:49:39,304][INFO ][get                      ] [GetActionTests#testGetDocWithMultivaluedFields]: cleaning up after test
+[2014-02-18 15:49:39,305][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:39,341][INFO ][get                      ] [GetActionTests#testGetDocWithMultivaluedFields]: cleaned up after test
+[2014-02-18 15:49:39,341][INFO ][test                     ] Test testGetDocWithMultivaluedFields(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:39,342][INFO ][test                     ] Test simpleMultiGetTests(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:39,346][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:39,385][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:49:39,411][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:39,442][INFO ][get                      ] [GetActionTests#simpleMultiGetTests]: before test
+[2014-02-18 15:49:39,454][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:49:39,814][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:39,856][INFO ][get                      ] [GetActionTests#simpleMultiGetTests]: cleaning up after test
+[2014-02-18 15:49:39,859][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:39,957][INFO ][get                      ] [GetActionTests#simpleMultiGetTests]: cleaned up after test
+[2014-02-18 15:49:39,972][INFO ][test                     ] Test simpleMultiGetTests(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:39,973][INFO ][test                     ] Test testGetWithVersion(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:39,977][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:40,012][INFO ][get                      ] [GetActionTests#testGetWithVersion]: before test
+[2014-02-18 15:49:40,024][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:49:40,281][INFO ][get                      ] --> index doc 1
+[2014-02-18 15:49:40,282][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:40,381][INFO ][get                      ] --> index doc 1 again, so increasing the version
+[2014-02-18 15:49:40,418][INFO ][get                      ] [GetActionTests#testGetWithVersion]: cleaning up after test
+[2014-02-18 15:49:40,420][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:40,452][INFO ][get                      ] [GetActionTests#testGetWithVersion]: cleaned up after test
+[2014-02-18 15:49:40,456][INFO ][test                     ] Test testGetWithVersion(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:40,457][INFO ][test                     ] Test testGetFields_nonLeafField(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:40,462][INFO ][get                      ] [GetActionTests#testGetFields_nonLeafField]: before test
+[2014-02-18 15:49:40,472][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:49:40,576][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [my-type1] (dynamic)
+[2014-02-18 15:49:40,605][INFO ][get                      ] [GetActionTests#testGetFields_nonLeafField]: cleaning up after test
+[2014-02-18 15:49:40,606][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:49:40,634][INFO ][get                      ] [GetActionTests#testGetFields_nonLeafField]: cleaned up after test
+[2014-02-18 15:49:40,634][INFO ][test                     ] Test testGetFields_nonLeafField(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:40,635][INFO ][test                     ] Test testThatGetFromTranslogShouldWorkWithInclude(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:40,639][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithInclude]: before test
+[2014-02-18 15:49:40,647][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:49:40,728][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:40,732][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:40,776][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithInclude]: cleaning up after test
+[2014-02-18 15:49:40,780][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:40,830][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithInclude]: cleaned up after test
+[2014-02-18 15:49:40,833][INFO ][test                     ] Test testThatGetFromTranslogShouldWorkWithInclude(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:40,834][INFO ][test                     ] Test testThatGetFromTranslogShouldWorkWithIncludeExcludeAndFields(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:40,838][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:40,860][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:40,885][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithIncludeExcludeAndFields]: before test
+[2014-02-18 15:49:40,896][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:49:41,061][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithIncludeExcludeAndFields]: cleaning up after test
+[2014-02-18 15:49:41,098][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:41,268][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithIncludeExcludeAndFields]: cleaned up after test
+[2014-02-18 15:49:41,276][INFO ][test                     ] Test testThatGetFromTranslogShouldWorkWithIncludeExcludeAndFields(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:41,276][INFO ][test                     ] Test getFieldsWithDifferentTypes(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:41,280][INFO ][get                      ] [GetActionTests#getFieldsWithDifferentTypes]: before test
+[2014-02-18 15:49:41,292][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1, type2]
+[2014-02-18 15:49:41,604][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:41,611][INFO ][get                      ] --> realtime get (from source)
+[2014-02-18 15:49:41,611][INFO ][get                      ] --> realtime get (from stored fields)
+[2014-02-18 15:49:41,612][INFO ][get                      ] --> flush the index, so we load it from it
+[2014-02-18 15:49:41,631][INFO ][get                      ] --> non realtime get (from source)
+[2014-02-18 15:49:41,632][INFO ][get                      ] --> non realtime get (from stored fields)
+[2014-02-18 15:49:41,633][INFO ][get                      ] [GetActionTests#getFieldsWithDifferentTypes]: cleaning up after test
+[2014-02-18 15:49:41,634][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:41,664][INFO ][get                      ] [GetActionTests#getFieldsWithDifferentTypes]: cleaned up after test
+[2014-02-18 15:49:41,664][INFO ][test                     ] Test getFieldsWithDifferentTypes(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:41,665][INFO ][test                     ] Test testGetFields_metaData(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:41,668][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:41,676][WARN ][transport.netty          ] [transport_client_node_0] exception caught on transport layer [[id: 0x0c635646]], closing connection
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.connect0(Native Method)
+	at sun.nio.ch.Net.connect(Net.java:465)
+	at sun.nio.ch.Net.connect(Net.java:457)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:666)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink.connect(NioClientSocketPipelineSink.java:108)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink.eventSunk(NioClientSocketPipelineSink.java:70)
+	at org.jboss.netty.channel.Channels.connect(Channels.java:634)
+	at org.jboss.netty.channel.AbstractChannel.connect(AbstractChannel.java:207)
+	at org.jboss.netty.bootstrap.ClientBootstrap.connect(ClientBootstrap.java:229)
+	at org.jboss.netty.bootstrap.ClientBootstrap.connect(ClientBootstrap.java:182)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToChannelsLight(NettyTransport.java:680)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNode(NettyTransport.java:643)
+	at org.elasticsearch.transport.netty.NettyTransport.connectToNodeLight(NettyTransport.java:610)
+	at org.elasticsearch.transport.TransportService.connectToNodeLight(TransportService.java:133)
+	at org.elasticsearch.client.transport.TransportClientNodesService$SimpleNodeSampler.doSample(TransportClientNodesService.java:355)
+	at org.elasticsearch.client.transport.TransportClientNodesService$NodeSampler.sample(TransportClientNodesService.java:301)
+	at org.elasticsearch.client.transport.TransportClientNodesService.addTransportAddresses(TransportClientNodesService.java:169)
+	at org.elasticsearch.client.transport.TransportClient.addTransportAddress(TransportClient.java:237)
+	at org.elasticsearch.test.TestCluster$TransportClientFactory.client(TestCluster.java:636)
+	at org.elasticsearch.test.TestCluster$RandomClientFactory.client(TestCluster.java:653)
+	at org.elasticsearch.test.TestCluster$NodeAndClient.client(TestCluster.java:526)
+	at org.elasticsearch.test.TestCluster.client(TestCluster.java:392)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.client(ElasticsearchIntegrationTest.java:268)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.wipeIndices(ElasticsearchIntegrationTest.java:340)
+	at org.elasticsearch.test.ElasticsearchIntegrationTest.before(ElasticsearchIntegrationTest.java:192)
+	at sun.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.invoke(RandomizedRunner.java:1558)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.access$600(RandomizedRunner.java:79)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$7.evaluate(RandomizedRunner.java:770)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$8.evaluate(RandomizedRunner.java:786)
+	at org.apache.lucene.util.TestRuleSetupTeardownChained$1.evaluate(TestRuleSetupTeardownChained.java:50)
+	at org.apache.lucene.util.TestRuleFieldCacheSanity$1.evaluate(TestRuleFieldCacheSanity.java:51)
+	at org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+	at com.carrotsearch.randomizedtesting.rules.SystemPropertiesInvariantRule$1.evaluate(SystemPropertiesInvariantRule.java:55)
+	at org.apache.lucene.util.TestRuleThreadAndTestName$1.evaluate(TestRuleThreadAndTestName.java:49)
+	at org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+	at org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$StatementRunner.run(ThreadLeakControl.java:358)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl.forkTimeoutingTask(ThreadLeakControl.java:782)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$3.evaluate(ThreadLeakControl.java:442)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner.runSingleTest(RandomizedRunner.java:745)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$3.evaluate(RandomizedRunner.java:647)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$4.evaluate(RandomizedRunner.java:681)
+	at com.carrotsearch.randomizedtesting.RandomizedRunner$5.evaluate(RandomizedRunner.java:692)
+	at org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+	at org.apache.lucene.util.TestRuleStoreClassName$1.evaluate(TestRuleStoreClassName.java:42)
+	at com.carrotsearch.randomizedtesting.rules.SystemPropertiesInvariantRule$1.evaluate(SystemPropertiesInvariantRule.java:55)
+	at com.carrotsearch.randomizedtesting.rules.NoShadowingOrOverridesOnMethodsRule$1.evaluate(NoShadowingOrOverridesOnMethodsRule.java:39)
+	at com.carrotsearch.randomizedtesting.rules.NoShadowingOrOverridesOnMethodsRule$1.evaluate(NoShadowingOrOverridesOnMethodsRule.java:39)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at org.apache.lucene.util.TestRuleAssertionsRequired$1.evaluate(TestRuleAssertionsRequired.java:43)
+	at org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+	at org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+	at org.apache.lucene.util.TestRuleIgnoreTestSuites$1.evaluate(TestRuleIgnoreTestSuites.java:55)
+	at com.carrotsearch.randomizedtesting.rules.StatementAdapter.evaluate(StatementAdapter.java:36)
+	at com.carrotsearch.randomizedtesting.ThreadLeakControl$StatementRunner.run(ThreadLeakControl.java:358)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:49:41,677][INFO ][get                      ] [GetActionTests#testGetFields_metaData]: cleaning up after test
+[2014-02-18 15:49:41,684][ERROR][test                     ] FAILURE  : testGetFields_metaData(org.elasticsearch.get.GetActionTests)
+REPRODUCE WITH  : mvn test -Dtests.seed=A89B4FF56754358E -Dtests.class=org.elasticsearch.get.GetActionTests -Dtests.method=testGetFields_metaData -Dtests.prefix=tests -Dfile.encoding=UTF-8 -Duser.timezone=US/Pacific -Des.logger.level=INFO -Dtests.cluster_seed=135419AB38A95790
+Throwable:
+org.elasticsearch.client.transport.NoNodeAvailableException: No node available
+    org.elasticsearch.client.transport.TransportClientNodesService.execute(TransportClientNodesService.java:219)
+    org.elasticsearch.client.transport.support.InternalTransportIndicesAdminClient.execute(InternalTransportIndicesAdminClient.java:85)
+    org.elasticsearch.client.support.AbstractIndicesAdminClient.delete(AbstractIndicesAdminClient.java:265)
+    org.elasticsearch.action.admin.indices.delete.DeleteIndexRequestBuilder.doExecute(DeleteIndexRequestBuilder.java:68)
+    org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:85)
+    org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:59)
+    org.elasticsearch.action.ActionRequestBuilder.get(ActionRequestBuilder.java:67)
+    org.elasticsearch.test.hamcrest.ElasticsearchAssertions.assertAcked(ElasticsearchAssertions.java:79)
+    org.elasticsearch.test.ElasticsearchIntegrationTest.wipeIndices(ElasticsearchIntegrationTest.java:340)
+    org.elasticsearch.test.ElasticsearchIntegrationTest.before(ElasticsearchIntegrationTest.java:192)
+    [...sun.*, com.carrotsearch.randomizedtesting.*, java.lang.reflect.*]
+    org.apache.lucene.util.TestRuleSetupTeardownChained$1.evaluate(TestRuleSetupTeardownChained.java:50)
+    org.apache.lucene.util.TestRuleFieldCacheSanity$1.evaluate(TestRuleFieldCacheSanity.java:51)
+    org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+    [...com.carrotsearch.randomizedtesting.*]
+    org.apache.lucene.util.TestRuleThreadAndTestName$1.evaluate(TestRuleThreadAndTestName.java:49)
+    org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+    org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+    [...com.carrotsearch.randomizedtesting.*]
+    org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+    org.apache.lucene.util.TestRuleStoreClassName$1.evaluate(TestRuleStoreClassName.java:42)
+    [...com.carrotsearch.randomizedtesting.*]
+    org.apache.lucene.util.TestRuleAssertionsRequired$1.evaluate(TestRuleAssertionsRequired.java:43)
+    org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+    org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+    org.apache.lucene.util.TestRuleIgnoreTestSuites$1.evaluate(TestRuleIgnoreTestSuites.java:55)
+    [...com.carrotsearch.randomizedtesting.*]
+    java.lang.Thread.run(Thread.java:744)
+
+[2014-02-18 15:49:41,687][ERROR][test                     ] FAILURE  : testGetFields_metaData(org.elasticsearch.get.GetActionTests)
+REPRODUCE WITH  : mvn test -Dtests.seed=A89B4FF56754358E -Dtests.class=org.elasticsearch.get.GetActionTests -Dtests.method=testGetFields_metaData -Dtests.prefix=tests -Dfile.encoding=UTF-8 -Duser.timezone=US/Pacific -Des.logger.level=INFO -Dtests.cluster_seed=135419AB38A95790
+Throwable:
+org.elasticsearch.client.transport.NoNodeAvailableException: No node available
+    org.elasticsearch.client.transport.TransportClientNodesService.execute(TransportClientNodesService.java:219)
+    org.elasticsearch.client.transport.support.InternalTransportIndicesAdminClient.execute(InternalTransportIndicesAdminClient.java:85)
+    org.elasticsearch.client.support.AbstractIndicesAdminClient.deleteTemplate(AbstractIndicesAdminClient.java:540)
+    org.elasticsearch.action.admin.indices.template.delete.DeleteIndexTemplateRequestBuilder.doExecute(DeleteIndexTemplateRequestBuilder.java:41)
+    org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:85)
+    org.elasticsearch.action.ActionRequestBuilder.execute(ActionRequestBuilder.java:59)
+    org.elasticsearch.test.ElasticsearchIntegrationTest.wipeTemplates(ElasticsearchIntegrationTest.java:372)
+    org.elasticsearch.test.ElasticsearchIntegrationTest.after(ElasticsearchIntegrationTest.java:243)
+    [...sun.*, com.carrotsearch.randomizedtesting.*, java.lang.reflect.*]
+    org.apache.lucene.util.TestRuleSetupTeardownChained$1.evaluate(TestRuleSetupTeardownChained.java:50)
+    org.apache.lucene.util.TestRuleFieldCacheSanity$1.evaluate(TestRuleFieldCacheSanity.java:51)
+    org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+    [...com.carrotsearch.randomizedtesting.*]
+    org.apache.lucene.util.TestRuleThreadAndTestName$1.evaluate(TestRuleThreadAndTestName.java:49)
+    org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+    org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+    [...com.carrotsearch.randomizedtesting.*]
+    org.apache.lucene.util.AbstractBeforeAfterRule$1.evaluate(AbstractBeforeAfterRule.java:46)
+    org.apache.lucene.util.TestRuleStoreClassName$1.evaluate(TestRuleStoreClassName.java:42)
+    [...com.carrotsearch.randomizedtesting.*]
+    org.apache.lucene.util.TestRuleAssertionsRequired$1.evaluate(TestRuleAssertionsRequired.java:43)
+    org.apache.lucene.util.TestRuleMarkFailure$1.evaluate(TestRuleMarkFailure.java:48)
+    org.apache.lucene.util.TestRuleIgnoreAfterMaxFailures$1.evaluate(TestRuleIgnoreAfterMaxFailures.java:70)
+    org.apache.lucene.util.TestRuleIgnoreTestSuites$1.evaluate(TestRuleIgnoreTestSuites.java:55)
+    [...com.carrotsearch.randomizedtesting.*]
+    java.lang.Thread.run(Thread.java:744)
+
+[2014-02-18 15:49:41,690][INFO ][test                     ] Test testGetFields_metaData(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:41,690][INFO ][test                     ] Test testGetFields_complexField(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:41,693][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:49:41,719][INFO ][get                      ] [GetActionTests#testGetFields_complexField]: before test
+[2014-02-18 15:49:41,730][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [5]/[1], mappings [my-type2]
+[2014-02-18 15:49:41,791][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:41,879][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [my-type1] (dynamic)
+[2014-02-18 15:49:41,887][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [my-type2] (dynamic)
+[2014-02-18 15:49:42,016][INFO ][get                      ] [GetActionTests#testGetFields_complexField]: cleaning up after test
+[2014-02-18 15:49:42,017][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:49:42,080][INFO ][get                      ] [GetActionTests#testGetFields_complexField]: cleaned up after test
+[2014-02-18 15:49:42,086][INFO ][test                     ] Test testGetFields_complexField(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:42,087][INFO ][test                     ] Test realtimeGetWithCompress(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:42,090][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:42,114][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:42,138][INFO ][get                      ] [GetActionTests#realtimeGetWithCompress]: before test
+[2014-02-18 15:49:42,146][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:49:42,546][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:49:42,562][INFO ][get                      ] [GetActionTests#realtimeGetWithCompress]: cleaning up after test
+[2014-02-18 15:49:42,563][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:42,593][INFO ][get                      ] [GetActionTests#realtimeGetWithCompress]: cleaned up after test
+[2014-02-18 15:49:42,600][INFO ][test                     ] Test realtimeGetWithCompress(org.elasticsearch.get.GetActionTests) finished
+[2014-02-18 15:49:42,600][INFO ][test                     ] Test testThatGetFromTranslogShouldWorkWithExclude(org.elasticsearch.get.GetActionTests) started
+[2014-02-18 15:49:42,604][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:49:42,634][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithExclude]: before test
+[2014-02-18 15:49:42,636][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:42,664][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:49:42,800][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:49:42,991][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithExclude]: cleaning up after test
+[2014-02-18 15:49:42,993][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:49:43,085][INFO ][get                      ] [GetActionTests#testThatGetFromTranslogShouldWorkWithExclude]: cleaned up after test
+[2014-02-18 15:49:43,094][INFO ][test                     ] Test testThatGetFromTranslogShouldWorkWithExclude(org.elasticsearch.get.GetActionTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

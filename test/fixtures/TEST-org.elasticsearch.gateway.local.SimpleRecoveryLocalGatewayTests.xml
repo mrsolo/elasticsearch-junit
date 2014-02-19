@@ -1,0 +1,1154 @@
+<testsuite errors="0" failures="0" tests="7" skipped="0" name="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" hostname="nohost.nodomain" time="116.868" timestamp="2014-02-18T15:56:30">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testReusePeerRecovery" time="51.853"/>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testSingleNodeNoFlush" time="9.764"/>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testX" time="9.66"/>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testTwoNodeFirstNodeCleared" time="13.036"/>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testLatestVersionLoaded" time="13.021"/>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testRecoveryDifferentNodeOrderStartup" time="9.662"/>
+   <testcase classname="org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests" name="testSingleNodeWithFlush" time="9.854"/>
+   <system-out><![CDATA[[2014-02-18 15:56:30,915][INFO ][test                     ] Test testReusePeerRecovery(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:56:30,918][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]] with seed [7C0AAC4B1CF7A789] using [0] nodes
+[2014-02-18 15:56:30,918][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:56:30,922][INFO ][discovery.zen            ] [node_3] master_left [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:30,922][INFO ][discovery.zen            ] [node_4] master_left [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:30,922][INFO ][discovery.zen            ] [node_2] master_left [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:30,922][INFO ][discovery.zen            ] [node_1] master_left [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:30,923][INFO ][cluster.service          ] [node_2] master {new [node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:30,938][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:56:30,941][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:56:30,944][INFO ][cluster.service          ] [node_3] master {new [node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:30,948][INFO ][discovery.zen            ] [node_1] master_left [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [transport disconnected (with verified connect)]
+[2014-02-18 15:56:30,948][INFO ][cluster.service          ] [node_1] master {new [node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:30,951][INFO ][discovery.zen            ] [node_4] master_left [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [transport disconnected (with verified connect)]
+[2014-02-18 15:56:30,951][INFO ][cluster.service          ] [node_4] master {new [node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:30,952][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:56:30,953][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:56:30,958][INFO ][cluster.service          ] [node_3] removed {[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-node_left([node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]])
+[2014-02-18 15:56:30,962][INFO ][cluster.service          ] [node_2] removed {[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:56:30,963][INFO ][cluster.service          ] [node_4] removed {[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:56:30,965][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:56:30,965][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:56:30,971][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:56:30,971][INFO ][node                     ] [node_2] stopping ...
+[2014-02-18 15:56:30,974][INFO ][cluster.service          ] [node_3] removed {[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-node_left([node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]])
+[2014-02-18 15:56:30,979][INFO ][cluster.service          ] [node_4] removed {[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:56:30,983][INFO ][node                     ] [node_2] stopped
+[2014-02-18 15:56:30,983][INFO ][node                     ] [node_2] closing ...
+[2014-02-18 15:56:30,988][INFO ][node                     ] [node_2] closed
+[2014-02-18 15:56:30,988][INFO ][node                     ] [node_3] stopping ...
+[2014-02-18 15:56:30,995][INFO ][discovery.zen            ] [node_4] master_left [[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]], reason [shut_down]
+[2014-02-18 15:56:31,003][INFO ][node                     ] [node_3] stopped
+[2014-02-18 15:56:31,009][INFO ][node                     ] [node_3] closing ...
+[2014-02-18 15:56:31,009][INFO ][cluster.service          ] [node_4] master {new [node_4][BAmd8yPATT2Gww3SMnOWtA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9307]], previous [node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]}, removed {[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-master_failed ([node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]])
+[2014-02-18 15:56:31,012][INFO ][node                     ] [node_3] closed
+[2014-02-18 15:56:31,012][INFO ][node                     ] [node_4] stopping ...
+[2014-02-18 15:56:31,023][INFO ][node                     ] [node_4] stopped
+[2014-02-18 15:56:31,024][INFO ][node                     ] [node_4] closing ...
+[2014-02-18 15:56:31,032][INFO ][node                     ] [node_4] closed
+[2014-02-18 15:56:31,033][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testReusePeerRecovery]: before test
+[2014-02-18 15:56:31,036][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:31,036][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:56:31,037][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:56:31,122][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:56:31,122][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:56:31,134][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:56:34,139][INFO ][cluster.service          ] [node_0] new_master [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:56:34,157][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/UBljQqYYSAiGnWW5mA7Fow
+[2014-02-18 15:56:34,161][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:56:34,162][INFO ][node                     ] [node_0] started
+[2014-02-18 15:56:34,163][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:34,163][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:56:34,163][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:56:34,199][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:56:34,199][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:56:34,206][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:56:37,233][INFO ][cluster.service          ] [node_0] added {[node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:56:37,234][INFO ][cluster.service          ] [node_1] detected_master [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:37,253][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/3d8Z6Zk-RUeSKHgdpeVWnA
+[2014-02-18 15:56:37,269][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:56:37,270][INFO ][node                     ] [node_1] started
+[2014-02-18 15:56:37,272][INFO ][node                     ] [node_2] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:37,273][INFO ][node                     ] [node_2] initializing ...
+[2014-02-18 15:56:37,273][INFO ][plugins                  ] [node_2] loaded [], sites []
+[2014-02-18 15:56:37,434][INFO ][node                     ] [node_2] initialized
+[2014-02-18 15:56:37,435][INFO ][node                     ] [node_2] starting ...
+[2014-02-18 15:56:37,443][INFO ][transport                ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9305]}, publish_address {inet[/10.1.10.75:9305]}
+[2014-02-18 15:56:40,468][INFO ][cluster.service          ] [node_0] added {[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(join from node[[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]])
+[2014-02-18 15:56:40,469][INFO ][cluster.service          ] [node_1] added {[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:40,470][INFO ][cluster.service          ] [node_2] detected_master [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:40,499][INFO ][discovery                ] [node_2] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/0KUNLhswRnmWXpMRciP3XQ
+[2014-02-18 15:56:40,504][INFO ][http                     ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9205]}, publish_address {inet[/10.1.10.75:9205]}
+[2014-02-18 15:56:40,504][INFO ][node                     ] [node_2] started
+[2014-02-18 15:56:40,506][INFO ][node                     ] [node_3] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:40,506][INFO ][node                     ] [node_3] initializing ...
+[2014-02-18 15:56:40,506][INFO ][plugins                  ] [node_3] loaded [], sites []
+[2014-02-18 15:56:40,552][INFO ][node                     ] [node_3] initialized
+[2014-02-18 15:56:40,552][INFO ][node                     ] [node_3] starting ...
+[2014-02-18 15:56:40,560][INFO ][transport                ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9306]}, publish_address {inet[/10.1.10.75:9306]}
+[2014-02-18 15:56:40,563][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:41,065][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:41,566][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:42,067][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:42,569][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:43,070][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:43,570][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:43,583][INFO ][cluster.service          ] [node_0] added {[node_3][83eAZ_hWS7GMtjWF4dq9fg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(join from node[[node_3][83eAZ_hWS7GMtjWF4dq9fg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:56:43,584][INFO ][cluster.service          ] [node_1] added {[node_3][83eAZ_hWS7GMtjWF4dq9fg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:43,584][INFO ][cluster.service          ] [node_2] added {[node_3][83eAZ_hWS7GMtjWF4dq9fg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:43,584][INFO ][cluster.service          ] [node_3] detected_master [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:43,623][INFO ][discovery                ] [node_3] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/83eAZ_hWS7GMtjWF4dq9fg
+[2014-02-18 15:56:43,628][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:56:43,630][INFO ][http                     ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9206]}, publish_address {inet[/10.1.10.75:9206]}
+[2014-02-18 15:56:43,630][INFO ][node                     ] [node_3] started
+[2014-02-18 15:56:43,630][INFO ][gateway.local            ] --> indexing docs
+[2014-02-18 15:56:43,632][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:43,675][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:56:43,782][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:56:43,802][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:44,365][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:44,865][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:45,366][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:45,868][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:46,196][INFO ][gateway.local            ] Running Cluster Health
+[2014-02-18 15:56:46,197][INFO ][gateway.local            ] Done Cluster Health, status GREEN
+[2014-02-18 15:56:46,197][INFO ][gateway.local            ] --> shutting down the nodes
+[2014-02-18 15:56:46,197][WARN ][action.admin.cluster.settings] [node_0] ignoring transient setting [gateway.type], not dynamically updateable
+[2014-02-18 15:56:46,199][INFO ][cluster.routing.allocation.decider] [node_3] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,200][INFO ][cluster.routing.allocation.decider] [node_2] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,200][INFO ][cluster.routing.allocation.decider] [node_2] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,199][INFO ][cluster.routing.allocation.decider] [node_1] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,200][INFO ][cluster.routing.allocation.decider] [node_2] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,200][INFO ][cluster.routing.allocation.decider] [node_3] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,200][INFO ][cluster.routing.allocation.decider] [node_1] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,201][INFO ][cluster.routing.allocation.decider] [node_3] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,201][INFO ][cluster.routing.allocation.decider] [node_1] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,202][INFO ][cluster.routing.allocation.decider] [node_0] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,202][INFO ][cluster.routing.allocation.decider] [node_0] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,203][INFO ][cluster.routing.allocation.decider] [node_0] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:46,204][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:56:46,204][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:56:46,204][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:56:46,216][INFO ][discovery.zen            ] [node_2] master_left [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:46,219][INFO ][discovery.zen            ] [node_3] master_left [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:46,216][INFO ][discovery.zen            ] [node_1] master_left [[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:46,221][INFO ][cluster.service          ] [node_3] master {new [node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]], previous [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:46,220][INFO ][cluster.service          ] [node_2] master {new [node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]], previous [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:46,223][INFO ][cluster.service          ] [node_1] master {new [node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]], previous [node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][UBljQqYYSAiGnWW5mA7Fow][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:46,228][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:56:46,229][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:56:46,231][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:56:46,231][INFO ][test                     ] Stopping node [node_1] 
+[2014-02-18 15:56:46,231][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:56:46,266][INFO ][cluster.service          ] [node_2] removed {[node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-node_left([node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]])
+[2014-02-18 15:56:46,270][INFO ][cluster.service          ] [node_3] removed {[node_1][3d8Z6Zk-RUeSKHgdpeVWnA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]])
+[2014-02-18 15:56:46,279][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:56:46,280][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:56:46,283][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:56:46,283][INFO ][test                     ] Stopping node [node_2] 
+[2014-02-18 15:56:46,283][INFO ][node                     ] [node_2] stopping ...
+[2014-02-18 15:56:46,304][INFO ][discovery.zen            ] [node_3] master_left [[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]], reason [shut_down]
+[2014-02-18 15:56:46,311][INFO ][node                     ] [node_2] stopped
+[2014-02-18 15:56:46,313][INFO ][node                     ] [node_2] closing ...
+[2014-02-18 15:56:46,316][INFO ][cluster.service          ] [node_3] master {new [node_3][83eAZ_hWS7GMtjWF4dq9fg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]}, removed {[node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-master_failed ([node_2][0KUNLhswRnmWXpMRciP3XQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]])
+[2014-02-18 15:56:46,317][INFO ][node                     ] [node_2] closed
+[2014-02-18 15:56:46,318][INFO ][test                     ] Stopping node [node_3] 
+[2014-02-18 15:56:46,318][INFO ][node                     ] [node_3] stopping ...
+[2014-02-18 15:56:46,342][INFO ][node                     ] [node_3] stopped
+[2014-02-18 15:56:46,343][INFO ][node                     ] [node_3] closing ...
+[2014-02-18 15:56:46,345][INFO ][node                     ] [node_3] closed
+[2014-02-18 15:56:46,345][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:56:46,347][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:46,348][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:56:46,348][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:56:46,404][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:56:46,404][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:56:46,423][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:56:49,430][INFO ][cluster.service          ] [node_0] new_master [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:56:49,453][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/02jPuE5zRdOMVwludkcgFg
+[2014-02-18 15:56:49,459][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:56:49,459][INFO ][node                     ] [node_0] started
+[2014-02-18 15:56:49,462][INFO ][test                     ] Starting node [node_1] 
+[2014-02-18 15:56:49,464][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:49,464][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:56:49,465][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:56:49,502][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:56:49,502][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:56:49,508][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:56:52,536][INFO ][cluster.service          ] [node_0] added {[node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:56:52,540][INFO ][cluster.service          ] [node_1] detected_master [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:52,564][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/anb7qGiDQNaV8RbAUu3yPg
+[2014-02-18 15:56:52,569][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:56:52,569][INFO ][node                     ] [node_1] started
+[2014-02-18 15:56:52,570][INFO ][test                     ] Starting node [node_2] 
+[2014-02-18 15:56:52,571][INFO ][node                     ] [node_2] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:52,571][INFO ][node                     ] [node_2] initializing ...
+[2014-02-18 15:56:52,572][INFO ][plugins                  ] [node_2] loaded [], sites []
+[2014-02-18 15:56:52,625][INFO ][node                     ] [node_2] initialized
+[2014-02-18 15:56:52,625][INFO ][node                     ] [node_2] starting ...
+[2014-02-18 15:56:52,632][INFO ][transport                ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9305]}, publish_address {inet[/10.1.10.75:9305]}
+[2014-02-18 15:56:55,652][INFO ][cluster.service          ] [node_0] added {[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(join from node[[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]])
+[2014-02-18 15:56:55,653][INFO ][cluster.service          ] [node_1] added {[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:55,653][INFO ][cluster.service          ] [node_2] detected_master [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:55,679][INFO ][discovery                ] [node_2] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/GmXWtfWOQNKfAezmpQ07KQ
+[2014-02-18 15:56:55,682][INFO ][http                     ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9205]}, publish_address {inet[/10.1.10.75:9205]}
+[2014-02-18 15:56:55,683][INFO ][node                     ] [node_2] started
+[2014-02-18 15:56:55,683][INFO ][test                     ] Starting node [node_3] 
+[2014-02-18 15:56:55,684][INFO ][node                     ] [node_3] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:55,684][INFO ][node                     ] [node_3] initializing ...
+[2014-02-18 15:56:55,684][INFO ][plugins                  ] [node_3] loaded [], sites []
+[2014-02-18 15:56:55,723][INFO ][node                     ] [node_3] initialized
+[2014-02-18 15:56:55,723][INFO ][node                     ] [node_3] starting ...
+[2014-02-18 15:56:55,730][INFO ][transport                ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9306]}, publish_address {inet[/10.1.10.75:9306]}
+[2014-02-18 15:56:55,733][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:56,235][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:56,736][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:57,237][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:57,738][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:58,239][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:58,740][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:58,753][INFO ][cluster.service          ] [node_0] added {[node_3][yOhvqcHEQCaw_VUQqF4JKA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(join from node[[node_3][yOhvqcHEQCaw_VUQqF4JKA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:56:58,753][INFO ][cluster.service          ] [node_1] added {[node_3][yOhvqcHEQCaw_VUQqF4JKA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:58,753][INFO ][cluster.service          ] [node_2] added {[node_3][yOhvqcHEQCaw_VUQqF4JKA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:58,754][INFO ][cluster.service          ] [node_3] detected_master [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],[node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:58,791][INFO ][discovery                ] [node_3] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/yOhvqcHEQCaw_VUQqF4JKA
+[2014-02-18 15:56:58,799][INFO ][http                     ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9206]}, publish_address {inet[/10.1.10.75:9206]}
+[2014-02-18 15:56:58,799][INFO ][node                     ] [node_3] started
+[2014-02-18 15:56:58,805][INFO ][gateway.local            ] Running Cluster Health
+[2014-02-18 15:56:58,807][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:58,883][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:56:59,246][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:59,663][INFO ][gateway.local            ] Done Cluster Health, status GREEN
+[2014-02-18 15:56:59,663][INFO ][gateway.local            ] --> shutting down the nodes
+[2014-02-18 15:56:59,664][WARN ][action.admin.cluster.settings] [node_0] ignoring transient setting [gateway.type], not dynamically updateable
+[2014-02-18 15:56:59,664][INFO ][cluster.routing.allocation.decider] [node_3] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,664][INFO ][cluster.routing.allocation.decider] [node_1] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,664][INFO ][cluster.routing.allocation.decider] [node_2] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,665][INFO ][cluster.routing.allocation.decider] [node_1] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,665][INFO ][cluster.routing.allocation.decider] [node_1] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,665][INFO ][cluster.routing.allocation.decider] [node_3] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,665][INFO ][cluster.routing.allocation.decider] [node_2] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,665][INFO ][cluster.routing.allocation.decider] [node_3] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,665][INFO ][cluster.routing.allocation.decider] [node_2] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,666][INFO ][cluster.routing.allocation.decider] [node_0] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,666][INFO ][cluster.routing.allocation.decider] [node_0] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,666][INFO ][cluster.routing.allocation.decider] [node_0] updating [cluster.routing.allocation.disable_allocation] from [false] to [true]
+[2014-02-18 15:56:59,667][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:56:59,667][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:56:59,667][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:56:59,673][INFO ][discovery.zen            ] [node_3] master_left [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:59,673][INFO ][discovery.zen            ] [node_1] master_left [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:59,673][INFO ][cluster.service          ] [node_3] master {new [node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]], previous [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:59,673][INFO ][discovery.zen            ] [node_2] master_left [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:56:59,680][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:56:59,682][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:56:59,686][INFO ][cluster.service          ] [node_2] master {new [node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]], previous [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:59,686][INFO ][discovery.zen            ] [node_1] master_left [[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [transport disconnected (with verified connect)]
+[2014-02-18 15:56:59,686][INFO ][cluster.service          ] [node_1] master {new [node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]], previous [node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][02jPuE5zRdOMVwludkcgFg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:56:59,687][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:56:59,687][INFO ][test                     ] Stopping node [node_1] 
+[2014-02-18 15:56:59,687][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:56:59,698][INFO ][cluster.service          ] [node_2] removed {[node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-node_left([node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]])
+[2014-02-18 15:56:59,700][INFO ][cluster.service          ] [node_3] removed {[node_1][anb7qGiDQNaV8RbAUu3yPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]])
+[2014-02-18 15:56:59,703][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:56:59,704][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:56:59,706][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:56:59,706][INFO ][test                     ] Stopping node [node_2] 
+[2014-02-18 15:56:59,707][INFO ][node                     ] [node_2] stopping ...
+[2014-02-18 15:56:59,712][INFO ][discovery.zen            ] [node_3] master_left [[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]], reason [shut_down]
+[2014-02-18 15:56:59,717][INFO ][node                     ] [node_2] stopped
+[2014-02-18 15:56:59,718][INFO ][node                     ] [node_2] closing ...
+[2014-02-18 15:56:59,721][INFO ][node                     ] [node_2] closed
+[2014-02-18 15:56:59,722][INFO ][test                     ] Stopping node [node_3] 
+[2014-02-18 15:56:59,722][INFO ][node                     ] [node_3] stopping ...
+[2014-02-18 15:56:59,722][INFO ][cluster.service          ] [node_3] master {new [node_3][yOhvqcHEQCaw_VUQqF4JKA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]}, removed {[node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-master_failed ([node_2][GmXWtfWOQNKfAezmpQ07KQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]])
+[2014-02-18 15:56:59,729][INFO ][node                     ] [node_3] stopped
+[2014-02-18 15:56:59,730][INFO ][node                     ] [node_3] closing ...
+[2014-02-18 15:56:59,731][INFO ][node                     ] [node_3] closed
+[2014-02-18 15:56:59,731][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:56:59,733][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:59,733][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:56:59,734][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:56:59,783][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:56:59,783][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:56:59,789][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:02,797][INFO ][cluster.service          ] [node_0] new_master [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:02,809][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/pNPaxlNpS4a_fUYtgsYpmQ
+[2014-02-18 15:57:02,813][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:02,814][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:02,814][INFO ][test                     ] Starting node [node_1] 
+[2014-02-18 15:57:02,815][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:02,815][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:57:02,815][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:57:02,855][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:57:02,855][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:57:02,861][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:57:05,880][INFO ][cluster.service          ] [node_0] added {[node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:57:05,882][INFO ][cluster.service          ] [node_1] detected_master [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:05,894][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/yhX6FtMZQhK5iLmslvIM9Q
+[2014-02-18 15:57:05,899][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:57:05,900][INFO ][node                     ] [node_1] started
+[2014-02-18 15:57:05,902][INFO ][test                     ] Starting node [node_2] 
+[2014-02-18 15:57:05,903][INFO ][node                     ] [node_2] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:05,904][INFO ][node                     ] [node_2] initializing ...
+[2014-02-18 15:57:05,904][INFO ][plugins                  ] [node_2] loaded [], sites []
+[2014-02-18 15:57:05,940][INFO ][node                     ] [node_2] initialized
+[2014-02-18 15:57:05,940][INFO ][node                     ] [node_2] starting ...
+[2014-02-18 15:57:05,946][INFO ][transport                ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9305]}, publish_address {inet[/10.1.10.75:9305]}
+[2014-02-18 15:57:08,988][INFO ][cluster.service          ] [node_0] added {[node_2][zWQ-8fzCRKuHDjEzXNA8Cg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(join from node[[node_2][zWQ-8fzCRKuHDjEzXNA8Cg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]])
+[2014-02-18 15:57:08,988][INFO ][cluster.service          ] [node_1] added {[node_2][zWQ-8fzCRKuHDjEzXNA8Cg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:08,989][INFO ][cluster.service          ] [node_2] detected_master [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:09,017][INFO ][discovery                ] [node_2] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/zWQ-8fzCRKuHDjEzXNA8Cg
+[2014-02-18 15:57:09,021][INFO ][http                     ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9205]}, publish_address {inet[/10.1.10.75:9205]}
+[2014-02-18 15:57:09,022][INFO ][node                     ] [node_2] started
+[2014-02-18 15:57:09,022][INFO ][test                     ] Starting node [node_3] 
+[2014-02-18 15:57:09,023][INFO ][node                     ] [node_3] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:09,023][INFO ][node                     ] [node_3] initializing ...
+[2014-02-18 15:57:09,023][INFO ][plugins                  ] [node_3] loaded [], sites []
+[2014-02-18 15:57:09,059][INFO ][node                     ] [node_3] initialized
+[2014-02-18 15:57:09,059][INFO ][node                     ] [node_3] starting ...
+[2014-02-18 15:57:09,065][INFO ][transport                ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9306]}, publish_address {inet[/10.1.10.75:9306]}
+[2014-02-18 15:57:09,072][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:09,573][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:10,074][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:10,575][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:11,077][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:11,578][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:12,079][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:12,088][INFO ][cluster.service          ] [node_0] added {[node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(join from node[[node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:57:12,089][INFO ][cluster.service          ] [node_1] added {[node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:12,089][INFO ][cluster.service          ] [node_2] added {[node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:12,089][INFO ][cluster.service          ] [node_3] detected_master [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_2][zWQ-8fzCRKuHDjEzXNA8Cg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],[node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:12,147][INFO ][discovery                ] [node_3] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/DWvVSigqRnuMw7iPP1lFRA
+[2014-02-18 15:57:12,156][INFO ][http                     ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9206]}, publish_address {inet[/10.1.10.75:9206]}
+[2014-02-18 15:57:12,157][INFO ][node                     ] [node_3] started
+[2014-02-18 15:57:12,157][INFO ][gateway.local            ] Running Cluster Health
+[2014-02-18 15:57:12,218][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:57:12,558][INFO ][gateway.local            ] Done Cluster Health, status GREEN
+[2014-02-18 15:57:12,560][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:57:12,582][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:12,594][INFO ][gateway.local            ] --> shard 0, recovered 323b, reuse 24.7kb
+[2014-02-18 15:57:12,594][INFO ][gateway.local            ] --> shard 1, recovered 251b, reuse 21kb
+[2014-02-18 15:57:12,594][INFO ][gateway.local            ] --> shard 2, recovered 251b, reuse 20.6kb
+[2014-02-18 15:57:12,595][INFO ][gateway.local            ] --> shard 3, recovered 287b, reuse 23kb
+[2014-02-18 15:57:12,595][INFO ][gateway.local            ] --> shard 4, recovered 323b, reuse 24kb
+[2014-02-18 15:57:12,595][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testReusePeerRecovery]: cleaning up after test
+[2014-02-18 15:57:12,595][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:12,601][INFO ][discovery.zen            ] [node_1] master_left [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:57:12,601][INFO ][discovery.zen            ] [node_3] master_left [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:57:12,602][INFO ][cluster.service          ] [node_1] master {new [node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:57:12,601][INFO ][discovery.zen            ] [node_2] master_left [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:57:12,604][INFO ][cluster.service          ] [node_3] master {new [node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:57:12,611][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:12,612][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:12,614][INFO ][discovery.zen            ] [node_2] master_left [[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [transport disconnected (with verified connect)]
+[2014-02-18 15:57:12,614][INFO ][cluster.service          ] [node_2] master {new [node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]], previous [node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][pNPaxlNpS4a_fUYtgsYpmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:57:12,615][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:12,623][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:57:12,651][INFO ][cluster.service          ] [node_3] removed {[node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-node_left([node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]])
+[2014-02-18 15:57:12,653][INFO ][cluster.service          ] [node_2] removed {[node_1][yhX6FtMZQhK5iLmslvIM9Q][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_3][DWvVSigqRnuMw7iPP1lFRA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:57:12,657][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:57:12,657][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:57:13,084][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:13,585][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:14,086][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:14,587][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:15,088][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:15,589][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:16,090][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:16,591][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:17,093][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:17,593][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:18,095][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:18,596][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:19,097][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:19,597][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:20,098][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:20,599][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:21,101][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:21,602][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:22,104][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:22,604][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:57:22,659][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:57:22,659][INFO ][node                     ] [node_2] stopping ...
+[2014-02-18 15:57:22,666][INFO ][cluster.service          ] [node_3] removed {[node_2][zWQ-8fzCRKuHDjEzXNA8Cg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-node_left([node_2][zWQ-8fzCRKuHDjEzXNA8Cg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]])
+[2014-02-18 15:57:22,670][INFO ][node                     ] [node_2] stopped
+[2014-02-18 15:57:22,670][INFO ][node                     ] [node_2] closing ...
+[2014-02-18 15:57:22,672][INFO ][node                     ] [node_2] closed
+[2014-02-18 15:57:22,672][INFO ][node                     ] [node_3] stopping ...
+[2014-02-18 15:57:22,681][INFO ][node                     ] [node_3] stopped
+[2014-02-18 15:57:22,681][INFO ][node                     ] [node_3] closing ...
+[2014-02-18 15:57:22,683][INFO ][node                     ] [node_3] closed
+[2014-02-18 15:57:22,683][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testReusePeerRecovery]: cleaned up after test
+[2014-02-18 15:57:22,683][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/nodes/2, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/nodes/1, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/nodes/3, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8938145849078687625]-HASH=[13541AED384D4020]/nodes/0]
+[2014-02-18 15:57:22,768][INFO ][test                     ] Test testReusePeerRecovery(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+[2014-02-18 15:57:22,768][INFO ][test                     ] Test testSingleNodeNoFlush(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:57:22,770][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-4661626507633286677]-HASH=[13541AF94AEBB4D0]] with seed [BF4E9363C0F921EB] using [0] nodes
+[2014-02-18 15:57:22,770][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testSingleNodeNoFlush]: before test
+[2014-02-18 15:57:22,773][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:22,773][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:22,773][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:22,817][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:22,817][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:22,823][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:25,828][INFO ][cluster.service          ] [node_0] new_master [node_0][jtHW3KbSQk2kEx4c5iJLEw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:25,841][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-4661626507633286677]-HASH=[13541AF94AEBB4D0]/jtHW3KbSQk2kEx4c5iJLEw
+[2014-02-18 15:57:25,845][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:25,849][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:57:25,849][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:25,850][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:25,881][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:57:26,014][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:57:26,014][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:57:26,014][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:26,022][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:26,022][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:26,024][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:26,024][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:57:26,026][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:26,026][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:26,026][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:26,061][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:26,061][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:26,066][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:29,072][INFO ][cluster.service          ] [node_0] new_master [node_0][413aSE7BTTidh7_4WcLcmQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:29,086][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-4661626507633286677]-HASH=[13541AF94AEBB4D0]/413aSE7BTTidh7_4WcLcmQ
+[2014-02-18 15:57:29,091][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:29,109][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:57:29,109][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:29,112][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:57:29,115][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:29,344][INFO ][gateway.local            ] Done Cluster Health, status YELLOW
+[2014-02-18 15:57:29,364][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:57:29,365][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:57:29,365][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:29,372][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:29,372][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:29,373][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:29,373][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:57:29,375][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:29,375][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:29,376][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:29,411][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:29,411][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:29,416][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:32,421][INFO ][cluster.service          ] [node_0] new_master [node_0][E4at93rAQ_WIebQKZ2ynHg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:32,435][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-4661626507633286677]-HASH=[13541AF94AEBB4D0]/E4at93rAQ_WIebQKZ2ynHg
+[2014-02-18 15:57:32,440][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:32,461][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:57:32,463][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:32,466][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:57:32,469][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:32,493][INFO ][gateway.local            ] Done Cluster Health, status YELLOW
+[2014-02-18 15:57:32,516][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testSingleNodeNoFlush]: cleaning up after test
+[2014-02-18 15:57:32,519][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:32,526][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:32,526][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:32,528][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:32,528][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testSingleNodeNoFlush]: cleaned up after test
+[2014-02-18 15:57:32,528][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-4661626507633286677]-HASH=[13541AF94AEBB4D0]/nodes/0]
+[2014-02-18 15:57:32,532][INFO ][test                     ] Test testSingleNodeNoFlush(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+[2014-02-18 15:57:32,532][INFO ][test                     ] Test testX(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:57:32,534][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-1411394842624643967]-HASH=[13541AFB90E593A0]] with seed [EC69B7DE578A2C81] using [0] nodes
+[2014-02-18 15:57:32,534][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testX]: before test
+[2014-02-18 15:57:32,536][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:32,536][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:32,536][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:32,575][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:32,575][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:32,592][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:35,597][INFO ][cluster.service          ] [node_0] new_master [node_0][bC6YTtIWRCqU9raiSDg_nw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:35,611][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-1411394842624643967]-HASH=[13541AFB90E593A0]/bC6YTtIWRCqU9raiSDg_nw
+[2014-02-18 15:57:35,614][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:35,619][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:57:35,619][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:35,621][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:35,652][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:57:35,684][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:57:35,685][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:57:35,685][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:35,692][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:35,692][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:35,694][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:35,694][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:57:35,695][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:35,696][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:35,696][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:35,737][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:35,738][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:35,743][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:38,748][INFO ][cluster.service          ] [node_0] new_master [node_0][QfSUPQqzRte2G31fjNm9IA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:38,767][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-1411394842624643967]-HASH=[13541AFB90E593A0]/QfSUPQqzRte2G31fjNm9IA
+[2014-02-18 15:57:38,774][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:38,794][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:57:38,795][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:38,799][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:57:38,802][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:39,038][INFO ][gateway.local            ] Done Cluster Health, status YELLOW
+[2014-02-18 15:57:39,040][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:57:39,040][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:57:39,041][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:39,047][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:39,047][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:39,049][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:39,049][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:57:39,050][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:39,051][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:39,051][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:39,089][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:39,089][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:39,095][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:42,099][INFO ][cluster.service          ] [node_0] new_master [node_0][hooWzoUSTeKneRS0oN0MIQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:42,111][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-1411394842624643967]-HASH=[13541AFB90E593A0]/hooWzoUSTeKneRS0oN0MIQ
+[2014-02-18 15:57:42,118][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:42,138][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:57:42,142][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:42,145][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:57:42,147][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:42,168][INFO ][gateway.local            ] Done Cluster Health, status YELLOW
+[2014-02-18 15:57:42,170][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testX]: cleaning up after test
+[2014-02-18 15:57:42,174][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:42,182][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:42,182][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:42,184][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:42,185][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testX]: cleaned up after test
+[2014-02-18 15:57:42,185][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-1411394842624643967]-HASH=[13541AFB90E593A0]/nodes/0, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-1411394842624643967]-HASH=[13541AFB90E593A0]/nodes/0]
+[2014-02-18 15:57:42,191][INFO ][test                     ] Test testX(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+[2014-02-18 15:57:42,192][INFO ][test                     ] Test testTwoNodeFirstNodeCleared(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:57:42,193][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]] with seed [21C345F336965112] using [0] nodes
+[2014-02-18 15:57:42,193][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testTwoNodeFirstNodeCleared]: before test
+[2014-02-18 15:57:42,195][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:42,195][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:42,195][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:42,247][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:42,247][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:42,258][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:45,264][INFO ][cluster.service          ] [node_0] new_master [node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:45,286][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/cjh_ZJuvTNyxKIiOUemZLQ
+[2014-02-18 15:57:45,290][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:45,295][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:57:45,295][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:45,296][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:45,297][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:57:45,297][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:57:45,349][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:57:45,349][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:57:45,356][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:57:48,373][INFO ][cluster.service          ] [node_0] added {[node_1][GuGnBpMaQIKOBm9-1xBClg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][GuGnBpMaQIKOBm9-1xBClg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:57:48,375][INFO ][cluster.service          ] [node_1] detected_master [node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:48,390][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/GuGnBpMaQIKOBm9-1xBClg
+[2014-02-18 15:57:48,393][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:57:48,394][INFO ][node                     ] [node_1] started
+[2014-02-18 15:57:48,395][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:48,426][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [1]/[1], mappings []
+[2014-02-18 15:57:48,467][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:57:48,474][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:57:48,643][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:57:48,644][INFO ][gateway.local            ] Done Cluster Health, status GREEN
+[2014-02-18 15:57:48,660][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:57:48,660][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:57:48,660][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:48,665][INFO ][discovery.zen            ] [node_1] master_left [[node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:57:48,666][INFO ][cluster.service          ] [node_1] master {new [node_1][GuGnBpMaQIKOBm9-1xBClg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]], previous [node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][cjh_ZJuvTNyxKIiOUemZLQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:57:48,670][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:48,670][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:48,672][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:48,672][INFO ][test                     ] Stopping node [node_1] 
+[2014-02-18 15:57:48,673][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:57:48,680][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:57:48,680][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:57:48,682][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:57:48,682][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:57:48,692][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:48,692][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:48,693][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:48,727][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:48,727][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:48,733][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:51,737][INFO ][cluster.service          ] [node_0] new_master [node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:51,750][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/X0z0WiVBTQa8THSjyiBLVg
+[2014-02-18 15:57:51,753][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:51,753][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:51,756][INFO ][test                     ] Starting node [node_1] 
+[2014-02-18 15:57:51,757][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:51,757][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:57:51,757][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:57:51,807][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:57:51,807][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:57:51,815][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:57:54,834][INFO ][cluster.service          ] [node_0] added {[node_1][D485vYpESnOMPMTKcHZZJg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][D485vYpESnOMPMTKcHZZJg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:57:54,836][INFO ][cluster.service          ] [node_1] detected_master [node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:57:54,849][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/D485vYpESnOMPMTKcHZZJg
+[2014-02-18 15:57:54,855][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:57:54,877][INFO ][node                     ] [node_1] started
+[2014-02-18 15:57:54,882][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:57:54,884][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:57:54,885][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:57:55,150][INFO ][gateway.local            ] Done Cluster Health, status GREEN
+[2014-02-18 15:57:55,156][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:57:55,187][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testTwoNodeFirstNodeCleared]: cleaning up after test
+[2014-02-18 15:57:55,189][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:57:55,194][INFO ][discovery.zen            ] [node_1] master_left [[node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:57:55,194][INFO ][cluster.service          ] [node_1] master {new [node_1][D485vYpESnOMPMTKcHZZJg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]], previous [node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][X0z0WiVBTQa8THSjyiBLVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:57:55,198][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:57:55,198][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:57:55,200][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:57:55,203][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:57:55,209][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:57:55,210][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:57:55,211][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:57:55,211][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testTwoNodeFirstNodeCleared]: cleaned up after test
+[2014-02-18 15:57:55,212][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/nodes/1, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/nodes/0, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/nodes/0, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/nodes/1, data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/nodes/1, data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2432865134605390098]-HASH=[13541AFDD0A35CC8]/nodes/0]
+[2014-02-18 15:57:55,228][INFO ][test                     ] Test testTwoNodeFirstNodeCleared(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+[2014-02-18 15:57:55,228][INFO ][test                     ] Test testLatestVersionLoaded(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:57:55,230][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]] with seed [F9FB93B1A9CA1419] using [0] nodes
+[2014-02-18 15:57:55,230][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testLatestVersionLoaded]: before test
+[2014-02-18 15:57:55,232][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:55,232][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:57:55,232][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:57:55,269][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:57:55,269][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:57:55,274][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:57:58,284][INFO ][cluster.service          ] [node_0] new_master [node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:57:58,300][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/aOSdPcGcT1Gse6idNjl76w
+[2014-02-18 15:57:58,304][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:57:58,304][INFO ][node                     ] [node_0] started
+[2014-02-18 15:57:58,305][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:57:58,306][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:57:58,306][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:57:58,359][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:57:58,360][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:57:58,368][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:58:01,387][INFO ][cluster.service          ] [node_0] added {[node_1][8fwV6wKTQguwsksOADNm7g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][8fwV6wKTQguwsksOADNm7g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:58:01,388][INFO ][cluster.service          ] [node_1] detected_master [node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:58:01,400][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/8fwV6wKTQguwsksOADNm7g
+[2014-02-18 15:58:01,404][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:58:01,411][INFO ][node                     ] [node_1] started
+[2014-02-18 15:58:01,412][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:01,412][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:58:01,444][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [1]/[1], mappings []
+[2014-02-18 15:58:01,502][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:58:01,511][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:01,648][INFO ][gateway.local            ] --> running cluster_health (wait for the shards to startup)
+[2014-02-18 15:58:01,649][INFO ][gateway.local            ] --> done cluster_health, status GREEN
+[2014-02-18 15:58:01,668][INFO ][gateway.local            ] --> closing first node, and indexing more data to the second node
+[2014-02-18 15:58:01,669][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:58:01,669][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:58:01,669][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:58:01,675][INFO ][discovery.zen            ] [node_1] master_left [[node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:58:01,676][INFO ][cluster.service          ] [node_1] master {new [node_1][8fwV6wKTQguwsksOADNm7g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]], previous [node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][aOSdPcGcT1Gse6idNjl76w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:58:01,679][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:58:01,679][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:58:01,681][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:58:01,682][INFO ][gateway.local            ] --> one node is closed - start indexing data into the second one
+[2014-02-18 15:58:01,698][INFO ][gateway.local            ] --> add some metadata, additional type and template
+[2014-02-18 15:58:01,700][INFO ][cluster.metadata         ] [node_1] [test] create_mapping [type2]
+[2014-02-18 15:58:01,714][INFO ][gateway.local            ] --> starting two nodes back, verifying we got the latest version
+[2014-02-18 15:58:01,714][INFO ][test                     ] Stopping node [node_1] 
+[2014-02-18 15:58:01,715][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:58:01,725][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:58:01,726][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:58:01,728][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:58:01,729][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:58:01,731][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:01,731][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:58:01,731][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:58:01,774][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:58:01,774][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:58:01,779][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:58:04,783][INFO ][cluster.service          ] [node_0] new_master [node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:58:04,797][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/BFz-rmn6SxOvmQG7gBFJZQ
+[2014-02-18 15:58:04,800][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:58:04,801][INFO ][node                     ] [node_0] started
+[2014-02-18 15:58:04,803][INFO ][test                     ] Starting node [node_1] 
+[2014-02-18 15:58:04,804][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:04,804][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:58:04,804][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:58:04,849][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:58:04,849][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:58:04,856][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:58:07,878][INFO ][cluster.service          ] [node_0] added {[node_1][9rf1cRLrR1yfL5ac3FeX1g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][9rf1cRLrR1yfL5ac3FeX1g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:58:07,879][INFO ][cluster.service          ] [node_1] detected_master [node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:58:07,893][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/9rf1cRLrR1yfL5ac3FeX1g
+[2014-02-18 15:58:07,898][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:58:07,922][INFO ][node                     ] [node_1] started
+[2014-02-18 15:58:07,927][INFO ][gateway.local            ] --> running cluster_health (wait for the shards to startup)
+[2014-02-18 15:58:07,930][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:58:07,930][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:08,161][INFO ][gateway.local            ] --> done cluster_health, status GREEN
+[2014-02-18 15:58:08,170][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:08,200][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testLatestVersionLoaded]: cleaning up after test
+[2014-02-18 15:58:08,203][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:58:08,207][INFO ][discovery.zen            ] [node_1] master_left [[node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:58:08,208][INFO ][cluster.service          ] [node_1] master {new [node_1][9rf1cRLrR1yfL5ac3FeX1g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]], previous [node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][BFz-rmn6SxOvmQG7gBFJZQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:58:08,211][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:58:08,211][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:58:08,213][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:58:08,217][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:58:08,224][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:58:08,224][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:58:08,226][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:58:08,226][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testLatestVersionLoaded]: cleaned up after test
+[2014-02-18 15:58:08,226][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/nodes/1, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/nodes/0, data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/nodes/1, data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/nodes/0, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/nodes/0, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-433590547844033511]-HASH=[13541B00D9AFFFD0]/nodes/1]
+[2014-02-18 15:58:08,248][INFO ][test                     ] Test testLatestVersionLoaded(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+[2014-02-18 15:58:08,249][INFO ][test                     ] Test testRecoveryDifferentNodeOrderStartup(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:58:08,250][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4635121260498591724]-HASH=[13541B03E1C1F6F8]] with seed [4053423A7EE11FEC] using [0] nodes
+[2014-02-18 15:58:08,250][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testRecoveryDifferentNodeOrderStartup]: before test
+[2014-02-18 15:58:08,252][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:08,252][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:58:08,253][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:58:08,286][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:58:08,286][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:58:08,291][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:58:11,296][INFO ][cluster.service          ] [node_0] new_master [node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:58:11,321][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4635121260498591724]-HASH=[13541B03E1C1F6F8]/Pazvd5RzStKW0kFVcen75g
+[2014-02-18 15:58:11,325][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:58:11,329][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:58:11,330][INFO ][node                     ] [node_0] started
+[2014-02-18 15:58:11,357][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:58:11,398][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:58:11,399][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:11,399][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:58:11,399][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:58:11,439][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:58:11,439][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:58:11,445][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:58:14,464][INFO ][cluster.service          ] [node_0] added {[node_1][FMa63Fo0QtOveVMk8f7yhA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][FMa63Fo0QtOveVMk8f7yhA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:58:14,465][INFO ][cluster.service          ] [node_1] detected_master [node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:58:14,485][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4635121260498591724]-HASH=[13541B03E1C1F6F8]/FMa63Fo0QtOveVMk8f7yhA
+[2014-02-18 15:58:14,489][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:58:14,490][INFO ][node                     ] [node_1] started
+[2014-02-18 15:58:14,692][INFO ][test                     ] Closing node [node_0] during restart
+[2014-02-18 15:58:14,692][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:58:14,699][INFO ][discovery.zen            ] [node_1] master_left [[node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:58:14,700][INFO ][cluster.service          ] [node_1] master {new [node_1][FMa63Fo0QtOveVMk8f7yhA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]], previous [node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][Pazvd5RzStKW0kFVcen75g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:58:14,703][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:58:14,703][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:58:14,705][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:58:14,705][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:58:14,705][INFO ][test                     ] Stopping node [node_1] 
+[2014-02-18 15:58:14,705][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:58:14,715][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:58:14,715][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:58:14,716][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:58:14,717][INFO ][test                     ] Starting node [node_1] 
+[2014-02-18 15:58:14,718][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:14,718][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:58:14,719][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:58:14,754][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:58:14,754][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:58:14,760][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:58:17,765][INFO ][cluster.service          ] [node_1] new_master [node_1][8EQPgqzQTD6cP-zf1M82QA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:58:17,780][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4635121260498591724]-HASH=[13541B03E1C1F6F8]/8EQPgqzQTD6cP-zf1M82QA
+[2014-02-18 15:58:17,785][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:58:17,819][INFO ][gateway                  ] [node_1] recovered [1] indices into cluster_state
+[2014-02-18 15:58:17,830][INFO ][node                     ] [node_1] started
+[2014-02-18 15:58:17,833][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:17,869][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testRecoveryDifferentNodeOrderStartup]: cleaning up after test
+[2014-02-18 15:58:17,876][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:58:17,885][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:58:17,885][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:58:17,887][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:58:17,887][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testRecoveryDifferentNodeOrderStartup]: cleaned up after test
+[2014-02-18 15:58:17,887][INFO ][test                     ] Wipe data directory for all nodes locations: [data/data1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4635121260498591724]-HASH=[13541B03E1C1F6F8]/nodes/0, data/data2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4635121260498591724]-HASH=[13541B03E1C1F6F8]/nodes/0]
+[2014-02-18 15:58:17,911][INFO ][test                     ] Test testRecoveryDifferentNodeOrderStartup(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+[2014-02-18 15:58:17,911][INFO ][test                     ] Test testSingleNodeWithFlush(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) started
+[2014-02-18 15:58:17,914][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]] with seed [DFA000E1D6A10006] using [0] nodes
+[2014-02-18 15:58:17,914][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testSingleNodeWithFlush]: before test
+[2014-02-18 15:58:17,916][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:17,916][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:58:17,916][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:58:17,956][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:58:17,957][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:58:17,962][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:58:20,967][INFO ][cluster.service          ] [node_0] new_master [node_0][4Emx9mUnTkmiTu4jpCTW1g][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:58:20,989][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]/4Emx9mUnTkmiTu4jpCTW1g
+[2014-02-18 15:58:20,995][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:58:20,999][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:58:21,000][INFO ][node                     ] [node_0] started
+[2014-02-18 15:58:21,001][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:21,036][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [1]/[1], mappings []
+[2014-02-18 15:58:21,057][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:58:21,173][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:58:21,174][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:58:21,174][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:58:21,183][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:58:21,183][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:58:21,185][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:58:21,185][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:58:21,188][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:21,188][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:58:21,188][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:58:21,236][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:58:21,237][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:58:21,242][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:58:24,247][INFO ][cluster.service          ] [node_0] new_master [node_0][-L_ceI7gSJufxtnnYteljg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:58:24,260][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]/-L_ceI7gSJufxtnnYteljg
+[2014-02-18 15:58:24,266][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:58:24,281][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:58:24,281][INFO ][node                     ] [node_0] started
+[2014-02-18 15:58:24,284][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:58:24,287][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:24,516][INFO ][gateway.local            ] Done Cluster Health, status YELLOW
+[2014-02-18 15:58:24,521][INFO ][test                     ] Restarting remaining nodes rollingRestart [false]
+[2014-02-18 15:58:24,521][INFO ][test                     ] Stopping node [node_0] 
+[2014-02-18 15:58:24,521][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:58:24,528][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:58:24,528][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:58:24,529][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:58:24,530][INFO ][test                     ] Starting node [node_0] 
+[2014-02-18 15:58:24,531][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:58:24,532][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:58:24,532][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:58:24,569][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:58:24,570][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:58:24,575][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:58:27,585][INFO ][cluster.service          ] [node_0] new_master [node_0][ci93ib7vRF2EAPeiHcGIPg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:58:27,606][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]/ci93ib7vRF2EAPeiHcGIPg
+[2014-02-18 15:58:27,613][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:58:27,633][INFO ][gateway                  ] [node_0] recovered [1] indices into cluster_state
+[2014-02-18 15:58:27,633][INFO ][node                     ] [node_0] started
+[2014-02-18 15:58:27,639][INFO ][gateway.local            ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 15:58:27,644][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:27,715][INFO ][gateway.local            ] Done Cluster Health, status YELLOW
+[2014-02-18 15:58:27,729][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testSingleNodeWithFlush]: cleaning up after test
+[2014-02-18 15:58:27,734][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:58:27,747][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:58:27,747][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:58:27,749][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:58:27,749][INFO ][gateway.local            ] [SimpleRecoveryLocalGatewayTests#testSingleNodeWithFlush]: cleaned up after test
+[2014-02-18 15:58:27,749][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]/nodes/0, data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]/nodes/0, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[-2332863637009399802]-HASH=[13541B0621BCA9E0]/nodes/0]
+[2014-02-18 15:58:27,765][INFO ][test                     ] Test testSingleNodeWithFlush(org.elasticsearch.gateway.local.SimpleRecoveryLocalGatewayTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

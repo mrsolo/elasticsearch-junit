@@ -1,0 +1,467 @@
+<testsuite errors="0" failures="0" tests="33" skipped="1" name="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" hostname="nohost.nodomain" time="11.676" timestamp="2014-02-18T15:48:14">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testSimple" time="0.343"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testReservedChars" time="0.336"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatSuggestStopFilterWorks" time="0.371"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatFuzzySuggesterSupportsMinPrefixLength" time="0.203"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testDisabledPreserveSeperators" time="0.43"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatDisablingPositionIncrementsWorkForStopwords" time="0.121"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatFuzzySuggesterIsUnicodeAware" time="0.139"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatWeightsAreWorking" time="0.342"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatIndexingInvalidFieldsInCompletionFieldResultsInException" time="0.192"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatSortingOnCompletionFieldReturnsUsefulException" time="0.182"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testPayloadAsNumeric" time="0.221"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatShortSyntaxIsWorking" time="0.187"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatUpgradeToMultiFieldWorks_bug" time="0.02">
+      <skipped></skipped>
+   </testcase>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testVeryLongInput" time="0.443"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testPayloadAsString" time="0.463"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatFuzzySuggesterSupportsNonPrefixLength" time="0.357"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatFuzzySuggesterSupportsTranspositions" time="0.421"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatExceptionIsThrownWhenPayloadsAreDisabledButInIndexRequest" time="0.4"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatMultipleInputsAreSupported" time="0.407"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatUpgradeToMultiFieldsWorks" time="0.75"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testPrunedSegments" time="0.367"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatPayloadsAreArbitraryJsonObjects" time="0.268"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatInputCanBeAStringInsteadOfAnArray" time="0.301"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatWeightMustBeAnInteger" time="0.239"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testBasicPrefixSuggestion" time="0.875"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testSuggestFieldWithPercolateApi" time="0.28"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatFuzzySuggesterSupportsEditDistances" time="0.257"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatFuzzySuggesterWorks" time="0.216"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatUpgradeToMultiFieldTypeWorks" time="0.452"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatSynonymsWork" time="0.341"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testEnabledPreserveSeperators" time="0.275"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testMaxFieldLength" time="1.184"/>
+   <testcase classname="org.elasticsearch.search.suggest.CompletionSuggestSearchTests" name="testThatStatsAreWorking" time="0.259"/>
+   <system-out><![CDATA[[2014-02-18 15:48:14,446][INFO ][test                     ] Test testSimple(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:14,451][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:14,492][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:14,521][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:14,554][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testSimple]: before test
+[2014-02-18 15:48:14,563][INFO ][cluster.metadata         ] [node_0] [fyhiwfwupm] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 15:48:14,608][INFO ][cluster.metadata         ] [node_0] [fyhiwfwupm] create_mapping [kjusdqvgio]
+[2014-02-18 15:48:14,753][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testSimple]: cleaning up after test
+[2014-02-18 15:48:14,754][INFO ][cluster.metadata         ] [node_0] [fyhiwfwupm] deleting index
+[2014-02-18 15:48:14,773][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testSimple]: cleaned up after test
+[2014-02-18 15:48:14,789][INFO ][test                     ] Test testSimple(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:14,790][INFO ][test                     ] Test testReservedChars(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:14,793][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:14,822][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:14,852][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testReservedChars]: before test
+[2014-02-18 15:48:14,862][INFO ][cluster.metadata         ] [node_0] [ntegnbgtyo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:48:15,052][INFO ][cluster.metadata         ] [node_0] [ntegnbgtyo] create_mapping [ovwlqvqytq]
+[2014-02-18 15:48:15,075][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testReservedChars]: cleaning up after test
+[2014-02-18 15:48:15,078][INFO ][cluster.metadata         ] [node_0] [ntegnbgtyo] deleting index
+[2014-02-18 15:48:15,117][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testReservedChars]: cleaned up after test
+[2014-02-18 15:48:15,126][INFO ][test                     ] Test testReservedChars(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:15,127][INFO ][test                     ] Test testThatSuggestStopFilterWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:15,132][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:15,161][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSuggestStopFilterWorks]: before test
+[2014-02-18 15:48:15,162][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:15,201][INFO ][cluster.metadata         ] [node_0] [odxqlohsza] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:48:15,293][INFO ][cluster.metadata         ] [node_0] [odxqlohsza] create_mapping [ttzodoyzca]
+[2014-02-18 15:48:15,446][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSuggestStopFilterWorks]: cleaning up after test
+[2014-02-18 15:48:15,447][INFO ][cluster.metadata         ] [node_0] [odxqlohsza] deleting index
+[2014-02-18 15:48:15,489][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSuggestStopFilterWorks]: cleaned up after test
+[2014-02-18 15:48:15,498][INFO ][test                     ] Test testThatSuggestStopFilterWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:15,498][INFO ][test                     ] Test testThatFuzzySuggesterSupportsMinPrefixLength(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:15,502][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:15,530][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:15,554][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsMinPrefixLength]: before test
+[2014-02-18 15:48:15,563][INFO ][cluster.metadata         ] [node_0] [sirqtneyoz] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:48:15,627][INFO ][cluster.metadata         ] [node_0] [sirqtneyoz] create_mapping [uikavhnkez]
+[2014-02-18 15:48:15,668][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsMinPrefixLength]: cleaning up after test
+[2014-02-18 15:48:15,669][INFO ][cluster.metadata         ] [node_0] [sirqtneyoz] deleting index
+[2014-02-18 15:48:15,692][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsMinPrefixLength]: cleaned up after test
+[2014-02-18 15:48:15,701][INFO ][test                     ] Test testThatFuzzySuggesterSupportsMinPrefixLength(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:15,702][INFO ][test                     ] Test testDisabledPreserveSeperators(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:15,706][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:15,734][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testDisabledPreserveSeperators]: before test
+[2014-02-18 15:48:15,744][INFO ][cluster.metadata         ] [node_0] [xyyjluzgpz] creating index, cause [api], shards [4]/[2], mappings []
+[2014-02-18 15:48:15,803][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:15,897][INFO ][cluster.metadata         ] [node_0] [xyyjluzgpz] create_mapping [iubqrhenqf]
+[2014-02-18 15:48:16,084][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testDisabledPreserveSeperators]: cleaning up after test
+[2014-02-18 15:48:16,085][INFO ][cluster.metadata         ] [node_0] [xyyjluzgpz] deleting index
+[2014-02-18 15:48:16,125][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testDisabledPreserveSeperators]: cleaned up after test
+[2014-02-18 15:48:16,132][INFO ][test                     ] Test testDisabledPreserveSeperators(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:16,132][INFO ][test                     ] Test testThatDisablingPositionIncrementsWorkForStopwords(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:16,138][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatDisablingPositionIncrementsWorkForStopwords]: before test
+[2014-02-18 15:48:16,146][INFO ][cluster.metadata         ] [node_0] [zoqiulyifg] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 15:48:16,207][INFO ][cluster.metadata         ] [node_0] [zoqiulyifg] create_mapping [kbwbmupsep]
+[2014-02-18 15:48:16,233][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatDisablingPositionIncrementsWorkForStopwords]: cleaning up after test
+[2014-02-18 15:48:16,234][INFO ][cluster.metadata         ] [node_0] [zoqiulyifg] deleting index
+[2014-02-18 15:48:16,252][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatDisablingPositionIncrementsWorkForStopwords]: cleaned up after test
+[2014-02-18 15:48:16,252][INFO ][test                     ] Test testThatDisablingPositionIncrementsWorkForStopwords(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:16,253][INFO ][test                     ] Test testThatFuzzySuggesterIsUnicodeAware(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:16,258][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterIsUnicodeAware]: before test
+[2014-02-18 15:48:16,267][INFO ][cluster.metadata         ] [node_0] [xvjmdhrlyg] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:48:16,324][INFO ][cluster.metadata         ] [node_0] [xvjmdhrlyg] create_mapping [rtdoonshiw]
+[2014-02-18 15:48:16,374][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterIsUnicodeAware]: cleaning up after test
+[2014-02-18 15:48:16,375][INFO ][cluster.metadata         ] [node_0] [xvjmdhrlyg] deleting index
+[2014-02-18 15:48:16,391][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterIsUnicodeAware]: cleaned up after test
+[2014-02-18 15:48:16,392][INFO ][test                     ] Test testThatFuzzySuggesterIsUnicodeAware(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:16,392][INFO ][test                     ] Test testThatWeightsAreWorking(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:16,396][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:16,424][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:16,456][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatWeightsAreWorking]: before test
+[2014-02-18 15:48:16,465][INFO ][cluster.metadata         ] [node_0] [efjbkkujdu] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:48:16,541][INFO ][cluster.metadata         ] [node_0] [efjbkkujdu] create_mapping [ewjuhtkxyw]
+[2014-02-18 15:48:16,548][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:16,691][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatWeightsAreWorking]: cleaning up after test
+[2014-02-18 15:48:16,693][INFO ][cluster.metadata         ] [node_0] [efjbkkujdu] deleting index
+[2014-02-18 15:48:16,720][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatWeightsAreWorking]: cleaned up after test
+[2014-02-18 15:48:16,734][INFO ][test                     ] Test testThatWeightsAreWorking(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:16,734][INFO ][test                     ] Test testThatIndexingInvalidFieldsInCompletionFieldResultsInException(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:16,739][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:16,769][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:16,797][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatIndexingInvalidFieldsInCompletionFieldResultsInException]: before test
+[2014-02-18 15:48:16,799][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:16,836][INFO ][cluster.metadata         ] [node_0] [jkdedvnjum] creating index, cause [api], shards [1]/[2], mappings []
+[2014-02-18 15:48:16,878][INFO ][cluster.metadata         ] [node_0] [jkdedvnjum] create_mapping [iulgnhawfb]
+[2014-02-18 15:48:16,891][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatIndexingInvalidFieldsInCompletionFieldResultsInException]: cleaning up after test
+[2014-02-18 15:48:16,892][INFO ][cluster.metadata         ] [node_0] [jkdedvnjum] deleting index
+[2014-02-18 15:48:16,905][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatIndexingInvalidFieldsInCompletionFieldResultsInException]: cleaned up after test
+[2014-02-18 15:48:16,926][INFO ][test                     ] Test testThatIndexingInvalidFieldsInCompletionFieldResultsInException(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:16,926][INFO ][test                     ] Test testThatSortingOnCompletionFieldReturnsUsefulException(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:16,931][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSortingOnCompletionFieldReturnsUsefulException]: before test
+[2014-02-18 15:48:16,940][INFO ][cluster.metadata         ] [node_0] [ndqgvdxvvn] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:48:17,024][INFO ][cluster.metadata         ] [node_0] [ndqgvdxvvn] create_mapping [fzxomjfwtt]
+[2014-02-18 15:48:17,071][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSortingOnCompletionFieldReturnsUsefulException]: cleaning up after test
+[2014-02-18 15:48:17,072][INFO ][cluster.metadata         ] [node_0] [ndqgvdxvvn] deleting index
+[2014-02-18 15:48:17,107][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSortingOnCompletionFieldReturnsUsefulException]: cleaned up after test
+[2014-02-18 15:48:17,108][INFO ][test                     ] Test testThatSortingOnCompletionFieldReturnsUsefulException(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:17,108][INFO ][test                     ] Test testPayloadAsNumeric(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:17,112][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPayloadAsNumeric]: before test
+[2014-02-18 15:48:17,121][INFO ][cluster.metadata         ] [node_0] [dmeojzfyez] creating index, cause [api], shards [2]/[2], mappings []
+[2014-02-18 15:48:17,224][INFO ][cluster.metadata         ] [node_0] [dmeojzfyez] create_mapping [vatmrlsqhl]
+[2014-02-18 15:48:17,307][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPayloadAsNumeric]: cleaning up after test
+[2014-02-18 15:48:17,309][INFO ][cluster.metadata         ] [node_0] [dmeojzfyez] deleting index
+[2014-02-18 15:48:17,328][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPayloadAsNumeric]: cleaned up after test
+[2014-02-18 15:48:17,329][INFO ][test                     ] Test testPayloadAsNumeric(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:17,330][INFO ][test                     ] Test testThatShortSyntaxIsWorking(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:17,335][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatShortSyntaxIsWorking]: before test
+[2014-02-18 15:48:17,342][INFO ][cluster.metadata         ] [node_0] [qbtypappyy] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 15:48:17,423][INFO ][cluster.metadata         ] [node_0] [qbtypappyy] create_mapping [pvxtwcznbz]
+[2014-02-18 15:48:17,471][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatShortSyntaxIsWorking]: cleaning up after test
+[2014-02-18 15:48:17,472][INFO ][cluster.metadata         ] [node_0] [qbtypappyy] deleting index
+[2014-02-18 15:48:17,516][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatShortSyntaxIsWorking]: cleaned up after test
+[2014-02-18 15:48:17,517][INFO ][test                     ] Test testThatShortSyntaxIsWorking(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:17,517][INFO ][test                     ] Test testThatUpgradeToMultiFieldWorks_bug(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:17,537][INFO ][test                     ] Test testThatUpgradeToMultiFieldWorks_bug(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:17,538][INFO ][test                     ] Test testVeryLongInput(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:17,542][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:17,589][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:17,652][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:17,728][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testVeryLongInput]: before test
+[2014-02-18 15:48:17,742][INFO ][cluster.metadata         ] [node_0] [jgzhiikjsk] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:48:17,866][INFO ][cluster.metadata         ] [node_0] [jgzhiikjsk] create_mapping [wntpcotbsh]
+[2014-02-18 15:48:17,925][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testVeryLongInput]: cleaning up after test
+[2014-02-18 15:48:17,927][INFO ][cluster.metadata         ] [node_0] [jgzhiikjsk] deleting index
+[2014-02-18 15:48:17,968][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testVeryLongInput]: cleaned up after test
+[2014-02-18 15:48:17,981][INFO ][test                     ] Test testVeryLongInput(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:17,981][INFO ][test                     ] Test testPayloadAsString(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:17,987][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:18,024][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:18,052][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPayloadAsString]: before test
+[2014-02-18 15:48:18,060][INFO ][cluster.metadata         ] [node_0] [edyxeimimq] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:48:18,172][INFO ][cluster.metadata         ] [node_0] [edyxeimimq] create_mapping [jqbnzjitxr]
+[2014-02-18 15:48:18,381][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:18,407][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPayloadAsString]: cleaning up after test
+[2014-02-18 15:48:18,408][INFO ][cluster.metadata         ] [node_0] [edyxeimimq] deleting index
+[2014-02-18 15:48:18,432][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPayloadAsString]: cleaned up after test
+[2014-02-18 15:48:18,444][INFO ][test                     ] Test testPayloadAsString(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:18,445][INFO ][test                     ] Test testThatFuzzySuggesterSupportsNonPrefixLength(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:18,451][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsNonPrefixLength]: before test
+[2014-02-18 15:48:18,461][INFO ][cluster.metadata         ] [node_0] [jyfgwuixru] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:48:18,534][INFO ][cluster.metadata         ] [node_0] [jyfgwuixru] create_mapping [kwwjqfhrwq]
+[2014-02-18 15:48:18,712][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsNonPrefixLength]: cleaning up after test
+[2014-02-18 15:48:18,714][INFO ][cluster.metadata         ] [node_0] [jyfgwuixru] deleting index
+[2014-02-18 15:48:18,763][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:18,798][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsNonPrefixLength]: cleaned up after test
+[2014-02-18 15:48:18,802][INFO ][test                     ] Test testThatFuzzySuggesterSupportsNonPrefixLength(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:18,802][INFO ][test                     ] Test testThatFuzzySuggesterSupportsTranspositions(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:18,807][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsTranspositions]: before test
+[2014-02-18 15:48:18,816][INFO ][cluster.metadata         ] [node_0] [opqalfngif] creating index, cause [api], shards [3]/[2], mappings []
+[2014-02-18 15:48:18,909][INFO ][cluster.metadata         ] [node_0] [opqalfngif] create_mapping [yyzwbtocol]
+[2014-02-18 15:48:19,172][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsTranspositions]: cleaning up after test
+[2014-02-18 15:48:19,173][INFO ][cluster.metadata         ] [node_0] [opqalfngif] deleting index
+[2014-02-18 15:48:19,222][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsTranspositions]: cleaned up after test
+[2014-02-18 15:48:19,223][INFO ][test                     ] Test testThatFuzzySuggesterSupportsTranspositions(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:19,224][INFO ][test                     ] Test testThatExceptionIsThrownWhenPayloadsAreDisabledButInIndexRequest(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:19,229][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:19,257][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:19,284][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:19,308][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatExceptionIsThrownWhenPayloadsAreDisabledButInIndexRequest]: before test
+[2014-02-18 15:48:19,316][INFO ][cluster.metadata         ] [node_0] [mtsdkgzluh] creating index, cause [api], shards [5]/[2], mappings []
+[2014-02-18 15:48:19,509][INFO ][cluster.metadata         ] [node_0] [mtsdkgzluh] create_mapping [kmaihptsuh]
+[2014-02-18 15:48:19,567][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatExceptionIsThrownWhenPayloadsAreDisabledButInIndexRequest]: cleaning up after test
+[2014-02-18 15:48:19,568][INFO ][cluster.metadata         ] [node_0] [mtsdkgzluh] deleting index
+[2014-02-18 15:48:19,614][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatExceptionIsThrownWhenPayloadsAreDisabledButInIndexRequest]: cleaned up after test
+[2014-02-18 15:48:19,624][INFO ][test                     ] Test testThatExceptionIsThrownWhenPayloadsAreDisabledButInIndexRequest(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:19,625][INFO ][test                     ] Test testThatMultipleInputsAreSupported(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:19,629][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:19,654][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:19,691][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:19,732][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatMultipleInputsAreSupported]: before test
+[2014-02-18 15:48:19,743][INFO ][cluster.metadata         ] [node_0] [wbckwviiiu] creating index, cause [api], shards [4]/[2], mappings []
+[2014-02-18 15:48:19,892][INFO ][cluster.metadata         ] [node_0] [wbckwviiiu] create_mapping [bgypkozrrh]
+[2014-02-18 15:48:19,966][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatMultipleInputsAreSupported]: cleaning up after test
+[2014-02-18 15:48:19,968][INFO ][cluster.metadata         ] [node_0] [wbckwviiiu] deleting index
+[2014-02-18 15:48:20,020][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatMultipleInputsAreSupported]: cleaned up after test
+[2014-02-18 15:48:20,031][INFO ][test                     ] Test testThatMultipleInputsAreSupported(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:20,032][INFO ][test                     ] Test testThatUpgradeToMultiFieldsWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:20,036][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:20,060][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:20,086][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatUpgradeToMultiFieldsWorks]: before test
+[2014-02-18 15:48:20,087][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:20,119][INFO ][cluster.metadata         ] [node_0] [fvlbaufgnw] creating index, cause [api], shards [5]/[2], mappings [ilkzustdup]
+[2014-02-18 15:48:20,603][INFO ][cluster.metadata         ] [node_0] [fvlbaufgnw] update_mapping [ilkzustdup]
+[2014-02-18 15:48:20,713][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatUpgradeToMultiFieldsWorks]: cleaning up after test
+[2014-02-18 15:48:20,715][INFO ][cluster.metadata         ] [node_0] [fvlbaufgnw] deleting index
+[2014-02-18 15:48:20,768][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatUpgradeToMultiFieldsWorks]: cleaned up after test
+[2014-02-18 15:48:20,782][INFO ][test                     ] Test testThatUpgradeToMultiFieldsWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:20,782][INFO ][test                     ] Test testPrunedSegments(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:20,788][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:20,815][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:20,844][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:20,880][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPrunedSegments]: before test
+[2014-02-18 15:48:20,894][INFO ][cluster.metadata         ] [node_0] [etjgihtucx] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:48:20,917][INFO ][cluster.metadata         ] [node_0] [etjgihtucx] create_mapping [dciuabhybi]
+[2014-02-18 15:48:20,926][INFO ][cluster.metadata         ] [node_0] [etjgihtucx] update_mapping [dciuabhybi] (dynamic)
+[2014-02-18 15:48:21,122][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPrunedSegments]: cleaning up after test
+[2014-02-18 15:48:21,124][INFO ][cluster.metadata         ] [node_0] [etjgihtucx] deleting index
+[2014-02-18 15:48:21,138][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testPrunedSegments]: cleaned up after test
+[2014-02-18 15:48:21,149][INFO ][test                     ] Test testPrunedSegments(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:21,150][INFO ][test                     ] Test testThatPayloadsAreArbitraryJsonObjects(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:21,155][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:21,183][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatPayloadsAreArbitraryJsonObjects]: before test
+[2014-02-18 15:48:21,195][INFO ][cluster.metadata         ] [node_0] [btllofrcfp] creating index, cause [api], shards [4]/[2], mappings []
+[2014-02-18 15:48:21,318][INFO ][cluster.metadata         ] [node_0] [btllofrcfp] create_mapping [dldnfztfep]
+[2014-02-18 15:48:21,376][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatPayloadsAreArbitraryJsonObjects]: cleaning up after test
+[2014-02-18 15:48:21,377][INFO ][cluster.metadata         ] [node_0] [btllofrcfp] deleting index
+[2014-02-18 15:48:21,413][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatPayloadsAreArbitraryJsonObjects]: cleaned up after test
+[2014-02-18 15:48:21,418][INFO ][test                     ] Test testThatPayloadsAreArbitraryJsonObjects(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:21,418][INFO ][test                     ] Test testThatInputCanBeAStringInsteadOfAnArray(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:21,423][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:21,451][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:21,482][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:21,510][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatInputCanBeAStringInsteadOfAnArray]: before test
+[2014-02-18 15:48:21,519][INFO ][cluster.metadata         ] [node_0] [fmdgyzzzld] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:48:21,574][INFO ][cluster.metadata         ] [node_0] [fmdgyzzzld] create_mapping [jxhnphbtbc]
+[2014-02-18 15:48:21,683][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatInputCanBeAStringInsteadOfAnArray]: cleaning up after test
+[2014-02-18 15:48:21,685][INFO ][cluster.metadata         ] [node_0] [fmdgyzzzld] deleting index
+[2014-02-18 15:48:21,707][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatInputCanBeAStringInsteadOfAnArray]: cleaned up after test
+[2014-02-18 15:48:21,719][INFO ][test                     ] Test testThatInputCanBeAStringInsteadOfAnArray(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:21,719][INFO ][test                     ] Test testThatWeightMustBeAnInteger(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:21,725][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatWeightMustBeAnInteger]: before test
+[2014-02-18 15:48:21,735][INFO ][cluster.metadata         ] [node_0] [xzmirazmrx] creating index, cause [api], shards [2]/[2], mappings []
+[2014-02-18 15:48:21,895][INFO ][cluster.metadata         ] [node_0] [xzmirazmrx] create_mapping [ufklduenjs]
+[2014-02-18 15:48:21,916][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatWeightMustBeAnInteger]: cleaning up after test
+[2014-02-18 15:48:21,916][INFO ][cluster.metadata         ] [node_0] [xzmirazmrx] deleting index
+[2014-02-18 15:48:21,957][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatWeightMustBeAnInteger]: cleaned up after test
+[2014-02-18 15:48:21,958][INFO ][test                     ] Test testThatWeightMustBeAnInteger(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:21,959][INFO ][test                     ] Test testBasicPrefixSuggestion(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:21,965][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:22,014][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testBasicPrefixSuggestion]: before test
+[2014-02-18 15:48:22,028][INFO ][cluster.metadata         ] [node_0] [hsfuasuvnn] creating index, cause [api], shards [3]/[2], mappings []
+[2014-02-18 15:48:22,192][INFO ][cluster.metadata         ] [node_0] [hsfuasuvnn] create_mapping [xuoyjwcfwe]
+[2014-02-18 15:48:22,199][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:22,232][INFO ][search.suggest           ] Index [7] docs async: [false] bulk: [false]
+[2014-02-18 15:48:22,260][INFO ][search.suggest           ] Index [7] docs async: [true] bulk: [false]
+[2014-02-18 15:48:22,523][INFO ][search.suggest           ] Index [7] docs async: [true] bulk: [false]
+[2014-02-18 15:48:22,545][INFO ][search.suggest           ] Index [7] docs async: [true] bulk: [false]
+[2014-02-18 15:48:22,782][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testBasicPrefixSuggestion]: cleaning up after test
+[2014-02-18 15:48:22,783][INFO ][cluster.metadata         ] [node_0] [hsfuasuvnn] deleting index
+[2014-02-18 15:48:22,827][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testBasicPrefixSuggestion]: cleaned up after test
+[2014-02-18 15:48:22,834][INFO ][test                     ] Test testBasicPrefixSuggestion(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:22,835][INFO ][test                     ] Test testSuggestFieldWithPercolateApi(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:22,839][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:22,862][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testSuggestFieldWithPercolateApi]: before test
+[2014-02-18 15:48:22,870][INFO ][cluster.metadata         ] [node_0] [ajgvxppyxy] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:48:22,939][INFO ][cluster.metadata         ] [node_0] [ajgvxppyxy] create_mapping [huphdzyvvv]
+[2014-02-18 15:48:22,994][INFO ][cluster.metadata         ] [node_0] [ajgvxppyxy] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:48:23,086][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testSuggestFieldWithPercolateApi]: cleaning up after test
+[2014-02-18 15:48:23,086][INFO ][cluster.metadata         ] [node_0] [ajgvxppyxy] deleting index
+[2014-02-18 15:48:23,110][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testSuggestFieldWithPercolateApi]: cleaned up after test
+[2014-02-18 15:48:23,115][INFO ][test                     ] Test testSuggestFieldWithPercolateApi(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:23,115][INFO ][test                     ] Test testThatFuzzySuggesterSupportsEditDistances(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:23,120][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:23,144][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsEditDistances]: before test
+[2014-02-18 15:48:23,151][INFO ][cluster.metadata         ] [node_0] [jddofnkidj] creating index, cause [api], shards [3]/[2], mappings []
+[2014-02-18 15:48:23,193][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:23,294][INFO ][cluster.metadata         ] [node_0] [jddofnkidj] create_mapping [kccxglpngr]
+[2014-02-18 15:48:23,334][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsEditDistances]: cleaning up after test
+[2014-02-18 15:48:23,335][INFO ][cluster.metadata         ] [node_0] [jddofnkidj] deleting index
+[2014-02-18 15:48:23,365][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterSupportsEditDistances]: cleaned up after test
+[2014-02-18 15:48:23,372][INFO ][test                     ] Test testThatFuzzySuggesterSupportsEditDistances(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:23,372][INFO ][test                     ] Test testThatFuzzySuggesterWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:23,376][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:23,400][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterWorks]: before test
+[2014-02-18 15:48:23,409][INFO ][cluster.metadata         ] [node_0] [onktflaibw] creating index, cause [api], shards [2]/[2], mappings []
+[2014-02-18 15:48:23,487][INFO ][cluster.metadata         ] [node_0] [onktflaibw] create_mapping [uzapahgvky]
+[2014-02-18 15:48:23,561][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterWorks]: cleaning up after test
+[2014-02-18 15:48:23,562][INFO ][cluster.metadata         ] [node_0] [onktflaibw] deleting index
+[2014-02-18 15:48:23,584][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatFuzzySuggesterWorks]: cleaned up after test
+[2014-02-18 15:48:23,588][INFO ][test                     ] Test testThatFuzzySuggesterWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:23,588][INFO ][test                     ] Test testThatUpgradeToMultiFieldTypeWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:23,592][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:23,616][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:23,638][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatUpgradeToMultiFieldTypeWorks]: before test
+[2014-02-18 15:48:23,646][INFO ][cluster.metadata         ] [node_0] [nswusrttyd] creating index, cause [api], shards [1]/[1], mappings [lfbkbdodqg]
+[2014-02-18 15:48:23,899][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:23,921][INFO ][cluster.metadata         ] [node_0] [nswusrttyd] update_mapping [lfbkbdodqg]
+[2014-02-18 15:48:23,976][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatUpgradeToMultiFieldTypeWorks]: cleaning up after test
+[2014-02-18 15:48:23,977][INFO ][cluster.metadata         ] [node_0] [nswusrttyd] deleting index
+[2014-02-18 15:48:24,030][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatUpgradeToMultiFieldTypeWorks]: cleaned up after test
+[2014-02-18 15:48:24,040][INFO ][test                     ] Test testThatUpgradeToMultiFieldTypeWorks(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:24,040][INFO ][test                     ] Test testThatSynonymsWork(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:24,044][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:24,066][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:24,092][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSynonymsWork]: before test
+[2014-02-18 15:48:24,093][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:24,123][INFO ][cluster.metadata         ] [node_0] [otvpijudbl] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:48:24,215][INFO ][cluster.metadata         ] [node_0] [otvpijudbl] create_mapping [oclmoubzjy]
+[2014-02-18 15:48:24,317][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSynonymsWork]: cleaning up after test
+[2014-02-18 15:48:24,320][INFO ][cluster.metadata         ] [node_0] [otvpijudbl] deleting index
+[2014-02-18 15:48:24,372][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatSynonymsWork]: cleaned up after test
+[2014-02-18 15:48:24,381][INFO ][test                     ] Test testThatSynonymsWork(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:24,382][INFO ][test                     ] Test testEnabledPreserveSeperators(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:24,386][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:24,410][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testEnabledPreserveSeperators]: before test
+[2014-02-18 15:48:24,411][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:24,441][INFO ][cluster.metadata         ] [node_0] [lpbbgbkrcm] creating index, cause [api], shards [2]/[2], mappings []
+[2014-02-18 15:48:24,525][INFO ][cluster.metadata         ] [node_0] [lpbbgbkrcm] create_mapping [aadhjjbrcy]
+[2014-02-18 15:48:24,624][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testEnabledPreserveSeperators]: cleaning up after test
+[2014-02-18 15:48:24,625][INFO ][cluster.metadata         ] [node_0] [lpbbgbkrcm] deleting index
+[2014-02-18 15:48:24,650][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testEnabledPreserveSeperators]: cleaned up after test
+[2014-02-18 15:48:24,656][INFO ][test                     ] Test testEnabledPreserveSeperators(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:24,657][INFO ][test                     ] Test testMaxFieldLength(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:24,661][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:24,684][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testMaxFieldLength]: before test
+[2014-02-18 15:48:24,696][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:48:24,784][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] create_mapping [wkidygfmdn]
+[2014-02-18 15:48:24,870][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,070][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,141][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,220][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,365][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,453][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,557][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,629][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,684][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,744][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] update_mapping [wkidygfmdn]
+[2014-02-18 15:48:25,803][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testMaxFieldLength]: cleaning up after test
+[2014-02-18 15:48:25,804][INFO ][cluster.metadata         ] [node_0] [gfwaazjevn] deleting index
+[2014-02-18 15:48:25,837][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testMaxFieldLength]: cleaned up after test
+[2014-02-18 15:48:25,841][INFO ][test                     ] Test testMaxFieldLength(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+[2014-02-18 15:48:25,841][INFO ][test                     ] Test testThatStatsAreWorking(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) started
+[2014-02-18 15:48:25,845][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:48:25,870][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:48:25,893][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatStatsAreWorking]: before test
+[2014-02-18 15:48:25,894][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:48:25,923][INFO ][cluster.metadata         ] [node_0] [mvjsslkafj] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:48:25,988][INFO ][cluster.metadata         ] [node_0] [mvjsslkafj] create_mapping [fxvqhaaiez]
+[2014-02-18 15:48:26,066][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatStatsAreWorking]: cleaning up after test
+[2014-02-18 15:48:26,067][INFO ][cluster.metadata         ] [node_0] [mvjsslkafj] deleting index
+[2014-02-18 15:48:26,088][INFO ][search.suggest           ] [CompletionSuggestSearchTests#testThatStatsAreWorking]: cleaned up after test
+[2014-02-18 15:48:26,100][INFO ][test                     ] Test testThatStatsAreWorking(org.elasticsearch.search.suggest.CompletionSuggestSearchTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

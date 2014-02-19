@@ -1,0 +1,295 @@
+<testsuite errors="0" failures="0" tests="19" skipped="0" name="org.elasticsearch.indices.state.OpenCloseIndexTests" hostname="nohost.nodomain" time="14.264" timestamp="2014-02-18T15:33:44">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testOpenAlreadyOpenedIndex" time="0.822"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testSimpleOpenMissingIndex" time="0.216"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testSimpleCloseMissingIndex" time="0.026"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOpenMultipleIndices" time="2.213"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testOpenNullIndex" time="0.021"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOpenAliasMultipleIndices" time="1.079"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOpenAll" time="1.339"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseAlreadyClosedIndex" time="0.345"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testOpenOneMissingIndex" time="0.474"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOneMissingIndexIgnoreMissing" time="0.53"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testOpenOneMissingIndexIgnoreMissing" time="0.396"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testOpenNoIndex" time="0.194"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseNullIndex" time="0.086"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOneMissingIndex" time="0.496"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOpenWildcard" time="2.424"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseOpenAllWildcard" time="2.263"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testSimpleCloseOpenAlias" time="0.691"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testCloseNoIndex" time="0.054"/>
+   <testcase classname="org.elasticsearch.indices.state.OpenCloseIndexTests" name="testSimpleCloseOpen" time="0.534"/>
+   <system-out><![CDATA[[2014-02-18 15:33:44,671][INFO ][test                     ] Test testOpenAlreadyOpenedIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:44,683][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:33:44,737][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenAlreadyOpenedIndex]: before test
+[2014-02-18 15:33:44,787][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:45,416][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenAlreadyOpenedIndex]: cleaning up after test
+[2014-02-18 15:33:45,421][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:45,476][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenAlreadyOpenedIndex]: cleaned up after test
+[2014-02-18 15:33:45,492][INFO ][test                     ] Test testOpenAlreadyOpenedIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:45,494][INFO ][test                     ] Test testSimpleOpenMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:45,504][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:33:45,578][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:33:45,650][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleOpenMissingIndex]: before test
+[2014-02-18 15:33:45,666][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleOpenMissingIndex]: cleaning up after test
+[2014-02-18 15:33:45,684][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleOpenMissingIndex]: cleaned up after test
+[2014-02-18 15:33:45,709][INFO ][test                     ] Test testSimpleOpenMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:45,711][INFO ][test                     ] Test testSimpleCloseMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:45,727][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseMissingIndex]: before test
+[2014-02-18 15:33:45,728][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseMissingIndex]: cleaning up after test
+[2014-02-18 15:33:45,734][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseMissingIndex]: cleaned up after test
+[2014-02-18 15:33:45,736][INFO ][test                     ] Test testSimpleCloseMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:45,737][INFO ][test                     ] Test testCloseOpenMultipleIndices(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:45,746][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:33:45,801][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenMultipleIndices]: before test
+[2014-02-18 15:33:45,844][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:46,336][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:46,730][INFO ][cluster.metadata         ] [node_0] [test3] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:47,112][INFO ][cluster.metadata         ] [node_0] closing indices [[test1]]
+[2014-02-18 15:33:47,141][INFO ][cluster.metadata         ] [node_0] closing indices [[test2]]
+[2014-02-18 15:33:47,157][INFO ][cluster.metadata         ] [node_0] opening indices [[test1]]
+[2014-02-18 15:33:47,359][INFO ][cluster.metadata         ] [node_0] opening indices [[test2]]
+[2014-02-18 15:33:47,600][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenMultipleIndices]: cleaning up after test
+[2014-02-18 15:33:47,740][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:33:47,823][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:47,888][INFO ][cluster.metadata         ] [node_0] [test3] deleting index
+[2014-02-18 15:33:47,939][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenMultipleIndices]: cleaned up after test
+[2014-02-18 15:33:47,949][INFO ][test                     ] Test testCloseOpenMultipleIndices(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:47,950][INFO ][test                     ] Test testOpenNullIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:47,961][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenNullIndex]: before test
+[2014-02-18 15:33:47,963][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenNullIndex]: cleaning up after test
+[2014-02-18 15:33:47,969][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenNullIndex]: cleaned up after test
+[2014-02-18 15:33:47,970][INFO ][test                     ] Test testOpenNullIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:47,971][INFO ][test                     ] Test testCloseOpenAliasMultipleIndices(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:47,978][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAliasMultipleIndices]: before test
+[2014-02-18 15:33:47,995][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:48,257][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:48,621][INFO ][cluster.metadata         ] [node_0] closing indices [[test2, test1]]
+[2014-02-18 15:33:48,652][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:33:48,684][INFO ][cluster.metadata         ] [node_0] opening indices [[test2, test1]]
+[2014-02-18 15:33:48,850][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAliasMultipleIndices]: cleaning up after test
+[2014-02-18 15:33:48,925][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:33:48,983][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:49,041][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAliasMultipleIndices]: cleaned up after test
+[2014-02-18 15:33:49,050][INFO ][test                     ] Test testCloseOpenAliasMultipleIndices(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:49,051][INFO ][test                     ] Test testCloseOpenAll(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:49,057][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:49,103][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAll]: before test
+[2014-02-18 15:33:49,129][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:49,349][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:49,535][INFO ][cluster.metadata         ] [node_0] [test3] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:49,865][INFO ][cluster.metadata         ] [node_0] closing indices [[test2, test1, test3]]
+[2014-02-18 15:33:49,883][INFO ][cluster.metadata         ] [node_0] opening indices [[test2, test1, test3]]
+[2014-02-18 15:33:50,140][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAll]: cleaning up after test
+[2014-02-18 15:33:50,236][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:33:50,281][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:50,329][INFO ][cluster.metadata         ] [node_0] [test3] deleting index
+[2014-02-18 15:33:50,382][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAll]: cleaned up after test
+[2014-02-18 15:33:50,390][INFO ][test                     ] Test testCloseOpenAll(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:50,391][INFO ][test                     ] Test testCloseAlreadyClosedIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:50,401][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseAlreadyClosedIndex]: before test
+[2014-02-18 15:33:50,422][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:50,697][INFO ][cluster.metadata         ] [node_0] closing indices [[test1]]
+[2014-02-18 15:33:50,705][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseAlreadyClosedIndex]: cleaning up after test
+[2014-02-18 15:33:50,706][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:50,734][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseAlreadyClosedIndex]: cleaned up after test
+[2014-02-18 15:33:50,736][INFO ][test                     ] Test testCloseAlreadyClosedIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:50,736][INFO ][test                     ] Test testOpenOneMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:50,741][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:33:50,782][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:33:50,813][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenOneMissingIndex]: before test
+[2014-02-18 15:33:50,827][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:51,155][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenOneMissingIndex]: cleaning up after test
+[2014-02-18 15:33:51,158][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:51,198][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenOneMissingIndex]: cleaned up after test
+[2014-02-18 15:33:51,210][INFO ][test                     ] Test testOpenOneMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:51,210][INFO ][test                     ] Test testCloseOneMissingIndexIgnoreMissing(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:51,217][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:33:51,249][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:33:51,297][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOneMissingIndexIgnoreMissing]: before test
+[2014-02-18 15:33:51,299][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:51,353][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:51,651][INFO ][cluster.metadata         ] [node_0] closing indices [[test1]]
+[2014-02-18 15:33:51,671][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOneMissingIndexIgnoreMissing]: cleaning up after test
+[2014-02-18 15:33:51,676][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:51,719][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOneMissingIndexIgnoreMissing]: cleaned up after test
+[2014-02-18 15:33:51,739][INFO ][test                     ] Test testCloseOneMissingIndexIgnoreMissing(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:51,741][INFO ][test                     ] Test testOpenOneMissingIndexIgnoreMissing(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:51,751][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenOneMissingIndexIgnoreMissing]: before test
+[2014-02-18 15:33:51,767][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:52,093][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenOneMissingIndexIgnoreMissing]: cleaning up after test
+[2014-02-18 15:33:52,096][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:52,134][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenOneMissingIndexIgnoreMissing]: cleaned up after test
+[2014-02-18 15:33:52,136][INFO ][test                     ] Test testOpenOneMissingIndexIgnoreMissing(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:52,138][INFO ][test                     ] Test testOpenNoIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:52,146][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:52,192][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:33:52,242][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:33:52,296][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenNoIndex]: before test
+[2014-02-18 15:33:52,297][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenNoIndex]: cleaning up after test
+[2014-02-18 15:33:52,309][INFO ][indices.state            ] [OpenCloseIndexTests#testOpenNoIndex]: cleaned up after test
+[2014-02-18 15:33:52,332][INFO ][test                     ] Test testOpenNoIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:52,333][INFO ][test                     ] Test testCloseNullIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:52,341][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:52,403][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseNullIndex]: before test
+[2014-02-18 15:33:52,403][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseNullIndex]: cleaning up after test
+[2014-02-18 15:33:52,410][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseNullIndex]: cleaned up after test
+[2014-02-18 15:33:52,419][INFO ][test                     ] Test testCloseNullIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:52,420][INFO ][test                     ] Test testCloseOneMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:52,431][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOneMissingIndex]: before test
+[2014-02-18 15:33:52,434][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:52,482][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:52,825][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOneMissingIndex]: cleaning up after test
+[2014-02-18 15:33:52,827][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:52,907][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOneMissingIndex]: cleaned up after test
+[2014-02-18 15:33:52,916][INFO ][test                     ] Test testCloseOneMissingIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:52,917][INFO ][test                     ] Test testCloseOpenWildcard(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:52,925][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenWildcard]: before test
+[2014-02-18 15:33:52,944][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:53,136][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:53,573][INFO ][cluster.metadata         ] [node_0] [a] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:54,497][INFO ][cluster.metadata         ] [node_0] closing indices [[test1, test2]]
+[2014-02-18 15:33:54,515][INFO ][cluster.metadata         ] [node_0] opening indices [[test1, test2]]
+[2014-02-18 15:33:54,805][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenWildcard]: cleaning up after test
+[2014-02-18 15:33:55,146][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:33:55,243][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:55,293][INFO ][cluster.metadata         ] [node_0] [a] deleting index
+[2014-02-18 15:33:55,339][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenWildcard]: cleaned up after test
+[2014-02-18 15:33:55,341][INFO ][test                     ] Test testCloseOpenWildcard(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:55,342][INFO ][test                     ] Test testCloseOpenAllWildcard(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:55,353][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAllWildcard]: before test
+[2014-02-18 15:33:55,373][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:55,632][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:56,092][INFO ][cluster.metadata         ] [node_0] [test3] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:56,842][INFO ][cluster.metadata         ] [node_0] closing indices [[test1, test2, test3]]
+[2014-02-18 15:33:56,956][INFO ][cluster.metadata         ] [node_0] opening indices [[test1, test2, test3]]
+[2014-02-18 15:33:57,279][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAllWildcard]: cleaning up after test
+[2014-02-18 15:33:57,401][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:33:57,467][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:57,555][INFO ][cluster.metadata         ] [node_0] [test3] deleting index
+[2014-02-18 15:33:57,603][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseOpenAllWildcard]: cleaned up after test
+[2014-02-18 15:33:57,605][INFO ][test                     ] Test testCloseOpenAllWildcard(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:57,606][INFO ][test                     ] Test testSimpleCloseOpenAlias(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:57,616][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:33:57,657][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseOpenAlias]: before test
+[2014-02-18 15:33:57,675][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:57,999][INFO ][cluster.metadata         ] [node_0] closing indices [[test1]]
+[2014-02-18 15:33:58,010][INFO ][cluster.metadata         ] [node_0] opening indices [[test1]]
+[2014-02-18 15:33:58,093][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:58,142][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseOpenAlias]: cleaning up after test
+[2014-02-18 15:33:58,210][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:58,284][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseOpenAlias]: cleaned up after test
+[2014-02-18 15:33:58,297][INFO ][test                     ] Test testSimpleCloseOpenAlias(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:58,298][INFO ][test                     ] Test testCloseNoIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:58,306][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseNoIndex]: before test
+[2014-02-18 15:33:58,309][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:33:58,340][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseNoIndex]: cleaning up after test
+[2014-02-18 15:33:58,346][INFO ][indices.state            ] [OpenCloseIndexTests#testCloseNoIndex]: cleaned up after test
+[2014-02-18 15:33:58,352][INFO ][test                     ] Test testCloseNoIndex(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+[2014-02-18 15:33:58,353][INFO ][test                     ] Test testSimpleCloseOpen(org.elasticsearch.indices.state.OpenCloseIndexTests) started
+[2014-02-18 15:33:58,362][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseOpen]: before test
+[2014-02-18 15:33:58,379][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:33:58,679][INFO ][cluster.metadata         ] [node_0] closing indices [[test1]]
+[2014-02-18 15:33:58,728][INFO ][cluster.metadata         ] [node_0] opening indices [[test1]]
+[2014-02-18 15:33:58,806][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseOpen]: cleaning up after test
+[2014-02-18 15:33:58,829][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:33:58,886][INFO ][indices.state            ] [OpenCloseIndexTests#testSimpleCloseOpen]: cleaned up after test
+[2014-02-18 15:33:58,887][INFO ][test                     ] Test testSimpleCloseOpen(org.elasticsearch.indices.state.OpenCloseIndexTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

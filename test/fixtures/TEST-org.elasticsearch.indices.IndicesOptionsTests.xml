@@ -1,0 +1,521 @@
+<testsuite errors="0" failures="0" tests="22" skipped="0" name="org.elasticsearch.indices.IndicesOptionsTests" hostname="nohost.nodomain" time="14.705" timestamp="2014-02-18T16:08:15">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testAllMissing_strict" time="0.296"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteIndex" time="0.248"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testPutMapping" time="0.717"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteMapping" time="0.295"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testPutAlias" time="0.176"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteMapping_typeWildcard" time="0.974"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testUpdateSettings" time="1.179"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testSpecifiedIndexUnavailable_snapshotRestore" time="1.01"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testWildcardBehaviour_snapshotRestore" time="1.175"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testCloseApi_wildcards" time="1.061"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteWarmer_wildcard" time="0.619"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testPutWarmer" time="0.185"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testSpecifiedIndexUnavailable" time="1.135"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteWarmer" time="0.276"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteMapping_wildcard" time="1.309"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testWildcardBehaviour" time="0.723"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testIndicesExists" time="0.655"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testAllMissing_lenient" time="0.227"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testPutWarmer_wildcard" time="0.663"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testDeleteIndex_wildcard" time="0.737"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testPutAlias_wildcard" time="0.657"/>
+   <testcase classname="org.elasticsearch.indices.IndicesOptionsTests" name="testCloseApi_specifiedIndices" time="0.366"/>
+   <system-out><![CDATA[[2014-02-18 16:08:15,784][INFO ][test                     ] Test testAllMissing_strict(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:15,788][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:15,827][INFO ][indices                  ] [IndicesOptionsTests#testAllMissing_strict]: before test
+[2014-02-18 16:08:15,837][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:16,015][INFO ][indices                  ] [IndicesOptionsTests#testAllMissing_strict]: cleaning up after test
+[2014-02-18 16:08:16,017][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 16:08:16,075][INFO ][indices                  ] [IndicesOptionsTests#testAllMissing_strict]: cleaned up after test
+[2014-02-18 16:08:16,080][INFO ][test                     ] Test testAllMissing_strict(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:16,080][INFO ][test                     ] Test testDeleteIndex(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:16,085][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:16,107][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:16,131][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:16,163][INFO ][indices                  ] [IndicesOptionsTests#testDeleteIndex]: before test
+[2014-02-18 16:08:16,173][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:16,287][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:16,313][INFO ][indices                  ] [IndicesOptionsTests#testDeleteIndex]: cleaning up after test
+[2014-02-18 16:08:16,319][INFO ][indices                  ] [IndicesOptionsTests#testDeleteIndex]: cleaned up after test
+[2014-02-18 16:08:16,328][INFO ][test                     ] Test testDeleteIndex(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:16,328][INFO ][test                     ] Test testPutMapping(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:16,332][INFO ][indices                  ] [IndicesOptionsTests#testPutMapping]: before test
+[2014-02-18 16:08:16,340][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:16,434][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:16,539][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:16,653][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:16,805][INFO ][cluster.metadata         ] [node_0] [foo] create_mapping [type1]
+[2014-02-18 16:08:16,815][INFO ][cluster.metadata         ] [node_0] [barbaz] create_mapping [type1]
+[2014-02-18 16:08:16,816][INFO ][cluster.metadata         ] [node_0] [bar] create_mapping [type1]
+[2014-02-18 16:08:16,821][INFO ][cluster.metadata         ] [node_0] [foobar] create_mapping [type2]
+[2014-02-18 16:08:16,821][INFO ][cluster.metadata         ] [node_0] [barbaz] create_mapping [type2]
+[2014-02-18 16:08:16,821][INFO ][cluster.metadata         ] [node_0] [foo] create_mapping [type2]
+[2014-02-18 16:08:16,822][INFO ][cluster.metadata         ] [node_0] [bar] create_mapping [type2]
+[2014-02-18 16:08:16,828][INFO ][cluster.metadata         ] [node_0] [foobar] create_mapping [type3]
+[2014-02-18 16:08:16,829][INFO ][cluster.metadata         ] [node_0] [barbaz] create_mapping [type3]
+[2014-02-18 16:08:16,829][INFO ][cluster.metadata         ] [node_0] [foo] create_mapping [type3]
+[2014-02-18 16:08:16,829][INFO ][cluster.metadata         ] [node_0] [bar] create_mapping [type3]
+[2014-02-18 16:08:16,835][INFO ][cluster.metadata         ] [node_0] closing indices [[barbaz]]
+[2014-02-18 16:08:16,862][INFO ][cluster.metadata         ] [node_0] [barbaz] create_mapping [type4]
+[2014-02-18 16:08:16,865][INFO ][indices                  ] [IndicesOptionsTests#testPutMapping]: cleaning up after test
+[2014-02-18 16:08:16,877][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:16,920][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:16,982][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:17,016][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:17,045][INFO ][indices                  ] [IndicesOptionsTests#testPutMapping]: cleaned up after test
+[2014-02-18 16:08:17,045][INFO ][test                     ] Test testPutMapping(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:17,046][INFO ][test                     ] Test testDeleteMapping(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:17,050][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:17,076][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:17,104][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:17,135][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping]: before test
+[2014-02-18 16:08:17,147][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:08:17,284][INFO ][cluster.metadata         ] [node_0] [[foobar]] remove_mapping [[type1]]
+[2014-02-18 16:08:17,290][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping]: cleaning up after test
+[2014-02-18 16:08:17,292][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:17,330][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping]: cleaned up after test
+[2014-02-18 16:08:17,340][INFO ][test                     ] Test testDeleteMapping(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:17,341][INFO ][test                     ] Test testPutAlias(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:17,346][INFO ][indices                  ] [IndicesOptionsTests#testPutAlias]: before test
+[2014-02-18 16:08:17,354][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:17,473][INFO ][indices                  ] [IndicesOptionsTests#testPutAlias]: cleaning up after test
+[2014-02-18 16:08:17,475][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:17,516][INFO ][indices                  ] [IndicesOptionsTests#testPutAlias]: cleaned up after test
+[2014-02-18 16:08:17,517][INFO ][test                     ] Test testPutAlias(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:17,517][INFO ][test                     ] Test testDeleteMapping_typeWildcard(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:17,521][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:17,548][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:17,574][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping_typeWildcard]: before test
+[2014-02-18 16:08:17,589][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:08:17,701][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings [type2]
+[2014-02-18 16:08:17,772][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:17,843][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings [type3]
+[2014-02-18 16:08:18,074][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings [type4]
+[2014-02-18 16:08:18,282][INFO ][cluster.metadata         ] [node_0] [[foobar, foo]] remove_mapping [[type1, type2]]
+[2014-02-18 16:08:18,299][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:18,339][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:18,392][INFO ][cluster.metadata         ] [node_0] [[bar, barbaz]] remove_mapping [[type3, type4]]
+[2014-02-18 16:08:18,396][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping_typeWildcard]: cleaning up after test
+[2014-02-18 16:08:18,397][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:18,433][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:18,477][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping_typeWildcard]: cleaned up after test
+[2014-02-18 16:08:18,491][INFO ][test                     ] Test testDeleteMapping_typeWildcard(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:18,491][INFO ][test                     ] Test testUpdateSettings(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:18,495][INFO ][indices                  ] [IndicesOptionsTests#testUpdateSettings]: before test
+[2014-02-18 16:08:18,504][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:18,614][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:18,762][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:18,910][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:19,101][INFO ][cluster.metadata         ] [node_0] closing indices [[foo, foobar, bar, barbaz]]
+[2014-02-18 16:08:19,140][INFO ][cluster.metadata         ] [node_0] opening indices [[foo, foobar, bar, barbaz]]
+[2014-02-18 16:08:19,384][INFO ][indices                  ] [IndicesOptionsTests#testUpdateSettings]: cleaning up after test
+[2014-02-18 16:08:19,447][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:19,511][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:19,550][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:19,620][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:19,669][INFO ][indices                  ] [IndicesOptionsTests#testUpdateSettings]: cleaned up after test
+[2014-02-18 16:08:19,670][INFO ][test                     ] Test testUpdateSettings(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:19,670][INFO ][test                     ] Test testSpecifiedIndexUnavailable_snapshotRestore(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:19,675][INFO ][indices                  ] [IndicesOptionsTests#testSpecifiedIndexUnavailable_snapshotRestore]: before test
+[2014-02-18 16:08:19,688][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:19,802][INFO ][repositories             ] [node_0] put repository [dummy-repo]
+[2014-02-18 16:08:19,830][INFO ][snapshots                ] [node_0] snapshot [dummy-repo:snap1] is done
+[2014-02-18 16:08:19,833][WARN ][snapshots                ] [node_0] [dummy-repo][snap2] failed to create snapshot
+org.elasticsearch.indices.IndexMissingException: [test2] missing
+	at org.elasticsearch.cluster.metadata.MetaData.convertFromWildcards(MetaData.java:771)
+	at org.elasticsearch.cluster.metadata.MetaData.concreteIndices(MetaData.java:659)
+	at org.elasticsearch.snapshots.SnapshotsService$1.execute(SnapshotsService.java:166)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:19,834][WARN ][snapshots                ] [node_0] [dummy-repo][snap1] failed to restore snapshot
+org.elasticsearch.indices.IndexMissingException: [test2] missing
+	at org.elasticsearch.snapshots.SnapshotUtils.filterIndices(SnapshotUtils.java:77)
+	at org.elasticsearch.snapshots.RestoreService.restoreSnapshot(RestoreService.java:118)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:87)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:41)
+	at org.elasticsearch.action.support.master.TransportMasterNodeOperationAction$2.run(TransportMasterNodeOperationAction.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:19,836][WARN ][snapshots                ] [node_0] [dummy-repo][snap2] failed to create snapshot
+org.elasticsearch.indices.IndexMissingException: [test2] missing
+	at org.elasticsearch.cluster.metadata.MetaData.convertFromWildcards(MetaData.java:771)
+	at org.elasticsearch.cluster.metadata.MetaData.concreteIndices(MetaData.java:659)
+	at org.elasticsearch.snapshots.SnapshotsService$1.execute(SnapshotsService.java:166)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:19,837][WARN ][snapshots                ] [node_0] [dummy-repo][snap1] failed to restore snapshot
+org.elasticsearch.indices.IndexMissingException: [test2] missing
+	at org.elasticsearch.snapshots.SnapshotUtils.filterIndices(SnapshotUtils.java:77)
+	at org.elasticsearch.snapshots.RestoreService.restoreSnapshot(RestoreService.java:118)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:87)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:41)
+	at org.elasticsearch.action.support.master.TransportMasterNodeOperationAction$2.run(TransportMasterNodeOperationAction.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:19,863][INFO ][snapshots                ] [node_0] snapshot [dummy-repo:snap2] is done
+[2014-02-18 16:08:20,045][INFO ][snapshots                ] [node_0] restore [dummy-repo:snap2] is done
+[2014-02-18 16:08:20,062][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:20,271][INFO ][snapshots                ] [node_0] snapshot [dummy-repo:snap3] is done
+[2014-02-18 16:08:20,517][INFO ][snapshots                ] [node_0] restore [dummy-repo:snap3] is done
+[2014-02-18 16:08:20,519][INFO ][indices                  ] [IndicesOptionsTests#testSpecifiedIndexUnavailable_snapshotRestore]: cleaning up after test
+[2014-02-18 16:08:20,520][INFO ][cluster.metadata         ] [node_0] [test1-copy-snap3] deleting index
+[2014-02-18 16:08:20,558][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 16:08:20,586][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 16:08:20,613][INFO ][cluster.metadata         ] [node_0] [test1-copy-snap2] deleting index
+[2014-02-18 16:08:20,640][INFO ][cluster.metadata         ] [node_0] [test2-copy-snap3] deleting index
+[2014-02-18 16:08:20,667][INFO ][repositories             ] [node_0] delete repository [dummy-repo]
+[2014-02-18 16:08:20,668][INFO ][indices                  ] [IndicesOptionsTests#testSpecifiedIndexUnavailable_snapshotRestore]: cleaned up after test
+[2014-02-18 16:08:20,680][INFO ][test                     ] Test testSpecifiedIndexUnavailable_snapshotRestore(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:20,681][INFO ][test                     ] Test testWildcardBehaviour_snapshotRestore(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:20,684][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:20,710][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:20,736][INFO ][indices                  ] [IndicesOptionsTests#testWildcardBehaviour_snapshotRestore]: before test
+[2014-02-18 16:08:20,737][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:20,765][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:20,852][INFO ][repositories             ] [node_0] put repository [dummy-repo]
+[2014-02-18 16:08:20,876][INFO ][snapshots                ] [node_0] snapshot [dummy-repo:snap1] is done
+[2014-02-18 16:08:20,880][WARN ][snapshots                ] [node_0] [dummy-repo][snap2] failed to create snapshot
+org.elasticsearch.indices.IndexMissingException: [bar*] missing
+	at org.elasticsearch.cluster.metadata.MetaData.convertFromWildcards(MetaData.java:823)
+	at org.elasticsearch.cluster.metadata.MetaData.concreteIndices(MetaData.java:659)
+	at org.elasticsearch.snapshots.SnapshotsService$1.execute(SnapshotsService.java:166)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:20,885][WARN ][snapshots                ] [node_0] [dummy-repo][snap1] failed to restore snapshot
+org.elasticsearch.indices.IndexMissingException: [bar*] missing
+	at org.elasticsearch.snapshots.SnapshotUtils.filterIndices(SnapshotUtils.java:113)
+	at org.elasticsearch.snapshots.RestoreService.restoreSnapshot(RestoreService.java:118)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:87)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:41)
+	at org.elasticsearch.action.support.master.TransportMasterNodeOperationAction$2.run(TransportMasterNodeOperationAction.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:20,910][INFO ][snapshots                ] [node_0] snapshot [dummy-repo:snap2] is done
+[2014-02-18 16:08:21,035][INFO ][snapshots                ] [node_0] restore [dummy-repo:snap2] is done
+[2014-02-18 16:08:21,045][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:21,257][INFO ][snapshots                ] [node_0] snapshot [dummy-repo:snap3] is done
+[2014-02-18 16:08:21,626][INFO ][snapshots                ] [node_0] restore [dummy-repo:snap3] is done
+[2014-02-18 16:08:21,628][WARN ][snapshots                ] [node_0] [dummy-repo][snap4] failed to create snapshot
+org.elasticsearch.indices.IndexMissingException: [baz*] missing
+	at org.elasticsearch.cluster.metadata.MetaData.convertFromWildcards(MetaData.java:823)
+	at org.elasticsearch.cluster.metadata.MetaData.concreteIndices(MetaData.java:659)
+	at org.elasticsearch.snapshots.SnapshotsService$1.execute(SnapshotsService.java:166)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:21,631][WARN ][snapshots                ] [node_0] [dummy-repo][snap3] failed to restore snapshot
+org.elasticsearch.indices.IndexMissingException: [baz*] missing
+	at org.elasticsearch.snapshots.SnapshotUtils.filterIndices(SnapshotUtils.java:113)
+	at org.elasticsearch.snapshots.RestoreService.restoreSnapshot(RestoreService.java:118)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:87)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:41)
+	at org.elasticsearch.action.support.master.TransportMasterNodeOperationAction$2.run(TransportMasterNodeOperationAction.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:08:21,633][INFO ][indices                  ] [IndicesOptionsTests#testWildcardBehaviour_snapshotRestore]: cleaning up after test
+[2014-02-18 16:08:21,635][INFO ][cluster.metadata         ] [node_0] [barbaz-copy-snap3] deleting index
+[2014-02-18 16:08:21,669][INFO ][cluster.metadata         ] [node_0] [foobar-copy-snap2-copy-snap3] deleting index
+[2014-02-18 16:08:21,702][INFO ][cluster.metadata         ] [node_0] [foobar-copy-snap2] deleting index
+[2014-02-18 16:08:21,754][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:21,781][INFO ][cluster.metadata         ] [node_0] [foobar-copy-snap3] deleting index
+[2014-02-18 16:08:21,807][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:21,835][INFO ][repositories             ] [node_0] delete repository [dummy-repo]
+[2014-02-18 16:08:21,836][INFO ][indices                  ] [IndicesOptionsTests#testWildcardBehaviour_snapshotRestore]: cleaned up after test
+[2014-02-18 16:08:21,856][INFO ][test                     ] Test testWildcardBehaviour_snapshotRestore(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:21,857][INFO ][test                     ] Test testCloseApi_wildcards(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:21,860][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:21,882][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:21,909][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:21,936][INFO ][indices                  ] [IndicesOptionsTests#testCloseApi_wildcards]: before test
+[2014-02-18 16:08:21,959][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:22,062][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:22,164][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:22,297][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:22,410][INFO ][cluster.metadata         ] [node_0] closing indices [[barbaz, bar]]
+[2014-02-18 16:08:22,427][INFO ][cluster.metadata         ] [node_0] closing indices [[foobar, foo]]
+[2014-02-18 16:08:22,445][INFO ][cluster.metadata         ] [node_0] opening indices [[barbaz, bar]]
+[2014-02-18 16:08:22,594][INFO ][cluster.metadata         ] [node_0] opening indices [[foo, foobar]]
+[2014-02-18 16:08:22,694][INFO ][indices                  ] [IndicesOptionsTests#testCloseApi_wildcards]: cleaning up after test
+[2014-02-18 16:08:22,771][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:22,808][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:22,841][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:22,872][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:22,908][INFO ][indices                  ] [IndicesOptionsTests#testCloseApi_wildcards]: cleaned up after test
+[2014-02-18 16:08:22,918][INFO ][test                     ] Test testCloseApi_wildcards(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:22,918][INFO ][test                     ] Test testDeleteWarmer_wildcard(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:22,923][INFO ][indices                  ] [IndicesOptionsTests#testDeleteWarmer_wildcard]: before test
+[2014-02-18 16:08:22,933][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:23,046][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:23,153][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:23,282][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:23,394][INFO ][action.admin.indices.warmer.delete] [node_0] [foobar] delete warmer [test1]
+[2014-02-18 16:08:23,394][INFO ][action.admin.indices.warmer.delete] [node_0] [foo] delete warmer [test1]
+[2014-02-18 16:08:23,397][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:23,438][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:23,477][INFO ][action.admin.indices.warmer.delete] [node_0] [bar] delete warmer [test1]
+[2014-02-18 16:08:23,477][INFO ][action.admin.indices.warmer.delete] [node_0] [barbaz] delete warmer [test1]
+[2014-02-18 16:08:23,480][INFO ][indices                  ] [IndicesOptionsTests#testDeleteWarmer_wildcard]: cleaning up after test
+[2014-02-18 16:08:23,480][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:23,509][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:23,536][INFO ][indices                  ] [IndicesOptionsTests#testDeleteWarmer_wildcard]: cleaned up after test
+[2014-02-18 16:08:23,536][INFO ][test                     ] Test testDeleteWarmer_wildcard(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:23,537][INFO ][test                     ] Test testPutWarmer(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:23,541][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:23,563][INFO ][indices                  ] [IndicesOptionsTests#testPutWarmer]: before test
+[2014-02-18 16:08:23,571][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:23,681][INFO ][action.admin.indices.warmer.put] [node_0] [foobar] putting warmer [warmer1]
+[2014-02-18 16:08:23,684][INFO ][indices                  ] [IndicesOptionsTests#testPutWarmer]: cleaning up after test
+[2014-02-18 16:08:23,685][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:23,717][INFO ][indices                  ] [IndicesOptionsTests#testPutWarmer]: cleaned up after test
+[2014-02-18 16:08:23,722][INFO ][test                     ] Test testPutWarmer(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:23,723][INFO ][test                     ] Test testSpecifiedIndexUnavailable(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:23,729][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:23,757][INFO ][indices                  ] [IndicesOptionsTests#testSpecifiedIndexUnavailable]: before test
+[2014-02-18 16:08:23,758][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:23,795][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:24,045][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:24,753][INFO ][indices                  ] [IndicesOptionsTests#testSpecifiedIndexUnavailable]: cleaning up after test
+[2014-02-18 16:08:24,755][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 16:08:24,808][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 16:08:24,848][INFO ][indices                  ] [IndicesOptionsTests#testSpecifiedIndexUnavailable]: cleaned up after test
+[2014-02-18 16:08:24,858][INFO ][test                     ] Test testSpecifiedIndexUnavailable(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:24,858][INFO ][test                     ] Test testDeleteWarmer(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:24,864][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:24,898][INFO ][indices                  ] [IndicesOptionsTests#testDeleteWarmer]: before test
+[2014-02-18 16:08:24,912][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:25,056][INFO ][action.admin.indices.warmer.delete] [node_0] [foobar] delete warmer [test1]
+[2014-02-18 16:08:25,058][INFO ][indices                  ] [IndicesOptionsTests#testDeleteWarmer]: cleaning up after test
+[2014-02-18 16:08:25,060][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:25,129][INFO ][indices                  ] [IndicesOptionsTests#testDeleteWarmer]: cleaned up after test
+[2014-02-18 16:08:25,134][INFO ][test                     ] Test testDeleteWarmer(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:25,134][INFO ][test                     ] Test testDeleteMapping_wildcard(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:25,140][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:25,176][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping_wildcard]: before test
+[2014-02-18 16:08:25,191][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:08:25,339][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:08:25,519][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:08:25,630][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:25,821][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:08:26,151][INFO ][cluster.metadata         ] [node_0] [[foobar, foo]] remove_mapping [[type1]]
+[2014-02-18 16:08:26,157][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:26,248][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:26,369][INFO ][cluster.metadata         ] [node_0] [[bar, barbaz]] remove_mapping [[type1]]
+[2014-02-18 16:08:26,372][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping_wildcard]: cleaning up after test
+[2014-02-18 16:08:26,373][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:26,403][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:26,436][INFO ][indices                  ] [IndicesOptionsTests#testDeleteMapping_wildcard]: cleaned up after test
+[2014-02-18 16:08:26,443][INFO ][test                     ] Test testDeleteMapping_wildcard(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:26,444][INFO ][test                     ] Test testWildcardBehaviour(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:26,448][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:26,474][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:26,501][INFO ][indices                  ] [IndicesOptionsTests#testWildcardBehaviour]: before test
+[2014-02-18 16:08:26,503][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:26,550][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:26,648][INFO ][cluster.metadata         ] [node_0] [foobar] update_mapping [type] (dynamic)
+[2014-02-18 16:08:27,121][INFO ][indices                  ] [IndicesOptionsTests#testWildcardBehaviour]: cleaning up after test
+[2014-02-18 16:08:27,122][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:27,157][INFO ][indices                  ] [IndicesOptionsTests#testWildcardBehaviour]: cleaned up after test
+[2014-02-18 16:08:27,167][INFO ][test                     ] Test testWildcardBehaviour(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:27,167][INFO ][test                     ] Test testIndicesExists(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:27,171][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:27,197][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:27,225][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:27,250][INFO ][indices                  ] [IndicesOptionsTests#testIndicesExists]: before test
+[2014-02-18 16:08:27,261][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:27,345][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:27,448][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:27,573][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:27,677][INFO ][indices                  ] [IndicesOptionsTests#testIndicesExists]: cleaning up after test
+[2014-02-18 16:08:27,684][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:27,721][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:27,752][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:27,781][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:27,813][INFO ][indices                  ] [IndicesOptionsTests#testIndicesExists]: cleaned up after test
+[2014-02-18 16:08:27,822][INFO ][test                     ] Test testIndicesExists(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:27,822][INFO ][test                     ] Test testAllMissing_lenient(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:27,827][INFO ][indices                  ] [IndicesOptionsTests#testAllMissing_lenient]: before test
+[2014-02-18 16:08:27,834][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:27,938][INFO ][cluster.metadata         ] [node_0] [test1] update_mapping [type] (dynamic)
+[2014-02-18 16:08:28,019][INFO ][indices                  ] [IndicesOptionsTests#testAllMissing_lenient]: cleaning up after test
+[2014-02-18 16:08:28,020][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 16:08:28,049][INFO ][indices                  ] [IndicesOptionsTests#testAllMissing_lenient]: cleaned up after test
+[2014-02-18 16:08:28,049][INFO ][test                     ] Test testAllMissing_lenient(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:28,050][INFO ][test                     ] Test testPutWarmer_wildcard(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:28,053][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:28,082][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:28,109][INFO ][indices                  ] [IndicesOptionsTests#testPutWarmer_wildcard]: before test
+[2014-02-18 16:08:28,117][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:28,216][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:28,339][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:28,454][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:28,573][INFO ][action.admin.indices.warmer.put] [node_0] [foobar] putting warmer [warmer1]
+[2014-02-18 16:08:28,573][INFO ][action.admin.indices.warmer.put] [node_0] [foo] putting warmer [warmer1]
+[2014-02-18 16:08:28,578][INFO ][action.admin.indices.warmer.put] [node_0] [foo] put warmer [warmer2]
+[2014-02-18 16:08:28,578][INFO ][action.admin.indices.warmer.put] [node_0] [foobar] put warmer [warmer2]
+[2014-02-18 16:08:28,578][INFO ][action.admin.indices.warmer.put] [node_0] [bar] putting warmer [warmer2]
+[2014-02-18 16:08:28,579][INFO ][action.admin.indices.warmer.put] [node_0] [barbaz] putting warmer [warmer2]
+[2014-02-18 16:08:28,582][INFO ][indices                  ] [IndicesOptionsTests#testPutWarmer_wildcard]: cleaning up after test
+[2014-02-18 16:08:28,583][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:28,612][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:28,643][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:28,672][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:28,705][INFO ][indices                  ] [IndicesOptionsTests#testPutWarmer_wildcard]: cleaned up after test
+[2014-02-18 16:08:28,712][INFO ][test                     ] Test testPutWarmer_wildcard(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:28,713][INFO ][test                     ] Test testDeleteIndex_wildcard(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:28,717][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:08:28,744][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:28,767][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:28,791][INFO ][indices                  ] [IndicesOptionsTests#testDeleteIndex_wildcard]: before test
+[2014-02-18 16:08:28,799][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:28,892][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,026][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,151][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,307][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:29,341][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:29,376][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:29,403][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:29,434][INFO ][indices                  ] [IndicesOptionsTests#testDeleteIndex_wildcard]: cleaning up after test
+[2014-02-18 16:08:29,438][INFO ][indices                  ] [IndicesOptionsTests#testDeleteIndex_wildcard]: cleaned up after test
+[2014-02-18 16:08:29,449][INFO ][test                     ] Test testDeleteIndex_wildcard(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:29,450][INFO ][test                     ] Test testPutAlias_wildcard(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:29,454][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:29,482][INFO ][indices                  ] [IndicesOptionsTests#testPutAlias_wildcard]: before test
+[2014-02-18 16:08:29,493][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,591][INFO ][cluster.metadata         ] [node_0] [foobar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,696][INFO ][cluster.metadata         ] [node_0] [bar] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,813][INFO ][cluster.metadata         ] [node_0] [barbaz] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:29,920][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:29,974][INFO ][indices                  ] [IndicesOptionsTests#testPutAlias_wildcard]: cleaning up after test
+[2014-02-18 16:08:29,975][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:08:30,018][INFO ][cluster.metadata         ] [node_0] [foobar] deleting index
+[2014-02-18 16:08:30,048][INFO ][cluster.metadata         ] [node_0] [bar] deleting index
+[2014-02-18 16:08:30,075][INFO ][cluster.metadata         ] [node_0] [barbaz] deleting index
+[2014-02-18 16:08:30,101][INFO ][indices                  ] [IndicesOptionsTests#testPutAlias_wildcard]: cleaned up after test
+[2014-02-18 16:08:30,107][INFO ][test                     ] Test testPutAlias_wildcard(org.elasticsearch.indices.IndicesOptionsTests) finished
+[2014-02-18 16:08:30,108][INFO ][test                     ] Test testCloseApi_specifiedIndices(org.elasticsearch.indices.IndicesOptionsTests) started
+[2014-02-18 16:08:30,111][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:08:30,132][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:08:30,155][INFO ][indices                  ] [IndicesOptionsTests#testCloseApi_specifiedIndices]: before test
+[2014-02-18 16:08:30,166][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:30,281][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:08:30,392][INFO ][cluster.metadata         ] [node_0] closing indices [[test2]]
+[2014-02-18 16:08:30,408][INFO ][indices                  ] [IndicesOptionsTests#testCloseApi_specifiedIndices]: cleaning up after test
+[2014-02-18 16:08:30,410][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 16:08:30,435][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 16:08:30,467][INFO ][indices                  ] [IndicesOptionsTests#testCloseApi_specifiedIndices]: cleaned up after test
+[2014-02-18 16:08:30,474][INFO ][test                     ] Test testCloseApi_specifiedIndices(org.elasticsearch.indices.IndicesOptionsTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

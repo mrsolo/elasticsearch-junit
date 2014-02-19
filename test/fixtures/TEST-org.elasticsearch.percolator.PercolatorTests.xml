@@ -1,0 +1,468 @@
+<testsuite errors="0" failures="0" tests="25" skipped="0" name="org.elasticsearch.percolator.PercolatorTests" hostname="nohost.nodomain" time="24.239" timestamp="2014-02-18T15:43:36">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testCountPercolation" time="0.651"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testDeletePercolatorType" time="0.923"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateScoreAndSorting" time="0.928"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="percolateNonMatchingConstantScoreQuery" time="1.897"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateMultipleIndicesAndAliases" time="0.525"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolatorWithHighlighting" time="0.489"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testSimple1" time="0.839"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testCountPercolatingExistingDocs" time="0.724"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateSizingWithQueryAndFilter" time="7.326"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="percolateCustomAnalyzer" time="0.348"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolatingExistingDocs" time="0.726"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="percolateOnRecreatedIndex" time="0.939"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="percolateWithSizeField" time="0.435"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateSorting_unsupportedField" time="0.548"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateStatistics" time="0.451"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolatingExistingDocs_versionCheck" time="0.808"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateSortingWithNoSize" time="0.503"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testSimple2" time="1.676"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolatingExistingDocs_routing" time="0.747"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateQueriesWithRouting" time="0.405"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="createIndexAndThenRegisterPercolator" time="0.403"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateOnEmptyIndex" time="0.462"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="multiplePercolators" time="0.469"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="dynamicAddingRemovingQueries" time="0.532"/>
+   <testcase classname="org.elasticsearch.percolator.PercolatorTests" name="testPercolateNotEmptyIndexButNoRefresh" time="0.462"/>
+   <system-out><![CDATA[[2014-02-18 15:43:36,828][INFO ][test                     ] Test testCountPercolation(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:36,832][INFO ][percolator               ] [PercolatorTests#testCountPercolation]: before test
+[2014-02-18 15:43:36,839][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:36,932][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:37,208][INFO ][percolator               ] --> Add dummy doc
+[2014-02-18 15:43:37,209][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:43:37,212][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:37,214][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:37,405][INFO ][percolator               ] --> Count percolate doc with field1=b
+[2014-02-18 15:43:37,417][INFO ][percolator               ] --> Count percolate doc with field1=c
+[2014-02-18 15:43:37,420][INFO ][percolator               ] --> Count percolate doc with field1=b c
+[2014-02-18 15:43:37,423][INFO ][percolator               ] --> Count percolate doc with field1=d
+[2014-02-18 15:43:37,426][INFO ][percolator               ] --> Count percolate non existing doc
+[2014-02-18 15:43:37,427][INFO ][percolator               ] [PercolatorTests#testCountPercolation]: cleaning up after test
+[2014-02-18 15:43:37,428][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:37,475][INFO ][percolator               ] [PercolatorTests#testCountPercolation]: cleaned up after test
+[2014-02-18 15:43:37,479][INFO ][test                     ] Test testCountPercolation(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:37,479][INFO ][test                     ] Test testDeletePercolatorType(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:37,483][INFO ][percolator               ] [PercolatorTests#testDeletePercolatorType]: before test
+[2014-02-18 15:43:37,491][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:37,645][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:38,145][INFO ][cluster.metadata         ] [node_0] [test1] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:38,145][INFO ][cluster.metadata         ] [node_0] [test2] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:38,276][INFO ][cluster.metadata         ] [node_0] [[test1]] remove_mapping [[.percolator]]
+[2014-02-18 15:43:38,318][INFO ][cluster.metadata         ] [node_0] [[test2]] remove_mapping [[.percolator]]
+[2014-02-18 15:43:38,321][INFO ][percolator               ] [PercolatorTests#testDeletePercolatorType]: cleaning up after test
+[2014-02-18 15:43:38,322][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:43:38,367][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:43:38,401][INFO ][percolator               ] [PercolatorTests#testDeletePercolatorType]: cleaned up after test
+[2014-02-18 15:43:38,402][INFO ][test                     ] Test testDeletePercolatorType(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:38,402][INFO ][test                     ] Test testPercolateScoreAndSorting(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:38,406][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:38,431][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:38,457][INFO ][percolator               ] [PercolatorTests#testPercolateScoreAndSorting]: before test
+[2014-02-18 15:43:38,459][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:38,488][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:43:38,757][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [my-type] (dynamic)
+[2014-02-18 15:43:38,761][INFO ][percolator               ] --> register 164 queries
+[2014-02-18 15:43:38,762][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:39,297][INFO ][percolator               ] [PercolatorTests#testPercolateScoreAndSorting]: cleaning up after test
+[2014-02-18 15:43:39,298][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:43:39,321][INFO ][percolator               ] [PercolatorTests#testPercolateScoreAndSorting]: cleaned up after test
+[2014-02-18 15:43:39,330][INFO ][test                     ] Test testPercolateScoreAndSorting(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:39,331][INFO ][test                     ] Test percolateNonMatchingConstantScoreQuery(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:39,334][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:39,358][INFO ][percolator               ] [PercolatorTests#percolateNonMatchingConstantScoreQuery]: before test
+[2014-02-18 15:43:39,366][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:39,677][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:39,679][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:41,173][INFO ][percolator               ] [PercolatorTests#percolateNonMatchingConstantScoreQuery]: cleaning up after test
+[2014-02-18 15:43:41,174][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:41,222][INFO ][percolator               ] [PercolatorTests#percolateNonMatchingConstantScoreQuery]: cleaned up after test
+[2014-02-18 15:43:41,227][INFO ][test                     ] Test percolateNonMatchingConstantScoreQuery(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:41,228][INFO ][test                     ] Test testPercolateMultipleIndicesAndAliases(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:41,231][INFO ][percolator               ] [PercolatorTests#testPercolateMultipleIndicesAndAliases]: before test
+[2014-02-18 15:43:41,238][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:43:41,305][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:43:41,608][INFO ][percolator               ] --> registering queries
+[2014-02-18 15:43:41,610][INFO ][cluster.metadata         ] [node_0] [test2] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:41,619][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:41,647][INFO ][cluster.metadata         ] [node_0] [test1] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:41,661][INFO ][percolator               ] --> Percolate doc to index test1
+[2014-02-18 15:43:41,664][INFO ][percolator               ] --> Percolate doc to index test2
+[2014-02-18 15:43:41,666][INFO ][percolator               ] --> Percolate doc to index test1 and test2
+[2014-02-18 15:43:41,669][INFO ][percolator               ] --> Percolate doc to index test2 and test3, with ignore missing
+[2014-02-18 15:43:41,670][INFO ][percolator               ] --> Adding aliases
+[2014-02-18 15:43:41,672][INFO ][percolator               ] --> Percolate doc to my-alias1
+[2014-02-18 15:43:41,675][INFO ][percolator               ] --> Percolate doc to my-alias2
+[2014-02-18 15:43:41,676][INFO ][percolator               ] [PercolatorTests#testPercolateMultipleIndicesAndAliases]: cleaning up after test
+[2014-02-18 15:43:41,678][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:43:41,728][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:43:41,749][INFO ][percolator               ] [PercolatorTests#testPercolateMultipleIndicesAndAliases]: cleaned up after test
+[2014-02-18 15:43:41,752][INFO ][test                     ] Test testPercolateMultipleIndicesAndAliases(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:41,753][INFO ][test                     ] Test testPercolatorWithHighlighting(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:41,757][INFO ][percolator               ] [PercolatorTests#testPercolatorWithHighlighting]: before test
+[2014-02-18 15:43:41,765][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:43:42,026][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [type]
+[2014-02-18 15:43:42,029][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:42,030][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:42,044][INFO ][percolator               ] --> Percolate doc with field1=The quick brown fox jumps over the lazy dog
+[2014-02-18 15:43:42,157][INFO ][percolator               ] --> Query percolate doc with field1=The quick brown fox jumps over the lazy dog
+[2014-02-18 15:43:42,161][INFO ][percolator               ] --> Query percolate with score for doc with field1=The quick brown fox jumps over the lazy dog
+[2014-02-18 15:43:42,167][INFO ][percolator               ] --> Top percolate for doc with field1=The quick brown fox jumps over the lazy dog
+[2014-02-18 15:43:42,171][INFO ][percolator               ] [PercolatorTests#testPercolatorWithHighlighting]: cleaning up after test
+[2014-02-18 15:43:42,174][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:42,207][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:42,237][INFO ][percolator               ] [PercolatorTests#testPercolatorWithHighlighting]: cleaned up after test
+[2014-02-18 15:43:42,242][INFO ][test                     ] Test testPercolatorWithHighlighting(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:42,242][INFO ][test                     ] Test testSimple1(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:42,248][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:42,281][INFO ][percolator               ] [PercolatorTests#testSimple1]: before test
+[2014-02-18 15:43:42,290][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:42,427][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:42,741][INFO ][percolator               ] --> Add dummy doc
+[2014-02-18 15:43:42,743][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:43:42,746][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:42,748][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:42,989][INFO ][percolator               ] --> Percolate doc with field1=b
+[2014-02-18 15:43:42,992][INFO ][percolator               ] --> Percolate doc with field1=c
+[2014-02-18 15:43:42,995][INFO ][percolator               ] --> Percolate doc with field1=b c
+[2014-02-18 15:43:42,999][INFO ][percolator               ] --> Percolate doc with field1=d
+[2014-02-18 15:43:43,003][INFO ][percolator               ] --> Search dummy doc, percolate queries must not be included
+[2014-02-18 15:43:43,006][INFO ][percolator               ] --> Percolate non existing doc
+[2014-02-18 15:43:43,010][INFO ][percolator               ] [PercolatorTests#testSimple1]: cleaning up after test
+[2014-02-18 15:43:43,012][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:43,072][INFO ][percolator               ] [PercolatorTests#testSimple1]: cleaned up after test
+[2014-02-18 15:43:43,081][INFO ][test                     ] Test testSimple1(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:43,081][INFO ][test                     ] Test testCountPercolatingExistingDocs(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:43,086][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:43,119][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:43,144][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:43,172][INFO ][percolator               ] [PercolatorTests#testCountPercolatingExistingDocs]: before test
+[2014-02-18 15:43:43,183][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:43,506][INFO ][percolator               ] --> Adding docs
+[2014-02-18 15:43:43,508][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:43:43,527][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:43,530][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:43,742][INFO ][percolator               ] --> Count percolate existing doc with id 1
+[2014-02-18 15:43:43,744][INFO ][percolator               ] --> Count percolate existing doc with id 2
+[2014-02-18 15:43:43,746][INFO ][percolator               ] --> Count percolate existing doc with id 3
+[2014-02-18 15:43:43,749][INFO ][percolator               ] --> Count percolate existing doc with id 4
+[2014-02-18 15:43:43,751][INFO ][percolator               ] [PercolatorTests#testCountPercolatingExistingDocs]: cleaning up after test
+[2014-02-18 15:43:43,753][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:43,795][INFO ][percolator               ] [PercolatorTests#testCountPercolatingExistingDocs]: cleaned up after test
+[2014-02-18 15:43:43,804][INFO ][test                     ] Test testCountPercolatingExistingDocs(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:43,805][INFO ][test                     ] Test testPercolateSizingWithQueryAndFilter(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:43,809][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:43,831][INFO ][percolator               ] [PercolatorTests#testPercolateSizingWithQueryAndFilter]: before test
+[2014-02-18 15:43:43,839][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:44,148][INFO ][percolator               ] --> register 5136 queries
+[2014-02-18 15:43:44,160][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:43:44,324][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:44,341][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:50,947][INFO ][percolator               ] [PercolatorTests#testPercolateSizingWithQueryAndFilter]: cleaning up after test
+[2014-02-18 15:43:50,949][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:43:51,094][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:51,125][INFO ][percolator               ] [PercolatorTests#testPercolateSizingWithQueryAndFilter]: cleaned up after test
+[2014-02-18 15:43:51,131][INFO ][test                     ] Test testPercolateSizingWithQueryAndFilter(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:51,132][INFO ][test                     ] Test percolateCustomAnalyzer(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:51,137][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:51,163][INFO ][percolator               ] [PercolatorTests#percolateCustomAnalyzer]: before test
+[2014-02-18 15:43:51,176][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [doc]
+[2014-02-18 15:43:51,417][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:51,418][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:51,450][INFO ][percolator               ] [PercolatorTests#percolateCustomAnalyzer]: cleaning up after test
+[2014-02-18 15:43:51,451][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:51,476][INFO ][percolator               ] [PercolatorTests#percolateCustomAnalyzer]: cleaned up after test
+[2014-02-18 15:43:51,480][INFO ][test                     ] Test percolateCustomAnalyzer(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:51,481][INFO ][test                     ] Test testPercolatingExistingDocs(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:51,484][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:51,506][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:51,530][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs]: before test
+[2014-02-18 15:43:51,531][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:51,560][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:51,854][INFO ][percolator               ] --> Adding docs
+[2014-02-18 15:43:51,856][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:43:51,866][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:51,869][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:52,125][INFO ][percolator               ] --> Percolate existing doc with id 1
+[2014-02-18 15:43:52,128][INFO ][percolator               ] --> Percolate existing doc with id 2
+[2014-02-18 15:43:52,130][INFO ][percolator               ] --> Percolate existing doc with id 3
+[2014-02-18 15:43:52,132][INFO ][percolator               ] --> Percolate existing doc with id 4
+[2014-02-18 15:43:52,134][INFO ][percolator               ] --> Search normals docs, percolate queries must not be included
+[2014-02-18 15:43:52,136][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs]: cleaning up after test
+[2014-02-18 15:43:52,139][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:52,195][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs]: cleaned up after test
+[2014-02-18 15:43:52,206][INFO ][test                     ] Test testPercolatingExistingDocs(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:52,207][INFO ][test                     ] Test percolateOnRecreatedIndex(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:52,211][INFO ][percolator               ] [PercolatorTests#percolateOnRecreatedIndex]: before test
+[2014-02-18 15:43:52,222][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:43:52,464][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:43:52,467][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:52,475][INFO ][cluster.metadata         ] [node_0] [my-queries-index] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:43:52,624][INFO ][cluster.metadata         ] [node_0] [my-queries-index] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:52,742][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:52,786][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:43:53,040][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:43:53,043][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:53,084][INFO ][percolator               ] [PercolatorTests#percolateOnRecreatedIndex]: cleaning up after test
+[2014-02-18 15:43:53,085][INFO ][cluster.metadata         ] [node_0] [my-queries-index] deleting index
+[2014-02-18 15:43:53,128][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:53,145][INFO ][percolator               ] [PercolatorTests#percolateOnRecreatedIndex]: cleaned up after test
+[2014-02-18 15:43:53,146][INFO ][test                     ] Test percolateOnRecreatedIndex(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:53,146][INFO ][test                     ] Test percolateWithSizeField(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:53,152][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:53,180][INFO ][percolator               ] [PercolatorTests#percolateWithSizeField]: before test
+[2014-02-18 15:43:53,193][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:43:53,468][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:53,470][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:53,553][INFO ][percolator               ] --> percolate a document
+[2014-02-18 15:43:53,555][INFO ][percolator               ] [PercolatorTests#percolateWithSizeField]: cleaning up after test
+[2014-02-18 15:43:53,556][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:53,577][INFO ][percolator               ] [PercolatorTests#percolateWithSizeField]: cleaned up after test
+[2014-02-18 15:43:53,581][INFO ][test                     ] Test percolateWithSizeField(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:53,582][INFO ][test                     ] Test testPercolateSorting_unsupportedField(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:53,586][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:53,609][INFO ][percolator               ] [PercolatorTests#testPercolateSorting_unsupportedField]: before test
+[2014-02-18 15:43:53,617][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:53,970][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:54,095][INFO ][percolator               ] [PercolatorTests#testPercolateSorting_unsupportedField]: cleaning up after test
+[2014-02-18 15:43:54,097][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:43:54,125][INFO ][percolator               ] [PercolatorTests#testPercolateSorting_unsupportedField]: cleaned up after test
+[2014-02-18 15:43:54,129][INFO ][test                     ] Test testPercolateSorting_unsupportedField(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:54,130][INFO ][test                     ] Test testPercolateStatistics(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:54,135][INFO ][percolator               ] [PercolatorTests#testPercolateStatistics]: before test
+[2014-02-18 15:43:54,148][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:54,459][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:54,461][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:54,537][INFO ][percolator               ] --> First percolate request
+[2014-02-18 15:43:54,541][INFO ][percolator               ] --> Second percolate request
+[2014-02-18 15:43:54,548][INFO ][percolator               ] [PercolatorTests#testPercolateStatistics]: cleaning up after test
+[2014-02-18 15:43:54,550][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:54,581][INFO ][percolator               ] [PercolatorTests#testPercolateStatistics]: cleaned up after test
+[2014-02-18 15:43:54,581][INFO ][test                     ] Test testPercolateStatistics(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:54,582][INFO ][test                     ] Test testPercolatingExistingDocs_versionCheck(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:54,585][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:54,609][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs_versionCheck]: before test
+[2014-02-18 15:43:54,617][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:54,776][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:55,044][INFO ][percolator               ] --> Adding docs
+[2014-02-18 15:43:55,046][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:43:55,056][INFO ][percolator               ] --> registering queries
+[2014-02-18 15:43:55,059][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:55,303][INFO ][percolator               ] --> Percolate existing doc with id 2 and version 1
+[2014-02-18 15:43:55,306][INFO ][percolator               ] --> Percolate existing doc with id 2 and version 2
+[2014-02-18 15:43:55,309][INFO ][percolator               ] --> Index doc with id for the second time
+[2014-02-18 15:43:55,312][INFO ][percolator               ] --> Percolate existing doc with id 2 and version 2
+[2014-02-18 15:43:55,313][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs_versionCheck]: cleaning up after test
+[2014-02-18 15:43:55,314][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:55,382][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs_versionCheck]: cleaned up after test
+[2014-02-18 15:43:55,390][INFO ][test                     ] Test testPercolatingExistingDocs_versionCheck(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:55,390][INFO ][test                     ] Test testPercolateSortingWithNoSize(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:55,395][INFO ][percolator               ] [PercolatorTests#testPercolateSortingWithNoSize]: before test
+[2014-02-18 15:43:55,404][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:55,728][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:55,853][INFO ][percolator               ] [PercolatorTests#testPercolateSortingWithNoSize]: cleaning up after test
+[2014-02-18 15:43:55,854][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:43:55,892][INFO ][percolator               ] [PercolatorTests#testPercolateSortingWithNoSize]: cleaned up after test
+[2014-02-18 15:43:55,893][INFO ][test                     ] Test testPercolateSortingWithNoSize(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:55,894][INFO ][test                     ] Test testSimple2(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:55,898][INFO ][percolator               ] [PercolatorTests#testSimple2]: before test
+[2014-02-18 15:43:55,901][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:55,957][INFO ][cluster.metadata         ] [node_0] [index] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:43:55,992][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:43:56,036][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:56,050][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:43:56,147][INFO ][cluster.metadata         ] [node_0] [test1] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:56,979][INFO ][percolator               ] [PercolatorTests#testSimple2]: cleaning up after test
+[2014-02-18 15:43:56,981][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:56,993][INFO ][cluster.metadata         ] [node_0] [index] deleting index
+[2014-02-18 15:43:57,002][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:43:57,565][INFO ][percolator               ] [PercolatorTests#testSimple2]: cleaned up after test
+[2014-02-18 15:43:57,569][INFO ][test                     ] Test testSimple2(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:57,570][INFO ][test                     ] Test testPercolatingExistingDocs_routing(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:57,573][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:57,597][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:57,618][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs_routing]: before test
+[2014-02-18 15:43:57,626][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:57,986][INFO ][percolator               ] --> Adding docs
+[2014-02-18 15:43:57,987][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:43:57,993][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:58,045][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:58,048][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:58,239][INFO ][percolator               ] --> Percolate existing doc with id 1
+[2014-02-18 15:43:58,241][INFO ][percolator               ] --> Percolate existing doc with id 2
+[2014-02-18 15:43:58,253][INFO ][percolator               ] --> Percolate existing doc with id 3
+[2014-02-18 15:43:58,255][INFO ][percolator               ] --> Percolate existing doc with id 4
+[2014-02-18 15:43:58,263][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs_routing]: cleaning up after test
+[2014-02-18 15:43:58,264][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:58,307][INFO ][percolator               ] [PercolatorTests#testPercolatingExistingDocs_routing]: cleaned up after test
+[2014-02-18 15:43:58,317][INFO ][test                     ] Test testPercolatingExistingDocs_routing(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:58,317][INFO ][test                     ] Test testPercolateQueriesWithRouting(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:58,321][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:58,344][INFO ][percolator               ] [PercolatorTests#testPercolateQueriesWithRouting]: before test
+[2014-02-18 15:43:58,351][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:43:58,604][INFO ][percolator               ] --> register a queries
+[2014-02-18 15:43:58,605][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:58,676][INFO ][percolator               ] --> Percolate doc with no routing
+[2014-02-18 15:43:58,678][INFO ][percolator               ] --> Percolate doc with routing=0
+[2014-02-18 15:43:58,680][INFO ][percolator               ] --> Percolate doc with routing=1
+[2014-02-18 15:43:58,682][INFO ][percolator               ] [PercolatorTests#testPercolateQueriesWithRouting]: cleaning up after test
+[2014-02-18 15:43:58,684][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:58,717][INFO ][percolator               ] [PercolatorTests#testPercolateQueriesWithRouting]: cleaned up after test
+[2014-02-18 15:43:58,722][INFO ][test                     ] Test testPercolateQueriesWithRouting(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:58,723][INFO ][test                     ] Test createIndexAndThenRegisterPercolator(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:58,730][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:58,757][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:58,782][INFO ][percolator               ] [PercolatorTests#createIndexAndThenRegisterPercolator]: before test
+[2014-02-18 15:43:58,792][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:43:59,022][INFO ][percolator               ] --> register a query
+[2014-02-18 15:43:59,024][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:59,105][INFO ][percolator               ] --> delete the index
+[2014-02-18 15:43:59,105][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:43:59,116][INFO ][percolator               ] --> make sure percolated queries for it have been deleted as well
+[2014-02-18 15:43:59,116][INFO ][percolator               ] [PercolatorTests#createIndexAndThenRegisterPercolator]: cleaning up after test
+[2014-02-18 15:43:59,120][INFO ][percolator               ] [PercolatorTests#createIndexAndThenRegisterPercolator]: cleaned up after test
+[2014-02-18 15:43:59,126][INFO ][test                     ] Test createIndexAndThenRegisterPercolator(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:59,127][INFO ][test                     ] Test testPercolateOnEmptyIndex(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:59,130][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:59,153][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:59,180][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:59,207][INFO ][percolator               ] [PercolatorTests#testPercolateOnEmptyIndex]: before test
+[2014-02-18 15:43:59,216][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:59,516][INFO ][percolator               ] [PercolatorTests#testPercolateOnEmptyIndex]: cleaning up after test
+[2014-02-18 15:43:59,517][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:43:59,576][INFO ][percolator               ] [PercolatorTests#testPercolateOnEmptyIndex]: cleaned up after test
+[2014-02-18 15:43:59,589][INFO ][test                     ] Test testPercolateOnEmptyIndex(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:43:59,590][INFO ][test                     ] Test multiplePercolators(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:43:59,595][INFO ][percolator               ] [PercolatorTests#multiplePercolators]: before test
+[2014-02-18 15:43:59,605][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:43:59,840][INFO ][percolator               ] --> register a query 1
+[2014-02-18 15:43:59,841][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:43:59,901][INFO ][percolator               ] --> register a query 2
+[2014-02-18 15:43:59,904][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:59,999][INFO ][percolator               ] [PercolatorTests#multiplePercolators]: cleaning up after test
+[2014-02-18 15:44:00,002][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:00,052][INFO ][percolator               ] [PercolatorTests#multiplePercolators]: cleaned up after test
+[2014-02-18 15:44:00,059][INFO ][test                     ] Test multiplePercolators(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:44:00,059][INFO ][test                     ] Test dynamicAddingRemovingQueries(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:44:00,065][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:00,090][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:00,117][INFO ][percolator               ] [PercolatorTests#dynamicAddingRemovingQueries]: before test
+[2014-02-18 15:44:00,129][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:00,151][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:00,386][INFO ][percolator               ] --> register a query 1
+[2014-02-18 15:44:00,388][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:44:00,422][INFO ][percolator               ] --> register a query 2
+[2014-02-18 15:44:00,509][INFO ][percolator               ] --> register a query 3
+[2014-02-18 15:44:00,553][INFO ][percolator               ] --> deleting query 1
+[2014-02-18 15:44:00,558][INFO ][percolator               ] [PercolatorTests#dynamicAddingRemovingQueries]: cleaning up after test
+[2014-02-18 15:44:00,559][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:00,580][INFO ][percolator               ] [PercolatorTests#dynamicAddingRemovingQueries]: cleaned up after test
+[2014-02-18 15:44:00,591][INFO ][test                     ] Test dynamicAddingRemovingQueries(org.elasticsearch.percolator.PercolatorTests) finished
+[2014-02-18 15:44:00,592][INFO ][test                     ] Test testPercolateNotEmptyIndexButNoRefresh(org.elasticsearch.percolator.PercolatorTests) started
+[2014-02-18 15:44:00,595][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:00,622][INFO ][percolator               ] [PercolatorTests#testPercolateNotEmptyIndexButNoRefresh]: before test
+[2014-02-18 15:44:00,623][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:00,655][INFO ][cluster.metadata         ] [node_0] [my-index] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:00,999][INFO ][cluster.metadata         ] [node_0] [my-index] update_mapping [.percolator] (dynamic)
+[2014-02-18 15:44:01,005][INFO ][percolator               ] [PercolatorTests#testPercolateNotEmptyIndexButNoRefresh]: cleaning up after test
+[2014-02-18 15:44:01,006][INFO ][cluster.metadata         ] [node_0] [my-index] deleting index
+[2014-02-18 15:44:01,046][INFO ][percolator               ] [PercolatorTests#testPercolateNotEmptyIndexButNoRefresh]: cleaned up after test
+[2014-02-18 15:44:01,054][INFO ][test                     ] Test testPercolateNotEmptyIndexButNoRefresh(org.elasticsearch.percolator.PercolatorTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,1312 @@
+<testsuite errors="0" failures="0" tests="16" skipped="0" name="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" hostname="nohost.nodomain" time="19.81" timestamp="2014-02-18T15:38:10">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="snapshotClosedIndexTest" time="0.863"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="includeGlobalStateTest" time="1.208"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="moveShardWhileSnapshottingTest" time="0.841"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="renameOnRestoreTest" time="1.895"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="deletionOfFailingToRecoverIndexShouldStopRestore" time="1.173"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="deleteRepositoryWhileSnapshottingTest" time="0.74"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="snapshotFileFailureDuringSnapshotTest" time="0.601"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="deleteSnapshotTest" time="4.722"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="unallocatedShardsTest" time="0.034"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="basicWorkFlowTest" time="2.951"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="dataFileFailureDuringSnapshotTest" time="0.616"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="emptySnapshotTest" time="0.105"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="dataFileFailureDuringRestoreTest" time="1.3"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="throttlingTest" time="1.471"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="restoreTemplatesTest" time="0.062"/>
+   <testcase classname="org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests" name="urlRepositoryTest" time="1.157"/>
+   <system-out><![CDATA[[2014-02-18 15:38:10,910][INFO ][test                     ] Test snapshotClosedIndexTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:10,914][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:10,948][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#snapshotClosedIndexTest]: before test
+[2014-02-18 15:38:10,948][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:10,977][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:10,988][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:11,230][INFO ][cluster.metadata         ] [node_0] [test-idx-closed] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:11,628][INFO ][snapshots                ] -->  closing index test-idx-closed
+[2014-02-18 15:38:11,628][INFO ][cluster.metadata         ] [node_0] closing indices [[test-idx-closed]]
+[2014-02-18 15:38:11,634][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:11,639][TRACE][snapshots                ] [node_0] [test-repo][test-snap] creating snapshot for indices [[test-idx]]
+[2014-02-18 15:38:11,685][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][3]] with status [SUCCESS]
+[2014-02-18 15:38:11,687][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][4]] with status [SUCCESS]
+[2014-02-18 15:38:11,688][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][2]] with status [SUCCESS]
+[2014-02-18 15:38:11,689][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][1]] with status [SUCCESS]
+[2014-02-18 15:38:11,690][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][0]] with status [SUCCESS]
+[2014-02-18 15:38:11,692][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:11,692][TRACE][snapshots                ] [node_0] [test-repo:test-snap] finalizing snapshot in repository, state: [SUCCESS], failure[null]
+[2014-02-18 15:38:11,701][INFO ][snapshots                ] -->  deleting snapshot
+[2014-02-18 15:38:11,703][TRACE][snapshots                ] [node_0] deleted snapshot is not running - deleting files
+[2014-02-18 15:38:11,713][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#snapshotClosedIndexTest]: cleaning up after test
+[2014-02-18 15:38:11,715][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:11,742][INFO ][cluster.metadata         ] [node_0] [test-idx-closed] deleting index
+[2014-02-18 15:38:11,766][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:11,768][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#snapshotClosedIndexTest]: cleaned up after test
+[2014-02-18 15:38:11,772][INFO ][test                     ] Test snapshotClosedIndexTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:11,773][INFO ][test                     ] Test includeGlobalStateTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:11,776][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:38:11,800][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#includeGlobalStateTest]: before test
+[2014-02-18 15:38:11,800][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:11,802][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:11,804][INFO ][snapshots                ] -->  creating test template
+[2014-02-18 15:38:11,808][INFO ][snapshots                ] --> snapshot without global state
+[2014-02-18 15:38:11,858][INFO ][snapshots                ] --> snapshot with global state
+[2014-02-18 15:38:11,872][INFO ][snapshots                ] -->  delete test template
+[2014-02-18 15:38:11,877][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:38:11,941][INFO ][snapshots                ] --> try restoring cluster state from snapshot without global state
+[2014-02-18 15:38:11,952][INFO ][snapshots                ] --> check that template wasn't restored
+[2014-02-18 15:38:11,954][INFO ][snapshots                ] --> restore cluster state
+[2014-02-18 15:38:11,967][INFO ][snapshots                ] --> check that template is restored
+[2014-02-18 15:38:11,984][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:12,337][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:12,341][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:12,530][INFO ][snapshots                ] --> snapshot without global state but with indices
+[2014-02-18 15:38:12,559][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-no-global-state-with-index] is done
+[2014-02-18 15:38:12,564][INFO ][snapshots                ] -->  delete test template and index 
+[2014-02-18 15:38:12,564][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:12,603][INFO ][snapshots                ] --> try restoring index and cluster state from snapshot without global state
+[2014-02-18 15:38:12,727][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap-no-global-state-with-index] is done
+[2014-02-18 15:38:12,931][INFO ][snapshots                ] --> check that template wasn't restored but index was
+[2014-02-18 15:38:12,932][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#includeGlobalStateTest]: cleaning up after test
+[2014-02-18 15:38:12,933][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:12,967][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:12,968][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#includeGlobalStateTest]: cleaned up after test
+[2014-02-18 15:38:12,981][INFO ][test                     ] Test includeGlobalStateTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:12,981][INFO ][test                     ] Test moveShardWhileSnapshottingTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:12,984][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#moveShardWhileSnapshottingTest]: before test
+[2014-02-18 15:38:12,985][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:12,990][INFO ][snapshots.mockstore      ] [node_0] starting mock repository with random prefix gKYGkPDckV
+[2014-02-18 15:38:12,992][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:12,994][INFO ][snapshots.mockstore      ] [node_2] starting mock repository with random prefix gKYGkPDckV
+[2014-02-18 15:38:12,995][INFO ][snapshots.mockstore      ] [node_1] starting mock repository with random prefix gKYGkPDckV
+[2014-02-18 15:38:13,004][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:38:13,004][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,004][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,005][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,005][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,005][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,065][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:13,065][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,065][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,065][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,065][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,066][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,071][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:13,080][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:13,243][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:13,250][INFO ][snapshots                ] --> waiting for block to kick in
+[2014-02-18 15:38:13,254][INFO ][snapshots.mockstore      ] [node_2] blocking I/O operation for file [__0] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:13,256][INFO ][snapshots.mockstore      ] [node_2] blocking I/O operation for file [__0] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:13,350][INFO ][snapshots                ] --> execution was blocked on node [node_2], moving shards away from this node
+[2014-02-18 15:38:13,351][TRACE][cluster.routing.allocation.decider] [node_0] Shard [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] can not remain on node [YDkOVpQ0RLKhdd4JNL-RIg] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,351][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,351][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Shard [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] can not remain on node [YDkOVpQ0RLKhdd4JNL-RIg] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,352][TRACE][cluster.routing.allocation.decider] [node_0] Shard [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] can not remain on node [YDkOVpQ0RLKhdd4JNL-RIg] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,353][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,354][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,355][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,356][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,380][INFO ][snapshots                ] --> unblocking blocked node
+[2014-02-18 15:38:13,380][INFO ][snapshots                ] --> waiting for completion
+[2014-02-18 15:38:13,398][TRACE][cluster.routing.allocation.decider] [node_0] Shard [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] can not remain on node [YDkOVpQ0RLKhdd4JNL-RIg] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Shard [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] can not remain on node [YDkOVpQ0RLKhdd4JNL-RIg] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,399][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Shard [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] can not remain on node [YDkOVpQ0RLKhdd4JNL-RIg] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,400][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,401][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,402][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,402][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,402][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,402][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][0]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,402][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,402][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,403][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][4]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,403][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,403][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [Y-GAf-d9TnWBgKZR_Cw0qw] due to [SnapshotInProgressAllocationDecider]
+[2014-02-18 15:38:13,403][TRACE][cluster.routing.allocation.decider] [node_0] Preventing snapshotted shard [[test-idx][2]] to be moved from node [YDkOVpQ0RLKhdd4JNL-RIg]
+[2014-02-18 15:38:13,591][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:13,686][INFO ][snapshots                ] Number of failed shards [0]
+[2014-02-18 15:38:13,686][INFO ][snapshots                ] --> done
+[2014-02-18 15:38:13,687][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:13,688][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:13,706][INFO ][snapshots                ] --> replace mock repository with real one at the same location
+[2014-02-18 15:38:13,708][INFO ][repositories             ] [node_0] update repository [test-repo]
+[2014-02-18 15:38:13,709][INFO ][snapshots                ] --> restore index
+[2014-02-18 15:38:13,713][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,713][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,713][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,714][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,714][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,777][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,777][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,777][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,781][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,781][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,782][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,782][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,787][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,787][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,787][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,788][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,788][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:13,792][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:13,794][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#moveShardWhileSnapshottingTest]: cleaning up after test
+[2014-02-18 15:38:13,795][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:13,811][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:13,812][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#moveShardWhileSnapshottingTest]: cleaned up after test
+[2014-02-18 15:38:13,822][INFO ][test                     ] Test moveShardWhileSnapshottingTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:13,823][INFO ][test                     ] Test renameOnRestoreTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:13,827][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:13,853][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#renameOnRestoreTest]: before test
+[2014-02-18 15:38:13,854][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:13,855][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:13,867][INFO ][cluster.metadata         ] [node_0] [test-idx-1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:14,023][INFO ][cluster.metadata         ] [node_0] [test-idx-2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:14,365][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:14,367][INFO ][cluster.metadata         ] [node_0] [test-idx-1] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:14,372][INFO ][cluster.metadata         ] [node_0] [test-idx-2] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:14,743][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:14,798][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:14,801][INFO ][snapshots                ] --> restore indices with different names
+[2014-02-18 15:38:15,209][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:15,212][INFO ][snapshots                ] --> close indices
+[2014-02-18 15:38:15,213][INFO ][cluster.metadata         ] [node_0] closing indices [[test-idx-1, test-idx-2-copy]]
+[2014-02-18 15:38:15,227][INFO ][snapshots                ] --> restore indices with different names
+[2014-02-18 15:38:15,548][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:15,550][INFO ][snapshots                ] --> try renaming indices using the same name
+[2014-02-18 15:38:15,551][WARN ][snapshots                ] [node_0] [test-repo][test-snap] failed to restore snapshot
+org.elasticsearch.snapshots.SnapshotRestoreException: [test-repo:test-snap] indices [test-idx-2] and [test-idx-1] are renamed into the same index [same-name]
+	at org.elasticsearch.snapshots.RestoreService.restoreSnapshot(RestoreService.java:138)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:87)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:41)
+	at org.elasticsearch.action.support.master.TransportMasterNodeOperationAction$2.run(TransportMasterNodeOperationAction.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:38:15,555][INFO ][snapshots                ] --> try renaming indices using the same name
+[2014-02-18 15:38:15,557][WARN ][snapshots                ] [node_0] [test-repo][test-snap] failed to restore snapshot
+org.elasticsearch.snapshots.SnapshotRestoreException: [test-repo:test-snap] indices [test-idx-2] and [test-idx-1] are renamed into the same index [test-idx-1]
+	at org.elasticsearch.snapshots.RestoreService.restoreSnapshot(RestoreService.java:138)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:87)
+	at org.elasticsearch.action.admin.cluster.snapshots.restore.TransportRestoreSnapshotAction.masterOperation(TransportRestoreSnapshotAction.java:41)
+	at org.elasticsearch.action.support.master.TransportMasterNodeOperationAction$2.run(TransportMasterNodeOperationAction.java:145)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:38:15,559][INFO ][snapshots                ] --> try renaming indices using invalid index name
+[2014-02-18 15:38:15,560][WARN ][snapshots                ] [node_0] [test-repo:test-snap] failed to restore snapshot
+org.elasticsearch.indices.InvalidIndexNameException: [__WRONG__] Invalid index name [__WRONG__], must not start with '_'
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.validateIndexName(MetaDataCreateIndexService.java:164)
+	at org.elasticsearch.snapshots.RestoreService$1.execute(RestoreService.java:177)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:38:15,563][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#renameOnRestoreTest]: cleaning up after test
+[2014-02-18 15:38:15,564][INFO ][cluster.metadata         ] [node_0] [test-idx-1-copy] deleting index
+[2014-02-18 15:38:15,596][INFO ][cluster.metadata         ] [node_0] [test-idx-2] deleting index
+[2014-02-18 15:38:15,638][INFO ][cluster.metadata         ] [node_0] [test-idx-2-copy] deleting index
+[2014-02-18 15:38:15,676][INFO ][cluster.metadata         ] [node_0] [test-idx-1] deleting index
+[2014-02-18 15:38:15,712][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:15,713][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#renameOnRestoreTest]: cleaned up after test
+[2014-02-18 15:38:15,717][INFO ][test                     ] Test renameOnRestoreTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:15,718][INFO ][test                     ] Test deletionOfFailingToRecoverIndexShouldStopRestore(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:15,722][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:38:15,747][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deletionOfFailingToRecoverIndexShouldStopRestore]: before test
+[2014-02-18 15:38:15,747][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:15,749][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:15,759][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:16,039][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:16,041][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:16,278][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:16,278][TRACE][snapshots                ] [node_0] [test-repo][test-snap] creating snapshot for indices [[test-idx]]
+[2014-02-18 15:38:16,306][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][1]] with status [SUCCESS]
+[2014-02-18 15:38:16,308][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][2]] with status [SUCCESS]
+[2014-02-18 15:38:16,313][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][0]] with status [SUCCESS]
+[2014-02-18 15:38:16,315][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][4]] with status [SUCCESS]
+[2014-02-18 15:38:16,319][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][3]] with status [SUCCESS]
+[2014-02-18 15:38:16,319][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:16,319][TRACE][snapshots                ] [node_0] [test-repo:test-snap] finalizing snapshot in repository, state: [SUCCESS], failure[null]
+[2014-02-18 15:38:16,323][INFO ][snapshots                ] -->  update repository with mock version
+[2014-02-18 15:38:16,324][INFO ][snapshots.mockstore      ] [node_0] starting mock repository with random prefix flKCDAUSOB
+[2014-02-18 15:38:16,324][INFO ][repositories             ] [node_0] update repository [test-repo]
+[2014-02-18 15:38:16,326][INFO ][snapshots.mockstore      ] [node_1] starting mock repository with random prefix flKCDAUSOB
+[2014-02-18 15:38:16,326][INFO ][snapshots.mockstore      ] [node_2] starting mock repository with random prefix flKCDAUSOB
+[2014-02-18 15:38:16,327][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:16,327][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:16,365][INFO ][snapshots                ] --> restore index after deletion
+[2014-02-18 15:38:16,365][INFO ][snapshots                ] --> wait for the index to appear
+[2014-02-18 15:38:16,396][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,397][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__0] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,398][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,398][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__1] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,400][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,401][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__0] at path [[indices][test-idx][1]]
+[2014-02-18 15:38:16,401][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,401][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__2] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,402][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,403][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__3] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,403][WARN ][indices.cluster          ] [node_1] [test-idx][2] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][2] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,405][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,406][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__1] at path [[indices][test-idx][1]]
+[2014-02-18 15:38:16,407][WARN ][cluster.action.shard     ] [node_1] [test-idx][2] sending failed shard for [test-idx][2], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,411][WARN ][cluster.action.shard     ] [node_0] [test-idx][2] received shard failed for [test-idx][2], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,414][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,414][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__0] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,415][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,416][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__2] at path [[indices][test-idx][1]]
+[2014-02-18 15:38:16,417][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,417][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__3] at path [[indices][test-idx][1]]
+[2014-02-18 15:38:16,417][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,418][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__1] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,418][WARN ][indices.cluster          ] [node_2] [test-idx][1] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][1] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][1] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][1] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][1] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,423][WARN ][cluster.action.shard     ] [node_2] [test-idx][1] sending failed shard for [test-idx][1], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][1] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][1] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][1] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][1] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,423][WARN ][cluster.action.shard     ] [node_0] [test-idx][1] received shard failed for [test-idx][1], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][1] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][1] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][1] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][1] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,424][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,424][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__2] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,428][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,429][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__3] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,429][WARN ][indices.cluster          ] [node_2] [test-idx][4] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][4] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][4] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][4] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][4] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,431][WARN ][cluster.action.shard     ] [node_2] [test-idx][4] sending failed shard for [test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][4] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][4] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][4] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][4] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,432][WARN ][cluster.action.shard     ] [node_0] [test-idx][4] received shard failed for [test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][4] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][4] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][4] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][4] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,435][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,437][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__0] at path [[indices][test-idx][0]]
+[2014-02-18 15:38:16,438][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,438][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__1] at path [[indices][test-idx][0]]
+[2014-02-18 15:38:16,443][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,443][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__2] at path [[indices][test-idx][0]]
+[2014-02-18 15:38:16,444][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,444][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__3] at path [[indices][test-idx][0]]
+[2014-02-18 15:38:16,446][WARN ][indices.cluster          ] [node_0] [test-idx][0] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][0] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,448][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,449][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__0] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:16,449][WARN ][cluster.action.shard     ] [node_0] [test-idx][0] sending failed shard for [test-idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][0] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][0] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][0] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][0] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,449][WARN ][cluster.action.shard     ] [node_0] [test-idx][0] received shard failed for [test-idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][0] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][0] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][0] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][0] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,449][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,449][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__1] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:16,454][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,454][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__2] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:16,455][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,455][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__3] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:16,455][WARN ][indices.cluster          ] [node_0] [test-idx][3] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][3] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,457][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] sending failed shard for [test-idx][3], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,458][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/2/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,458][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] received shard failed for [test-idx][3], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,458][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__0] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,459][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/2/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,459][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__1] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,460][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/4/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,461][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/2/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,461][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__2] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,461][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__0] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,462][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/4/__1/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,462][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__1] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,464][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/2/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,465][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__3] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:16,465][WARN ][indices.cluster          ] [node_2] [test-idx][2] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][2] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,466][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:16,467][WARN ][cluster.action.shard     ] [node_2] [test-idx][2] sending failed shard for [test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,468][WARN ][cluster.action.shard     ] [node_0] [test-idx][2] received shard failed for [test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,468][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/4/__2/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,470][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__2] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,470][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:16,470][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/1/__0/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,471][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/4/__3/flKCDAUSOB/1] [true]
+[2014-02-18 15:38:16,471][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__3] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:16,471][WARN ][indices.cluster          ] [node_1] [test-idx][4] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][4] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][4] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][4] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][4] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:16,476][WARN ][cluster.action.shard     ] [node_1] [test-idx][4] sending failed shard for [test-idx][4], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][4] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][4] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][4] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][4] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,471][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__0] at path [[indices][test-idx][1]]
+[2014-02-18 15:38:16,476][WARN ][cluster.action.shard     ] [node_0] [test-idx][4] received shard failed for [test-idx][4], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [8bAmMuw_SUeUeoYJmOCbBQ], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][4] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][4] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][4] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][4] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:16,488][TRACE][snapshots                ] [node_0] [test-repo:test-snap] failing running shard restore [[test-idx][0]]
+[2014-02-18 15:38:16,488][TRACE][snapshots                ] [node_0] [test-repo:test-snap] failing running shard restore [[test-idx][1]]
+[2014-02-18 15:38:16,488][TRACE][snapshots                ] [node_0] [test-repo:test-snap] failing running shard restore [[test-idx][2]]
+[2014-02-18 15:38:16,488][TRACE][snapshots                ] [node_0] [test-repo:test-snap] failing running shard restore [[test-idx][3]]
+[2014-02-18 15:38:16,488][TRACE][snapshots                ] [node_0] [test-repo:test-snap] failing running shard restore [[test-idx][4]]
+[2014-02-18 15:38:16,495][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][0]] with status [FAILURE]
+[2014-02-18 15:38:16,495][INFO ][snapshots                ] --> get restore results
+[2014-02-18 15:38:16,496][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][1]] with status [FAILURE]
+[2014-02-18 15:38:16,497][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][2]] with status [FAILURE]
+[2014-02-18 15:38:16,498][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][3]] with status [FAILURE]
+[2014-02-18 15:38:16,498][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][4]] with status [FAILURE]
+[2014-02-18 15:38:16,498][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:16,499][INFO ][snapshots                ] --> restoring working repository
+[2014-02-18 15:38:16,501][INFO ][repositories             ] [node_0] update repository [test-repo]
+[2014-02-18 15:38:16,502][INFO ][snapshots                ] --> trying to restore index again
+[2014-02-18 15:38:16,535][TRACE][snapshots                ] [node_1] [test-repo:test-snap] successfully restored shard  [[test-idx][2]]
+[2014-02-18 15:38:16,540][TRACE][snapshots                ] [node_2] [test-repo:test-snap] successfully restored shard  [[test-idx][1]]
+[2014-02-18 15:38:16,549][TRACE][snapshots                ] [node_2] [test-repo:test-snap] successfully restored shard  [[test-idx][4]]
+[2014-02-18 15:38:16,567][TRACE][snapshots                ] [node_0] [test-repo:test-snap] successfully restored shard  [[test-idx][0]]
+[2014-02-18 15:38:16,577][TRACE][snapshots                ] [node_0] [test-repo:test-snap] successfully restored shard  [[test-idx][3]]
+[2014-02-18 15:38:16,627][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][2]] with status [SUCCESS]
+[2014-02-18 15:38:16,629][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][1]] with status [SUCCESS]
+[2014-02-18 15:38:16,633][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][4]] with status [SUCCESS]
+[2014-02-18 15:38:16,635][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][0]] with status [SUCCESS]
+[2014-02-18 15:38:16,636][TRACE][snapshots                ] [node_0] [test-repo:test-snap] Updating shard [[test-idx][3]] with status [SUCCESS]
+[2014-02-18 15:38:16,637][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:16,841][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deletionOfFailingToRecoverIndexShouldStopRestore]: cleaning up after test
+[2014-02-18 15:38:16,842][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:16,878][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:16,879][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deletionOfFailingToRecoverIndexShouldStopRestore]: cleaned up after test
+[2014-02-18 15:38:16,891][INFO ][test                     ] Test deletionOfFailingToRecoverIndexShouldStopRestore(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:16,891][INFO ][test                     ] Test deleteRepositoryWhileSnapshottingTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:16,896][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deleteRepositoryWhileSnapshottingTest]: before test
+[2014-02-18 15:38:16,897][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:16,898][INFO ][snapshots.mockstore      ] [node_0] starting mock repository with random prefix Hutaubabal
+[2014-02-18 15:38:16,899][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:16,900][INFO ][snapshots.mockstore      ] [node_1] starting mock repository with random prefix Hutaubabal
+[2014-02-18 15:38:16,901][INFO ][snapshots.mockstore      ] [node_2] starting mock repository with random prefix Hutaubabal
+[2014-02-18 15:38:16,910][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:38:16,911][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,911][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,911][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,911][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,911][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[null], [P], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,959][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:16,959][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,959][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,959][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,959][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,959][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:16,977][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:17,070][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:17,077][INFO ][snapshots                ] --> waiting for block to kick in
+[2014-02-18 15:38:17,086][INFO ][snapshots.mockstore      ] [node_2] blocking I/O operation for file [__0] at path [[indices][test-idx][4]]
+[2014-02-18 15:38:17,087][INFO ][snapshots.mockstore      ] [node_2] blocking I/O operation for file [__0] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:17,178][INFO ][snapshots                ] --> execution was blocked on node [node_2], trying to delete repository
+[2014-02-18 15:38:17,181][INFO ][snapshots                ] --> in-use repository deletion failed
+[2014-02-18 15:38:17,181][INFO ][snapshots                ] --> trying to move repository to another location
+[2014-02-18 15:38:17,182][WARN ][repositories             ] [node_0] failed to create repository [test-repo]
+org.elasticsearch.ElasticsearchIllegalStateException: trying to modify or unregister repository that is currently used 
+	at org.elasticsearch.repositories.RepositoriesService.ensureRepositoryNotInUse(RepositoriesService.java:400)
+	at org.elasticsearch.repositories.RepositoriesService.access$000(RepositoriesService.java:55)
+	at org.elasticsearch.repositories.RepositoriesService$1.execute(RepositoriesService.java:93)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:38:17,184][INFO ][snapshots                ] --> in-use repository replacement failed
+[2014-02-18 15:38:17,184][INFO ][snapshots                ] --> trying to create a repository with different name
+[2014-02-18 15:38:17,185][INFO ][repositories             ] [node_0] put repository [test-repo-2]
+[2014-02-18 15:38:17,187][INFO ][snapshots                ] --> unblocking blocked node
+[2014-02-18 15:38:17,187][INFO ][snapshots                ] --> waiting for completion
+[2014-02-18 15:38:17,403][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:17,492][INFO ][snapshots                ] Number of failed shards [0]
+[2014-02-18 15:38:17,493][INFO ][snapshots                ] --> done
+[2014-02-18 15:38:17,493][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:17,493][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:17,510][INFO ][snapshots                ] --> replace mock repository with real one at the same location
+[2014-02-18 15:38:17,511][INFO ][repositories             ] [node_0] update repository [test-repo]
+[2014-02-18 15:38:17,513][INFO ][snapshots                ] --> restore index
+[2014-02-18 15:38:17,516][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,517][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,517][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,517][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,517][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[null], [P], restoring[test-repo:test-snap], s[UNASSIGNED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,583][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,592][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:17,594][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,594][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,594][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,598][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][0], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,598][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][4], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,598][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][2], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,599][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][1], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,599][TRACE][cluster.routing.allocation.decider] [node_0] Can not allocate [[test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], s[STARTED]] on node [tbUF3y2YTPm1TPdTF8YBYw] due to [FilterAllocationDecider]
+[2014-02-18 15:38:17,602][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deleteRepositoryWhileSnapshottingTest]: cleaning up after test
+[2014-02-18 15:38:17,603][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:17,622][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:17,623][INFO ][repositories             ] [node_0] delete repository [test-repo-2]
+[2014-02-18 15:38:17,624][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deleteRepositoryWhileSnapshottingTest]: cleaned up after test
+[2014-02-18 15:38:17,631][INFO ][test                     ] Test deleteRepositoryWhileSnapshottingTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:17,631][INFO ][test                     ] Test snapshotFileFailureDuringSnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:17,637][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#snapshotFileFailureDuringSnapshotTest]: before test
+[2014-02-18 15:38:17,637][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:17,638][INFO ][snapshots.mockstore      ] [node_0] starting mock repository with random prefix FdfSxEnlcK
+[2014-02-18 15:38:17,639][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:17,640][INFO ][snapshots.mockstore      ] [node_2] starting mock repository with random prefix FdfSxEnlcK
+[2014-02-18 15:38:17,640][INFO ][snapshots.mockstore      ] [node_1] starting mock repository with random prefix FdfSxEnlcK
+[2014-02-18 15:38:17,649][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:17,936][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:17,938][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:18,150][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:18,152][INFO ][snapshots.mockstore      ] [node_0] checking [snapshot-test-snap/FdfSxEnlcK/1] [false]
+[2014-02-18 15:38:18,154][INFO ][snapshots.mockstore      ] [node_0] checking [metadata-test-snap/FdfSxEnlcK/1] [false]
+[2014-02-18 15:38:18,156][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/snapshot-test-snap/FdfSxEnlcK/1] [true]
+[2014-02-18 15:38:18,156][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [snapshot-test-snap] at path [[indices][test-idx]]
+[2014-02-18 15:38:18,156][WARN ][snapshots                ] [node_0] failed to create snapshot [test-repo:test-snap]
+org.elasticsearch.snapshots.SnapshotCreationException: [test-repo:test-snap] failed to create snapshot
+	at org.elasticsearch.repositories.blobstore.BlobStoreRepository.initializeSnapshot(BlobStoreRepository.java:246)
+	at org.elasticsearch.snapshots.SnapshotsService.beginSnapshot(SnapshotsService.java:265)
+	at org.elasticsearch.snapshots.SnapshotsService.access$600(SnapshotsService.java:81)
+	at org.elasticsearch.snapshots.SnapshotsService$1$1.run(SnapshotsService.java:191)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:218)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.writeBlob(MockRepository.java:263)
+	at org.elasticsearch.repositories.blobstore.BlobStoreRepository.initializeSnapshot(BlobStoreRepository.java:243)
+	... 6 more
+[2014-02-18 15:38:18,158][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#snapshotFileFailureDuringSnapshotTest]: cleaning up after test
+[2014-02-18 15:38:18,160][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:18,230][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:18,231][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#snapshotFileFailureDuringSnapshotTest]: cleaned up after test
+[2014-02-18 15:38:18,232][INFO ][test                     ] Test snapshotFileFailureDuringSnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:18,233][INFO ][test                     ] Test deleteSnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:18,237][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deleteSnapshotTest]: before test
+[2014-02-18 15:38:18,238][INFO ][snapshots                ] -->  creating repository at /Users/bhwang/elasticsearch/target/J0/./tests-20140219073803-339/0008 has-space
+[2014-02-18 15:38:18,239][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:18,248][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:18,522][INFO ][snapshots                ] --> creating 12 snapshots 
+[2014-02-18 15:38:18,525][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:18,664][INFO ][snapshots                ] --> snapshot 0
+[2014-02-18 15:38:18,714][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-0] is done
+[2014-02-18 15:38:18,806][INFO ][snapshots                ] --> snapshot 1
+[2014-02-18 15:38:18,887][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-1] is done
+[2014-02-18 15:38:19,037][INFO ][snapshots                ] --> snapshot 2
+[2014-02-18 15:38:19,102][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-2] is done
+[2014-02-18 15:38:19,274][INFO ][snapshots                ] --> snapshot 3
+[2014-02-18 15:38:19,331][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-3] is done
+[2014-02-18 15:38:19,483][INFO ][snapshots                ] --> snapshot 4
+[2014-02-18 15:38:19,563][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-4] is done
+[2014-02-18 15:38:19,715][INFO ][snapshots                ] --> snapshot 5
+[2014-02-18 15:38:19,792][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-5] is done
+[2014-02-18 15:38:19,935][INFO ][snapshots                ] --> snapshot 6
+[2014-02-18 15:38:20,012][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-6] is done
+[2014-02-18 15:38:20,173][INFO ][snapshots                ] --> snapshot 7
+[2014-02-18 15:38:20,262][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-7] is done
+[2014-02-18 15:38:20,430][INFO ][snapshots                ] --> snapshot 8
+[2014-02-18 15:38:20,512][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-8] is done
+[2014-02-18 15:38:20,789][INFO ][snapshots                ] --> snapshot 9
+[2014-02-18 15:38:20,954][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-9] is done
+[2014-02-18 15:38:21,111][INFO ][snapshots                ] --> snapshot 10
+[2014-02-18 15:38:21,270][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-10] is done
+[2014-02-18 15:38:21,466][INFO ][snapshots                ] --> snapshot 11
+[2014-02-18 15:38:21,535][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap-11] is done
+[2014-02-18 15:38:21,626][INFO ][snapshots                ] --> delete all snapshots except the first one and last one
+[2014-02-18 15:38:22,309][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:22,310][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:22,369][INFO ][snapshots                ] --> restore index
+[2014-02-18 15:38:22,633][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap-11] is done
+[2014-02-18 15:38:22,837][INFO ][snapshots                ] --> delete the last snapshot
+[2014-02-18 15:38:22,888][INFO ][snapshots                ] --> make sure that number of files is back to what it was when the first snapshot was made
+[2014-02-18 15:38:22,893][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deleteSnapshotTest]: cleaning up after test
+[2014-02-18 15:38:22,894][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:22,953][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:22,954][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#deleteSnapshotTest]: cleaned up after test
+[2014-02-18 15:38:22,955][INFO ][test                     ] Test deleteSnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:22,955][INFO ][test                     ] Test unallocatedShardsTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:22,960][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#unallocatedShardsTest]: before test
+[2014-02-18 15:38:22,960][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:22,962][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:22,963][INFO ][snapshots                ] -->  creating index that cannot be allocated
+[2014-02-18 15:38:22,973][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:38:22,975][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:22,984][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#unallocatedShardsTest]: cleaning up after test
+[2014-02-18 15:38:22,985][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:22,988][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:22,989][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#unallocatedShardsTest]: cleaned up after test
+[2014-02-18 15:38:22,989][INFO ][test                     ] Test unallocatedShardsTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:22,990][INFO ][test                     ] Test basicWorkFlowTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:22,993][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:23,023][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:38:23,065][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:38:23,089][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#basicWorkFlowTest]: before test
+[2014-02-18 15:38:23,089][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:23,090][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:23,101][INFO ][cluster.metadata         ] [node_0] [test-idx-1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:23,209][INFO ][cluster.metadata         ] [node_0] [test-idx-2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:23,324][INFO ][cluster.metadata         ] [node_0] [test-idx-3] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:23,674][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:23,676][INFO ][cluster.metadata         ] [node_0] [test-idx-1] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:23,683][INFO ][cluster.metadata         ] [node_0] [test-idx-2] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:23,691][INFO ][cluster.metadata         ] [node_0] [test-idx-3] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:24,610][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:24,729][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:24,738][INFO ][snapshots                ] --> delete some data
+[2014-02-18 15:38:24,851][INFO ][snapshots                ] --> close indices
+[2014-02-18 15:38:24,851][INFO ][cluster.metadata         ] [node_0] closing indices [[test-idx-1, test-idx-2]]
+[2014-02-18 15:38:24,883][INFO ][snapshots                ] --> restore all indices from the snapshot
+[2014-02-18 15:38:25,181][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:25,388][INFO ][snapshots                ] --> delete indices
+[2014-02-18 15:38:25,389][INFO ][cluster.metadata         ] [node_0] [test-idx-1] deleting index
+[2014-02-18 15:38:25,432][INFO ][cluster.metadata         ] [node_0] [test-idx-2] deleting index
+[2014-02-18 15:38:25,480][INFO ][snapshots                ] --> restore one index after deletion
+[2014-02-18 15:38:25,635][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:25,841][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#basicWorkFlowTest]: cleaning up after test
+[2014-02-18 15:38:25,842][INFO ][cluster.metadata         ] [node_0] [test-idx-1] deleting index
+[2014-02-18 15:38:25,873][INFO ][cluster.metadata         ] [node_0] [test-idx-3] deleting index
+[2014-02-18 15:38:25,927][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:25,929][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#basicWorkFlowTest]: cleaned up after test
+[2014-02-18 15:38:25,940][INFO ][test                     ] Test basicWorkFlowTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:25,941][INFO ][test                     ] Test dataFileFailureDuringSnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:25,944][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#dataFileFailureDuringSnapshotTest]: before test
+[2014-02-18 15:38:25,945][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:25,946][INFO ][snapshots.mockstore      ] [node_0] starting mock repository with random prefix fPJgGqzSQb
+[2014-02-18 15:38:25,947][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:25,948][INFO ][snapshots.mockstore      ] [node_2] starting mock repository with random prefix fPJgGqzSQb
+[2014-02-18 15:38:25,948][INFO ][snapshots.mockstore      ] [node_1] starting mock repository with random prefix fPJgGqzSQb
+[2014-02-18 15:38:25,961][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:26,268][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:26,270][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:26,458][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:26,484][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__0/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,485][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__1/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,487][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__0/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,487][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__1/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,493][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__0/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,493][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__0/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,494][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__2/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,495][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__3/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,494][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__1/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,496][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__2/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,500][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__0/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,501][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__1/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,501][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__1/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,502][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__2/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,502][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__2/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,502][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__3/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,502][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__3/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,507][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__2/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,507][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__3/fPJgGqzSQb/1] [false]
+[2014-02-18 15:38:26,510][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__3/fPJgGqzSQb/1] [true]
+[2014-02-18 15:38:26,511][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__3] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:26,511][WARN ][snapshots                ] [node_1] [[test-idx][2]] [test-repo:test-snap] failed to create snapshot
+org.elasticsearch.index.snapshots.IndexShardSnapshotFailedException: [test-idx][2] Failed to perform snapshot (index files)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$SnapshotContext.snapshot(BlobStoreIndexShardRepository.java:448)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.snapshot(BlobStoreIndexShardRepository.java:126)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.snapshot(IndexShardSnapshotAndRestoreService.java:85)
+	at org.elasticsearch.snapshots.SnapshotsService$5.run(SnapshotsService.java:571)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:236)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.writeBlob(MockRepository.java:257)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$SnapshotContext.snapshotFile(BlobStoreIndexShardRepository.java:503)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$SnapshotContext.snapshot(BlobStoreIndexShardRepository.java:428)
+	... 6 more
+[2014-02-18 15:38:26,512][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:26,517][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#dataFileFailureDuringSnapshotTest]: cleaning up after test
+[2014-02-18 15:38:26,518][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:26,550][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:26,551][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#dataFileFailureDuringSnapshotTest]: cleaned up after test
+[2014-02-18 15:38:26,557][INFO ][test                     ] Test dataFileFailureDuringSnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:26,557][INFO ][test                     ] Test emptySnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:26,561][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:26,585][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:38:26,610][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#emptySnapshotTest]: before test
+[2014-02-18 15:38:26,610][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:26,611][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:26,613][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:26,618][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#emptySnapshotTest]: cleaning up after test
+[2014-02-18 15:38:26,620][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:38:26,648][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:26,650][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#emptySnapshotTest]: cleaned up after test
+[2014-02-18 15:38:26,662][INFO ][test                     ] Test emptySnapshotTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:26,662][INFO ][test                     ] Test dataFileFailureDuringRestoreTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:26,667][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:26,696][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:38:26,725][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#dataFileFailureDuringRestoreTest]: before test
+[2014-02-18 15:38:26,726][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:26,727][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:26,738][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:27,019][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:27,022][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:27,368][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:27,406][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:27,410][INFO ][snapshots                ] -->  update repository with mock version
+[2014-02-18 15:38:27,411][INFO ][snapshots.mockstore      ] [node_0] starting mock repository with random prefix aCIByxtcEq
+[2014-02-18 15:38:27,411][INFO ][repositories             ] [node_0] update repository [test-repo]
+[2014-02-18 15:38:27,414][INFO ][snapshots.mockstore      ] [node_2] starting mock repository with random prefix aCIByxtcEq
+[2014-02-18 15:38:27,414][INFO ][snapshots.mockstore      ] [node_1] starting mock repository with random prefix aCIByxtcEq
+[2014-02-18 15:38:27,415][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:27,415][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:27,461][INFO ][snapshots                ] --> restore index after deletion
+[2014-02-18 15:38:27,487][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,488][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__0] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:27,489][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__1/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,492][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,494][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__3/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,494][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__3] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:27,495][WARN ][indices.cluster          ] [node_1] [test-idx][2] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][2] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,497][WARN ][cluster.action.shard     ] [node_1] [test-idx][2] sending failed shard for [test-idx][2], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,498][WARN ][cluster.action.shard     ] [node_0] [test-idx][2] received shard failed for [test-idx][2], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,498][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__0/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,499][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__1/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,500][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,502][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/1/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,508][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__0/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,509][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__1/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,510][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,513][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/4/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,531][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,531][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__0] at path [[indices][test-idx][0]]
+[2014-02-18 15:38:27,532][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__1/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,533][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,535][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,538][WARN ][indices.cluster          ] [node_0] [test-idx][0] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][0] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,539][WARN ][cluster.action.shard     ] [node_0] [test-idx][0] sending failed shard for [test-idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][0] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][0] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][0] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][0] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,539][WARN ][cluster.action.shard     ] [node_0] [test-idx][0] received shard failed for [test-idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][0] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][0] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][0] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][0] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,540][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,540][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__0] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,541][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__1/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,542][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__1] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,543][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,544][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,545][WARN ][indices.cluster          ] [node_0] [test-idx][3] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][3] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,547][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] sending failed shard for [test-idx][3], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,547][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] received shard failed for [test-idx][3], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,559][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/0/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,560][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__0] at path [[indices][test-idx][0]]
+[2014-02-18 15:38:27,560][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/0/__1/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,561][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/0/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,562][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/0/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,566][WARN ][indices.cluster          ] [node_1] [test-idx][0] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][0] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][0] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,567][WARN ][cluster.action.shard     ] [node_1] [test-idx][0] sending failed shard for [test-idx][0], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][0] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][0] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][0] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][0] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,568][WARN ][cluster.action.shard     ] [node_0] [test-idx][0] received shard failed for [test-idx][0], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][0] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][0] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][0] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][0] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,569][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/3/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,569][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__0] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,570][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/3/__1/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,570][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__1] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,571][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/3/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,571][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/3/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,572][WARN ][indices.cluster          ] [node_1] [test-idx][3] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][3] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,573][WARN ][cluster.action.shard     ] [node_1] [test-idx][3] sending failed shard for [test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,573][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] received shard failed for [test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,586][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/2/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,586][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__0] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:27,587][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/2/__1/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,588][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/2/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,589][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/2/__3/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,589][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__3] at path [[indices][test-idx][2]]
+[2014-02-18 15:38:27,590][WARN ][indices.cluster          ] [node_0] [test-idx][2] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][2] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][2] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,592][WARN ][cluster.action.shard     ] [node_0] [test-idx][2] sending failed shard for [test-idx][2], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,593][WARN ][cluster.action.shard     ] [node_0] [test-idx][2] received shard failed for [test-idx][2], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][2] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][2] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][2] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][2] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,603][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/3/__0/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,603][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__0] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,604][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/3/__1/aCIByxtcEq/1] [true]
+[2014-02-18 15:38:27,604][INFO ][snapshots.mockstore      ] [node_2] throwing random IOException for file [__1] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,605][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/3/__2/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,607][INFO ][snapshots.mockstore      ] [node_2] checking [indices/test-idx/3/__3/aCIByxtcEq/1] [false]
+[2014-02-18 15:38:27,608][WARN ][indices.cluster          ] [node_2] [test-idx][3] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][3] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,613][WARN ][cluster.action.shard     ] [node_2] [test-idx][3] sending failed shard for [test-idx][3], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,614][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] received shard failed for [test-idx][3], node[YDkOVpQ0RLKhdd4JNL-RIg], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,617][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/0/__2/aCIByxtcEq/2] [false]
+[2014-02-18 15:38:27,628][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__2/aCIByxtcEq/2] [false]
+[2014-02-18 15:38:27,630][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/2/__3/aCIByxtcEq/2] [false]
+[2014-02-18 15:38:27,635][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__2/aCIByxtcEq/2] [true]
+[2014-02-18 15:38:27,635][INFO ][snapshots.mockstore      ] [node_0] throwing random IOException for file [__2] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,635][WARN ][indices.cluster          ] [node_0] [test-idx][3] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][3] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,643][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] sending failed shard for [test-idx][3], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,643][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] received shard failed for [test-idx][3], node[tbUF3y2YTPm1TPdTF8YBYw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,671][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/3/__2/aCIByxtcEq/2] [true]
+[2014-02-18 15:38:27,671][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__2] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,672][INFO ][snapshots.mockstore      ] [node_1] checking [indices/test-idx/3/__3/aCIByxtcEq/2] [true]
+[2014-02-18 15:38:27,672][INFO ][snapshots.mockstore      ] [node_1] throwing random IOException for file [__3] at path [[indices][test-idx][3]]
+[2014-02-18 15:38:27,672][WARN ][indices.cluster          ] [node_1] [test-idx][3] failed to start shard
+org.elasticsearch.index.gateway.IndexShardGatewayRecoveryException: [test-idx][3] failed recovery
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:248)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] restore failed
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:126)
+	at org.elasticsearch.index.gateway.IndexShardGatewayService$1.run(IndexShardGatewayService.java:186)
+	... 3 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] failed to restore snapshot [test-snap]
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:152)
+	at org.elasticsearch.index.snapshots.IndexShardSnapshotAndRestoreService.restore(IndexShardSnapshotAndRestoreService.java:123)
+	... 4 more
+Caused by: org.elasticsearch.index.snapshots.IndexShardRestoreFailedException: [test-idx][3] Failed to recover index
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:655)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository.restore(BlobStoreIndexShardRepository.java:149)
+	... 5 more
+Caused by: java.io.IOException: Random IOException
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:201)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.maybeIOExceptionOrBlock(MockRepository.java:244)
+	at org.elasticsearch.snapshots.mockstore.MockRepository$MockBlobStore$MockImmutableBlobContainer.readBlob(MockRepository.java:274)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restoreFile(BlobStoreIndexShardRepository.java:709)
+	at org.elasticsearch.index.snapshots.blobstore.BlobStoreIndexShardRepository$RestoreContext.restore(BlobStoreIndexShardRepository.java:645)
+	... 6 more
+[2014-02-18 15:38:27,674][WARN ][cluster.action.shard     ] [node_1] [test-idx][3] sending failed shard for [test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,675][WARN ][cluster.action.shard     ] [node_0] [test-idx][3] received shard failed for [test-idx][3], node[Y-GAf-d9TnWBgKZR_Cw0qw], [P], restoring[test-repo:test-snap], s[INITIALIZING], indexUUID [Jez3gCxLTxWRM-Z2M6PDug], reason [Failed to start shard, message [IndexShardGatewayRecoveryException[[test-idx][3] failed recovery]; nested: IndexShardRestoreFailedException[[test-idx][3] restore failed]; nested: IndexShardRestoreFailedException[[test-idx][3] failed to restore snapshot [test-snap]]; nested: IndexShardRestoreFailedException[[test-idx][3] Failed to recover index]; nested: IOException[Random IOException]; ]]
+[2014-02-18 15:38:27,684][INFO ][snapshots.mockstore      ] [node_0] checking [indices/test-idx/3/__2/aCIByxtcEq/3] [false]
+[2014-02-18 15:38:27,695][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:27,907][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#dataFileFailureDuringRestoreTest]: cleaning up after test
+[2014-02-18 15:38:27,908][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:27,946][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:27,947][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#dataFileFailureDuringRestoreTest]: cleaned up after test
+[2014-02-18 15:38:27,962][INFO ][test                     ] Test dataFileFailureDuringRestoreTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:27,963][INFO ][test                     ] Test throttlingTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:27,968][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:28,001][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#throttlingTest]: before test
+[2014-02-18 15:38:28,002][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:28,003][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:28,028][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:28,125][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:38:28,486][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:28,487][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:28,660][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:28,993][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:29,001][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:29,003][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:29,063][INFO ][snapshots                ] --> restore index
+[2014-02-18 15:38:29,183][INFO ][snapshots                ] [node_0] restore [test-repo:test-snap] is done
+[2014-02-18 15:38:29,387][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#throttlingTest]: cleaning up after test
+[2014-02-18 15:38:29,387][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:29,424][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:29,425][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#throttlingTest]: cleaned up after test
+[2014-02-18 15:38:29,434][INFO ][test                     ] Test throttlingTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:29,434][INFO ][test                     ] Test restoreTemplatesTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:29,439][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:29,469][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#restoreTemplatesTest]: before test
+[2014-02-18 15:38:29,469][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:29,470][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:29,473][INFO ][snapshots                ] -->  creating test template
+[2014-02-18 15:38:29,474][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:29,480][INFO ][snapshots                ] -->  delete test template
+[2014-02-18 15:38:29,482][INFO ][snapshots                ] --> restore cluster state
+[2014-02-18 15:38:29,485][INFO ][snapshots                ] --> check that template is restored
+[2014-02-18 15:38:29,485][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#restoreTemplatesTest]: cleaning up after test
+[2014-02-18 15:38:29,487][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:29,489][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#restoreTemplatesTest]: cleaned up after test
+[2014-02-18 15:38:29,496][INFO ][test                     ] Test restoreTemplatesTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+[2014-02-18 15:38:29,497][INFO ][test                     ] Test urlRepositoryTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) started
+[2014-02-18 15:38:29,501][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:38:29,532][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:38:29,558][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:38:29,583][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#urlRepositoryTest]: before test
+[2014-02-18 15:38:29,583][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 15:38:29,584][INFO ][repositories             ] [node_0] put repository [test-repo]
+[2014-02-18 15:38:29,594][INFO ][cluster.metadata         ] [node_0] [test-idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:38:29,882][INFO ][snapshots                ] --> indexing some data
+[2014-02-18 15:38:29,884][INFO ][cluster.metadata         ] [node_0] [test-idx] update_mapping [doc] (dynamic)
+[2014-02-18 15:38:30,131][INFO ][snapshots                ] --> snapshot
+[2014-02-18 15:38:30,175][INFO ][snapshots                ] [node_0] snapshot [test-repo:test-snap] is done
+[2014-02-18 15:38:30,179][INFO ][snapshots                ] --> delete index
+[2014-02-18 15:38:30,180][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:30,218][INFO ][snapshots                ] --> create read-only URL repository
+[2014-02-18 15:38:30,230][INFO ][repositories             ] [node_0] put repository [url-repo]
+[2014-02-18 15:38:30,233][INFO ][snapshots                ] --> restore index after deletion
+[2014-02-18 15:38:30,387][INFO ][snapshots                ] [node_0] restore [url-repo:test-snap] is done
+[2014-02-18 15:38:30,592][INFO ][snapshots                ] --> list available shapshots
+[2014-02-18 15:38:30,593][INFO ][snapshots                ] --> delete snapshot
+[2014-02-18 15:38:30,606][INFO ][snapshots                ] --> list available shapshot again, no snapshots should be returned
+[2014-02-18 15:38:30,607][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#urlRepositoryTest]: cleaning up after test
+[2014-02-18 15:38:30,608][INFO ][cluster.metadata         ] [node_0] [test-idx] deleting index
+[2014-02-18 15:38:30,640][INFO ][repositories             ] [node_0] delete repository [test-repo]
+[2014-02-18 15:38:30,640][INFO ][repositories             ] [node_0] delete repository [url-repo]
+[2014-02-18 15:38:30,641][INFO ][snapshots                ] [SharedClusterSnapshotRestoreTests#urlRepositoryTest]: cleaned up after test
+[2014-02-18 15:38:30,654][INFO ][test                     ] Test urlRepositoryTest(org.elasticsearch.snapshots.SharedClusterSnapshotRestoreTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

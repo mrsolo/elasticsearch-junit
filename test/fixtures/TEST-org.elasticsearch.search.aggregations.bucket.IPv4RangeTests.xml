@@ -1,0 +1,340 @@
+<testsuite errors="0" failures="0" tests="16" skipped="0" name="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" hostname="nohost.nodomain" time="22.624" timestamp="2014-02-18T15:43:14">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="singleValueField_WithMaskRange" time="1.881"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="script_SingleValue" time="1.019"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="script_SingleValue_WithSubAggregator_Inherited" time="1.712"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="singleValueField" time="1.654"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="script_MultiValued" time="0.939"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="multiValuedField_WithValueScript_WithInheritedSubAggregator" time="0.489"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="singleValuedField_WithSubAggregation" time="1.341"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="partiallyUnmapped" time="0.673"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="singleValuedField_WithValueScript" time="1.298"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="emptyAggregation" time="2.675"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="multiValuedField_WithValueScript" time="0.915"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="script_MultiValued_WithAggregatorInherited" time="1.27"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="multiValuedField" time="1.432"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="singleValuedField_WithSubAggregation_Inherited" time="1.727"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="singleValueField_WithCustomKey" time="2.034"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.IPv4RangeTests" name="unmapped" time="1.546"/>
+   <system-out><![CDATA[[2014-02-18 15:43:14,185][INFO ][test                     ] Test singleValueField_WithMaskRange(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:14,190][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField_WithMaskRange]: before test
+[2014-02-18 15:43:14,201][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings [type]
+[2014-02-18 15:43:14,248][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:14,367][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:15,721][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:43:15,977][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][0],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][3],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][1] (cluster state version: 2488)
+[2014-02-18 15:43:15,982][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField_WithMaskRange]: cleaning up after test
+[2014-02-18 15:43:15,983][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:15,992][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:16,065][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField_WithMaskRange]: cleaned up after test
+[2014-02-18 15:43:16,066][INFO ][test                     ] Test singleValueField_WithMaskRange(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:16,067][INFO ][test                     ] Test script_SingleValue(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:16,070][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:16,094][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:16,121][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:16,154][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_SingleValue]: before test
+[2014-02-18 15:43:16,162][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 15:43:16,181][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:16,186][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:16,779][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:43:17,044][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 2500)
+[2014-02-18 15:43:17,045][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_SingleValue]: cleaning up after test
+[2014-02-18 15:43:17,047][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:17,061][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:17,074][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_SingleValue]: cleaned up after test
+[2014-02-18 15:43:17,086][INFO ][test                     ] Test script_SingleValue(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:17,086][INFO ][test                     ] Test script_SingleValue_WithSubAggregator_Inherited(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:17,091][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:17,117][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_SingleValue_WithSubAggregator_Inherited]: before test
+[2014-02-18 15:43:17,127][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings [type]
+[2014-02-18 15:43:17,180][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:17,186][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:18,376][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:18,723][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][4],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 2514)
+[2014-02-18 15:43:18,728][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_SingleValue_WithSubAggregator_Inherited]: cleaning up after test
+[2014-02-18 15:43:18,729][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:18,758][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:18,792][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_SingleValue_WithSubAggregator_Inherited]: cleaned up after test
+[2014-02-18 15:43:18,797][INFO ][test                     ] Test script_SingleValue_WithSubAggregator_Inherited(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:18,798][INFO ][test                     ] Test singleValueField(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:18,803][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:18,831][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField]: before test
+[2014-02-18 15:43:18,842][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings [type]
+[2014-02-18 15:43:18,898][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:18,912][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:20,390][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:43:20,414][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][4],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 2523)
+[2014-02-18 15:43:20,416][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField]: cleaning up after test
+[2014-02-18 15:43:20,416][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:20,423][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:20,448][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField]: cleaned up after test
+[2014-02-18 15:43:20,451][INFO ][test                     ] Test singleValueField(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:20,452][INFO ][test                     ] Test script_MultiValued(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:20,455][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_MultiValued]: before test
+[2014-02-18 15:43:20,463][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings [type]
+[2014-02-18 15:43:20,480][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:20,607][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:21,096][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 15:43:21,358][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][0] (cluster state version: 2534)
+[2014-02-18 15:43:21,359][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_MultiValued]: cleaning up after test
+[2014-02-18 15:43:21,359][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:21,371][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:21,390][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_MultiValued]: cleaned up after test
+[2014-02-18 15:43:21,391][INFO ][test                     ] Test script_MultiValued(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:21,391][INFO ][test                     ] Test multiValuedField_WithValueScript_WithInheritedSubAggregator(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:21,394][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:21,418][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:21,441][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField_WithValueScript_WithInheritedSubAggregator]: before test
+[2014-02-18 15:43:21,442][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:21,472][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[1], mappings [type]
+[2014-02-18 15:43:21,512][INFO ][search.aggregations.bucket] Index [255] docs async: [false] bulk: [true]
+[2014-02-18 15:43:21,554][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:21,767][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:43:21,815][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][0],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1] (cluster state version: 2546)
+[2014-02-18 15:43:21,817][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField_WithValueScript_WithInheritedSubAggregator]: cleaning up after test
+[2014-02-18 15:43:21,819][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:21,830][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:21,869][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField_WithValueScript_WithInheritedSubAggregator]: cleaned up after test
+[2014-02-18 15:43:21,880][INFO ][test                     ] Test multiValuedField_WithValueScript_WithInheritedSubAggregator(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:21,881][INFO ][test                     ] Test singleValuedField_WithSubAggregation(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:21,884][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:21,909][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:21,932][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithSubAggregation]: before test
+[2014-02-18 15:43:21,941][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings [type]
+[2014-02-18 15:43:21,987][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:22,077][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:23,076][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 15:43:23,165][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[YDkOVpQ0RLKhdd4JNL-RIg][idx][2],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1] (cluster state version: 2558)
+[2014-02-18 15:43:23,167][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithSubAggregation]: cleaning up after test
+[2014-02-18 15:43:23,169][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:23,179][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:23,216][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithSubAggregation]: cleaned up after test
+[2014-02-18 15:43:23,222][INFO ][test                     ] Test singleValuedField_WithSubAggregation(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:23,223][INFO ][test                     ] Test partiallyUnmapped(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:23,226][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:23,248][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:23,276][INFO ][search.aggregations.bucket] [IPv4RangeTests#partiallyUnmapped]: before test
+[2014-02-18 15:43:23,285][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings [type]
+[2014-02-18 15:43:23,302][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:23,331][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:23,384][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:23,799][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:43:23,833][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][0],[Y-GAf-d9TnWBgKZR_Cw0qw][idx_unmapped][0],[YDkOVpQ0RLKhdd4JNL-RIg][idx_unmapped][1] (cluster state version: 2567)
+[2014-02-18 15:43:23,836][INFO ][search.aggregations.bucket] [IPv4RangeTests#partiallyUnmapped]: cleaning up after test
+[2014-02-18 15:43:23,838][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:23,846][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:23,885][INFO ][search.aggregations.bucket] [IPv4RangeTests#partiallyUnmapped]: cleaned up after test
+[2014-02-18 15:43:23,895][INFO ][test                     ] Test partiallyUnmapped(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:23,896][INFO ][test                     ] Test singleValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:23,899][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:23,931][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:23,953][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:23,978][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithValueScript]: before test
+[2014-02-18 15:43:23,990][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings [type]
+[2014-02-18 15:43:24,035][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:24,124][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:25,080][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 15:43:25,130][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][0],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1] (cluster state version: 2578)
+[2014-02-18 15:43:25,132][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithValueScript]: cleaning up after test
+[2014-02-18 15:43:25,133][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:25,149][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:25,184][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithValueScript]: cleaned up after test
+[2014-02-18 15:43:25,194][INFO ][test                     ] Test singleValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:25,195][INFO ][test                     ] Test emptyAggregation(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:25,198][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:25,221][INFO ][search.aggregations.bucket] [IPv4RangeTests#emptyAggregation]: before test
+[2014-02-18 15:43:25,230][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings [type]
+[2014-02-18 15:43:25,280][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:25,348][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:25,351][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:27,446][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:43:27,724][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 15:43:27,742][INFO ][search.aggregations.bucket] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:43:27,758][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][empty_bucket_idx][0] (cluster state version: 2596)
+[2014-02-18 15:43:27,759][INFO ][search.aggregations.bucket] [IPv4RangeTests#emptyAggregation]: cleaning up after test
+[2014-02-18 15:43:27,761][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:27,795][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:27,853][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 15:43:27,862][INFO ][search.aggregations.bucket] [IPv4RangeTests#emptyAggregation]: cleaned up after test
+[2014-02-18 15:43:27,870][INFO ][test                     ] Test emptyAggregation(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:27,870][INFO ][test                     ] Test multiValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:27,875][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField_WithValueScript]: before test
+[2014-02-18 15:43:27,886][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings [type]
+[2014-02-18 15:43:27,949][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:27,972][INFO ][search.aggregations.bucket] Index [255] docs async: [false] bulk: [false]
+[2014-02-18 15:43:27,973][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:28,683][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:43:28,708][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][4],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 2606)
+[2014-02-18 15:43:28,710][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField_WithValueScript]: cleaning up after test
+[2014-02-18 15:43:28,711][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:28,718][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:28,779][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField_WithValueScript]: cleaned up after test
+[2014-02-18 15:43:28,785][INFO ][test                     ] Test multiValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:28,785][INFO ][test                     ] Test script_MultiValued_WithAggregatorInherited(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:28,790][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_MultiValued_WithAggregatorInherited]: before test
+[2014-02-18 15:43:28,792][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:28,821][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings [type]
+[2014-02-18 15:43:28,886][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:28,936][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:29,620][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:43:29,894][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][0],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][3],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][1] (cluster state version: 2621)
+[2014-02-18 15:43:29,901][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_MultiValued_WithAggregatorInherited]: cleaning up after test
+[2014-02-18 15:43:29,902][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:29,958][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:30,050][INFO ][search.aggregations.bucket] [IPv4RangeTests#script_MultiValued_WithAggregatorInherited]: cleaned up after test
+[2014-02-18 15:43:30,055][INFO ][test                     ] Test script_MultiValued_WithAggregatorInherited(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:30,056][INFO ][test                     ] Test multiValuedField(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:30,061][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField]: before test
+[2014-02-18 15:43:30,070][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 15:43:30,151][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:30,170][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:30,866][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 15:43:31,397][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][2],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1] (cluster state version: 2635)
+[2014-02-18 15:43:31,398][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField]: cleaning up after test
+[2014-02-18 15:43:31,399][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:31,443][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:31,487][INFO ][search.aggregations.bucket] [IPv4RangeTests#multiValuedField]: cleaned up after test
+[2014-02-18 15:43:31,488][INFO ][test                     ] Test multiValuedField(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:31,489][INFO ][test                     ] Test singleValuedField_WithSubAggregation_Inherited(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:31,493][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:31,519][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:31,546][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithSubAggregation_Inherited]: before test
+[2014-02-18 15:43:31,555][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings [type]
+[2014-02-18 15:43:31,612][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:31,677][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:31,766][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:32,921][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:43:33,156][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [YDkOVpQ0RLKhdd4JNL-RIg][idx][0],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][3],[YDkOVpQ0RLKhdd4JNL-RIg][idx][2],[Y-GAf-d9TnWBgKZR_Cw0qw][idx][1] (cluster state version: 2650)
+[2014-02-18 15:43:33,158][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithSubAggregation_Inherited]: cleaning up after test
+[2014-02-18 15:43:33,159][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:33,167][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:33,206][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValuedField_WithSubAggregation_Inherited]: cleaned up after test
+[2014-02-18 15:43:33,216][INFO ][test                     ] Test singleValuedField_WithSubAggregation_Inherited(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:33,217][INFO ][test                     ] Test singleValueField_WithCustomKey(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:33,221][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:33,257][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField_WithCustomKey]: before test
+[2014-02-18 15:43:33,265][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings [type]
+[2014-02-18 15:43:33,298][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:33,323][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:33,368][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:33,381][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:34,804][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:43:35,171][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [Y-GAf-d9TnWBgKZR_Cw0qw][idx][0],[YDkOVpQ0RLKhdd4JNL-RIg][idx][1] (cluster state version: 2665)
+[2014-02-18 15:43:35,173][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField_WithCustomKey]: cleaning up after test
+[2014-02-18 15:43:35,173][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:35,207][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:35,241][INFO ][search.aggregations.bucket] [IPv4RangeTests#singleValueField_WithCustomKey]: cleaned up after test
+[2014-02-18 15:43:35,251][INFO ][test                     ] Test singleValueField_WithCustomKey(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+[2014-02-18 15:43:35,251][INFO ][test                     ] Test unmapped(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) started
+[2014-02-18 15:43:35,255][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:43:35,278][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:43:35,301][INFO ][search.aggregations.bucket] [IPv4RangeTests#unmapped]: before test
+[2014-02-18 15:43:35,302][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:43:35,332][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:43:35,391][INFO ][search.aggregations.bucket] Index [255] docs async: [true] bulk: [false]
+[2014-02-18 15:43:35,511][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:43:36,652][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:43:36,710][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx_unmapped][0],[YDkOVpQ0RLKhdd4JNL-RIg][idx_unmapped][1] (cluster state version: 2679)
+[2014-02-18 15:43:36,711][INFO ][search.aggregations.bucket] [IPv4RangeTests#unmapped]: cleaning up after test
+[2014-02-18 15:43:36,712][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 15:43:36,723][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:43:36,788][INFO ][search.aggregations.bucket] [IPv4RangeTests#unmapped]: cleaned up after test
+[2014-02-18 15:43:36,797][INFO ][test                     ] Test unmapped(org.elasticsearch.search.aggregations.bucket.IPv4RangeTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

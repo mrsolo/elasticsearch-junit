@@ -1,0 +1,371 @@
+<testsuite errors="0" failures="0" tests="26" skipped="0" name="org.elasticsearch.search.facet.SimpleFacetsTests" hostname="nohost.nodomain" time="42.279" timestamp="2014-02-18T15:37:00">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testFacetsWithSize0" time="0.192"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermsIndexFacet" time="0.277"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testDateHistoFacetsCollectorMode" time="0.354"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermsFacetsNoHint" time="0.401"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testConcurrentFacets" time="23.417"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testDateHistoFacets_preZoneBug" time="0.488"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermsFacetsMissing" time="0.424"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testHistoFacets" time="0.459"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermFacetWithEqualTermDistribution" time="0.13"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testNumericTermsStatsFacets" time="0.374"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testSimpleFacetEmptyFilterFacet" time="0.343"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testSimpleFacetEmptyFacetFilter" time="0.376"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testDuelByteFieldDataImpl" time="10.249"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testQueryFacet" time="0.487"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testFilterFacetWithFacetFilterPostMode" time="0.242"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testFacetNumeric" time="0.588"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermsStatsFacets" time="0.384"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testDateHistoFacetsPostMode" time="0.381"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermsFacetsMapHint" time="0.418"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testBinaryFacet" time="0.296"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testTermsStatsFacets2" time="0.362"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testRangeFacets" time="0.33"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testStatsFacets" time="0.225"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testFilterFacets" time="0.318"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testSearchFilter" time="0.451"/>
+   <testcase classname="org.elasticsearch.search.facet.SimpleFacetsTests" name="testHistoFacetEdge" time="0.277"/>
+   <system-out><![CDATA[[2014-02-18 15:37:00,283][INFO ][test                     ] Test testFacetsWithSize0(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:00,289][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:00,318][INFO ][search.facet             ] [SimpleFacetsTests#testFacetsWithSize0]: before test
+[2014-02-18 15:37:00,329][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 15:37:00,396][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:00,454][INFO ][search.facet             ] [SimpleFacetsTests#testFacetsWithSize0]: cleaning up after test
+[2014-02-18 15:37:00,455][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:00,471][INFO ][search.facet             ] [SimpleFacetsTests#testFacetsWithSize0]: cleaned up after test
+[2014-02-18 15:37:00,475][INFO ][test                     ] Test testFacetsWithSize0(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:00,475][INFO ][test                     ] Test testTermsIndexFacet(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:00,480][INFO ][search.facet             ] [SimpleFacetsTests#testTermsIndexFacet]: before test
+[2014-02-18 15:37:00,489][INFO ][cluster.metadata         ] [node_0] [test1] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 15:37:00,570][INFO ][cluster.metadata         ] [node_0] [test2] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 15:37:00,630][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:00,660][INFO ][cluster.metadata         ] [node_0] [test1] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:00,665][INFO ][cluster.metadata         ] [node_0] [test2] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:00,714][INFO ][cluster.metadata         ] [node_0] [test1] deleting index
+[2014-02-18 15:37:00,731][INFO ][cluster.metadata         ] [node_0] [test2] deleting index
+[2014-02-18 15:37:00,744][INFO ][search.facet             ] [SimpleFacetsTests#testTermsIndexFacet]: cleaning up after test
+[2014-02-18 15:37:00,748][INFO ][search.facet             ] [SimpleFacetsTests#testTermsIndexFacet]: cleaned up after test
+[2014-02-18 15:37:00,751][INFO ][test                     ] Test testTermsIndexFacet(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:00,752][INFO ][test                     ] Test testDateHistoFacetsCollectorMode(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:00,759][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:00,802][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacetsCollectorMode]: before test
+[2014-02-18 15:37:00,806][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:00,847][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings [type1]
+[2014-02-18 15:37:01,075][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacetsCollectorMode]: cleaning up after test
+[2014-02-18 15:37:01,076][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:01,098][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacetsCollectorMode]: cleaned up after test
+[2014-02-18 15:37:01,105][INFO ][test                     ] Test testDateHistoFacetsCollectorMode(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:01,106][INFO ][test                     ] Test testTermsFacetsNoHint(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:01,111][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsNoHint]: before test
+[2014-02-18 15:37:01,121][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings [type1]
+[2014-02-18 15:37:01,194][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:01,478][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsNoHint]: cleaning up after test
+[2014-02-18 15:37:01,479][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:01,506][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsNoHint]: cleaned up after test
+[2014-02-18 15:37:01,507][INFO ][test                     ] Test testTermsFacetsNoHint(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:01,507][INFO ][test                     ] Test testConcurrentFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:01,513][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:01,554][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:01,591][INFO ][search.facet             ] [SimpleFacetsTests#testConcurrentFacets]: before test
+[2014-02-18 15:37:01,605][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [type]
+[2014-02-18 15:37:01,662][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:01,704][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:37:01,857][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:37:24,885][INFO ][search.facet             ] [SimpleFacetsTests#testConcurrentFacets]: cleaning up after test
+[2014-02-18 15:37:24,888][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:24,907][INFO ][search.facet             ] [SimpleFacetsTests#testConcurrentFacets]: cleaned up after test
+[2014-02-18 15:37:24,924][INFO ][test                     ] Test testConcurrentFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:24,925][INFO ][test                     ] Test testDateHistoFacets_preZoneBug(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:24,931][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:24,974][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacets_preZoneBug]: before test
+[2014-02-18 15:37:24,992][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type1]
+[2014-02-18 15:37:25,392][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacets_preZoneBug]: cleaning up after test
+[2014-02-18 15:37:25,393][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:25,408][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacets_preZoneBug]: cleaned up after test
+[2014-02-18 15:37:25,413][INFO ][test                     ] Test testDateHistoFacets_preZoneBug(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:25,414][INFO ][test                     ] Test testTermsFacetsMissing(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:25,420][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:25,461][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:25,500][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsMissing]: before test
+[2014-02-18 15:37:25,516][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [type1]
+[2014-02-18 15:37:25,604][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:25,614][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:25,795][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsMissing]: cleaning up after test
+[2014-02-18 15:37:25,797][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:25,828][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsMissing]: cleaned up after test
+[2014-02-18 15:37:25,837][INFO ][test                     ] Test testTermsFacetsMissing(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:25,838][INFO ][test                     ] Test testHistoFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:25,845][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:25,892][INFO ][search.facet             ] [SimpleFacetsTests#testHistoFacets]: before test
+[2014-02-18 15:37:25,908][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [4]/[0], mappings [type1]
+[2014-02-18 15:37:26,256][INFO ][search.facet             ] [SimpleFacetsTests#testHistoFacets]: cleaning up after test
+[2014-02-18 15:37:26,258][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:26,290][INFO ][search.facet             ] [SimpleFacetsTests#testHistoFacets]: cleaned up after test
+[2014-02-18 15:37:26,297][INFO ][test                     ] Test testHistoFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:26,298][INFO ][test                     ] Test testTermFacetWithEqualTermDistribution(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:26,305][INFO ][search.facet             ] [SimpleFacetsTests#testTermFacetWithEqualTermDistribution]: before test
+[2014-02-18 15:37:26,320][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:37:26,362][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:26,413][INFO ][search.facet             ] [SimpleFacetsTests#testTermFacetWithEqualTermDistribution]: cleaning up after test
+[2014-02-18 15:37:26,414][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:26,427][INFO ][search.facet             ] [SimpleFacetsTests#testTermFacetWithEqualTermDistribution]: cleaned up after test
+[2014-02-18 15:37:26,428][INFO ][test                     ] Test testTermFacetWithEqualTermDistribution(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:26,429][INFO ][test                     ] Test testNumericTermsStatsFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:26,435][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:26,476][INFO ][search.facet             ] [SimpleFacetsTests#testNumericTermsStatsFacets]: before test
+[2014-02-18 15:37:26,493][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings [type1]
+[2014-02-18 15:37:26,759][INFO ][search.facet             ] [SimpleFacetsTests#testNumericTermsStatsFacets]: cleaning up after test
+[2014-02-18 15:37:26,761][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:26,794][INFO ][search.facet             ] [SimpleFacetsTests#testNumericTermsStatsFacets]: cleaned up after test
+[2014-02-18 15:37:26,802][INFO ][test                     ] Test testNumericTermsStatsFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:26,803][INFO ][test                     ] Test testSimpleFacetEmptyFilterFacet(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:26,809][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:26,874][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:26,940][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:26,974][INFO ][search.facet             ] [SimpleFacetsTests#testSimpleFacetEmptyFilterFacet]: before test
+[2014-02-18 15:37:26,986][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:37:27,078][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:27,100][INFO ][search.facet             ] [SimpleFacetsTests#testSimpleFacetEmptyFilterFacet]: cleaning up after test
+[2014-02-18 15:37:27,102][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:27,130][INFO ][search.facet             ] [SimpleFacetsTests#testSimpleFacetEmptyFilterFacet]: cleaned up after test
+[2014-02-18 15:37:27,146][INFO ][test                     ] Test testSimpleFacetEmptyFilterFacet(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:27,147][INFO ][test                     ] Test testSimpleFacetEmptyFacetFilter(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:27,154][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:27,189][INFO ][search.facet             ] [SimpleFacetsTests#testSimpleFacetEmptyFacetFilter]: before test
+[2014-02-18 15:37:27,199][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 15:37:27,469][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:27,491][INFO ][search.facet             ] [SimpleFacetsTests#testSimpleFacetEmptyFacetFilter]: cleaning up after test
+[2014-02-18 15:37:27,493][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:27,517][INFO ][search.facet             ] [SimpleFacetsTests#testSimpleFacetEmptyFacetFilter]: cleaned up after test
+[2014-02-18 15:37:27,522][INFO ][test                     ] Test testSimpleFacetEmptyFacetFilter(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:27,523][INFO ][test                     ] Test testDuelByteFieldDataImpl(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:27,527][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:27,557][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:27,589][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:27,620][INFO ][search.facet             ] [SimpleFacetsTests#testDuelByteFieldDataImpl]: before test
+[2014-02-18 15:37:27,632][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [type]
+[2014-02-18 15:37:27,785][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:37:37,715][INFO ][search.facet             ] [SimpleFacetsTests#testDuelByteFieldDataImpl]: cleaning up after test
+[2014-02-18 15:37:37,717][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:37,756][INFO ][search.facet             ] [SimpleFacetsTests#testDuelByteFieldDataImpl]: cleaned up after test
+[2014-02-18 15:37:37,772][INFO ][test                     ] Test testDuelByteFieldDataImpl(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:37,773][INFO ][test                     ] Test testQueryFacet(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:37,780][INFO ][search.facet             ] [SimpleFacetsTests#testQueryFacet]: before test
+[2014-02-18 15:37:37,795][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:37:38,101][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:38,239][INFO ][search.facet             ] [SimpleFacetsTests#testQueryFacet]: cleaning up after test
+[2014-02-18 15:37:38,240][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:38,259][INFO ][search.facet             ] [SimpleFacetsTests#testQueryFacet]: cleaned up after test
+[2014-02-18 15:37:38,260][INFO ][test                     ] Test testQueryFacet(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:38,261][INFO ][test                     ] Test testFilterFacetWithFacetFilterPostMode(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:38,267][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:38,339][INFO ][search.facet             ] [SimpleFacetsTests#testFilterFacetWithFacetFilterPostMode]: before test
+[2014-02-18 15:37:38,354][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:37:38,403][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:38,484][INFO ][search.facet             ] [SimpleFacetsTests#testFilterFacetWithFacetFilterPostMode]: cleaning up after test
+[2014-02-18 15:37:38,485][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:38,497][INFO ][search.facet             ] [SimpleFacetsTests#testFilterFacetWithFacetFilterPostMode]: cleaned up after test
+[2014-02-18 15:37:38,503][INFO ][test                     ] Test testFilterFacetWithFacetFilterPostMode(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:38,504][INFO ][test                     ] Test testFacetNumeric(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:38,511][INFO ][search.facet             ] [SimpleFacetsTests#testFacetNumeric]: before test
+[2014-02-18 15:37:38,528][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 15:37:38,634][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:37:38,748][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:37:39,042][INFO ][search.facet             ] [SimpleFacetsTests#testFacetNumeric]: cleaning up after test
+[2014-02-18 15:37:39,044][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:39,091][INFO ][search.facet             ] [SimpleFacetsTests#testFacetNumeric]: cleaned up after test
+[2014-02-18 15:37:39,092][INFO ][test                     ] Test testFacetNumeric(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:39,092][INFO ][test                     ] Test testTermsStatsFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:39,097][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:39,126][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:39,156][INFO ][search.facet             ] [SimpleFacetsTests#testTermsStatsFacets]: before test
+[2014-02-18 15:37:39,169][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings [type1]
+[2014-02-18 15:37:39,424][INFO ][search.facet             ] [SimpleFacetsTests#testTermsStatsFacets]: cleaning up after test
+[2014-02-18 15:37:39,426][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:39,466][INFO ][search.facet             ] [SimpleFacetsTests#testTermsStatsFacets]: cleaned up after test
+[2014-02-18 15:37:39,476][INFO ][test                     ] Test testTermsStatsFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:39,477][INFO ][test                     ] Test testDateHistoFacetsPostMode(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:39,481][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:39,516][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:39,553][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacetsPostMode]: before test
+[2014-02-18 15:37:39,567][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [4]/[0], mappings [type1]
+[2014-02-18 15:37:39,636][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:39,786][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacetsPostMode]: cleaning up after test
+[2014-02-18 15:37:39,787][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:39,840][INFO ][search.facet             ] [SimpleFacetsTests#testDateHistoFacetsPostMode]: cleaned up after test
+[2014-02-18 15:37:39,858][INFO ][test                     ] Test testDateHistoFacetsPostMode(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:39,858][INFO ][test                     ] Test testTermsFacetsMapHint(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:39,863][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsMapHint]: before test
+[2014-02-18 15:37:39,879][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [type1]
+[2014-02-18 15:37:40,142][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:40,257][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsMapHint]: cleaning up after test
+[2014-02-18 15:37:40,258][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:40,275][INFO ][search.facet             ] [SimpleFacetsTests#testTermsFacetsMapHint]: cleaned up after test
+[2014-02-18 15:37:40,276][INFO ][test                     ] Test testTermsFacetsMapHint(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:40,277][INFO ][test                     ] Test testBinaryFacet(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:40,282][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:40,317][INFO ][search.facet             ] [SimpleFacetsTests#testBinaryFacet]: before test
+[2014-02-18 15:37:40,329][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:37:40,408][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:40,539][INFO ][search.facet             ] [SimpleFacetsTests#testBinaryFacet]: cleaning up after test
+[2014-02-18 15:37:40,541][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:40,567][INFO ][search.facet             ] [SimpleFacetsTests#testBinaryFacet]: cleaned up after test
+[2014-02-18 15:37:40,572][INFO ][test                     ] Test testBinaryFacet(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:40,573][INFO ][test                     ] Test testTermsStatsFacets2(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:40,578][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:40,613][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:40,641][INFO ][search.facet             ] [SimpleFacetsTests#testTermsStatsFacets2]: before test
+[2014-02-18 15:37:40,643][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:40,694][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [3]/[0], mappings [type1]
+[2014-02-18 15:37:40,885][INFO ][search.facet             ] [SimpleFacetsTests#testTermsStatsFacets2]: cleaning up after test
+[2014-02-18 15:37:40,887][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:40,920][INFO ][search.facet             ] [SimpleFacetsTests#testTermsStatsFacets2]: cleaned up after test
+[2014-02-18 15:37:40,935][INFO ][test                     ] Test testTermsStatsFacets2(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:40,935][INFO ][test                     ] Test testRangeFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:40,939][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:40,971][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:41,004][INFO ][search.facet             ] [SimpleFacetsTests#testRangeFacets]: before test
+[2014-02-18 15:37:41,005][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:41,096][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [type1]
+[2014-02-18 15:37:41,230][INFO ][search.facet             ] [SimpleFacetsTests#testRangeFacets]: cleaning up after test
+[2014-02-18 15:37:41,231][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:41,251][INFO ][search.facet             ] [SimpleFacetsTests#testRangeFacets]: cleaned up after test
+[2014-02-18 15:37:41,264][INFO ][test                     ] Test testRangeFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:41,265][INFO ][test                     ] Test testStatsFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:41,271][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:41,300][INFO ][search.facet             ] [SimpleFacetsTests#testStatsFacets]: before test
+[2014-02-18 15:37:41,311][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [type1]
+[2014-02-18 15:37:41,362][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:41,452][INFO ][search.facet             ] [SimpleFacetsTests#testStatsFacets]: cleaning up after test
+[2014-02-18 15:37:41,453][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:41,482][INFO ][search.facet             ] [SimpleFacetsTests#testStatsFacets]: cleaned up after test
+[2014-02-18 15:37:41,489][INFO ][test                     ] Test testStatsFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:41,490][INFO ][test                     ] Test testFilterFacets(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:41,494][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:41,522][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:41,551][INFO ][search.facet             ] [SimpleFacetsTests#testFilterFacets]: before test
+[2014-02-18 15:37:41,561][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:37:41,652][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:41,679][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:41,772][INFO ][search.facet             ] [SimpleFacetsTests#testFilterFacets]: cleaning up after test
+[2014-02-18 15:37:41,773][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:41,796][INFO ][search.facet             ] [SimpleFacetsTests#testFilterFacets]: cleaned up after test
+[2014-02-18 15:37:41,808][INFO ][test                     ] Test testFilterFacets(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:41,809][INFO ][test                     ] Test testSearchFilter(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:41,813][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:41,849][INFO ][search.facet             ] [SimpleFacetsTests#testSearchFilter]: before test
+[2014-02-18 15:37:41,863][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 15:37:42,131][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:37:42,227][INFO ][search.facet             ] [SimpleFacetsTests#testSearchFilter]: cleaning up after test
+[2014-02-18 15:37:42,228][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:42,255][INFO ][search.facet             ] [SimpleFacetsTests#testSearchFilter]: cleaned up after test
+[2014-02-18 15:37:42,260][INFO ][test                     ] Test testSearchFilter(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+[2014-02-18 15:37:42,260][INFO ][test                     ] Test testHistoFacetEdge(org.elasticsearch.search.facet.SimpleFacetsTests) started
+[2014-02-18 15:37:42,265][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:37:42,291][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:37:42,323][INFO ][search.facet             ] [SimpleFacetsTests#testHistoFacetEdge]: before test
+[2014-02-18 15:37:42,324][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:37:42,369][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [3]/[0], mappings [type1]
+[2014-02-18 15:37:42,502][INFO ][search.facet             ] [SimpleFacetsTests#testHistoFacetEdge]: cleaning up after test
+[2014-02-18 15:37:42,504][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:37:42,522][INFO ][search.facet             ] [SimpleFacetsTests#testHistoFacetEdge]: cleaned up after test
+[2014-02-18 15:37:42,536][INFO ][test                     ] Test testHistoFacetEdge(org.elasticsearch.search.facet.SimpleFacetsTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

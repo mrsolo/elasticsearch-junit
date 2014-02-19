@@ -1,0 +1,594 @@
+<testsuite errors="0" failures="0" tests="39" skipped="0" name="org.elasticsearch.search.child.SimpleChildQuerySearchTests" hostname="nohost.nodomain" time="11.045" timestamp="2014-02-18T15:42:33">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testCountApiUsage" time="0.216"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testParentChildQueriesNoParentType" time="0.248"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testDeleteByQuery_has_parent" time="0.521"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasChildQueryWithMinimumScore" time="0.079"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasChildQueryWithNestedInnerObjects" time="0.076"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testTopChildrenReSearchBug" time="0.352"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="indexChildDocWithNoParentMapping" time="0.113"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasChildAndHasParentFilter_withFilter" time="0.243"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="simpleChildQuery" time="0.112"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testReIndexingParentAndChildDocuments" time="0.44"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="simpleChildQueryWithFlush" time="0.446"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="simpleChildQueryWithFlushAnd3Shards" time="0.341"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="multiLevelChild" time="0.148"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testParentChildQueriesCanHandleNoRelevantTypesInIndex" time="0.164"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testParentFieldFilter" time="0.623"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testExplainUsage" time="0.132"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testAdd_ParentFieldAfterIndexingParentDocButBeforeIndexingChildDoc" time="0.181"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testDeleteByQuery_has_child_SingleRefresh" time="0.485"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testScoreForParentChildQueries" time="0.617"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testParentChildCaching" time="0.16"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testCachingBug_withFqueryFilter" time="0.262"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasChildAndHasParentFailWhenSomeSegmentsDontContainAnyParentOrChildDocs" time="0.094"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasParentFilter" time="0.402"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testFixAOBEIfTopChildrenIsWrappedInMusNotClause" time="0.145"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testSimpleQueryRewrite" time="0.496"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="test2744" time="0.182"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasChildQueryOnlyReturnsSingleChildType" time="0.437"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testNamedFilters" time="0.131"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testHasChildNotBeingCached" time="0.176"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testScoreForParentChildQueries_withFunctionScore" time="0.276"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testDfsSearchType" time="0.14"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testClearIdCacheBug" time="0.133"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testAddingParentToExistingMapping" time="0.157"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testDeleteByQuery_has_child" time="0.565"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testDeletedParent" time="0.166"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testValidateThatHasChildAndHasParentFilterAreNeverCached" time="0.104"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testScopedFacet" time="0.158"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testParentChildQueriesViaScrollApi" time="0.163"/>
+   <testcase classname="org.elasticsearch.search.child.SimpleChildQuerySearchTests" name="testTopChildrenBug_concurrencyIssue" time="1.121"/>
+   <system-out><![CDATA[[2014-02-18 15:42:33,762][INFO ][test                     ] Test testCountApiUsage(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:33,768][INFO ][search.child             ] [SimpleChildQuerySearchTests#testCountApiUsage]: before test
+[2014-02-18 15:42:33,779][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:33,811][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:33,851][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:33,857][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:33,869][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:33,959][INFO ][search.child             ] [SimpleChildQuerySearchTests#testCountApiUsage]: cleaning up after test
+[2014-02-18 15:42:33,959][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:33,971][INFO ][search.child             ] [SimpleChildQuerySearchTests#testCountApiUsage]: cleaned up after test
+[2014-02-18 15:42:33,977][INFO ][test                     ] Test testCountApiUsage(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:33,978][INFO ][test                     ] Test testParentChildQueriesNoParentType(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:33,985][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:34,025][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:34,072][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesNoParentType]: before test
+[2014-02-18 15:42:34,085][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:34,145][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:34,198][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesNoParentType]: cleaning up after test
+[2014-02-18 15:42:34,201][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:34,215][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesNoParentType]: cleaned up after test
+[2014-02-18 15:42:34,226][INFO ][test                     ] Test testParentChildQueriesNoParentType(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:34,226][INFO ][test                     ] Test testDeleteByQuery_has_parent(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:34,232][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:34,266][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_parent]: before test
+[2014-02-18 15:42:34,280][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:42:34,601][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:34,605][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:34,610][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:34,724][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_parent]: cleaning up after test
+[2014-02-18 15:42:34,726][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:34,743][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_parent]: cleaned up after test
+[2014-02-18 15:42:34,747][INFO ][test                     ] Test testDeleteByQuery_has_parent(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:34,748][INFO ][test                     ] Test testHasChildQueryWithMinimumScore(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:34,752][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryWithMinimumScore]: before test
+[2014-02-18 15:42:34,760][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:34,785][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:34,787][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:34,790][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:34,806][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryWithMinimumScore]: cleaning up after test
+[2014-02-18 15:42:34,807][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:34,826][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryWithMinimumScore]: cleaned up after test
+[2014-02-18 15:42:34,827][INFO ][test                     ] Test testHasChildQueryWithMinimumScore(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:34,828][INFO ][test                     ] Test testHasChildQueryWithNestedInnerObjects(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:34,833][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryWithNestedInnerObjects]: before test
+[2014-02-18 15:42:34,843][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [child, parent]
+[2014-02-18 15:42:34,868][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:34,872][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:34,892][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryWithNestedInnerObjects]: cleaning up after test
+[2014-02-18 15:42:34,892][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:34,903][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryWithNestedInnerObjects]: cleaned up after test
+[2014-02-18 15:42:34,904][INFO ][test                     ] Test testHasChildQueryWithNestedInnerObjects(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:34,904][INFO ][test                     ] Test testTopChildrenReSearchBug(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:34,909][INFO ][search.child             ] [SimpleChildQuerySearchTests#testTopChildrenReSearchBug]: before test
+[2014-02-18 15:42:34,917][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:34,935][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:34,937][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:34,941][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:35,244][INFO ][search.child             ] [SimpleChildQuerySearchTests#testTopChildrenReSearchBug]: cleaning up after test
+[2014-02-18 15:42:35,245][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:35,255][INFO ][search.child             ] [SimpleChildQuerySearchTests#testTopChildrenReSearchBug]: cleaned up after test
+[2014-02-18 15:42:35,256][INFO ][test                     ] Test testTopChildrenReSearchBug(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:35,257][INFO ][test                     ] Test indexChildDocWithNoParentMapping(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:35,261][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:35,290][INFO ][search.child             ] [SimpleChildQuerySearchTests#indexChildDocWithNoParentMapping]: before test
+[2014-02-18 15:42:35,299][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:35,327][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child1]
+[2014-02-18 15:42:35,330][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:35,349][INFO ][search.child             ] [SimpleChildQuerySearchTests#indexChildDocWithNoParentMapping]: cleaning up after test
+[2014-02-18 15:42:35,350][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:35,364][INFO ][search.child             ] [SimpleChildQuerySearchTests#indexChildDocWithNoParentMapping]: cleaned up after test
+[2014-02-18 15:42:35,370][INFO ][test                     ] Test indexChildDocWithNoParentMapping(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:35,370][INFO ][test                     ] Test testHasChildAndHasParentFilter_withFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:35,375][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:35,407][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:35,432][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:35,456][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildAndHasParentFilter_withFilter]: before test
+[2014-02-18 15:42:35,464][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:35,482][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:35,486][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:35,488][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:35,505][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:42:35,582][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildAndHasParentFilter_withFilter]: cleaning up after test
+[2014-02-18 15:42:35,585][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:35,601][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildAndHasParentFilter_withFilter]: cleaned up after test
+[2014-02-18 15:42:35,613][INFO ][test                     ] Test testHasChildAndHasParentFilter_withFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:35,614][INFO ][test                     ] Test simpleChildQuery(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:35,619][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:35,648][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQuery]: before test
+[2014-02-18 15:42:35,659][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:35,679][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:35,681][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:35,684][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:35,713][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQuery]: cleaning up after test
+[2014-02-18 15:42:35,714][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:35,722][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQuery]: cleaned up after test
+[2014-02-18 15:42:35,726][INFO ][test                     ] Test simpleChildQuery(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:35,726][INFO ][test                     ] Test testReIndexingParentAndChildDocuments(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:35,731][INFO ][search.child             ] [SimpleChildQuerySearchTests#testReIndexingParentAndChildDocuments]: before test
+[2014-02-18 15:42:35,739][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:35,759][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:35,781][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:35,783][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:35,785][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:36,135][INFO ][search.child             ] [SimpleChildQuerySearchTests#testReIndexingParentAndChildDocuments]: cleaning up after test
+[2014-02-18 15:42:36,137][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:36,160][INFO ][search.child             ] [SimpleChildQuerySearchTests#testReIndexingParentAndChildDocuments]: cleaned up after test
+[2014-02-18 15:42:36,166][INFO ][test                     ] Test testReIndexingParentAndChildDocuments(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:36,166][INFO ][test                     ] Test simpleChildQueryWithFlush(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:36,172][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:36,198][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:36,223][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQueryWithFlush]: before test
+[2014-02-18 15:42:36,234][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:36,257][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:36,259][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:36,290][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:36,588][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQueryWithFlush]: cleaning up after test
+[2014-02-18 15:42:36,589][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:36,603][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQueryWithFlush]: cleaned up after test
+[2014-02-18 15:42:36,612][INFO ][test                     ] Test simpleChildQueryWithFlush(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:36,613][INFO ][test                     ] Test simpleChildQueryWithFlushAnd3Shards(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:36,618][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:36,645][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:36,674][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQueryWithFlushAnd3Shards]: before test
+[2014-02-18 15:42:36,683][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 15:42:36,728][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:36,733][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:36,759][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:36,927][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQueryWithFlushAnd3Shards]: cleaning up after test
+[2014-02-18 15:42:36,928][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:36,946][INFO ][search.child             ] [SimpleChildQuerySearchTests#simpleChildQueryWithFlushAnd3Shards]: cleaned up after test
+[2014-02-18 15:42:36,953][INFO ][test                     ] Test simpleChildQueryWithFlushAnd3Shards(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:36,954][INFO ][test                     ] Test multiLevelChild(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:36,957][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:36,981][INFO ][search.child             ] [SimpleChildQuerySearchTests#multiLevelChild]: before test
+[2014-02-18 15:42:36,989][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:37,016][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:37,050][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:37,052][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [grandchild]
+[2014-02-18 15:42:37,055][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:37,057][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:37,060][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [grandchild] (dynamic)
+[2014-02-18 15:42:37,083][INFO ][search.child             ] [SimpleChildQuerySearchTests#multiLevelChild]: cleaning up after test
+[2014-02-18 15:42:37,084][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:37,094][INFO ][search.child             ] [SimpleChildQuerySearchTests#multiLevelChild]: cleaned up after test
+[2014-02-18 15:42:37,102][INFO ][test                     ] Test multiLevelChild(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:37,102][INFO ][test                     ] Test testParentChildQueriesCanHandleNoRelevantTypesInIndex(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:37,107][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:37,131][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:37,160][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:37,181][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesCanHandleNoRelevantTypesInIndex]: before test
+[2014-02-18 15:42:37,190][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [child, parent]
+[2014-02-18 15:42:37,222][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child1] (dynamic)
+[2014-02-18 15:42:37,239][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesCanHandleNoRelevantTypesInIndex]: cleaning up after test
+[2014-02-18 15:42:37,240][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:37,253][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesCanHandleNoRelevantTypesInIndex]: cleaned up after test
+[2014-02-18 15:42:37,266][INFO ][test                     ] Test testParentChildQueriesCanHandleNoRelevantTypesInIndex(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:37,266][INFO ][test                     ] Test testParentFieldFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:37,272][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:37,300][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentFieldFilter]: before test
+[2014-02-18 15:42:37,302][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:37,330][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:42:37,567][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:37,570][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child2]
+[2014-02-18 15:42:37,575][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [some_type] (dynamic)
+[2014-02-18 15:42:37,582][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:37,586][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:37,617][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent2] (dynamic)
+[2014-02-18 15:42:37,812][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child2] (dynamic)
+[2014-02-18 15:42:37,861][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentFieldFilter]: cleaning up after test
+[2014-02-18 15:42:37,862][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:37,880][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentFieldFilter]: cleaned up after test
+[2014-02-18 15:42:37,888][INFO ][test                     ] Test testParentFieldFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:37,889][INFO ][test                     ] Test testExplainUsage(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:37,894][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:37,922][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:37,946][INFO ][search.child             ] [SimpleChildQuerySearchTests#testExplainUsage]: before test
+[2014-02-18 15:42:37,953][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:37,972][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:37,974][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:37,977][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:37,996][INFO ][search.child             ] [SimpleChildQuerySearchTests#testExplainUsage]: cleaning up after test
+[2014-02-18 15:42:37,997][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:38,012][INFO ][search.child             ] [SimpleChildQuerySearchTests#testExplainUsage]: cleaned up after test
+[2014-02-18 15:42:38,021][INFO ][test                     ] Test testExplainUsage(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:38,021][INFO ][test                     ] Test testAdd_ParentFieldAfterIndexingParentDocButBeforeIndexingChildDoc(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:38,027][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:38,051][INFO ][search.child             ] [SimpleChildQuerySearchTests#testAdd_ParentFieldAfterIndexingParentDocButBeforeIndexingChildDoc]: before test
+[2014-02-18 15:42:38,059][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:38,095][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:38,097][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:38,136][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:38,138][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:38,169][INFO ][search.child             ] [SimpleChildQuerySearchTests#testAdd_ParentFieldAfterIndexingParentDocButBeforeIndexingChildDoc]: cleaning up after test
+[2014-02-18 15:42:38,170][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:38,195][INFO ][search.child             ] [SimpleChildQuerySearchTests#testAdd_ParentFieldAfterIndexingParentDocButBeforeIndexingChildDoc]: cleaned up after test
+[2014-02-18 15:42:38,202][INFO ][test                     ] Test testAdd_ParentFieldAfterIndexingParentDocButBeforeIndexingChildDoc(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:38,202][INFO ][test                     ] Test testDeleteByQuery_has_child_SingleRefresh(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:38,206][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:38,228][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:38,250][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:38,273][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_child_SingleRefresh]: before test
+[2014-02-18 15:42:38,281][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:42:38,513][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:38,516][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:38,522][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:38,659][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_child_SingleRefresh]: cleaning up after test
+[2014-02-18 15:42:38,661][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:38,677][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_child_SingleRefresh]: cleaned up after test
+[2014-02-18 15:42:38,687][INFO ][test                     ] Test testDeleteByQuery_has_child_SingleRefresh(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:38,687][INFO ][test                     ] Test testScoreForParentChildQueries(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:38,691][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:38,713][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScoreForParentChildQueries]: before test
+[2014-02-18 15:42:38,722][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [child, child1]
+[2014-02-18 15:42:38,757][INFO ][search.child             ] Index [22] docs async: [true] bulk: [false]
+[2014-02-18 15:42:38,759][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:38,765][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:38,770][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child1] (dynamic)
+[2014-02-18 15:42:39,247][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScoreForParentChildQueries]: cleaning up after test
+[2014-02-18 15:42:39,248][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:39,297][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScoreForParentChildQueries]: cleaned up after test
+[2014-02-18 15:42:39,303][INFO ][test                     ] Test testScoreForParentChildQueries(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:39,304][INFO ][test                     ] Test testParentChildCaching(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:39,311][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:39,341][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildCaching]: before test
+[2014-02-18 15:42:39,352][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:39,375][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:39,379][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:39,381][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:39,451][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildCaching]: cleaning up after test
+[2014-02-18 15:42:39,452][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:39,460][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildCaching]: cleaned up after test
+[2014-02-18 15:42:39,464][INFO ][test                     ] Test testParentChildCaching(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:39,465][INFO ][test                     ] Test testCachingBug_withFqueryFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:39,468][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:39,490][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:39,512][INFO ][search.child             ] [SimpleChildQuerySearchTests#testCachingBug_withFqueryFilter]: before test
+[2014-02-18 15:42:39,521][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:39,540][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:39,543][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:39,547][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:39,575][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:39,701][INFO ][search.child             ] [SimpleChildQuerySearchTests#testCachingBug_withFqueryFilter]: cleaning up after test
+[2014-02-18 15:42:39,702][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:39,715][INFO ][search.child             ] [SimpleChildQuerySearchTests#testCachingBug_withFqueryFilter]: cleaned up after test
+[2014-02-18 15:42:39,727][INFO ][test                     ] Test testCachingBug_withFqueryFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:39,728][INFO ][test                     ] Test testHasChildAndHasParentFailWhenSomeSegmentsDontContainAnyParentOrChildDocs(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:39,731][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildAndHasParentFailWhenSomeSegmentsDontContainAnyParentOrChildDocs]: before test
+[2014-02-18 15:42:39,740][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:39,765][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:39,768][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:39,771][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:39,789][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:42:39,810][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildAndHasParentFailWhenSomeSegmentsDontContainAnyParentOrChildDocs]: cleaning up after test
+[2014-02-18 15:42:39,810][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:39,821][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildAndHasParentFailWhenSomeSegmentsDontContainAnyParentOrChildDocs]: cleaned up after test
+[2014-02-18 15:42:39,822][INFO ][test                     ] Test testHasChildAndHasParentFailWhenSomeSegmentsDontContainAnyParentOrChildDocs(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:39,822][INFO ][test                     ] Test testHasParentFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:39,827][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:39,861][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:39,888][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasParentFilter]: before test
+[2014-02-18 15:42:39,899][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:39,922][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:39,925][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:39,927][INFO ][search.child             ] Index [49] docs async: [true] bulk: [false]
+[2014-02-18 15:42:39,930][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:40,202][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasParentFilter]: cleaning up after test
+[2014-02-18 15:42:40,204][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:40,216][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasParentFilter]: cleaned up after test
+[2014-02-18 15:42:40,224][INFO ][test                     ] Test testHasParentFilter(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:40,224][INFO ][test                     ] Test testFixAOBEIfTopChildrenIsWrappedInMusNotClause(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:40,229][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:40,252][INFO ][search.child             ] [SimpleChildQuerySearchTests#testFixAOBEIfTopChildrenIsWrappedInMusNotClause]: before test
+[2014-02-18 15:42:40,259][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:40,278][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:40,281][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:40,283][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:40,355][INFO ][search.child             ] [SimpleChildQuerySearchTests#testFixAOBEIfTopChildrenIsWrappedInMusNotClause]: cleaning up after test
+[2014-02-18 15:42:40,355][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:40,364][INFO ][search.child             ] [SimpleChildQuerySearchTests#testFixAOBEIfTopChildrenIsWrappedInMusNotClause]: cleaned up after test
+[2014-02-18 15:42:40,368][INFO ][test                     ] Test testFixAOBEIfTopChildrenIsWrappedInMusNotClause(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:40,369][INFO ][test                     ] Test testSimpleQueryRewrite(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:40,373][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:40,407][INFO ][search.child             ] [SimpleChildQuerySearchTests#testSimpleQueryRewrite]: before test
+[2014-02-18 15:42:40,417][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:42:40,462][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:40,466][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:40,469][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:40,833][INFO ][search.child             ] [SimpleChildQuerySearchTests#testSimpleQueryRewrite]: cleaning up after test
+[2014-02-18 15:42:40,834][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:40,859][INFO ][search.child             ] [SimpleChildQuerySearchTests#testSimpleQueryRewrite]: cleaned up after test
+[2014-02-18 15:42:40,865][INFO ][test                     ] Test testSimpleQueryRewrite(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:40,866][INFO ][test                     ] Test test2744(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:40,871][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:40,903][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:40,932][INFO ][search.child             ] [SimpleChildQuerySearchTests#test2744]: before test
+[2014-02-18 15:42:40,941][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:40,962][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:40,984][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [test]
+[2014-02-18 15:42:40,987][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [foo] (dynamic)
+[2014-02-18 15:42:40,989][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:42:41,010][INFO ][search.child             ] [SimpleChildQuerySearchTests#test2744]: cleaning up after test
+[2014-02-18 15:42:41,015][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:41,030][INFO ][search.child             ] [SimpleChildQuerySearchTests#test2744]: cleaned up after test
+[2014-02-18 15:42:41,048][INFO ][test                     ] Test test2744(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:41,049][INFO ][test                     ] Test testHasChildQueryOnlyReturnsSingleChildType(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:41,054][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:41,082][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:41,118][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryOnlyReturnsSingleChildType]: before test
+[2014-02-18 15:42:41,370][INFO ][cluster.metadata         ] [node_0] [grandissue] creating index, cause [api], shards [1]/[0], mappings [child_type_two, parent, child_type_one, grandparent]
+[2014-02-18 15:42:41,397][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:41,434][INFO ][cluster.metadata         ] [node_0] [grandissue] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:41,438][INFO ][cluster.metadata         ] [node_0] [grandissue] update_mapping [child_type_one] (dynamic)
+[2014-02-18 15:42:41,440][INFO ][cluster.metadata         ] [node_0] [grandissue] update_mapping [child_type_two] (dynamic)
+[2014-02-18 15:42:41,460][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryOnlyReturnsSingleChildType]: cleaning up after test
+[2014-02-18 15:42:41,462][INFO ][cluster.metadata         ] [node_0] [grandissue] deleting index
+[2014-02-18 15:42:41,474][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildQueryOnlyReturnsSingleChildType]: cleaned up after test
+[2014-02-18 15:42:41,485][INFO ][test                     ] Test testHasChildQueryOnlyReturnsSingleChildType(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:41,486][INFO ][test                     ] Test testNamedFilters(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:41,490][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:41,515][INFO ][search.child             ] [SimpleChildQuerySearchTests#testNamedFilters]: before test
+[2014-02-18 15:42:41,526][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:41,557][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:41,560][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:41,563][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:41,597][INFO ][search.child             ] [SimpleChildQuerySearchTests#testNamedFilters]: cleaning up after test
+[2014-02-18 15:42:41,598][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:41,609][INFO ][search.child             ] [SimpleChildQuerySearchTests#testNamedFilters]: cleaned up after test
+[2014-02-18 15:42:41,617][INFO ][test                     ] Test testNamedFilters(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:41,617][INFO ][test                     ] Test testHasChildNotBeingCached(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:41,623][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:41,656][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildNotBeingCached]: before test
+[2014-02-18 15:42:41,668][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:41,691][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:41,694][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:41,720][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:41,729][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:41,769][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildNotBeingCached]: cleaning up after test
+[2014-02-18 15:42:41,771][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:41,784][INFO ][search.child             ] [SimpleChildQuerySearchTests#testHasChildNotBeingCached]: cleaned up after test
+[2014-02-18 15:42:41,793][INFO ][test                     ] Test testHasChildNotBeingCached(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:41,793][INFO ][test                     ] Test testScoreForParentChildQueries_withFunctionScore(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:41,799][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScoreForParentChildQueries_withFunctionScore]: before test
+[2014-02-18 15:42:41,808][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings [child, child1]
+[2014-02-18 15:42:41,856][INFO ][search.child             ] Index [22] docs async: [true] bulk: [false]
+[2014-02-18 15:42:41,864][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:41,866][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child1] (dynamic)
+[2014-02-18 15:42:41,869][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:42,051][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScoreForParentChildQueries_withFunctionScore]: cleaning up after test
+[2014-02-18 15:42:42,051][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:42,069][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScoreForParentChildQueries_withFunctionScore]: cleaned up after test
+[2014-02-18 15:42:42,069][INFO ][test                     ] Test testScoreForParentChildQueries_withFunctionScore(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:42,070][INFO ][test                     ] Test testDfsSearchType(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:42,073][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:42,100][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDfsSearchType]: before test
+[2014-02-18 15:42:42,111][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:42:42,153][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:42,157][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:42,160][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:42,191][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDfsSearchType]: cleaning up after test
+[2014-02-18 15:42:42,191][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:42,206][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDfsSearchType]: cleaned up after test
+[2014-02-18 15:42:42,210][INFO ][test                     ] Test testDfsSearchType(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:42,211][INFO ][test                     ] Test testClearIdCacheBug(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:42,215][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:42,238][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:42,261][INFO ][search.child             ] [SimpleChildQuerySearchTests#testClearIdCacheBug]: before test
+[2014-02-18 15:42:42,270][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:42,288][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:42,302][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:42,305][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:42,325][INFO ][search.child             ] [SimpleChildQuerySearchTests#testClearIdCacheBug]: cleaning up after test
+[2014-02-18 15:42:42,326][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:42,336][INFO ][search.child             ] [SimpleChildQuerySearchTests#testClearIdCacheBug]: cleaned up after test
+[2014-02-18 15:42:42,344][INFO ][test                     ] Test testClearIdCacheBug(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:42,344][INFO ][test                     ] Test testAddingParentToExistingMapping(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:42,349][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:42,386][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:42,424][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:42,448][INFO ][search.child             ] [SimpleChildQuerySearchTests#testAddingParentToExistingMapping]: before test
+[2014-02-18 15:42:42,456][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:42,474][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:42,482][INFO ][search.child             ] [SimpleChildQuerySearchTests#testAddingParentToExistingMapping]: cleaning up after test
+[2014-02-18 15:42:42,483][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:42,491][INFO ][search.child             ] [SimpleChildQuerySearchTests#testAddingParentToExistingMapping]: cleaned up after test
+[2014-02-18 15:42:42,500][INFO ][test                     ] Test testAddingParentToExistingMapping(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:42,501][INFO ][test                     ] Test testDeleteByQuery_has_child(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:42,506][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:42,532][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:42,563][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_child]: before test
+[2014-02-18 15:42:42,564][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:42,593][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:42:42,828][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:42,831][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:42,836][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:43,037][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_child]: cleaning up after test
+[2014-02-18 15:42:43,039][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:43,056][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeleteByQuery_has_child]: cleaned up after test
+[2014-02-18 15:42:43,066][INFO ][test                     ] Test testDeleteByQuery_has_child(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:43,066][INFO ][test                     ] Test testDeletedParent(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:43,069][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:43,096][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeletedParent]: before test
+[2014-02-18 15:42:43,098][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:43,141][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:43,166][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:43,171][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:43,173][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:43,212][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeletedParent]: cleaning up after test
+[2014-02-18 15:42:43,213][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:43,224][INFO ][search.child             ] [SimpleChildQuerySearchTests#testDeletedParent]: cleaned up after test
+[2014-02-18 15:42:43,232][INFO ][test                     ] Test testDeletedParent(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:43,233][INFO ][test                     ] Test testValidateThatHasChildAndHasParentFilterAreNeverCached(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:43,238][INFO ][search.child             ] [SimpleChildQuerySearchTests#testValidateThatHasChildAndHasParentFilterAreNeverCached]: before test
+[2014-02-18 15:42:43,249][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [child]
+[2014-02-18 15:42:43,293][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:43,295][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:43,328][INFO ][search.child             ] [SimpleChildQuerySearchTests#testValidateThatHasChildAndHasParentFilterAreNeverCached]: cleaning up after test
+[2014-02-18 15:42:43,329][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:43,336][INFO ][search.child             ] [SimpleChildQuerySearchTests#testValidateThatHasChildAndHasParentFilterAreNeverCached]: cleaned up after test
+[2014-02-18 15:42:43,336][INFO ][test                     ] Test testValidateThatHasChildAndHasParentFilterAreNeverCached(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:43,337][INFO ][test                     ] Test testScopedFacet(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:43,340][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:43,366][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:43,393][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:43,423][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScopedFacet]: before test
+[2014-02-18 15:42:43,433][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:43,452][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:43,454][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:43,457][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:43,474][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScopedFacet]: cleaning up after test
+[2014-02-18 15:42:43,476][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:43,485][INFO ][search.child             ] [SimpleChildQuerySearchTests#testScopedFacet]: cleaned up after test
+[2014-02-18 15:42:43,495][INFO ][test                     ] Test testScopedFacet(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:43,495][INFO ][test                     ] Test testParentChildQueriesViaScrollApi(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:43,499][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:43,522][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesViaScrollApi]: before test
+[2014-02-18 15:42:43,530][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:43,549][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:43,552][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:43,637][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesViaScrollApi]: cleaning up after test
+[2014-02-18 15:42:43,638][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:43,651][INFO ][search.child             ] [SimpleChildQuerySearchTests#testParentChildQueriesViaScrollApi]: cleaned up after test
+[2014-02-18 15:42:43,658][INFO ][test                     ] Test testParentChildQueriesViaScrollApi(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+[2014-02-18 15:42:43,659][INFO ][test                     ] Test testTopChildrenBug_concurrencyIssue(org.elasticsearch.search.child.SimpleChildQuerySearchTests) started
+[2014-02-18 15:42:43,664][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:42:43,694][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:42:43,719][INFO ][search.child             ] [SimpleChildQuerySearchTests#testTopChildrenBug_concurrencyIssue]: before test
+[2014-02-18 15:42:43,720][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:42:43,748][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:42:43,766][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [child]
+[2014-02-18 15:42:43,769][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [parent] (dynamic)
+[2014-02-18 15:42:43,772][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [child] (dynamic)
+[2014-02-18 15:42:44,724][INFO ][search.child             ] [SimpleChildQuerySearchTests#testTopChildrenBug_concurrencyIssue]: cleaning up after test
+[2014-02-18 15:42:44,725][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:42:44,767][INFO ][search.child             ] [SimpleChildQuerySearchTests#testTopChildrenBug_concurrencyIssue]: cleaned up after test
+[2014-02-18 15:42:44,779][INFO ][test                     ] Test testTopChildrenBug_concurrencyIssue(org.elasticsearch.search.child.SimpleChildQuerySearchTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

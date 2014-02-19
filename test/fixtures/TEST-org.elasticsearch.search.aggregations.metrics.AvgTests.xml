@@ -1,0 +1,361 @@
+<testsuite errors="0" failures="0" tests="15" skipped="0" name="org.elasticsearch.search.aggregations.metrics.AvgTests" hostname="nohost.nodomain" time="9.662" timestamp="2014-02-18T16:13:28">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testMultiValuedField" time="0.881"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testScript_ExplicitSingleValued_WithParams" time="0.738"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testScript_SingleValued_WithParams" time="0.447"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testSingleValuedField_PartiallyUnmapped" time="0.718"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testSingleValuedField_WithValueScript" time="0.39"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testUnmapped" time="0.475"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testScript_MultiValued_WithParams" time="0.365"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testMultiValuedField_WithValueScript" time="0.443"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testScript_ExplicitMultiValued" time="0.775"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testSingleValuedField" time="0.642"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testMultiValuedField_WithValueScript_WithParams" time="0.869"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testScript_SingleValued" time="0.664"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testEmptyAggregation" time="0.437"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testSingleValuedField_WithValueScript_WithParams" time="0.675"/>
+   <testcase classname="org.elasticsearch.search.aggregations.metrics.AvgTests" name="testScript_MultiValued" time="1.123"/>
+   <system-out><![CDATA[[2014-02-18 16:13:28,967][INFO ][test                     ] Test testMultiValuedField(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:28,977][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:13:29,003][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:29,028][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField]: before test
+[2014-02-18 16:13:29,042][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:13:29,083][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:13:29,192][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:13:29,273][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:29,341][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:29,413][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [3]/[1], mappings [type]
+[2014-02-18 16:13:29,480][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:29,782][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 12149)
+[2014-02-18 16:13:29,783][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField]: cleaning up after test
+[2014-02-18 16:13:29,784][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:29,799][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:29,809][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:29,836][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField]: cleaned up after test
+[2014-02-18 16:13:29,848][INFO ][test                     ] Test testMultiValuedField(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:29,849][INFO ][test                     ] Test testScript_ExplicitSingleValued_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:29,861][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:13:29,897][INFO ][search.aggregations.metrics] [AvgTests#testScript_ExplicitSingleValued_WithParams]: before test
+[2014-02-18 16:13:29,906][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:13:30,004][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:13:30,057][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:30,375][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 16:13:30,450][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:30,457][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:30,473][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1] (cluster state version: 12162)
+[2014-02-18 16:13:30,475][INFO ][search.aggregations.metrics] [AvgTests#testScript_ExplicitSingleValued_WithParams]: cleaning up after test
+[2014-02-18 16:13:30,475][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:30,507][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:30,551][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:30,583][INFO ][search.aggregations.metrics] [AvgTests#testScript_ExplicitSingleValued_WithParams]: cleaned up after test
+[2014-02-18 16:13:30,587][INFO ][test                     ] Test testScript_ExplicitSingleValued_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:30,587][INFO ][test                     ] Test testScript_SingleValued_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:30,592][INFO ][search.aggregations.metrics] [AvgTests#testScript_SingleValued_WithParams]: before test
+[2014-02-18 16:13:30,603][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:13:30,690][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:13:30,707][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:30,714][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:30,873][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 16:13:30,933][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:30,955][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 12174)
+[2014-02-18 16:13:30,957][INFO ][search.aggregations.metrics] [AvgTests#testScript_SingleValued_WithParams]: cleaning up after test
+[2014-02-18 16:13:30,958][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:30,979][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:31,014][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:31,033][INFO ][search.aggregations.metrics] [AvgTests#testScript_SingleValued_WithParams]: cleaned up after test
+[2014-02-18 16:13:31,034][INFO ][test                     ] Test testScript_SingleValued_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:31,035][INFO ][test                     ] Test testSingleValuedField_PartiallyUnmapped(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:31,042][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:13:31,076][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:31,116][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_PartiallyUnmapped]: before test
+[2014-02-18 16:13:31,126][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:13:31,190][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:13:31,231][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:31,385][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [2]/[1], mappings [type]
+[2014-02-18 16:13:31,437][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:31,457][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:31,687][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[t8Mqv-hjRzqYCBodDxtrKQ][idx_unmapped][0],[t8Mqv-hjRzqYCBodDxtrKQ][idx_unmapped][1],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 12189)
+[2014-02-18 16:13:31,688][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_PartiallyUnmapped]: cleaning up after test
+[2014-02-18 16:13:31,689][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:31,702][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:31,723][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:31,746][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_PartiallyUnmapped]: cleaned up after test
+[2014-02-18 16:13:31,753][INFO ][test                     ] Test testSingleValuedField_PartiallyUnmapped(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:31,754][INFO ][test                     ] Test testSingleValuedField_WithValueScript(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:31,760][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_WithValueScript]: before test
+[2014-02-18 16:13:31,771][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:13:31,836][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:13:31,884][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:31,890][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:31,945][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [5]/[0], mappings [type]
+[2014-02-18 16:13:32,018][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:32,042][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 12201)
+[2014-02-18 16:13:32,044][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_WithValueScript]: cleaning up after test
+[2014-02-18 16:13:32,045][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:32,092][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:32,123][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:32,143][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_WithValueScript]: cleaned up after test
+[2014-02-18 16:13:32,144][INFO ][test                     ] Test testSingleValuedField_WithValueScript(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:32,144][INFO ][test                     ] Test testUnmapped(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:32,150][INFO ][search.aggregations.metrics] [AvgTests#testUnmapped]: before test
+[2014-02-18 16:13:32,161][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:13:32,217][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:13:32,276][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:32,287][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:32,466][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [3]/[0], mappings [type]
+[2014-02-18 16:13:32,519][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:32,549][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx_unmapped][0],[tbUF3y2YTPm1TPdTF8YBYw][idx_unmapped][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx_unmapped][2],[q75XUfcITqG3o93Z8EOFnw][idx_unmapped][3],[tbUF3y2YTPm1TPdTF8YBYw][idx_unmapped][4] (cluster state version: 12213)
+[2014-02-18 16:13:32,549][INFO ][search.aggregations.metrics] [AvgTests#testUnmapped]: cleaning up after test
+[2014-02-18 16:13:32,551][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:32,574][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:32,595][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:32,618][INFO ][search.aggregations.metrics] [AvgTests#testUnmapped]: cleaned up after test
+[2014-02-18 16:13:32,619][INFO ][test                     ] Test testUnmapped(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:32,619][INFO ][test                     ] Test testScript_MultiValued_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:32,632][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:32,662][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:13:32,688][INFO ][search.aggregations.metrics] [AvgTests#testScript_MultiValued_WithParams]: before test
+[2014-02-18 16:13:32,700][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:13:32,742][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:13:32,776][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:32,793][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:32,843][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 16:13:32,870][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:32,897][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 12225)
+[2014-02-18 16:13:32,898][INFO ][search.aggregations.metrics] [AvgTests#testScript_MultiValued_WithParams]: cleaning up after test
+[2014-02-18 16:13:32,899][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:32,947][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:32,967][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:32,977][INFO ][search.aggregations.metrics] [AvgTests#testScript_MultiValued_WithParams]: cleaned up after test
+[2014-02-18 16:13:32,984][INFO ][test                     ] Test testScript_MultiValued_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:32,984][INFO ][test                     ] Test testMultiValuedField_WithValueScript(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:32,991][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:13:33,014][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField_WithValueScript]: before test
+[2014-02-18 16:13:33,017][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:13:33,056][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:13:33,105][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:13:33,140][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:33,172][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:33,189][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:33,258][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 16:13:33,309][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:33,341][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][0] (cluster state version: 12237)
+[2014-02-18 16:13:33,341][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField_WithValueScript]: cleaning up after test
+[2014-02-18 16:13:33,342][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:33,371][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:33,395][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:33,416][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField_WithValueScript]: cleaned up after test
+[2014-02-18 16:13:33,427][INFO ][test                     ] Test testMultiValuedField_WithValueScript(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:33,427][INFO ][test                     ] Test testScript_ExplicitMultiValued(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:33,435][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:33,462][INFO ][search.aggregations.metrics] [AvgTests#testScript_ExplicitMultiValued]: before test
+[2014-02-18 16:13:33,476][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:13:33,547][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:13:33,633][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:33,758][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:33,877][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 16:13:33,955][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:34,052][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 12252)
+[2014-02-18 16:13:34,062][INFO ][search.aggregations.metrics] [AvgTests#testScript_ExplicitMultiValued]: cleaning up after test
+[2014-02-18 16:13:34,066][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:34,134][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:34,178][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:34,197][INFO ][search.aggregations.metrics] [AvgTests#testScript_ExplicitMultiValued]: cleaned up after test
+[2014-02-18 16:13:34,201][INFO ][test                     ] Test testScript_ExplicitMultiValued(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:34,202][INFO ][test                     ] Test testSingleValuedField(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:34,209][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField]: before test
+[2014-02-18 16:13:34,218][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 16:13:34,273][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:13:34,324][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:13:34,396][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:34,528][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:34,633][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [4]/[0], mappings [type]
+[2014-02-18 16:13:34,724][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:34,753][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 12264)
+[2014-02-18 16:13:34,754][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField]: cleaning up after test
+[2014-02-18 16:13:34,755][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:34,775][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:34,817][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:34,838][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField]: cleaned up after test
+[2014-02-18 16:13:34,843][INFO ][test                     ] Test testSingleValuedField(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:34,844][INFO ][test                     ] Test testMultiValuedField_WithValueScript_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:34,855][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:13:34,895][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:13:34,942][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField_WithValueScript_WithParams]: before test
+[2014-02-18 16:13:34,952][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:13:35,015][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:35,098][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:13:35,166][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:35,175][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:35,351][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [1]/[1], mappings [type]
+[2014-02-18 16:13:35,374][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:35,618][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][0],[q75XUfcITqG3o93Z8EOFnw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 12278)
+[2014-02-18 16:13:35,619][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField_WithValueScript_WithParams]: cleaning up after test
+[2014-02-18 16:13:35,621][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:35,633][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:35,684][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:35,699][INFO ][search.aggregations.metrics] [AvgTests#testMultiValuedField_WithValueScript_WithParams]: cleaned up after test
+[2014-02-18 16:13:35,712][INFO ][test                     ] Test testMultiValuedField_WithValueScript_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:35,713][INFO ][test                     ] Test testScript_SingleValued(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:35,718][INFO ][search.aggregations.metrics] [AvgTests#testScript_SingleValued]: before test
+[2014-02-18 16:13:35,724][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:35,759][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:13:35,798][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:13:35,834][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:35,935][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:36,018][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [1]/[1], mappings [type]
+[2014-02-18 16:13:36,038][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:36,286][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][1] (cluster state version: 12292)
+[2014-02-18 16:13:36,289][INFO ][search.aggregations.metrics] [AvgTests#testScript_SingleValued]: cleaning up after test
+[2014-02-18 16:13:36,293][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:36,330][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:36,361][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:36,373][INFO ][search.aggregations.metrics] [AvgTests#testScript_SingleValued]: cleaned up after test
+[2014-02-18 16:13:36,377][INFO ][test                     ] Test testScript_SingleValued(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:36,377][INFO ][test                     ] Test testEmptyAggregation(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:36,382][INFO ][search.aggregations.metrics] [AvgTests#testEmptyAggregation]: before test
+[2014-02-18 16:13:36,395][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:13:36,429][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:36,477][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:13:36,517][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:36,595][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:36,622][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [2]/[0], mappings [type]
+[2014-02-18 16:13:36,666][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:36,711][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][empty_bucket_idx][0],[q75XUfcITqG3o93Z8EOFnw][empty_bucket_idx][1] (cluster state version: 12305)
+[2014-02-18 16:13:36,713][INFO ][search.aggregations.metrics] [AvgTests#testEmptyAggregation]: cleaning up after test
+[2014-02-18 16:13:36,718][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:36,764][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:36,792][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:36,810][INFO ][search.aggregations.metrics] [AvgTests#testEmptyAggregation]: cleaned up after test
+[2014-02-18 16:13:36,814][INFO ][test                     ] Test testEmptyAggregation(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:36,814][INFO ][test                     ] Test testSingleValuedField_WithValueScript_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:36,822][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:13:36,865][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_WithValueScript_WithParams]: before test
+[2014-02-18 16:13:36,883][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:13:37,017][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:13:37,039][INFO ][search.aggregations.metrics] Index [10] docs async: [true] bulk: [false]
+[2014-02-18 16:13:37,258][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:37,317][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 16:13:37,346][INFO ][search.aggregations.metrics] Index [2] docs async: [false] bulk: [false]
+[2014-02-18 16:13:37,372][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][0],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[q75XUfcITqG3o93Z8EOFnw][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1] (cluster state version: 12318)
+[2014-02-18 16:13:37,374][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_WithValueScript_WithParams]: cleaning up after test
+[2014-02-18 16:13:37,376][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:37,396][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:37,470][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:37,484][INFO ][search.aggregations.metrics] [AvgTests#testSingleValuedField_WithValueScript_WithParams]: cleaned up after test
+[2014-02-18 16:13:37,489][INFO ][test                     ] Test testSingleValuedField_WithValueScript_WithParams(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+[2014-02-18 16:13:37,489][INFO ][test                     ] Test testScript_MultiValued(org.elasticsearch.search.aggregations.metrics.AvgTests) started
+[2014-02-18 16:13:37,500][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:13:37,539][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:13:37,567][INFO ][search.aggregations.metrics] [AvgTests#testScript_MultiValued]: before test
+[2014-02-18 16:13:37,580][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:13:37,743][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:13:37,919][INFO ][search.aggregations.metrics] Index [10] docs async: [false] bulk: [true]
+[2014-02-18 16:13:38,120][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:13:38,183][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [2]/[1], mappings [type]
+[2014-02-18 16:13:38,277][INFO ][search.aggregations.metrics] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:13:38,521][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 12333)
+[2014-02-18 16:13:38,523][INFO ][search.aggregations.metrics] [AvgTests#testScript_MultiValued]: cleaning up after test
+[2014-02-18 16:13:38,524][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:13:38,534][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:13:38,571][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:13:38,601][INFO ][search.aggregations.metrics] [AvgTests#testScript_MultiValued]: cleaned up after test
+[2014-02-18 16:13:38,612][INFO ][test                     ] Test testScript_MultiValued(org.elasticsearch.search.aggregations.metrics.AvgTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

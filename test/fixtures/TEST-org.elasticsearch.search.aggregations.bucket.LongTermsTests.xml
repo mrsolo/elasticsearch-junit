@@ -1,0 +1,1071 @@
+<testsuite errors="0" failures="0" tests="28" skipped="0" name="org.elasticsearch.search.aggregations.bucket.LongTermsTests" hostname="nohost.nodomain" time="27.03" timestamp="2014-02-18T16:12:26">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByMultiValueExtendedStatsAsc" time="1.212"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_WithSubAggregation_Inherited" time="1.277"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_WithValueScript" time="1.208"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValueField_OrderedByTermAsc" time="0.571"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByNonMetricsSubAggregation" time="1.18"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByMultiValueSubAggregationAsc" time="0.947"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedBySingleValueSubAggregationDesc" time="0.993"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="multiValuedField" time="0.553"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByMissingSubAggregation" time="0.541"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByMultiValuedSubAggregation_WithUknownMetric" time="0.588"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="script_MultiValued_WithAggregatorInherited_NoExplicitType" time="1.694"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="script_SingleValue" time="0.447"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_WithSubAggregation" time="0.969"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedBySingleValueSubAggregationAsc" time="1.03"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="script_MultiValued_WithAggregatorInherited_WithExplicitType" time="0.61"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="multiValuedField_WithValueScript" time="1.011"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="multiValuedField_WithValueScript_WithInheritedSubAggregator" time="0.821"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="multiValuedField_WithValueScript_NotUnique" time="0.817"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByMultiValuedSubAggregation_WithoutMetric" time="0.677"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="partiallyUnmapped" time="0.609"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValueField_WithMaxSize" time="2.208"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="unmapped" time="0.733"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="emptyAggregation" time="1.35"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="script_MultiValued" time="0.884"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValueField" time="1.786"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValueField_OrderedByTermDesc" time="1.088"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="script_SingleValue_WithSubAggregator_Inherited" time="0.48"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.LongTermsTests" name="singleValuedField_OrderedByMultiValueSubAggregationDesc" time="0.722"/>
+   <system-out><![CDATA[[2014-02-18 16:12:26,358][INFO ][test                     ] Test singleValuedField_OrderedByMultiValueExtendedStatsAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:26,366][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:26,401][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueExtendedStatsAsc]: before test
+[2014-02-18 16:12:26,403][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:26,439][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:26,590][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:26,642][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:26,662][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:26,669][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:27,401][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:12:27,491][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 11324)
+[2014-02-18 16:12:27,493][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueExtendedStatsAsc]: cleaning up after test
+[2014-02-18 16:12:27,494][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:27,505][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:27,562][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueExtendedStatsAsc]: cleaned up after test
+[2014-02-18 16:12:27,569][INFO ][test                     ] Test singleValuedField_OrderedByMultiValueExtendedStatsAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:27,570][INFO ][test                     ] Test singleValuedField_WithSubAggregation_Inherited(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:27,583][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:27,650][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:27,717][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithSubAggregation_Inherited]: before test
+[2014-02-18 16:12:27,734][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:12:27,791][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:27,842][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:27,894][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:27,901][INFO ][search.aggregations.bucket] Index [100] docs async: [false] bulk: [false]
+[2014-02-18 16:12:27,903][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:28,448][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:12:28,539][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[q75XUfcITqG3o93Z8EOFnw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11337)
+[2014-02-18 16:12:28,541][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithSubAggregation_Inherited]: cleaning up after test
+[2014-02-18 16:12:28,543][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:28,565][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:28,829][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithSubAggregation_Inherited]: cleaned up after test
+[2014-02-18 16:12:28,846][INFO ][test                     ] Test singleValuedField_WithSubAggregation_Inherited(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:28,847][INFO ][test                     ] Test singleValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:28,862][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:28,905][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:28,955][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:29,002][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithValueScript]: before test
+[2014-02-18 16:12:29,024][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:29,088][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:29,137][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:29,229][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:29,233][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:29,760][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:12:29,990][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][1] (cluster state version: 11351)
+[2014-02-18 16:12:29,992][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithValueScript]: cleaning up after test
+[2014-02-18 16:12:29,993][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:30,003][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:30,045][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithValueScript]: cleaned up after test
+[2014-02-18 16:12:30,055][INFO ][test                     ] Test singleValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:30,055][INFO ][test                     ] Test singleValueField_OrderedByTermAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:30,065][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:30,103][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:30,156][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_OrderedByTermAsc]: before test
+[2014-02-18 16:12:30,188][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:12:30,231][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:30,269][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:30,280][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:30,326][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:30,488][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:12:30,572][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 11361)
+[2014-02-18 16:12:30,578][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_OrderedByTermAsc]: cleaning up after test
+[2014-02-18 16:12:30,580][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:30,604][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:30,618][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_OrderedByTermAsc]: cleaned up after test
+[2014-02-18 16:12:30,625][INFO ][test                     ] Test singleValueField_OrderedByTermAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:30,626][INFO ][test                     ] Test singleValuedField_OrderedByNonMetricsSubAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:30,636][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:30,672][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:30,709][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:30,732][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByNonMetricsSubAggregation]: before test
+[2014-02-18 16:12:30,743][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:30,771][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:30,821][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:30,824][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:30,844][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:31,319][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:31,666][TRACE][action.search.type       ] [node_2] [idx][1], node[q75XUfcITqG3o93Z8EOFnw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5a461b19] lastShard [false]
+org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured to order by sub-aggregation [filter] which is is not a metrics aggregation. Terms aggregation order can only refer to metrics aggregations
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:136)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeDfsPhase(SearchService.java:173)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteDfs(SearchServiceTransportAction.java:168)
+	at org.elasticsearch.action.search.type.TransportSearchDfsQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchDfsQueryThenFetchAction.java:85)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:203)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:186)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:31,669][TRACE][action.search.type       ] [node_2] [idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5a461b19] lastShard [false]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/dfs]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured to order by sub-aggregation [filter] which is is not a metrics aggregation. Terms aggregation order can only refer to metrics aggregations
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:136)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeDfsPhase(SearchService.java:173)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:602)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:591)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:31,675][TRACE][action.search.type       ] [node_2] [idx][1], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5a461b19] lastShard [true]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/dfs]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured to order by sub-aggregation [filter] which is is not a metrics aggregation. Terms aggregation order can only refer to metrics aggregations
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:136)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeDfsPhase(SearchService.java:173)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:602)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:591)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:31,682][DEBUG][action.search.type       ] [node_2] [idx][0], node[t8Mqv-hjRzqYCBodDxtrKQ], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5a461b19]
+org.elasticsearch.transport.RemoteTransportException: [node_1][inet[/10.1.10.75:9301]][search/phase/dfs]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured to order by sub-aggregation [filter] which is is not a metrics aggregation. Terms aggregation order can only refer to metrics aggregations
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:136)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeDfsPhase(SearchService.java:173)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:602)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:591)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:31,683][DEBUG][action.search.type       ] [node_2] All shards failed for phase: [dfs]
+[2014-02-18 16:12:31,690][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByNonMetricsSubAggregation]: cleaning up after test
+[2014-02-18 16:12:31,696][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:31,731][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:31,794][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByNonMetricsSubAggregation]: cleaned up after test
+[2014-02-18 16:12:31,805][INFO ][test                     ] Test singleValuedField_OrderedByNonMetricsSubAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:31,806][INFO ][test                     ] Test singleValuedField_OrderedByMultiValueSubAggregationAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:31,815][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueSubAggregationAsc]: before test
+[2014-02-18 16:12:31,831][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:31,876][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:31,948][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:31,971][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:31,980][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:32,480][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:32,710][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][1] (cluster state version: 11389)
+[2014-02-18 16:12:32,711][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueSubAggregationAsc]: cleaning up after test
+[2014-02-18 16:12:32,712][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:32,728][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:32,752][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueSubAggregationAsc]: cleaned up after test
+[2014-02-18 16:12:32,753][INFO ][test                     ] Test singleValuedField_OrderedByMultiValueSubAggregationAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:32,753][INFO ][test                     ] Test singleValuedField_OrderedBySingleValueSubAggregationDesc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:32,761][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:32,785][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:32,825][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedBySingleValueSubAggregationDesc]: before test
+[2014-02-18 16:12:32,838][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:32,892][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:32,894][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:32,942][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:32,944][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:33,598][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:33,662][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11399)
+[2014-02-18 16:12:33,664][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedBySingleValueSubAggregationDesc]: cleaning up after test
+[2014-02-18 16:12:33,666][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:33,685][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:33,739][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedBySingleValueSubAggregationDesc]: cleaned up after test
+[2014-02-18 16:12:33,746][INFO ][test                     ] Test singleValuedField_OrderedBySingleValueSubAggregationDesc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:33,746][INFO ][test                     ] Test multiValuedField(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:33,753][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField]: before test
+[2014-02-18 16:12:33,763][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:12:33,823][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:33,829][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:33,962][INFO ][search.aggregations.bucket] Index [100] docs async: [false] bulk: [true]
+[2014-02-18 16:12:33,971][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:34,174][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:12:34,239][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11410)
+[2014-02-18 16:12:34,240][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField]: cleaning up after test
+[2014-02-18 16:12:34,241][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:34,265][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:34,298][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField]: cleaned up after test
+[2014-02-18 16:12:34,299][INFO ][test                     ] Test multiValuedField(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:34,300][INFO ][test                     ] Test singleValuedField_OrderedByMissingSubAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:34,305][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMissingSubAggregation]: before test
+[2014-02-18 16:12:34,317][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:12:34,376][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:34,406][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:34,411][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:34,434][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:34,455][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:34,680][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:12:34,760][TRACE][action.search.type       ] [node_2] [idx][1], node[q75XUfcITqG3o93Z8EOFnw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e764807] lastShard [true]
+org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [avg_i] but no sub aggregation with this name is configured
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:159)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeDfsPhase(SearchService.java:173)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteDfs(SearchServiceTransportAction.java:168)
+	at org.elasticsearch.action.search.type.TransportSearchDfsQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchDfsQueryThenFetchAction.java:85)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:203)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:186)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:34,763][DEBUG][action.search.type       ] [node_2] [idx][0], node[t8Mqv-hjRzqYCBodDxtrKQ], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e764807]
+org.elasticsearch.transport.RemoteTransportException: [node_1][inet[/10.1.10.75:9301]][search/phase/dfs]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [avg_i] but no sub aggregation with this name is configured
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:159)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeDfsPhase(SearchService.java:173)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:602)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchDfsTransportHandler.messageReceived(SearchServiceTransportAction.java:591)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:34,763][DEBUG][action.search.type       ] [node_2] All shards failed for phase: [dfs]
+[2014-02-18 16:12:34,764][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMissingSubAggregation]: cleaning up after test
+[2014-02-18 16:12:34,765][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:34,785][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:34,826][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMissingSubAggregation]: cleaned up after test
+[2014-02-18 16:12:34,840][INFO ][test                     ] Test singleValuedField_OrderedByMissingSubAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:34,846][INFO ][test                     ] Test singleValuedField_OrderedByMultiValuedSubAggregation_WithUknownMetric(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:34,876][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:34,928][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValuedSubAggregation_WithUknownMetric]: before test
+[2014-02-18 16:12:34,933][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:34,984][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:12:35,006][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:35,041][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:35,057][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:35,154][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:35,285][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:12:35,375][TRACE][action.search.type       ] [node_2] [idx][0], node[t8Mqv-hjRzqYCBodDxtrKQ], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@210b6a1c] lastShard [false]
+org.elasticsearch.transport.RemoteTransportException: [node_1][inet[/10.1.10.75:9301]][search/phase/query+fetch]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [stats] and value [foo] yet the referred sub aggregator holds no metric that goes by this name
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:147)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:311)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:686)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:675)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:35,377][DEBUG][action.search.type       ] [node_2] [idx][0], node[q75XUfcITqG3o93Z8EOFnw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@210b6a1c]
+org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [stats] and value [foo] yet the referred sub aggregator holds no metric that goes by this name
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:147)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:311)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteFetch(SearchServiceTransportAction.java:304)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryAndFetchAction.java:71)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$4.run(TransportSearchTypeAction.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:35,377][DEBUG][action.search.type       ] [node_2] All shards failed for phase: [query_fetch]
+[2014-02-18 16:12:35,381][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValuedSubAggregation_WithUknownMetric]: cleaning up after test
+[2014-02-18 16:12:35,383][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:35,402][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:35,424][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValuedSubAggregation_WithUknownMetric]: cleaned up after test
+[2014-02-18 16:12:35,433][INFO ][test                     ] Test singleValuedField_OrderedByMultiValuedSubAggregation_WithUknownMetric(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:35,433][INFO ][test                     ] Test script_MultiValued_WithAggregatorInherited_NoExplicitType(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:35,447][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:35,484][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued_WithAggregatorInherited_NoExplicitType]: before test
+[2014-02-18 16:12:35,486][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:35,531][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:35,602][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:35,640][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:35,651][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:35,655][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:36,701][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:37,015][TRACE][action.search.type       ] [node_1] [idx][0], node[t8Mqv-hjRzqYCBodDxtrKQ], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [false]
+org.elasticsearch.search.SearchParseException: [idx][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:202)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:203)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:186)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 12 more
+[2014-02-18 16:12:37,015][TRACE][action.search.type       ] [node_1] [idx][2], node[t8Mqv-hjRzqYCBodDxtrKQ], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [false]
+org.elasticsearch.search.SearchParseException: [idx][2]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:202)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:203)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:186)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 12 more
+[2014-02-18 16:12:37,015][TRACE][action.search.type       ] [node_1] [idx][3], node[t8Mqv-hjRzqYCBodDxtrKQ], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [false]
+org.elasticsearch.search.SearchParseException: [idx][3]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:202)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:203)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$2.run(TransportSearchTypeAction.java:186)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 12 more
+[2014-02-18 16:12:37,018][TRACE][action.search.type       ] [node_1] [idx][1], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [false]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][1]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,018][TRACE][action.search.type       ] [node_1] [idx][4], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [false]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][4]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,020][TRACE][action.search.type       ] [node_1] [idx][2], node[tbUF3y2YTPm1TPdTF8YBYw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [true]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][2]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,019][TRACE][action.search.type       ] [node_1] [idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [true]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][0]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,023][DEBUG][action.search.type       ] [node_1] [idx][4], node[q75XUfcITqG3o93Z8EOFnw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b]
+org.elasticsearch.transport.RemoteTransportException: [node_2][inet[/10.1.10.75:9302]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][4]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,024][DEBUG][action.search.type       ] [node_1] All shards failed for phase: [query]
+[2014-02-18 16:12:37,023][TRACE][action.search.type       ] [node_1] [idx][1], node[q75XUfcITqG3o93Z8EOFnw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [true]
+org.elasticsearch.transport.RemoteTransportException: [node_2][inet[/10.1.10.75:9302]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][1]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,023][TRACE][action.search.type       ] [node_1] [idx][3], node[q75XUfcITqG3o93Z8EOFnw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@70f50b1b] lastShard [true]
+org.elasticsearch.transport.RemoteTransportException: [node_2][inet[/10.1.10.75:9302]][search/phase/query]
+Caused by: org.elasticsearch.search.SearchParseException: [idx][3]: from[-1],size[-1]: Parse Failure [Failed to parse source [{"aggregations":{"terms":{"terms":{"script":"doc['l_values'].values"},"aggregations":{"sum":{"sum":{}}}}}}]]
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:586)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:489)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: could not find the appropriate value context to perform aggregation [sum]
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.resolveValuesSourceConfigFromAncestors(ValueSourceAggregatorFactory.java:85)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.doValidate(ValueSourceAggregatorFactory.java:64)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:61)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.validate(AggregatorFactories.java:140)
+	at org.elasticsearch.search.aggregations.AggregatorFactory.validate(AggregatorFactory.java:62)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:120)
+	at org.elasticsearch.search.aggregations.AggregatorParsers.parseAggregators(AggregatorParsers.java:73)
+	at org.elasticsearch.search.aggregations.AggregationParseElement.parse(AggregationParseElement.java:60)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:574)
+	... 10 more
+[2014-02-18 16:12:37,024][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued_WithAggregatorInherited_NoExplicitType]: cleaning up after test
+[2014-02-18 16:12:37,027][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:37,051][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:37,113][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued_WithAggregatorInherited_NoExplicitType]: cleaned up after test
+[2014-02-18 16:12:37,127][INFO ][test                     ] Test script_MultiValued_WithAggregatorInherited_NoExplicitType(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:37,127][INFO ][test                     ] Test script_SingleValue(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:37,138][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:37,165][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:37,193][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:37,219][INFO ][search.aggregations.bucket] [LongTermsTests#script_SingleValue]: before test
+[2014-02-18 16:12:37,228][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:12:37,244][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:37,258][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:37,269][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:37,291][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:37,381][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:37,511][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 11460)
+[2014-02-18 16:12:37,512][INFO ][search.aggregations.bucket] [LongTermsTests#script_SingleValue]: cleaning up after test
+[2014-02-18 16:12:37,514][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:37,542][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:37,558][INFO ][search.aggregations.bucket] [LongTermsTests#script_SingleValue]: cleaned up after test
+[2014-02-18 16:12:37,574][INFO ][test                     ] Test script_SingleValue(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:37,574][INFO ][test                     ] Test singleValuedField_WithSubAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:37,582][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:37,611][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:37,640][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithSubAggregation]: before test
+[2014-02-18 16:12:37,652][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:12:37,715][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:37,749][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:37,840][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:37,854][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:38,442][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:12:38,475][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][0],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11474)
+[2014-02-18 16:12:38,477][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithSubAggregation]: cleaning up after test
+[2014-02-18 16:12:38,479][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:38,484][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:38,535][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_WithSubAggregation]: cleaned up after test
+[2014-02-18 16:12:38,543][INFO ][test                     ] Test singleValuedField_WithSubAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:38,544][INFO ][test                     ] Test singleValuedField_OrderedBySingleValueSubAggregationAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:38,555][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:38,590][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:38,618][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedBySingleValueSubAggregationAsc]: before test
+[2014-02-18 16:12:38,627][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:38,677][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:38,702][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:38,704][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:38,726][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:38,732][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:39,231][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 16:12:39,499][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11487)
+[2014-02-18 16:12:39,501][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedBySingleValueSubAggregationAsc]: cleaning up after test
+[2014-02-18 16:12:39,503][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:39,524][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:39,564][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedBySingleValueSubAggregationAsc]: cleaned up after test
+[2014-02-18 16:12:39,574][INFO ][test                     ] Test singleValuedField_OrderedBySingleValueSubAggregationAsc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:39,574][INFO ][test                     ] Test script_MultiValued_WithAggregatorInherited_WithExplicitType(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:39,584][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:39,610][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued_WithAggregatorInherited_WithExplicitType]: before test
+[2014-02-18 16:12:39,624][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:12:39,662][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:39,680][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:39,709][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:39,742][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:39,849][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 16:12:40,135][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11500)
+[2014-02-18 16:12:40,138][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued_WithAggregatorInherited_WithExplicitType]: cleaning up after test
+[2014-02-18 16:12:40,139][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:40,160][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:40,179][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued_WithAggregatorInherited_WithExplicitType]: cleaned up after test
+[2014-02-18 16:12:40,184][INFO ][test                     ] Test script_MultiValued_WithAggregatorInherited_WithExplicitType(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:40,184][INFO ][test                     ] Test multiValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:40,191][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript]: before test
+[2014-02-18 16:12:40,206][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:12:40,264][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:40,289][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:40,291][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:40,321][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:40,327][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:40,732][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:41,060][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 11513)
+[2014-02-18 16:12:41,063][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript]: cleaning up after test
+[2014-02-18 16:12:41,065][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:41,103][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:41,191][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript]: cleaned up after test
+[2014-02-18 16:12:41,195][INFO ][test                     ] Test multiValuedField_WithValueScript(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:41,196][INFO ][test                     ] Test multiValuedField_WithValueScript_WithInheritedSubAggregator(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:41,205][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:41,232][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:41,259][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript_WithInheritedSubAggregator]: before test
+[2014-02-18 16:12:41,262][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:41,298][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 16:12:41,340][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:41,361][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:41,380][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:41,391][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:41,899][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:41,967][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11526)
+[2014-02-18 16:12:41,970][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript_WithInheritedSubAggregator]: cleaning up after test
+[2014-02-18 16:12:41,971][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:41,980][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:42,007][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript_WithInheritedSubAggregator]: cleaned up after test
+[2014-02-18 16:12:42,017][INFO ][test                     ] Test multiValuedField_WithValueScript_WithInheritedSubAggregator(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:42,017][INFO ][test                     ] Test multiValuedField_WithValueScript_NotUnique(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:42,028][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:42,065][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript_NotUnique]: before test
+[2014-02-18 16:12:42,075][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:42,120][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:42,148][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:42,150][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:42,152][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:42,156][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:42,470][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:42,763][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11541)
+[2014-02-18 16:12:42,766][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript_NotUnique]: cleaning up after test
+[2014-02-18 16:12:42,767][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:42,797][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:42,827][INFO ][search.aggregations.bucket] [LongTermsTests#multiValuedField_WithValueScript_NotUnique]: cleaned up after test
+[2014-02-18 16:12:42,834][INFO ][test                     ] Test multiValuedField_WithValueScript_NotUnique(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:42,834][INFO ][test                     ] Test singleValuedField_OrderedByMultiValuedSubAggregation_WithoutMetric(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:42,844][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:42,871][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValuedSubAggregation_WithoutMetric]: before test
+[2014-02-18 16:12:42,873][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:42,914][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:42,952][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:42,979][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:43,036][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:43,040][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:43,354][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:12:43,440][TRACE][action.search.type       ] [node_1] [idx][1], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e742e4f] lastShard [false]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/query]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [stats] which is a multi-valued aggregation, yet no metric name was specified
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:143)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:43,441][TRACE][action.search.type       ] [node_1] [idx][0], node[tbUF3y2YTPm1TPdTF8YBYw], [R], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e742e4f] lastShard [false]
+org.elasticsearch.transport.RemoteTransportException: [node_0][inet[/10.1.10.75:9300]][search/phase/query]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [stats] which is a multi-valued aggregation, yet no metric name was specified
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:143)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:43,443][TRACE][action.search.type       ] [node_1] [idx][0], node[t8Mqv-hjRzqYCBodDxtrKQ], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e742e4f] lastShard [true]
+org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [stats] which is a multi-valued aggregation, yet no metric name was specified
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:143)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction.sendExecuteQuery(SearchServiceTransportAction.java:202)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.sendExecuteFirstPhase(TransportSearchQueryThenFetchAction.java:80)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.performFirstPhase(TransportSearchTypeAction.java:216)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$4.run(TransportSearchTypeAction.java:292)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:43,444][DEBUG][action.search.type       ] [node_1] [idx][1], node[q75XUfcITqG3o93Z8EOFnw], [P], s[STARTED]: Failed to execute [org.elasticsearch.action.search.SearchRequest@5e742e4f]
+org.elasticsearch.transport.RemoteTransportException: [node_2][inet[/10.1.10.75:9302]][search/phase/query]
+Caused by: org.elasticsearch.search.aggregations.AggregationExecutionException: terms aggregation [terms] is configured with a sub-aggregation order [stats] which is a multi-valued aggregation, yet no metric name was specified
+	at org.elasticsearch.search.aggregations.bucket.terms.InternalOrder.validate(InternalOrder.java:143)
+	at org.elasticsearch.search.aggregations.bucket.terms.LongTermsAggregator.<init>(LongTermsAggregator.java:52)
+	at org.elasticsearch.search.aggregations.bucket.terms.TermsAggregatorFactory.create(TermsAggregatorFactory.java:129)
+	at org.elasticsearch.search.aggregations.support.ValueSourceAggregatorFactory.create(ValueSourceAggregatorFactory.java:58)
+	at org.elasticsearch.search.aggregations.AggregatorFactories.createTopLevelAggregators(AggregatorFactories.java:123)
+	at org.elasticsearch.search.aggregations.AggregationPhase.preProcess(AggregationPhase.java:79)
+	at org.elasticsearch.search.query.QueryPhase.preProcess(QueryPhase.java:91)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:502)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:474)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:467)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:239)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:623)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:612)
+	at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.run(MessageChannelHandler.java:270)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:12:43,445][DEBUG][action.search.type       ] [node_1] All shards failed for phase: [query]
+[2014-02-18 16:12:43,445][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValuedSubAggregation_WithoutMetric]: cleaning up after test
+[2014-02-18 16:12:43,446][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:43,463][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:43,505][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValuedSubAggregation_WithoutMetric]: cleaned up after test
+[2014-02-18 16:12:43,511][INFO ][test                     ] Test singleValuedField_OrderedByMultiValuedSubAggregation_WithoutMetric(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:43,511][INFO ][test                     ] Test partiallyUnmapped(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:43,520][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:43,543][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:43,571][INFO ][search.aggregations.bucket] [LongTermsTests#partiallyUnmapped]: before test
+[2014-02-18 16:12:43,583][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:12:43,607][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:43,637][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:43,647][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:43,653][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:43,673][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:43,846][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:12:44,081][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[q75XUfcITqG3o93Z8EOFnw][idx_unmapped][0] (cluster state version: 11565)
+[2014-02-18 16:12:44,082][INFO ][search.aggregations.bucket] [LongTermsTests#partiallyUnmapped]: cleaning up after test
+[2014-02-18 16:12:44,084][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:44,092][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:44,109][INFO ][search.aggregations.bucket] [LongTermsTests#partiallyUnmapped]: cleaned up after test
+[2014-02-18 16:12:44,120][INFO ][test                     ] Test partiallyUnmapped(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:44,120][INFO ][test                     ] Test singleValueField_WithMaxSize(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:44,161][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:44,268][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:44,331][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_WithMaxSize]: before test
+[2014-02-18 16:12:44,334][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:44,400][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:44,538][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:44,544][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:44,548][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:44,570][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:45,924][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[1], mappings []
+[2014-02-18 16:12:46,262][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11577)
+[2014-02-18 16:12:46,266][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_WithMaxSize]: cleaning up after test
+[2014-02-18 16:12:46,269][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:46,299][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:46,318][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_WithMaxSize]: cleaned up after test
+[2014-02-18 16:12:46,328][INFO ][test                     ] Test singleValueField_WithMaxSize(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:46,328][INFO ][test                     ] Test unmapped(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:46,336][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:46,385][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:46,421][INFO ][search.aggregations.bucket] [LongTermsTests#unmapped]: before test
+[2014-02-18 16:12:46,424][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:46,469][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:12:46,544][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:46,623][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:46,645][INFO ][search.aggregations.bucket] Index [100] docs async: [false] bulk: [true]
+[2014-02-18 16:12:46,661][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:46,963][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 16:12:46,989][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx_unmapped][0] (cluster state version: 11592)
+[2014-02-18 16:12:46,990][INFO ][search.aggregations.bucket] [LongTermsTests#unmapped]: cleaning up after test
+[2014-02-18 16:12:46,991][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:46,997][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:47,049][INFO ][search.aggregations.bucket] [LongTermsTests#unmapped]: cleaned up after test
+[2014-02-18 16:12:47,060][INFO ][test                     ] Test unmapped(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:47,061][INFO ][test                     ] Test emptyAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:47,068][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:47,091][INFO ][search.aggregations.bucket] [LongTermsTests#emptyAggregation]: before test
+[2014-02-18 16:12:47,100][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:12:47,172][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:47,204][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:47,282][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:47,313][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:47,325][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:48,126][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [4]/[0], mappings []
+[2014-02-18 16:12:48,206][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 16:12:48,225][INFO ][search.aggregations.bucket] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 16:12:48,244][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][empty_bucket_idx][0] (cluster state version: 11607)
+[2014-02-18 16:12:48,244][INFO ][search.aggregations.bucket] [LongTermsTests#emptyAggregation]: cleaning up after test
+[2014-02-18 16:12:48,246][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:48,275][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:48,383][INFO ][cluster.metadata         ] [node_0] [empty_bucket_idx] deleting index
+[2014-02-18 16:12:48,402][INFO ][search.aggregations.bucket] [LongTermsTests#emptyAggregation]: cleaned up after test
+[2014-02-18 16:12:48,410][INFO ][test                     ] Test emptyAggregation(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:48,411][INFO ][test                     ] Test script_MultiValued(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:48,417][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued]: before test
+[2014-02-18 16:12:48,432][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:12:48,484][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:48,525][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:48,596][INFO ][search.aggregations.bucket] Index [100] docs async: [false] bulk: [false]
+[2014-02-18 16:12:48,615][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:49,210][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 16:12:49,260][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][0] (cluster state version: 11619)
+[2014-02-18 16:12:49,261][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued]: cleaning up after test
+[2014-02-18 16:12:49,262][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:49,276][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:49,294][INFO ][search.aggregations.bucket] [LongTermsTests#script_MultiValued]: cleaned up after test
+[2014-02-18 16:12:49,295][INFO ][test                     ] Test script_MultiValued(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:49,296][INFO ][test                     ] Test singleValueField(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:49,304][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:49,337][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField]: before test
+[2014-02-18 16:12:49,346][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:12:49,433][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:49,438][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:49,556][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:49,568][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:50,943][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:12:51,028][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 11629)
+[2014-02-18 16:12:51,030][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField]: cleaning up after test
+[2014-02-18 16:12:51,031][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:51,049][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:51,078][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField]: cleaned up after test
+[2014-02-18 16:12:51,082][INFO ][test                     ] Test singleValueField(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:51,083][INFO ][test                     ] Test singleValueField_OrderedByTermDesc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:51,093][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:12:51,123][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:51,147][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_OrderedByTermDesc]: before test
+[2014-02-18 16:12:51,156][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [4]/[1], mappings []
+[2014-02-18 16:12:51,228][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:51,284][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:51,352][INFO ][search.aggregations.bucket] Index [100] docs async: [false] bulk: [false]
+[2014-02-18 16:12:51,354][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:51,820][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[1], mappings []
+[2014-02-18 16:12:52,097][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1] (cluster state version: 11646)
+[2014-02-18 16:12:52,098][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_OrderedByTermDesc]: cleaning up after test
+[2014-02-18 16:12:52,099][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:52,115][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:52,162][INFO ][search.aggregations.bucket] [LongTermsTests#singleValueField_OrderedByTermDesc]: cleaned up after test
+[2014-02-18 16:12:52,171][INFO ][test                     ] Test singleValueField_OrderedByTermDesc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:52,171][INFO ][test                     ] Test script_SingleValue_WithSubAggregator_Inherited(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:52,183][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:12:52,211][INFO ][search.aggregations.bucket] [LongTermsTests#script_SingleValue_WithSubAggregator_Inherited]: before test
+[2014-02-18 16:12:52,223][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 16:12:52,286][INFO ][search.aggregations.bucket] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 16:12:52,292][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:52,292][INFO ][search.aggregations.bucket] Index [100] docs async: [false] bulk: [true]
+[2014-02-18 16:12:52,302][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:52,349][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:52,604][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 11657)
+[2014-02-18 16:12:52,606][INFO ][search.aggregations.bucket] [LongTermsTests#script_SingleValue_WithSubAggregator_Inherited]: cleaning up after test
+[2014-02-18 16:12:52,607][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:52,625][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:52,647][INFO ][search.aggregations.bucket] [LongTermsTests#script_SingleValue_WithSubAggregator_Inherited]: cleaned up after test
+[2014-02-18 16:12:52,651][INFO ][test                     ] Test script_SingleValue_WithSubAggregator_Inherited(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+[2014-02-18 16:12:52,651][INFO ][test                     ] Test singleValuedField_OrderedByMultiValueSubAggregationDesc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) started
+[2014-02-18 16:12:52,662][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:12:52,696][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueSubAggregationDesc]: before test
+[2014-02-18 16:12:52,712][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:52,770][INFO ][search.aggregations.bucket] Index [5] docs async: [false] bulk: [true]
+[2014-02-18 16:12:52,776][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:12:52,777][INFO ][search.aggregations.bucket] Index [100] docs async: [true] bulk: [false]
+[2014-02-18 16:12:52,787][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [high_card_type] (dynamic)
+[2014-02-18 16:12:53,276][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] creating index, cause [api], shards [3]/[0], mappings []
+[2014-02-18 16:12:53,328][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][0],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1] (cluster state version: 11667)
+[2014-02-18 16:12:53,331][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueSubAggregationDesc]: cleaning up after test
+[2014-02-18 16:12:53,332][INFO ][cluster.metadata         ] [node_0] [idx_unmapped] deleting index
+[2014-02-18 16:12:53,343][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:12:53,368][INFO ][search.aggregations.bucket] [LongTermsTests#singleValuedField_OrderedByMultiValueSubAggregationDesc]: cleaned up after test
+[2014-02-18 16:12:53,373][INFO ][test                     ] Test singleValuedField_OrderedByMultiValueSubAggregationDesc(org.elasticsearch.search.aggregations.bucket.LongTermsTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

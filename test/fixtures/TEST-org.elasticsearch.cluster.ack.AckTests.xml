@@ -1,0 +1,848 @@
+<testsuite errors="0" failures="0" tests="22" skipped="0" name="org.elasticsearch.cluster.ack.AckTests" hostname="nohost.nodomain" time="27.633" timestamp="2014-02-18T15:56:03">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testCloseIndexNoAcknowledgement" time="16.237"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testClusterRerouteNoAcknowledgement" time="0.541"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testOpenIndexAcknowledgement" time="0.558"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testCreateIndexAcknowledgement" time="0.394"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testIndicesAliasesAcknowledgement" time="0.247"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testCreateIndexNoAcknowledgement" time="0.285"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testPutWarmerNoAcknowledgement" time="0.522"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testPutWarmerAcknowledgement" time="0.363"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testUpdateSettingsNoAcknowledgement" time="0.162"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testClusterRerouteAcknowledgementDryRun" time="0.496"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testDeleteWarmerAcknowledgement" time="0.42"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testOpenIndexNoAcknowledgement" time="0.809"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testPutMappingNoAcknowledgement" time="0.693"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testDeleteMappingNoAcknowledgement" time="0.461"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testDeleteMappingAcknowledgement" time="0.774"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testUpdateSettingsAcknowledgement" time="0.556"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testDeleteWarmerNoAcknowledgement" time="0.975"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testCloseIndexAcknowledgement" time="1.028"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testPutMappingAcknowledgement" time="0.655"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testClusterRerouteNoAcknowledgementDryRun" time="0.306"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testIndicesAliasesNoAcknowledgement" time="0.522"/>
+   <testcase classname="org.elasticsearch.cluster.ack.AckTests" name="testClusterRerouteAcknowledgement" time="0.606"/>
+   <system-out><![CDATA[[2014-02-18 15:56:03,229][INFO ][test                     ] Test testCloseIndexNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:03,230][INFO ][test                     ] Setup TestCluster [SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]] with seed [6D321A0F51282A10] using [5] nodes
+[2014-02-18 15:56:03,232][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:03,232][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 15:56:03,233][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 15:56:03,271][INFO ][node                     ] [node_0] initialized
+[2014-02-18 15:56:03,271][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 15:56:03,277][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 15:56:06,282][INFO ][cluster.service          ] [node_0] new_master [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 15:56:06,315][INFO ][discovery                ] [node_0] SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/QTSHWpzFS3eqesgD83Yhuw
+[2014-02-18 15:56:06,317][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 15:56:06,320][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 15:56:06,320][INFO ][node                     ] [node_0] started
+[2014-02-18 15:56:06,320][INFO ][test                     ] Start Shared Node [node_0] not shared
+[2014-02-18 15:56:06,321][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:06,322][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:56:06,322][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:56:06,366][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:56:06,367][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:56:06,373][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9304]}, publish_address {inet[/10.1.10.75:9304]}
+[2014-02-18 15:56:09,392][INFO ][cluster.service          ] [node_0] added {[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(join from node[[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]]])
+[2014-02-18 15:56:09,393][INFO ][cluster.service          ] [node_1] detected_master [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:09,407][INFO ][discovery                ] [node_1] SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/7F-cNl-cRQ-qmI8TzNeWvw
+[2014-02-18 15:56:09,411][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9204]}, publish_address {inet[/10.1.10.75:9204]}
+[2014-02-18 15:56:09,411][INFO ][node                     ] [node_1] started
+[2014-02-18 15:56:09,411][INFO ][test                     ] Start Shared Node [node_1] not shared
+[2014-02-18 15:56:09,413][INFO ][node                     ] [node_2] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:09,413][INFO ][node                     ] [node_2] initializing ...
+[2014-02-18 15:56:09,413][INFO ][plugins                  ] [node_2] loaded [], sites []
+[2014-02-18 15:56:09,449][INFO ][node                     ] [node_2] initialized
+[2014-02-18 15:56:09,449][INFO ][node                     ] [node_2] starting ...
+[2014-02-18 15:56:09,454][INFO ][transport                ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9305]}, publish_address {inet[/10.1.10.75:9305]}
+[2014-02-18 15:56:12,476][INFO ][cluster.service          ] [node_0] added {[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(join from node[[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]]])
+[2014-02-18 15:56:12,477][INFO ][cluster.service          ] [node_1] added {[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:12,478][INFO ][cluster.service          ] [node_2] detected_master [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:12,503][INFO ][discovery                ] [node_2] SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/NMFel4oyT6GnOZykL_arxg
+[2014-02-18 15:56:12,507][INFO ][http                     ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9205]}, publish_address {inet[/10.1.10.75:9205]}
+[2014-02-18 15:56:12,507][INFO ][node                     ] [node_2] started
+[2014-02-18 15:56:12,507][INFO ][test                     ] Start Shared Node [node_2] not shared
+[2014-02-18 15:56:12,508][INFO ][node                     ] [node_3] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:12,508][INFO ][node                     ] [node_3] initializing ...
+[2014-02-18 15:56:12,509][INFO ][plugins                  ] [node_3] loaded [], sites []
+[2014-02-18 15:56:12,544][INFO ][node                     ] [node_3] initialized
+[2014-02-18 15:56:12,544][INFO ][node                     ] [node_3] starting ...
+[2014-02-18 15:56:12,550][INFO ][transport                ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9306]}, publish_address {inet[/10.1.10.75:9306]}
+[2014-02-18 15:56:12,553][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:13,055][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:13,556][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:14,057][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:14,559][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:15,059][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:15,560][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:15,573][INFO ][cluster.service          ] [node_0] added {[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(join from node[[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]]])
+[2014-02-18 15:56:15,574][INFO ][cluster.service          ] [node_1] added {[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:15,574][INFO ][cluster.service          ] [node_2] added {[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:15,574][INFO ][cluster.service          ] [node_3] detected_master [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:15,651][INFO ][discovery                ] [node_3] SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/-zHk13qZQNqJW2vyZ_JzJw
+[2014-02-18 15:56:15,657][INFO ][http                     ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9206]}, publish_address {inet[/10.1.10.75:9206]}
+[2014-02-18 15:56:15,657][INFO ][node                     ] [node_3] started
+[2014-02-18 15:56:15,658][INFO ][test                     ] Start Shared Node [node_3] not shared
+[2014-02-18 15:56:15,659][INFO ][node                     ] [node_4] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:56:15,660][INFO ][node                     ] [node_4] initializing ...
+[2014-02-18 15:56:15,662][INFO ][plugins                  ] [node_4] loaded [], sites []
+[2014-02-18 15:56:15,759][INFO ][node                     ] [node_4] initialized
+[2014-02-18 15:56:15,760][INFO ][node                     ] [node_4] starting ...
+[2014-02-18 15:56:15,767][INFO ][transport                ] [node_4] bound_address {inet[/0:0:0:0:0:0:0:0:9307]}, publish_address {inet[/10.1.10.75:9307]}
+[2014-02-18 15:56:15,771][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:16,066][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:16,272][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:16,568][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:16,774][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:17,069][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:17,275][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:17,570][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:17,776][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:18,071][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:18,277][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:18,572][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:18,777][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:18,787][INFO ][cluster.service          ] [node_0] added {[node_4][BAmd8yPATT2Gww3SMnOWtA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9307]],}, reason: zen-disco-receive(join from node[[node_4][BAmd8yPATT2Gww3SMnOWtA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9307]]])
+[2014-02-18 15:56:18,788][INFO ][cluster.service          ] [node_3] added {[node_4][BAmd8yPATT2Gww3SMnOWtA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9307]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:18,788][INFO ][cluster.service          ] [node_4] detected_master [node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], added {[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],[node_3][-zHk13qZQNqJW2vyZ_JzJw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9306]],[node_1][7F-cNl-cRQ-qmI8TzNeWvw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]],[node_2][NMFel4oyT6GnOZykL_arxg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9305]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:18,788][INFO ][cluster.service          ] [node_2] added {[node_4][BAmd8yPATT2Gww3SMnOWtA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9307]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:18,788][INFO ][cluster.service          ] [node_1] added {[node_4][BAmd8yPATT2Gww3SMnOWtA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9307]],}, reason: zen-disco-receive(from master [[node_0][QTSHWpzFS3eqesgD83Yhuw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]])
+[2014-02-18 15:56:18,859][INFO ][discovery                ] [node_4] SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/BAmd8yPATT2Gww3SMnOWtA
+[2014-02-18 15:56:18,864][INFO ][http                     ] [node_4] bound_address {inet[/0:0:0:0:0:0:0:0:9207]}, publish_address {inet[/10.1.10.75:9207]}
+[2014-02-18 15:56:18,864][INFO ][node                     ] [node_4] started
+[2014-02-18 15:56:18,865][INFO ][test                     ] Start Shared Node [node_4] not shared
+[2014-02-18 15:56:18,866][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:18,898][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:18,933][INFO ][cluster.ack              ] [AckTests#testCloseIndexNoAcknowledgement]: before test
+[2014-02-18 15:56:18,948][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:19,073][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:19,083][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:19,281][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:19,377][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:19,402][INFO ][cluster.metadata         ] [node_0] closing indices [[test]]
+[2014-02-18 15:56:19,405][INFO ][cluster.ack              ] [AckTests#testCloseIndexNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:19,408][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:19,442][INFO ][cluster.ack              ] [AckTests#testCloseIndexNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:19,442][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d3/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/2, data/d3/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/3, data/d3/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/0, data/d3/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/1, data/d2/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/2, data/d2/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/1, data/d3/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/4, data/d2/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/4, data/d2/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/3, data/d2/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/0, data/d0/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/0, data/d1/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/0, data/d0/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/2, data/d0/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/1, data/d1/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/1, data/d0/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/4, data/d1/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/2, data/d1/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/3, data/d0/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/3, data/d1/SUITE-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[7868380152058096144]-HASH=[13541AE6C5FE2B98]/nodes/4]
+[2014-02-18 15:56:19,466][INFO ][test                     ] Test testCloseIndexNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:19,466][INFO ][test                     ] Test testClusterRerouteNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:19,470][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:19,493][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:19,519][INFO ][cluster.ack              ] [AckTests#testClusterRerouteNoAcknowledgement]: before test
+[2014-02-18 15:56:19,528][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [7]/[0], mappings []
+[2014-02-18 15:56:19,575][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:19,781][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:19,824][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:19,849][INFO ][cluster.ack              ] ==> going to move shard [[test][0], node[-zHk13qZQNqJW2vyZ_JzJw], [P], s[STARTED]] from [-zHk13qZQNqJW2vyZ_JzJw] to [BAmd8yPATT2Gww3SMnOWtA]
+[2014-02-18 15:56:19,851][INFO ][cluster.ack              ] [AckTests#testClusterRerouteNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:19,857][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:19,903][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:19,957][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:19,989][INFO ][cluster.ack              ] [AckTests#testClusterRerouteNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:20,007][INFO ][test                     ] Test testClusterRerouteNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:20,007][INFO ][test                     ] Test testOpenIndexAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:20,011][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:20,036][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:20,059][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:20,075][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:20,084][INFO ][cluster.ack              ] [AckTests#testOpenIndexAcknowledgement]: before test
+[2014-02-18 15:56:20,092][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:20,283][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:20,416][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:20,438][INFO ][cluster.metadata         ] [node_0] closing indices [[test]]
+[2014-02-18 15:56:20,441][INFO ][cluster.metadata         ] [node_0] opening indices [[test]]
+[2014-02-18 15:56:20,515][INFO ][cluster.ack              ] [AckTests#testOpenIndexAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:20,520][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:20,552][INFO ][cluster.ack              ] [AckTests#testOpenIndexAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:20,565][INFO ][test                     ] Test testOpenIndexAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:20,565][INFO ][test                     ] Test testCreateIndexAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:20,569][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:20,580][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:20,593][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:20,623][INFO ][cluster.ack              ] [AckTests#testCreateIndexAcknowledgement]: before test
+[2014-02-18 15:56:20,632][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:20,784][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:20,914][INFO ][cluster.ack              ] [AckTests#testCreateIndexAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:20,915][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:20,952][INFO ][cluster.ack              ] [AckTests#testCreateIndexAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:20,958][INFO ][test                     ] Test testCreateIndexAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:20,959][INFO ][test                     ] Test testIndicesAliasesAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:20,963][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:20,996][INFO ][cluster.ack              ] [AckTests#testIndicesAliasesAcknowledgement]: before test
+[2014-02-18 15:56:21,005][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:21,083][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:21,108][INFO ][cluster.ack              ] [AckTests#testIndicesAliasesAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:21,110][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:21,202][INFO ][cluster.ack              ] [AckTests#testIndicesAliasesAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:21,206][INFO ][test                     ] Test testIndicesAliasesAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:21,206][INFO ][test                     ] Test testCreateIndexNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:21,211][INFO ][cluster.ack              ] [AckTests#testCreateIndexNoAcknowledgement]: before test
+[2014-02-18 15:56:21,219][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:21,284][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:21,464][INFO ][cluster.ack              ] [AckTests#testCreateIndexNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:21,464][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:21,490][INFO ][cluster.ack              ] [AckTests#testCreateIndexNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:21,491][INFO ][test                     ] Test testCreateIndexNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:21,491][INFO ][test                     ] Test testPutWarmerNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:21,495][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:21,519][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:21,543][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:21,569][INFO ][cluster.ack              ] [AckTests#testPutWarmerNoAcknowledgement]: before test
+[2014-02-18 15:56:21,578][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:21,595][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:21,651][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:21,785][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:21,931][INFO ][action.admin.indices.warmer.put] [node_0] [test] putting warmer [custom_warmer]
+[2014-02-18 15:56:21,932][INFO ][cluster.ack              ] [AckTests#testPutWarmerNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:21,933][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:21,959][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:21,993][INFO ][cluster.ack              ] [AckTests#testPutWarmerNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:22,013][INFO ][test                     ] Test testPutWarmerNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:22,013][INFO ][test                     ] Test testPutWarmerAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:22,017][INFO ][cluster.ack              ] [AckTests#testPutWarmerAcknowledgement]: before test
+[2014-02-18 15:56:22,019][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:22,049][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:22,095][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:22,286][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:22,340][INFO ][action.admin.indices.warmer.put] [node_0] [test] putting warmer [custom_warmer]
+[2014-02-18 15:56:22,342][INFO ][cluster.ack              ] [AckTests#testPutWarmerAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:22,343][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:22,372][INFO ][cluster.ack              ] [AckTests#testPutWarmerAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:22,376][INFO ][test                     ] Test testPutWarmerAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:22,377][INFO ][test                     ] Test testUpdateSettingsNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:22,382][INFO ][cluster.ack              ] [AckTests#testUpdateSettingsNoAcknowledgement]: before test
+[2014-02-18 15:56:22,384][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:22,417][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:22,487][INFO ][index.shard.service      ] [node_0] [test][2] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,487][INFO ][index.shard.service      ] [node_0] [test][1] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,488][INFO ][cluster.ack              ] [AckTests#testUpdateSettingsNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:22,489][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:22,493][INFO ][index.shard.service      ] [node_3] [test][0] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,493][INFO ][index.shard.service      ] [node_3] [test][4] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,504][INFO ][index.shard.service      ] [node_1] [test][4] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,504][INFO ][index.shard.service      ] [node_1] [test][3] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,515][INFO ][index.shard.service      ] [node_2] [test][3] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,515][INFO ][index.shard.service      ] [node_2] [test][2] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,526][INFO ][index.shard.service      ] [node_4] [test][1] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,526][INFO ][index.shard.service      ] [node_4] [test][0] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:22,535][INFO ][cluster.ack              ] [AckTests#testUpdateSettingsNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:22,539][INFO ][test                     ] Test testUpdateSettingsNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:22,540][INFO ][test                     ] Test testClusterRerouteAcknowledgementDryRun(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:22,543][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:22,566][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:22,590][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:22,597][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:22,617][INFO ][cluster.ack              ] [AckTests#testClusterRerouteAcknowledgementDryRun]: before test
+[2014-02-18 15:56:22,619][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:22,668][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [7]/[0], mappings []
+[2014-02-18 15:56:22,787][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:22,955][INFO ][cluster.ack              ] ==> going to move shard [[test][0], node[-zHk13qZQNqJW2vyZ_JzJw], [P], s[STARTED]] from [-zHk13qZQNqJW2vyZ_JzJw] to [BAmd8yPATT2Gww3SMnOWtA]
+[2014-02-18 15:56:22,957][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:22,988][INFO ][cluster.ack              ] [AckTests#testClusterRerouteAcknowledgementDryRun]: cleaning up after test
+[2014-02-18 15:56:22,989][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:23,020][INFO ][cluster.ack              ] [AckTests#testClusterRerouteAcknowledgementDryRun]: cleaned up after test
+[2014-02-18 15:56:23,036][INFO ][test                     ] Test testClusterRerouteAcknowledgementDryRun(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:23,036][INFO ][test                     ] Test testDeleteWarmerAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:23,040][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:23,065][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:23,088][INFO ][cluster.ack              ] [AckTests#testDeleteWarmerAcknowledgement]: before test
+[2014-02-18 15:56:23,096][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:23,098][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:23,289][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:23,386][INFO ][action.admin.indices.warmer.put] [node_0] [test] putting warmer [custom_warmer]
+[2014-02-18 15:56:23,389][INFO ][action.admin.indices.warmer.delete] [node_0] [test] delete warmer [custom_warmer]
+[2014-02-18 15:56:23,394][INFO ][cluster.ack              ] [AckTests#testDeleteWarmerAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:23,396][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:23,445][INFO ][cluster.ack              ] [AckTests#testDeleteWarmerAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:23,455][INFO ][test                     ] Test testDeleteWarmerAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:23,456][INFO ][test                     ] Test testOpenIndexNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:23,463][INFO ][cluster.ack              ] [AckTests#testOpenIndexNoAcknowledgement]: before test
+[2014-02-18 15:56:23,480][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:23,601][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:23,790][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:24,001][INFO ][cluster.metadata         ] [node_0] closing indices [[test]]
+[2014-02-18 15:56:24,067][INFO ][cluster.metadata         ] [node_0] opening indices [[test]]
+[2014-02-18 15:56:24,070][INFO ][cluster.ack              ] [AckTests#testOpenIndexNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:24,102][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:24,166][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:24,264][INFO ][cluster.ack              ] [AckTests#testOpenIndexNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:24,265][INFO ][test                     ] Test testOpenIndexNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:24,266][INFO ][test                     ] Test testPutMappingNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:24,290][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:24,292][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:24,398][INFO ][cluster.ack              ] [AckTests#testPutMappingNoAcknowledgement]: before test
+[2014-02-18 15:56:24,415][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:24,604][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:24,795][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:24,821][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [test]
+[2014-02-18 15:56:24,825][INFO ][cluster.ack              ] [AckTests#testPutMappingNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:24,845][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:24,953][INFO ][cluster.ack              ] [AckTests#testPutMappingNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:24,958][INFO ][test                     ] Test testPutMappingNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:24,959][INFO ][test                     ] Test testDeleteMappingNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:24,969][INFO ][cluster.ack              ] [AckTests#testDeleteMappingNoAcknowledgement]: before test
+[2014-02-18 15:56:24,991][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:56:25,105][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:25,297][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:25,377][INFO ][cluster.metadata         ] [node_0] [[test]] remove_mapping [[type1]]
+[2014-02-18 15:56:25,378][INFO ][cluster.ack              ] [AckTests#testDeleteMappingNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:25,379][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:25,419][INFO ][cluster.ack              ] [AckTests#testDeleteMappingNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:25,420][INFO ][test                     ] Test testDeleteMappingNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:25,421][INFO ][test                     ] Test testDeleteMappingAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:25,426][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:25,523][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:25,570][INFO ][cluster.ack              ] [AckTests#testDeleteMappingAcknowledgement]: before test
+[2014-02-18 15:56:25,590][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:56:25,632][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:25,798][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:26,001][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:26,087][INFO ][cluster.metadata         ] [node_0] [[test]] remove_mapping [[type1]]
+[2014-02-18 15:56:26,091][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:26,125][INFO ][cluster.ack              ] [AckTests#testDeleteMappingAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:26,127][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:26,132][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:26,173][INFO ][cluster.ack              ] [AckTests#testDeleteMappingAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:26,195][INFO ][test                     ] Test testDeleteMappingAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:26,196][INFO ][test                     ] Test testUpdateSettingsAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:26,202][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:26,252][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:26,299][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:26,312][INFO ][cluster.ack              ] [AckTests#testUpdateSettingsAcknowledgement]: before test
+[2014-02-18 15:56:26,314][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:26,348][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:26,414][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:26,490][INFO ][index.shard.service      ] [node_0] [test][2] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,490][INFO ][index.shard.service      ] [node_0] [test][1] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,493][INFO ][index.shard.service      ] [node_2] [test][3] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,494][INFO ][index.shard.service      ] [node_2] [test][2] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,494][INFO ][index.shard.service      ] [node_3] [test][0] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,494][INFO ][index.shard.service      ] [node_3] [test][4] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,593][INFO ][index.shard.service      ] [node_1] [test][4] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,594][INFO ][index.shard.service      ] [node_1] [test][3] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,630][INFO ][index.shard.service      ] [node_4] [test][1] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,631][INFO ][index.shard.service      ] [node_4] [test][0] updating refresh_interval from [1s] to [9.9s]
+[2014-02-18 15:56:26,634][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:26,643][INFO ][cluster.ack              ] [AckTests#testUpdateSettingsAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:26,645][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:26,730][INFO ][cluster.ack              ] [AckTests#testUpdateSettingsAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:26,752][INFO ][test                     ] Test testUpdateSettingsAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:26,753][INFO ][test                     ] Test testDeleteWarmerNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:26,760][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:26,800][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:26,833][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:26,886][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:26,956][INFO ][cluster.ack              ] [AckTests#testDeleteWarmerNoAcknowledgement]: before test
+[2014-02-18 15:56:26,980][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:27,136][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:27,293][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:27,313][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:27,564][INFO ][action.admin.indices.warmer.put] [node_0] [test] putting warmer [custom_warmer]
+[2014-02-18 15:56:27,567][INFO ][cluster.ack              ] [AckTests#testDeleteWarmerNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:27,571][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:27,630][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:27,639][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:27,688][INFO ][cluster.ack              ] [AckTests#testDeleteWarmerNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:27,728][INFO ][test                     ] Test testDeleteWarmerNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:27,728][INFO ][test                     ] Test testCloseIndexAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:27,734][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:27,786][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:27,814][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:27,837][INFO ][cluster.ack              ] [AckTests#testCloseIndexAcknowledgement]: before test
+[2014-02-18 15:56:27,840][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:27,916][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:28,141][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:28,249][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:28,318][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:28,531][INFO ][cluster.metadata         ] [node_0] closing indices [[test]]
+[2014-02-18 15:56:28,636][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:28,642][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:28,695][INFO ][cluster.ack              ] [AckTests#testCloseIndexAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:28,699][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:28,731][INFO ][cluster.ack              ] [AckTests#testCloseIndexAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:28,756][INFO ][test                     ] Test testCloseIndexAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:28,757][INFO ][test                     ] Test testPutMappingAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:28,764][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:28,821][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:28,843][INFO ][cluster.ack              ] [AckTests#testPutMappingAcknowledgement]: before test
+[2014-02-18 15:56:28,862][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:29,143][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:29,300][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [test]
+[2014-02-18 15:56:29,304][INFO ][cluster.ack              ] [AckTests#testPutMappingAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:29,306][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:29,327][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:29,404][INFO ][cluster.ack              ] [AckTests#testPutMappingAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:29,412][INFO ][test                     ] Test testPutMappingAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:29,413][INFO ][test                     ] Test testClusterRerouteNoAcknowledgementDryRun(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:29,419][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:29,481][INFO ][cluster.ack              ] [AckTests#testClusterRerouteNoAcknowledgementDryRun]: before test
+[2014-02-18 15:56:29,498][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [7]/[0], mappings []
+[2014-02-18 15:56:29,644][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:29,667][INFO ][cluster.ack              ] ==> going to move shard [[test][0], node[-zHk13qZQNqJW2vyZ_JzJw], [P], s[STARTED]] from [-zHk13qZQNqJW2vyZ_JzJw] to [BAmd8yPATT2Gww3SMnOWtA]
+[2014-02-18 15:56:29,668][INFO ][cluster.ack              ] [AckTests#testClusterRerouteNoAcknowledgementDryRun]: cleaning up after test
+[2014-02-18 15:56:29,670][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:29,713][INFO ][cluster.ack              ] [AckTests#testClusterRerouteNoAcknowledgementDryRun]: cleaned up after test
+[2014-02-18 15:56:29,719][INFO ][test                     ] Test testClusterRerouteNoAcknowledgementDryRun(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:29,720][INFO ][test                     ] Test testIndicesAliasesNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:29,726][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:29,781][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:56:29,827][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 15:56:29,829][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:29,857][INFO ][cluster.ack              ] [AckTests#testIndicesAliasesNoAcknowledgement]: before test
+[2014-02-18 15:56:29,858][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 15:56:29,901][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:56:30,058][INFO ][cluster.ack              ] [AckTests#testIndicesAliasesNoAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:30,064][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:56:30,130][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:30,148][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:30,205][INFO ][cluster.ack              ] [AckTests#testIndicesAliasesNoAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:30,242][INFO ][test                     ] Test testIndicesAliasesNoAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+[2014-02-18 15:56:30,243][INFO ][test                     ] Test testClusterRerouteAcknowledgement(org.elasticsearch.cluster.ack.AckTests) started
+[2014-02-18 15:56:30,249][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:56:30,303][INFO ][cluster.ack              ] [AckTests#testClusterRerouteAcknowledgement]: before test
+[2014-02-18 15:56:30,317][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [7]/[0], mappings []
+[2014-02-18 15:56:30,331][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:30,530][INFO ][cluster.ack              ] ==> going to move shard [[test][5], node[-zHk13qZQNqJW2vyZ_JzJw], [P], s[STARTED]] from [-zHk13qZQNqJW2vyZ_JzJw] to [BAmd8yPATT2Gww3SMnOWtA]
+[2014-02-18 15:56:30,649][WARN ][discovery.zen.ping.multicast] [node_3] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:30,789][INFO ][cluster.ack              ] [AckTests#testClusterRerouteAcknowledgement]: cleaning up after test
+[2014-02-18 15:56:30,791][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:56:30,832][WARN ][discovery.zen.ping.multicast] [node_4] failed to receive packet, throttling...
+java.net.SocketException: Socket closed
+	at java.net.PlainDatagramSocketImpl.peekData(Native Method)
+	at java.net.DatagramSocket.receive(DatagramSocket.java:726)
+	at org.elasticsearch.discovery.zen.ping.multicast.MulticastZenPing$Receiver.run(MulticastZenPing.java:366)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 15:56:30,843][INFO ][cluster.ack              ] [AckTests#testClusterRerouteAcknowledgement]: cleaned up after test
+[2014-02-18 15:56:30,848][INFO ][test                     ] Test testClusterRerouteAcknowledgement(org.elasticsearch.cluster.ack.AckTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

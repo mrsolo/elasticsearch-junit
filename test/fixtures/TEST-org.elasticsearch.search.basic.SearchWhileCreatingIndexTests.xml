@@ -1,0 +1,455 @@
+<testsuite errors="0" failures="0" tests="4" skipped="0" name="org.elasticsearch.search.basic.SearchWhileCreatingIndexTests" hostname="nohost.nodomain" time="45.457" timestamp="2014-02-18T16:02:21">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.basic.SearchWhileCreatingIndexTests" name="testOneReplica" time="12.509"/>
+   <testcase classname="org.elasticsearch.search.basic.SearchWhileCreatingIndexTests" name="testIndexCausesIndexCreation" time="8.638"/>
+   <testcase classname="org.elasticsearch.search.basic.SearchWhileCreatingIndexTests" name="testNoReplicas" time="6.216"/>
+   <testcase classname="org.elasticsearch.search.basic.SearchWhileCreatingIndexTests" name="testTwoReplicas" time="18.082"/>
+   <system-out><![CDATA[[2014-02-18 16:02:21,787][INFO ][test                     ] Test testOneReplica(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) started
+[2014-02-18 16:02:21,790][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:02:21,816][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:02:21,840][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testOneReplica]: before test
+[2014-02-18 16:02:21,840][INFO ][search.basic             ] running iteration 0
+[2014-02-18 16:02:21,848][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:22,048][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:22,057][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:02:22,108][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:22,170][INFO ][search.basic             ] running iteration 1
+[2014-02-18 16:02:22,183][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:22,441][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:22,624][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:22,719][INFO ][search.basic             ] running iteration 2
+[2014-02-18 16:02:22,731][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:23,285][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:23,583][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:23,645][INFO ][search.basic             ] running iteration 3
+[2014-02-18 16:02:23,653][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:23,915][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:24,248][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:24,329][INFO ][search.basic             ] running iteration 4
+[2014-02-18 16:02:24,343][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:24,675][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:24,954][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:25,097][INFO ][search.basic             ] running iteration 5
+[2014-02-18 16:02:25,110][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:25,482][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:25,627][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:25,718][INFO ][search.basic             ] running iteration 6
+[2014-02-18 16:02:25,730][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:26,042][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:26,235][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:26,333][INFO ][search.basic             ] running iteration 7
+[2014-02-18 16:02:26,346][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:26,549][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:26,962][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:27,086][INFO ][search.basic             ] running iteration 8
+[2014-02-18 16:02:27,100][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:27,328][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:27,745][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:27,861][INFO ][search.basic             ] running iteration 9
+[2014-02-18 16:02:27,873][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:28,130][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:28,516][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:28,622][INFO ][search.basic             ] running iteration 10
+[2014-02-18 16:02:28,636][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:28,879][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:29,184][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:29,278][INFO ][search.basic             ] running iteration 11
+[2014-02-18 16:02:29,292][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:29,477][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:29,552][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:29,607][INFO ][search.basic             ] running iteration 12
+[2014-02-18 16:02:29,620][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:29,808][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:30,235][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:30,408][INFO ][search.basic             ] running iteration 13
+[2014-02-18 16:02:30,422][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:30,692][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:30,923][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:31,006][INFO ][search.basic             ] running iteration 14
+[2014-02-18 16:02:31,021][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:31,290][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:31,438][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:31,523][INFO ][search.basic             ] running iteration 15
+[2014-02-18 16:02:31,535][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:31,718][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:31,755][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:31,811][INFO ][search.basic             ] running iteration 16
+[2014-02-18 16:02:31,823][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:32,015][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:32,164][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:32,228][INFO ][search.basic             ] running iteration 17
+[2014-02-18 16:02:32,238][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:32,543][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:32,700][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:32,805][INFO ][search.basic             ] running iteration 18
+[2014-02-18 16:02:32,817][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:33,108][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:33,459][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:33,541][INFO ][search.basic             ] running iteration 19
+[2014-02-18 16:02:33,555][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[1], mappings []
+[2014-02-18 16:02:33,788][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:34,196][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:34,278][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testOneReplica]: cleaning up after test
+[2014-02-18 16:02:34,283][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testOneReplica]: cleaned up after test
+[2014-02-18 16:02:34,296][INFO ][test                     ] Test testOneReplica(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) finished
+[2014-02-18 16:02:34,296][INFO ][test                     ] Test testIndexCausesIndexCreation(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) started
+[2014-02-18 16:02:34,301][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:02:34,331][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testIndexCausesIndexCreation]: before test
+[2014-02-18 16:02:34,331][INFO ][search.basic             ] running iteration 0
+[2014-02-18 16:02:34,342][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:34,470][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:34,705][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:02:34,794][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:34,834][INFO ][search.basic             ] running iteration 1
+[2014-02-18 16:02:34,843][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:34,960][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:35,119][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:35,175][INFO ][search.basic             ] running iteration 2
+[2014-02-18 16:02:35,183][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:35,316][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:35,510][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:35,550][INFO ][search.basic             ] running iteration 3
+[2014-02-18 16:02:35,561][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:35,665][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:35,934][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:35,986][INFO ][search.basic             ] running iteration 4
+[2014-02-18 16:02:35,995][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:36,144][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:36,349][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:36,387][INFO ][search.basic             ] running iteration 5
+[2014-02-18 16:02:36,399][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:36,518][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:36,892][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:36,941][INFO ][search.basic             ] running iteration 6
+[2014-02-18 16:02:36,955][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:37,096][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:37,230][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:37,287][INFO ][search.basic             ] running iteration 7
+[2014-02-18 16:02:37,300][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:37,473][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:37,727][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:37,769][INFO ][search.basic             ] running iteration 8
+[2014-02-18 16:02:37,781][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:37,924][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:38,092][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:38,150][INFO ][search.basic             ] running iteration 9
+[2014-02-18 16:02:38,163][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:38,259][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:38,536][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:38,580][INFO ][search.basic             ] running iteration 10
+[2014-02-18 16:02:38,593][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:38,695][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:38,959][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:39,098][INFO ][search.basic             ] running iteration 11
+[2014-02-18 16:02:39,114][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:39,305][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:39,493][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:39,538][INFO ][search.basic             ] running iteration 12
+[2014-02-18 16:02:39,552][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:39,673][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:39,822][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:39,888][INFO ][search.basic             ] running iteration 13
+[2014-02-18 16:02:39,899][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:40,027][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:40,119][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:40,148][INFO ][search.basic             ] running iteration 14
+[2014-02-18 16:02:40,160][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:40,249][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:40,341][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:40,376][INFO ][search.basic             ] running iteration 15
+[2014-02-18 16:02:40,388][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:40,506][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:40,700][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:40,742][INFO ][search.basic             ] running iteration 16
+[2014-02-18 16:02:40,758][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:40,948][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:41,242][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:41,294][INFO ][search.basic             ] running iteration 17
+[2014-02-18 16:02:41,308][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:41,436][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:41,743][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:41,784][INFO ][search.basic             ] running iteration 18
+[2014-02-18 16:02:41,793][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:41,934][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:42,209][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:42,266][INFO ][search.basic             ] running iteration 19
+[2014-02-18 16:02:42,278][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 16:02:42,418][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:42,872][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:42,917][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testIndexCausesIndexCreation]: cleaning up after test
+[2014-02-18 16:02:42,924][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testIndexCausesIndexCreation]: cleaned up after test
+[2014-02-18 16:02:42,934][INFO ][test                     ] Test testIndexCausesIndexCreation(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) finished
+[2014-02-18 16:02:42,935][INFO ][test                     ] Test testNoReplicas(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) started
+[2014-02-18 16:02:42,938][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:02:42,986][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:02:43,026][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testNoReplicas]: before test
+[2014-02-18 16:02:43,026][INFO ][search.basic             ] running iteration 0
+[2014-02-18 16:02:43,028][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:02:43,059][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:43,270][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:43,445][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:43,483][INFO ][search.basic             ] running iteration 1
+[2014-02-18 16:02:43,497][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:43,674][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:43,703][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:43,740][INFO ][search.basic             ] running iteration 2
+[2014-02-18 16:02:43,750][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:43,874][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:43,899][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:43,944][INFO ][search.basic             ] running iteration 3
+[2014-02-18 16:02:43,957][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:44,224][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:44,328][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:44,365][INFO ][search.basic             ] running iteration 4
+[2014-02-18 16:02:44,379][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:44,578][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:44,701][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:44,738][INFO ][search.basic             ] running iteration 5
+[2014-02-18 16:02:44,753][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:44,909][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:45,051][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:45,104][INFO ][search.basic             ] running iteration 6
+[2014-02-18 16:02:45,117][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:45,295][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:45,415][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:45,514][INFO ][search.basic             ] running iteration 7
+[2014-02-18 16:02:45,530][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:45,714][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:45,783][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:45,852][INFO ][search.basic             ] running iteration 8
+[2014-02-18 16:02:45,866][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:46,096][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:46,121][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:46,166][INFO ][search.basic             ] running iteration 9
+[2014-02-18 16:02:46,176][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:46,293][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:46,318][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:46,358][INFO ][search.basic             ] running iteration 10
+[2014-02-18 16:02:46,371][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:46,575][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:46,687][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:46,731][INFO ][search.basic             ] running iteration 11
+[2014-02-18 16:02:46,745][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:46,901][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:47,008][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:47,054][INFO ][search.basic             ] running iteration 12
+[2014-02-18 16:02:47,066][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:47,236][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:47,265][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:47,293][INFO ][search.basic             ] running iteration 13
+[2014-02-18 16:02:47,302][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:47,427][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:47,455][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:47,479][INFO ][search.basic             ] running iteration 14
+[2014-02-18 16:02:47,487][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:47,588][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:47,612][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:47,643][INFO ][search.basic             ] running iteration 15
+[2014-02-18 16:02:47,653][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:47,751][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:47,785][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:47,823][INFO ][search.basic             ] running iteration 16
+[2014-02-18 16:02:47,839][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:47,996][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:48,049][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:48,108][INFO ][search.basic             ] running iteration 17
+[2014-02-18 16:02:48,123][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:48,286][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:48,394][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:48,436][INFO ][search.basic             ] running iteration 18
+[2014-02-18 16:02:48,450][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:48,623][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:48,733][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:48,787][INFO ][search.basic             ] running iteration 19
+[2014-02-18 16:02:48,800][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[0], mappings []
+[2014-02-18 16:02:49,010][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:49,065][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:49,128][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testNoReplicas]: cleaning up after test
+[2014-02-18 16:02:49,136][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testNoReplicas]: cleaned up after test
+[2014-02-18 16:02:49,151][INFO ][test                     ] Test testNoReplicas(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) finished
+[2014-02-18 16:02:49,151][INFO ][test                     ] Test testTwoReplicas(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) started
+[2014-02-18 16:02:49,156][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:02:49,197][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:02:49,221][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testTwoReplicas]: before test
+[2014-02-18 16:02:49,221][INFO ][search.basic             ] running iteration 0
+[2014-02-18 16:02:49,229][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:49,738][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:49,761][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:02:49,965][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:50,102][INFO ][search.basic             ] running iteration 1
+[2014-02-18 16:02:50,115][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:50,582][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:50,749][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:50,893][INFO ][search.basic             ] running iteration 2
+[2014-02-18 16:02:50,908][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:51,438][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:51,573][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:51,765][INFO ][search.basic             ] running iteration 3
+[2014-02-18 16:02:51,779][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:52,308][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:52,447][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:52,631][INFO ][search.basic             ] running iteration 4
+[2014-02-18 16:02:52,645][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:53,047][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:53,294][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:53,432][INFO ][search.basic             ] running iteration 5
+[2014-02-18 16:02:53,448][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:54,003][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:54,423][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:54,574][INFO ][search.basic             ] running iteration 6
+[2014-02-18 16:02:54,597][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:55,232][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:55,342][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:55,475][INFO ][search.basic             ] running iteration 7
+[2014-02-18 16:02:55,487][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:55,773][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:55,917][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:56,023][INFO ][search.basic             ] running iteration 8
+[2014-02-18 16:02:56,035][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:56,328][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:56,504][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:56,655][INFO ][search.basic             ] running iteration 9
+[2014-02-18 16:02:56,700][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:57,556][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:58,231][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:02:58,711][INFO ][search.basic             ] running iteration 10
+[2014-02-18 16:02:58,726][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:02:59,679][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:02:59,963][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:00,204][INFO ][search.basic             ] running iteration 11
+[2014-02-18 16:03:00,219][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:00,733][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:00,799][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:00,919][INFO ][search.basic             ] running iteration 12
+[2014-02-18 16:03:00,931][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:01,276][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:01,315][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:01,401][INFO ][search.basic             ] running iteration 13
+[2014-02-18 16:03:01,415][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:01,853][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:02,051][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:02,338][INFO ][search.basic             ] running iteration 14
+[2014-02-18 16:03:02,350][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:02,827][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:03,146][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:03,276][INFO ][search.basic             ] running iteration 15
+[2014-02-18 16:03:03,288][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:03,651][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:04,038][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:04,176][INFO ][search.basic             ] running iteration 16
+[2014-02-18 16:03:04,191][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:04,810][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:04,977][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:05,072][INFO ][search.basic             ] running iteration 17
+[2014-02-18 16:03:05,085][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:05,429][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:05,433][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:05,523][INFO ][search.basic             ] running iteration 18
+[2014-02-18 16:03:05,537][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:06,131][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:06,279][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:06,418][INFO ][search.basic             ] running iteration 19
+[2014-02-18 16:03:06,431][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [10]/[2], mappings []
+[2014-02-18 16:03:07,006][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:03:07,081][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:03:07,214][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testTwoReplicas]: cleaning up after test
+[2014-02-18 16:03:07,220][INFO ][search.basic             ] [SearchWhileCreatingIndexTests#testTwoReplicas]: cleaned up after test
+[2014-02-18 16:03:07,233][INFO ][test                     ] Test testTwoReplicas(org.elasticsearch.search.basic.SearchWhileCreatingIndexTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

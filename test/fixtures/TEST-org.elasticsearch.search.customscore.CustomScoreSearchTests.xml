@@ -1,0 +1,1584 @@
+<testsuite errors="0" failures="0" tests="10" skipped="0" name="org.elasticsearch.search.customscore.CustomScoreSearchTests" hostname="nohost.nodomain" time="2.4" timestamp="2014-02-18T15:55:32">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testMultiValueCustomScriptBoost_withFunctionScore" time="0.281"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testTriggerBooleanScorer_withFunctionScore" time="0.251"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testScoreExplainBug_2283_withFunctionScore" time="0.448"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testMultiValueCustomScriptBoost" time="0.157"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testCustomScriptBoost_withFunctionScore" time="0.282"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testCustomFiltersScore" time="0.222"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testTriggerBooleanScorer" time="0.132"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testCustomScriptBoost" time="0.206"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testCustomFiltersScore_withFunctionScore" time="0.237"/>
+   <testcase classname="org.elasticsearch.search.customscore.CustomScoreSearchTests" name="testScoreExplainBug_2283" time="0.164"/>
+   <system-out><![CDATA[[2014-02-18 15:55:32,441][INFO ][test                     ] Test testMultiValueCustomScriptBoost_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:32,445][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:32,472][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:55:32,501][INFO ][search.customscore       ] [CustomScoreSearchTests#testMultiValueCustomScriptBoost_withFunctionScore]: before test
+[2014-02-18 15:55:32,512][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 15:55:32,536][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:32,573][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:55:32,586][INFO ][search.customscore       ] running min(doc['num1'].value)
+[2014-02-18 15:55:32,604][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,605][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,626][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,627][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,647][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,647][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,665][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,665][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:32,666][INFO ][search.customscore       ] [CustomScoreSearchTests#testMultiValueCustomScriptBoost_withFunctionScore]: cleaning up after test
+[2014-02-18 15:55:32,668][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:32,697][INFO ][search.customscore       ] [CustomScoreSearchTests#testMultiValueCustomScriptBoost_withFunctionScore]: cleaned up after test
+[2014-02-18 15:55:32,722][INFO ][test                     ] Test testMultiValueCustomScriptBoost_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:32,723][INFO ][test                     ] Test testTriggerBooleanScorer_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:32,728][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:32,780][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:32,810][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:55:32,844][INFO ][search.customscore       ] [CustomScoreSearchTests#testTriggerBooleanScorer_withFunctionScore]: before test
+[2014-02-18 15:55:32,855][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:32,904][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:55:32,919][INFO ][search.customscore       ] [CustomScoreSearchTests#testTriggerBooleanScorer_withFunctionScore]: cleaning up after test
+[2014-02-18 15:55:32,922][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:32,956][INFO ][search.customscore       ] [CustomScoreSearchTests#testTriggerBooleanScorer_withFunctionScore]: cleaned up after test
+[2014-02-18 15:55:32,974][INFO ][test                     ] Test testTriggerBooleanScorer_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:32,974][INFO ][test                     ] Test testScoreExplainBug_2283_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:32,981][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:33,023][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:55:33,059][INFO ][search.customscore       ] [CustomScoreSearchTests#testScoreExplainBug_2283_withFunctionScore]: before test
+[2014-02-18 15:55:33,069][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:33,293][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:55:33,301][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:33,388][INFO ][search.customscore       ] --> Hit[0] 2 Explanation:
+ 3.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [first]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = script score function: composed of:
+          1.0 = ConstantScore(*:*), product of:
+            1.0 = boost
+            1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,391][INFO ][search.customscore       ] --> Hit[0] 2 Explanation:
+ 6.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [first]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = script score function: composed of:
+          1.0 = ConstantScore(*:*), product of:
+            1.0 = boost
+            1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  2.0 = queryBoost
+
+[2014-02-18 15:55:33,391][INFO ][search.customscore       ] [CustomScoreSearchTests#testScoreExplainBug_2283_withFunctionScore]: cleaning up after test
+[2014-02-18 15:55:33,393][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:33,410][INFO ][search.customscore       ] [CustomScoreSearchTests#testScoreExplainBug_2283_withFunctionScore]: cleaned up after test
+[2014-02-18 15:55:33,422][INFO ][test                     ] Test testScoreExplainBug_2283_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:33,423][INFO ][test                     ] Test testMultiValueCustomScriptBoost(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:33,427][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:33,462][INFO ][search.customscore       ] [CustomScoreSearchTests#testMultiValueCustomScriptBoost]: before test
+[2014-02-18 15:55:33,474][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type]
+[2014-02-18 15:55:33,518][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:55:33,534][INFO ][search.customscore       ] running min(doc['num1'].value)
+[2014-02-18 15:55:33,539][INFO ][search.customscore       ] Hit[0] 2 Explanation 2.0 = (MATCH) function score, product of:
+  2.0 = (MATCH) Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = (MATCH) weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,539][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = (MATCH) function score, product of:
+  1.0 = (MATCH) Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = (MATCH) weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,545][INFO ][search.customscore       ] Hit[0] 2 Explanation 2.0 = (MATCH) function score, product of:
+  2.0 = (MATCH) Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = (MATCH) weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,545][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = (MATCH) function score, product of:
+  1.0 = (MATCH) Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = (MATCH) weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,552][INFO ][search.customscore       ] Hit[0] 2 Explanation 2.0 = (MATCH) function score, product of:
+  2.0 = (MATCH) Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = (MATCH) weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,553][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = (MATCH) function score, product of:
+  1.0 = (MATCH) Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = (MATCH) weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,561][INFO ][search.customscore       ] Hit[0] 2 Explanation 2.0 = function score, product of:
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,561][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = function score, product of:
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,562][INFO ][search.customscore       ] [CustomScoreSearchTests#testMultiValueCustomScriptBoost]: cleaning up after test
+[2014-02-18 15:55:33,563][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:33,575][INFO ][search.customscore       ] [CustomScoreSearchTests#testMultiValueCustomScriptBoost]: cleaned up after test
+[2014-02-18 15:55:33,580][INFO ][test                     ] Test testMultiValueCustomScriptBoost(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:33,581][INFO ][test                     ] Test testCustomScriptBoost_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:33,586][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:55:33,621][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:33,655][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomScriptBoost_withFunctionScore]: before test
+[2014-02-18 15:55:33,656][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:33,703][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:33,751][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:55:33,761][INFO ][search.customscore       ] --- QUERY_THEN_FETCH
+[2014-02-18 15:55:33,761][INFO ][search.customscore       ] running doc['num1'].value
+[2014-02-18 15:55:33,765][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,765][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,766][INFO ][search.customscore       ] running -doc['num1'].value
+[2014-02-18 15:55:33,772][INFO ][search.customscore       ] Hit[0] 1 Explanation -0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  -1.0 = Math.min of
+    -1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,773][INFO ][search.customscore       ] Hit[1] 2 Explanation -0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  -2.0 = Math.min of
+    -2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,773][INFO ][search.customscore       ] running pow(doc['num1'].value, 2)
+[2014-02-18 15:55:33,778][INFO ][search.customscore       ] Hit[0] 2 Explanation 1.4863371 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  4.0 = Math.min of
+    4.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,779][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,779][INFO ][search.customscore       ] running max(doc['num1'].value, 1)
+[2014-02-18 15:55:33,785][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,785][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,786][INFO ][search.customscore       ] running doc['num1'].value * _score
+[2014-02-18 15:55:33,790][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.27614972 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  0.74316853 = Math.min of
+    0.74316853 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,790][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.13807486 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  0.37158427 = Math.min of
+    0.37158427 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,791][INFO ][search.customscore       ] running param1 * param2 * _score
+[2014-02-18 15:55:33,798][INFO ][search.customscore       ] Hit[0] 1 Explanation 0.55229944 = function score, product of:
+  0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 0, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=0)
+  1.4863371 = Math.min of
+    1.4863371 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,798][INFO ][search.customscore       ] Hit[1] 2 Explanation 0.55229944 = function score, product of:
+  0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+    0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+      0.99999994 = queryWeight, product of:
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        1.681987 = queryNorm
+      0.3715843 = fieldWeight in 1, product of:
+        1.0 = tf(freq=1.0), with freq of:
+          1.0 = termFreq=1.0
+        0.5945349 = idf(docFreq=2, maxDocs=2)
+        0.625 = fieldNorm(doc=1)
+  1.4863371 = Math.min of
+    1.4863371 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,800][INFO ][search.customscore       ] running param1 * param2 * _score with filter instead of query
+[2014-02-18 15:55:33,803][INFO ][search.customscore       ] Hit[0] 1 Explanation 4.0 = function score, product of:
+  1.0 = ConstantScore(cache(test:value)), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  4.0 = Math.min of
+    4.0 = script score function: composed of:
+      1.0 = ConstantScore(cache(test:value)), product of:
+        1.0 = boost
+        1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,803][INFO ][search.customscore       ] Hit[1] 2 Explanation 4.0 = function score, product of:
+  1.0 = ConstantScore(cache(test:value)), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  4.0 = Math.min of
+    4.0 = script score function: composed of:
+      1.0 = ConstantScore(cache(test:value)), product of:
+        1.0 = boost
+        1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:33,804][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomScriptBoost_withFunctionScore]: cleaning up after test
+[2014-02-18 15:55:33,805][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:33,851][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomScriptBoost_withFunctionScore]: cleaned up after test
+[2014-02-18 15:55:33,863][INFO ][test                     ] Test testCustomScriptBoost_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:33,863][INFO ][test                     ] Test testCustomFiltersScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:33,868][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:55:33,896][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomFiltersScore]: before test
+[2014-02-18 15:55:33,907][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:33,948][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:55:34,033][INFO ][search.customscore       ] --> Hit[0] 2 Explanation 3.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [first]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = script score function: composed of:
+          1.0 = ConstantScore(*:*), product of:
+            1.0 = boost
+            1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,036][INFO ][search.customscore       ] --> Hit[0] 2 Explanation 3.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [first]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = static boost factor
+          3.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,039][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 8.0 = (MATCH) function score, product of:
+  1.0 = (MATCH) ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  8.0 = (MATCH) Math.min of
+    8.0 = (MATCH) function score, score mode [sum]
+      3.0 = (MATCH) function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = (MATCH) function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,042][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 5.0 = (MATCH) function score, product of:
+  1.0 = (MATCH) ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  5.0 = (MATCH) Math.min of
+    5.0 = (MATCH) function score, score mode [max]
+      3.0 = (MATCH) function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = (MATCH) function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,045][INFO ][search.customscore       ] --> Hit[0] 3 Explanation 5.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  5.0 = Math.min of
+    5.0 = function score, score mode [avg]
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,045][INFO ][search.customscore       ] --> Hit[1] 1 Explanation 4.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  4.0 = Math.min of
+    4.0 = function score, score mode [avg]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,050][INFO ][search.customscore       ] --> Hit[0] 3 Explanation 5.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  5.0 = Math.min of
+    5.0 = function score, score mode [min]
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,054][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 15.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  15.0 = Math.min of
+    15.0 = function score, score mode [multiply]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,059][INFO ][search.customscore       ] --> Hit[0] 2 Explanation 0.8465736 = (MATCH) function score, product of:
+  0.2116434 = (MATCH) product of:
+    0.8465736 = (MATCH) sum of:
+      0.8465736 = (MATCH) weight(field:value2 in 1) [PerFieldSimilarity], result of:
+        0.8465736 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.5 = queryWeight, product of:
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            0.29530805 = queryNorm
+          1.6931472 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            1.0 = fieldNorm(doc=1)
+    0.25 = coord(1/4)
+  4.0 = (MATCH) Math.min of
+    4.0 = (MATCH) function score, score mode [first]
+      4.0 = (MATCH) function score, product of:
+        1.0 = match filter: cache(field:value2)
+        4.0 = static boost factor
+          4.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,065][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 3.174651 = function score, product of:
+  0.2116434 = product of:
+    0.8465736 = sum of:
+      0.8465736 = weight(field:value1 in 0) [PerFieldSimilarity], result of:
+        0.8465736 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.5 = queryWeight, product of:
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            0.29530805 = queryNorm
+          1.6931472 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            1.0 = fieldNorm(doc=0)
+    0.25 = coord(1/4)
+  15.0 = Math.min of
+    15.0 = function score, score mode [multiply]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,066][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomFiltersScore]: cleaning up after test
+[2014-02-18 15:55:34,067][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:34,080][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomFiltersScore]: cleaned up after test
+[2014-02-18 15:55:34,085][INFO ][test                     ] Test testCustomFiltersScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:34,085][INFO ][test                     ] Test testTriggerBooleanScorer(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:34,089][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:34,117][INFO ][search.customscore       ] [CustomScoreSearchTests#testTriggerBooleanScorer]: before test
+[2014-02-18 15:55:34,127][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:34,179][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:55:34,192][INFO ][search.customscore       ] [CustomScoreSearchTests#testTriggerBooleanScorer]: cleaning up after test
+[2014-02-18 15:55:34,195][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:34,212][INFO ][search.customscore       ] [CustomScoreSearchTests#testTriggerBooleanScorer]: cleaned up after test
+[2014-02-18 15:55:34,217][INFO ][test                     ] Test testTriggerBooleanScorer(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:34,218][INFO ][test                     ] Test testCustomScriptBoost(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:34,223][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:34,258][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomScriptBoost]: before test
+[2014-02-18 15:55:34,260][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:34,296][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:34,327][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:55:34,381][INFO ][search.customscore       ] --- QUERY_THEN_FETCH
+[2014-02-18 15:55:34,382][INFO ][search.customscore       ] running doc['num1'].value
+[2014-02-18 15:55:34,384][INFO ][search.customscore       ] Hit[0] 2 Explanation 2.0 = function score, product of:
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,385][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = function score, product of:
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,385][INFO ][search.customscore       ] running -doc['num1'].value
+[2014-02-18 15:55:34,388][INFO ][search.customscore       ] Hit[0] 1 Explanation -1.0 = function score, product of:
+  -1.0 = Math.min of
+    -1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,389][INFO ][search.customscore       ] Hit[1] 2 Explanation -2.0 = function score, product of:
+  -2.0 = Math.min of
+    -2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,389][INFO ][search.customscore       ] running pow(doc['num1'].value, 2)
+[2014-02-18 15:55:34,391][INFO ][search.customscore       ] Hit[0] 2 Explanation 4.0 = function score, product of:
+  4.0 = Math.min of
+    4.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,392][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = function score, product of:
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,392][INFO ][search.customscore       ] running max(doc['num1'].value, 1)
+[2014-02-18 15:55:34,395][INFO ][search.customscore       ] Hit[0] 2 Explanation 2.0 = function score, product of:
+  2.0 = Math.min of
+    2.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,395][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.0 = function score, product of:
+  1.0 = Math.min of
+    1.0 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,396][INFO ][search.customscore       ] running doc['num1'].value * _score
+[2014-02-18 15:55:34,397][INFO ][search.customscore       ] Hit[0] 2 Explanation 0.74316853 = function score, product of:
+  0.74316853 = Math.min of
+    0.74316853 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,398][INFO ][search.customscore       ] Hit[1] 1 Explanation 0.37158427 = function score, product of:
+  0.37158427 = Math.min of
+    0.37158427 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,398][INFO ][search.customscore       ] running param1 * param2 * _score
+[2014-02-18 15:55:34,401][INFO ][search.customscore       ] Hit[0] 2 Explanation 1.4863371 = function score, product of:
+  1.4863371 = Math.min of
+    1.4863371 = script score function: composed of:
+      0.37158427 = weight(test:value in 0) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=0)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,401][INFO ][search.customscore       ] Hit[1] 1 Explanation 1.4863371 = function score, product of:
+  1.4863371 = Math.min of
+    1.4863371 = script score function: composed of:
+      0.37158427 = weight(test:value in 1) [PerFieldSimilarity], result of:
+        0.37158427 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.99999994 = queryWeight, product of:
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            1.681987 = queryNorm
+          0.3715843 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            0.5945349 = idf(docFreq=2, maxDocs=2)
+            0.625 = fieldNorm(doc=1)
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,402][INFO ][search.customscore       ] running param1 * param2 * _score with filter instead of query
+[2014-02-18 15:55:34,404][INFO ][search.customscore       ] Hit[0] 1 Explanation 4.0 = function score, product of:
+  4.0 = Math.min of
+    4.0 = script score function: composed of:
+      1.0 = ConstantScore(cache(test:value)), product of:
+        1.0 = boost
+        1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,404][INFO ][search.customscore       ] Hit[1] 2 Explanation 4.0 = function score, product of:
+  4.0 = Math.min of
+    4.0 = script score function: composed of:
+      1.0 = ConstantScore(cache(test:value)), product of:
+        1.0 = boost
+        1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,404][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomScriptBoost]: cleaning up after test
+[2014-02-18 15:55:34,405][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:34,418][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomScriptBoost]: cleaned up after test
+[2014-02-18 15:55:34,424][INFO ][test                     ] Test testCustomScriptBoost(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:34,425][INFO ][test                     ] Test testCustomFiltersScore_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:34,428][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:55:34,457][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:34,486][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:34,512][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomFiltersScore_withFunctionScore]: before test
+[2014-02-18 15:55:34,522][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:34,558][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:55:34,566][INFO ][search.customscore       ] --> Hit[0] 2 Explanation 3.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [multiply]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = script score function: composed of:
+          1.0 = ConstantScore(*:*), product of:
+            1.0 = boost
+            1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,568][INFO ][search.customscore       ] --> Hit[0] 2 Explanation 3.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [multiply]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = static boost factor
+          3.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,571][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 8.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  8.0 = Math.min of
+    8.0 = function score, score mode [sum]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,574][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 5.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  5.0 = Math.min of
+    5.0 = function score, score mode [max]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,576][INFO ][search.customscore       ] --> Hit[0] 3 Explanation 5.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  5.0 = Math.min of
+    5.0 = function score, score mode [avg]
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,577][INFO ][search.customscore       ] --> Hit[1] 1 Explanation 4.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  4.0 = Math.min of
+    4.0 = function score, score mode [avg]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,580][INFO ][search.customscore       ] --> Hit[0] 3 Explanation 5.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  5.0 = Math.min of
+    5.0 = function score, score mode [min]
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,584][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 15.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  15.0 = Math.min of
+    15.0 = function score, score mode [multiply]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,589][INFO ][search.customscore       ] --> Hit[0] 2 Explanation 0.8465736 = function score, product of:
+  0.2116434 = product of:
+    0.8465736 = sum of:
+      0.8465736 = weight(field:value2 in 1) [PerFieldSimilarity], result of:
+        0.8465736 = score(doc=1,freq=1.0 = termFreq=1.0
+), product of:
+          0.5 = queryWeight, product of:
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            0.29530805 = queryNorm
+          1.6931472 = fieldWeight in 1, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            1.0 = fieldNorm(doc=1)
+    0.25 = coord(1/4)
+  4.0 = Math.min of
+    4.0 = function score, score mode [first]
+      4.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        4.0 = static boost factor
+          4.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,594][INFO ][search.customscore       ] --> Hit[0] 1 Explanation 3.174651 = function score, product of:
+  0.2116434 = product of:
+    0.8465736 = sum of:
+      0.8465736 = weight(field:value1 in 0) [PerFieldSimilarity], result of:
+        0.8465736 = score(doc=0,freq=1.0 = termFreq=1.0
+), product of:
+          0.5 = queryWeight, product of:
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            0.29530805 = queryNorm
+          1.6931472 = fieldWeight in 0, product of:
+            1.0 = tf(freq=1.0), with freq of:
+              1.0 = termFreq=1.0
+            1.6931472 = idf(docFreq=1, maxDocs=4)
+            1.0 = fieldNorm(doc=0)
+    0.25 = coord(1/4)
+  15.0 = Math.min of
+    15.0 = function score, score mode [multiply]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value1)
+        3.0 = static boost factor
+          3.0 = boostFactor
+      5.0 = function score, product of:
+        1.0 = match filter: cache(color:red)
+        5.0 = static boost factor
+          5.0 = boostFactor
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,594][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomFiltersScore_withFunctionScore]: cleaning up after test
+[2014-02-18 15:55:34,597][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:34,653][INFO ][search.customscore       ] [CustomScoreSearchTests#testCustomFiltersScore_withFunctionScore]: cleaned up after test
+[2014-02-18 15:55:34,662][INFO ][test                     ] Test testCustomFiltersScore_withFunctionScore(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+[2014-02-18 15:55:34,663][INFO ][test                     ] Test testScoreExplainBug_2283(org.elasticsearch.search.customscore.CustomScoreSearchTests) started
+[2014-02-18 15:55:34,665][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:55:34,691][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:55:34,718][INFO ][search.customscore       ] [CustomScoreSearchTests#testScoreExplainBug_2283]: before test
+[2014-02-18 15:55:34,729][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:55:34,773][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:55:34,786][INFO ][search.customscore       ] --> Hit[0] 2 Explanation:
+ 3.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [first]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = script score function: composed of:
+          1.0 = ConstantScore(*:*), product of:
+            1.0 = boost
+            1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  1.0 = queryBoost
+
+[2014-02-18 15:55:34,789][INFO ][search.customscore       ] --> Hit[0] 2 Explanation:
+ 6.0 = function score, product of:
+  1.0 = ConstantScore(*:*), product of:
+    1.0 = boost
+    1.0 = queryNorm
+  3.0 = Math.min of
+    3.0 = function score, score mode [first]
+      3.0 = function score, product of:
+        1.0 = match filter: cache(field:value2)
+        3.0 = script score function: composed of:
+          1.0 = ConstantScore(*:*), product of:
+            1.0 = boost
+            1.0 = queryNorm
+    3.4028235E38 = maxBoost
+  2.0 = queryBoost
+
+[2014-02-18 15:55:34,790][INFO ][search.customscore       ] [CustomScoreSearchTests#testScoreExplainBug_2283]: cleaning up after test
+[2014-02-18 15:55:34,791][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:55:34,820][INFO ][search.customscore       ] [CustomScoreSearchTests#testScoreExplainBug_2283]: cleaned up after test
+[2014-02-18 15:55:34,826][INFO ][test                     ] Test testScoreExplainBug_2283(org.elasticsearch.search.customscore.CustomScoreSearchTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

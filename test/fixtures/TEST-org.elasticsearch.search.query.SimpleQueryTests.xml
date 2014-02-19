@@ -1,0 +1,825 @@
+<testsuite errors="0" failures="0" tests="58" skipped="0" name="org.elasticsearch.search.query.SimpleQueryTests" hostname="nohost.nodomain" time="30.52" timestamp="2014-02-18T15:44:07">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMatchQueryWithSynonyms" time="0.122"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMustNot" time="0.187"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSimpleQueryStringFlags" time="0.19"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSearchEmptyDoc" time="0.21"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testAllDocsQueryString" time="0.448"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSpecialRangeSyntaxInQueryString" time="0.125"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testEmptyTermsFilter" time="0.561"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="typeFilterTypeIndexedTests" time="0.139"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMultiFieldQueryString" time="0.547"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testRangeFilterNoCacheWithNow" time="0.241"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMultiMatchQueryMinShouldMatch" time="0.297"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndicesQueryMissingIndices" time="1.419"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndexOptions" time="0.302"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testDateRangeInQueryString" time="0.196"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMultiMatchQuery" time="0.316"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndicesFilter" time="0.764"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="typeFilterTypeNotIndexedTests" time="0.389"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="idsFilterTestsIdNotIndexed" time="0.155"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testOmitNormsOnAll" time="0.53"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMatchQueryNumeric" time="0.219"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testFiltersWithCustomCacheKey" time="0.426"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="passQueryOrFilterAsJSONStringTest" time="0.095"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testCustomWordDelimiterQueryString" time="0.489"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMultiMatchLenientIssue3797" time="0.504"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testBasicFilterById" time="0.537"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndicesQuery" time="1.157"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testQuotedQueryStringWithBoost" time="0.17"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSpanMultiTermQuery" time="0.134"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testNumericRangeFilter_2826" time="0.11"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testFieldDataTermsFilter" time="0.705"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSimpleDFSQuery" time="0.432"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="passQueryAsStringTest" time="0.232"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndicesFilterSkipParsing" time="1.251"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndicesFilterMissingIndices" time="2.173"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMatchQueryZeroTermsQuery" time="0.207"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMinScore" time="0.466"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSimpleQueryString" time="0.188"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMatchQueryWithStackedStems" time="0.08"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testBasicQueryById" time="0.403"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="queryStringAnalyzedWildcard" time="0.125"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testEmptyQueryString" time="0.599"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testCommonTermsQuery" time="0.498"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testTermsLookupFilter" time="1.796"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testQueryStringWithSlopAndFields" time="0.788"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testMultiMatchQueryZeroTermsQuery" time="0.297"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testEmptyTopLevelFilter" time="0.475"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testLimitFilter" time="0.243"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testQueryStringWithSynonyms" time="0.149"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testOmitTermFreqsAndPositions" time="2.246"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIndicesQuerySkipParsing" time="1.07"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testIssue3177" time="0.618"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testLowercaseExpandedTerms" time="0.441"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testFuzzyQueryString" time="0.242"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="filterExistsMissingTests" time="0.379"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="idsFilterTestsIdIndexed" time="0.223"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testNumericTermsAndRanges" time="0.426"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testConstantScoreQuery" time="2.458"/>
+   <testcase classname="org.elasticsearch.search.query.SimpleQueryTests" name="testSimpleSpan" time="0.285"/>
+   <system-out><![CDATA[[2014-02-18 15:44:07,814][INFO ][test                     ] Test testMatchQueryWithSynonyms(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:07,820][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:07,842][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryWithSynonyms]: before test
+[2014-02-18 15:44:07,856][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [test]
+[2014-02-18 15:44:07,920][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryWithSynonyms]: cleaning up after test
+[2014-02-18 15:44:07,921][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:07,932][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryWithSynonyms]: cleaned up after test
+[2014-02-18 15:44:07,936][INFO ][test                     ] Test testMatchQueryWithSynonyms(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:07,937][INFO ][test                     ] Test testMustNot(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:07,942][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:07,968][INFO ][search.query             ] [SimpleQueryTests#testMustNot]: before test
+[2014-02-18 15:44:07,979][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[0], mappings []
+[2014-02-18 15:44:08,035][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:08,064][INFO ][search.query             ] Index [4] docs async: [true] bulk: [false]
+[2014-02-18 15:44:08,068][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:44:08,102][INFO ][search.query             ] [SimpleQueryTests#testMustNot]: cleaning up after test
+[2014-02-18 15:44:08,103][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:08,117][INFO ][search.query             ] [SimpleQueryTests#testMustNot]: cleaned up after test
+[2014-02-18 15:44:08,124][INFO ][test                     ] Test testMustNot(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:08,124][INFO ][test                     ] Test testSimpleQueryStringFlags(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:08,130][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:08,153][INFO ][search.query             ] [SimpleQueryTests#testSimpleQueryStringFlags]: before test
+[2014-02-18 15:44:08,160][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:08,192][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:08,207][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:08,296][INFO ][search.query             ] [SimpleQueryTests#testSimpleQueryStringFlags]: cleaning up after test
+[2014-02-18 15:44:08,297][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:08,310][INFO ][search.query             ] [SimpleQueryTests#testSimpleQueryStringFlags]: cleaned up after test
+[2014-02-18 15:44:08,314][INFO ][test                     ] Test testSimpleQueryStringFlags(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:08,315][INFO ][test                     ] Test testSearchEmptyDoc(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:08,321][INFO ][search.query             ] [SimpleQueryTests#testSearchEmptyDoc]: before test
+[2014-02-18 15:44:08,330][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:08,411][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:08,436][INFO ][search.query             ] [SimpleQueryTests#testSearchEmptyDoc]: cleaning up after test
+[2014-02-18 15:44:08,437][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:08,525][INFO ][search.query             ] [SimpleQueryTests#testSearchEmptyDoc]: cleaned up after test
+[2014-02-18 15:44:08,525][INFO ][test                     ] Test testSearchEmptyDoc(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:08,526][INFO ][test                     ] Test testAllDocsQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:08,530][INFO ][search.query             ] [SimpleQueryTests#testAllDocsQueryString]: before test
+[2014-02-18 15:44:08,539][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings []
+[2014-02-18 15:44:08,587][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:08,593][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:08,929][INFO ][search.query             ] [SimpleQueryTests#testAllDocsQueryString]: cleaning up after test
+[2014-02-18 15:44:08,931][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:08,973][INFO ][search.query             ] [SimpleQueryTests#testAllDocsQueryString]: cleaned up after test
+[2014-02-18 15:44:08,974][INFO ][test                     ] Test testAllDocsQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:08,975][INFO ][test                     ] Test testSpecialRangeSyntaxInQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:08,982][INFO ][search.query             ] [SimpleQueryTests#testSpecialRangeSyntaxInQueryString]: before test
+[2014-02-18 15:44:08,995][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:09,050][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:09,084][INFO ][search.query             ] [SimpleQueryTests#testSpecialRangeSyntaxInQueryString]: cleaning up after test
+[2014-02-18 15:44:09,086][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:09,099][INFO ][search.query             ] [SimpleQueryTests#testSpecialRangeSyntaxInQueryString]: cleaned up after test
+[2014-02-18 15:44:09,100][INFO ][test                     ] Test testSpecialRangeSyntaxInQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:09,100][INFO ][test                     ] Test testEmptyTermsFilter(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:09,104][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:09,131][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:09,159][INFO ][search.query             ] [SimpleQueryTests#testEmptyTermsFilter]: before test
+[2014-02-18 15:44:09,169][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:44:09,485][INFO ][search.query             ] Index [4] docs async: [true] bulk: [false]
+[2014-02-18 15:44:09,614][INFO ][search.query             ] [SimpleQueryTests#testEmptyTermsFilter]: cleaning up after test
+[2014-02-18 15:44:09,616][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:09,654][INFO ][search.query             ] [SimpleQueryTests#testEmptyTermsFilter]: cleaned up after test
+[2014-02-18 15:44:09,661][INFO ][test                     ] Test testEmptyTermsFilter(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:09,661][INFO ][test                     ] Test typeFilterTypeIndexedTests(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:09,665][INFO ][search.query             ] [SimpleQueryTests#typeFilterTypeIndexedTests]: before test
+[2014-02-18 15:44:09,674][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1, type2]
+[2014-02-18 15:44:09,691][INFO ][search.query             ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:44:09,711][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type2] (dynamic)
+[2014-02-18 15:44:09,712][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:09,769][INFO ][search.query             ] [SimpleQueryTests#typeFilterTypeIndexedTests]: cleaning up after test
+[2014-02-18 15:44:09,770][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:09,799][INFO ][search.query             ] [SimpleQueryTests#typeFilterTypeIndexedTests]: cleaned up after test
+[2014-02-18 15:44:09,799][INFO ][test                     ] Test typeFilterTypeIndexedTests(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:09,800][INFO ][test                     ] Test testMultiFieldQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:09,805][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:09,832][INFO ][search.query             ] [SimpleQueryTests#testMultiFieldQueryString]: before test
+[2014-02-18 15:44:09,850][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:44:10,046][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [s] (dynamic)
+[2014-02-18 15:44:10,112][INFO ][search.query             ] regular
+[2014-02-18 15:44:10,122][INFO ][search.query             ] prefix
+[2014-02-18 15:44:10,128][INFO ][search.query             ] wildcard
+[2014-02-18 15:44:10,142][INFO ][search.query             ] fuzzy
+[2014-02-18 15:44:10,145][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:10,231][INFO ][search.query             ] regexp
+[2014-02-18 15:44:10,255][INFO ][search.query             ] [SimpleQueryTests#testMultiFieldQueryString]: cleaning up after test
+[2014-02-18 15:44:10,256][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:10,333][INFO ][search.query             ] [SimpleQueryTests#testMultiFieldQueryString]: cleaned up after test
+[2014-02-18 15:44:10,347][INFO ][test                     ] Test testMultiFieldQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:10,348][INFO ][test                     ] Test testRangeFilterNoCacheWithNow(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:10,356][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:10,402][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:10,447][INFO ][search.query             ] [SimpleQueryTests#testRangeFilterNoCacheWithNow]: before test
+[2014-02-18 15:44:10,463][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type1]
+[2014-02-18 15:44:10,498][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:10,559][INFO ][search.query             ] [SimpleQueryTests#testRangeFilterNoCacheWithNow]: cleaning up after test
+[2014-02-18 15:44:10,561][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:10,578][INFO ][search.query             ] [SimpleQueryTests#testRangeFilterNoCacheWithNow]: cleaned up after test
+[2014-02-18 15:44:10,588][INFO ][test                     ] Test testRangeFilterNoCacheWithNow(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:10,589][INFO ][test                     ] Test testMultiMatchQueryMinShouldMatch(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:10,599][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:10,641][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQueryMinShouldMatch]: before test
+[2014-02-18 15:44:10,655][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:10,710][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:10,725][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:10,802][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQueryMinShouldMatch]: cleaning up after test
+[2014-02-18 15:44:10,803][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:10,876][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQueryMinShouldMatch]: cleaned up after test
+[2014-02-18 15:44:10,886][INFO ][test                     ] Test testMultiMatchQueryMinShouldMatch(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:10,888][INFO ][test                     ] Test testIndicesQueryMissingIndices(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:10,895][INFO ][search.query             ] [SimpleQueryTests#testIndicesQueryMissingIndices]: before test
+[2014-02-18 15:44:10,913][INFO ][cluster.metadata         ] [node_0] [index1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:11,262][INFO ][cluster.metadata         ] [node_0] [index2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:11,686][INFO ][cluster.metadata         ] [node_0] [index1] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:11,694][INFO ][cluster.metadata         ] [node_0] [index2] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:11,720][INFO ][cluster.metadata         ] [node_0] [index3] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:44:11,839][INFO ][cluster.metadata         ] [node_0] [index3] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:12,188][INFO ][search.query             ] [SimpleQueryTests#testIndicesQueryMissingIndices]: cleaning up after test
+[2014-02-18 15:44:12,189][INFO ][cluster.metadata         ] [node_0] [index1] deleting index
+[2014-02-18 15:44:12,226][INFO ][cluster.metadata         ] [node_0] [index3] deleting index
+[2014-02-18 15:44:12,266][INFO ][cluster.metadata         ] [node_0] [index2] deleting index
+[2014-02-18 15:44:12,304][INFO ][search.query             ] [SimpleQueryTests#testIndicesQueryMissingIndices]: cleaned up after test
+[2014-02-18 15:44:12,305][INFO ][test                     ] Test testIndicesQueryMissingIndices(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:12,306][INFO ][test                     ] Test testIndexOptions(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:12,313][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:12,369][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:12,399][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:12,433][INFO ][search.query             ] [SimpleQueryTests#testIndexOptions]: before test
+[2014-02-18 15:44:12,444][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:12,482][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:12,537][INFO ][search.query             ] [SimpleQueryTests#testIndexOptions]: cleaning up after test
+[2014-02-18 15:44:12,540][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:12,591][INFO ][search.query             ] [SimpleQueryTests#testIndexOptions]: cleaned up after test
+[2014-02-18 15:44:12,607][INFO ][test                     ] Test testIndexOptions(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:12,608][INFO ][test                     ] Test testDateRangeInQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:12,615][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:12,647][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:12,675][INFO ][search.query             ] [SimpleQueryTests#testDateRangeInQueryString]: before test
+[2014-02-18 15:44:12,677][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:12,710][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:12,741][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:44:12,771][INFO ][search.query             ] [SimpleQueryTests#testDateRangeInQueryString]: cleaning up after test
+[2014-02-18 15:44:12,773][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:12,793][INFO ][search.query             ] [SimpleQueryTests#testDateRangeInQueryString]: cleaned up after test
+[2014-02-18 15:44:12,804][INFO ][test                     ] Test testDateRangeInQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:12,804][INFO ][test                     ] Test testMultiMatchQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:12,809][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:12,839][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQuery]: before test
+[2014-02-18 15:44:12,849][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:12,871][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:12,913][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:12,919][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:13,045][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:13,093][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQuery]: cleaning up after test
+[2014-02-18 15:44:13,094][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:13,111][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQuery]: cleaned up after test
+[2014-02-18 15:44:13,120][INFO ][test                     ] Test testMultiMatchQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:13,120][INFO ][test                     ] Test testIndicesFilter(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:13,128][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:13,152][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilter]: before test
+[2014-02-18 15:44:13,160][INFO ][cluster.metadata         ] [node_0] [index1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:13,251][INFO ][cluster.metadata         ] [node_0] [index2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:13,358][INFO ][cluster.metadata         ] [node_0] [index3] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:13,665][INFO ][cluster.metadata         ] [node_0] [index1] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:13,669][INFO ][cluster.metadata         ] [node_0] [index2] update_mapping [type2] (dynamic)
+[2014-02-18 15:44:13,673][INFO ][cluster.metadata         ] [node_0] [index3] update_mapping [type3] (dynamic)
+[2014-02-18 15:44:13,751][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilter]: cleaning up after test
+[2014-02-18 15:44:13,752][INFO ][cluster.metadata         ] [node_0] [index1] deleting index
+[2014-02-18 15:44:13,797][INFO ][cluster.metadata         ] [node_0] [index3] deleting index
+[2014-02-18 15:44:13,845][INFO ][cluster.metadata         ] [node_0] [index2] deleting index
+[2014-02-18 15:44:13,879][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilter]: cleaned up after test
+[2014-02-18 15:44:13,884][INFO ][test                     ] Test testIndicesFilter(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:13,884][INFO ][test                     ] Test typeFilterTypeNotIndexedTests(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:13,891][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:13,915][INFO ][search.query             ] [SimpleQueryTests#typeFilterTypeNotIndexedTests]: before test
+[2014-02-18 15:44:13,924][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1, type2]
+[2014-02-18 15:44:13,940][INFO ][search.query             ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:44:13,956][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:13,957][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type2] (dynamic)
+[2014-02-18 15:44:14,247][INFO ][search.query             ] [SimpleQueryTests#typeFilterTypeNotIndexedTests]: cleaning up after test
+[2014-02-18 15:44:14,249][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:14,269][INFO ][search.query             ] [SimpleQueryTests#typeFilterTypeNotIndexedTests]: cleaned up after test
+[2014-02-18 15:44:14,272][INFO ][test                     ] Test typeFilterTypeNotIndexedTests(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:14,273][INFO ][test                     ] Test idsFilterTestsIdNotIndexed(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:14,278][INFO ][search.query             ] [SimpleQueryTests#idsFilterTestsIdNotIndexed]: before test
+[2014-02-18 15:44:14,300][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:14,329][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:14,352][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:14,404][INFO ][search.query             ] [SimpleQueryTests#idsFilterTestsIdNotIndexed]: cleaning up after test
+[2014-02-18 15:44:14,404][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:14,427][INFO ][search.query             ] [SimpleQueryTests#idsFilterTestsIdNotIndexed]: cleaned up after test
+[2014-02-18 15:44:14,428][INFO ][test                     ] Test idsFilterTestsIdNotIndexed(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:14,428][INFO ][test                     ] Test testOmitNormsOnAll(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:14,433][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:14,459][INFO ][search.query             ] [SimpleQueryTests#testOmitNormsOnAll]: before test
+[2014-02-18 15:44:14,467][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:44:14,542][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:14,583][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:14,667][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:14,720][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:14,767][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:14,820][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:14,908][INFO ][search.query             ] [SimpleQueryTests#testOmitNormsOnAll]: cleaning up after test
+[2014-02-18 15:44:14,911][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:14,954][INFO ][search.query             ] [SimpleQueryTests#testOmitNormsOnAll]: cleaned up after test
+[2014-02-18 15:44:14,958][INFO ][test                     ] Test testOmitNormsOnAll(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:14,958][INFO ][test                     ] Test testMatchQueryNumeric(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:14,962][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:14,984][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:15,021][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryNumeric]: before test
+[2014-02-18 15:44:15,032][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:15,058][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:15,085][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:15,092][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:15,135][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryNumeric]: cleaning up after test
+[2014-02-18 15:44:15,147][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:15,167][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryNumeric]: cleaned up after test
+[2014-02-18 15:44:15,177][INFO ][test                     ] Test testMatchQueryNumeric(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:15,177][INFO ][test                     ] Test testFiltersWithCustomCacheKey(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:15,182][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:15,206][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:15,228][INFO ][search.query             ] [SimpleQueryTests#testFiltersWithCustomCacheKey]: before test
+[2014-02-18 15:44:15,238][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:15,524][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:15,556][INFO ][search.query             ] [SimpleQueryTests#testFiltersWithCustomCacheKey]: cleaning up after test
+[2014-02-18 15:44:15,558][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:15,594][INFO ][search.query             ] [SimpleQueryTests#testFiltersWithCustomCacheKey]: cleaned up after test
+[2014-02-18 15:44:15,603][INFO ][test                     ] Test testFiltersWithCustomCacheKey(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:15,604][INFO ][test                     ] Test passQueryOrFilterAsJSONStringTest(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:15,609][INFO ][search.query             ] [SimpleQueryTests#passQueryOrFilterAsJSONStringTest]: before test
+[2014-02-18 15:44:15,619][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:15,656][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:15,679][INFO ][search.query             ] [SimpleQueryTests#passQueryOrFilterAsJSONStringTest]: cleaning up after test
+[2014-02-18 15:44:15,680][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:15,698][INFO ][search.query             ] [SimpleQueryTests#passQueryOrFilterAsJSONStringTest]: cleaned up after test
+[2014-02-18 15:44:15,699][INFO ][test                     ] Test passQueryOrFilterAsJSONStringTest(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:15,699][INFO ][test                     ] Test testCustomWordDelimiterQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:15,703][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:15,727][INFO ][search.query             ] [SimpleQueryTests#testCustomWordDelimiterQueryString]: before test
+[2014-02-18 15:44:15,729][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:15,766][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:44:16,136][INFO ][search.query             ] [SimpleQueryTests#testCustomWordDelimiterQueryString]: cleaning up after test
+[2014-02-18 15:44:16,138][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:16,181][INFO ][search.query             ] [SimpleQueryTests#testCustomWordDelimiterQueryString]: cleaned up after test
+[2014-02-18 15:44:16,188][INFO ][test                     ] Test testCustomWordDelimiterQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:16,188][INFO ][test                     ] Test testMultiMatchLenientIssue3797(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:16,194][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:16,220][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:16,245][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchLenientIssue3797]: before test
+[2014-02-18 15:44:16,255][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:16,547][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:16,649][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchLenientIssue3797]: cleaning up after test
+[2014-02-18 15:44:16,651][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:16,682][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchLenientIssue3797]: cleaned up after test
+[2014-02-18 15:44:16,691][INFO ][test                     ] Test testMultiMatchLenientIssue3797(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:16,692][INFO ][test                     ] Test testBasicFilterById(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:16,697][INFO ][search.query             ] [SimpleQueryTests#testBasicFilterById]: before test
+[2014-02-18 15:44:16,709][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:17,010][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:17,042][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:17,049][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type2] (dynamic)
+[2014-02-18 15:44:17,193][INFO ][search.query             ] [SimpleQueryTests#testBasicFilterById]: cleaning up after test
+[2014-02-18 15:44:17,194][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:17,225][INFO ][search.query             ] [SimpleQueryTests#testBasicFilterById]: cleaned up after test
+[2014-02-18 15:44:17,229][INFO ][test                     ] Test testBasicFilterById(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:17,230][INFO ][test                     ] Test testIndicesQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:17,234][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:17,257][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:17,283][INFO ][search.query             ] [SimpleQueryTests#testIndicesQuery]: before test
+[2014-02-18 15:44:17,291][INFO ][cluster.metadata         ] [node_0] [index1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:17,417][INFO ][cluster.metadata         ] [node_0] [index2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:17,636][INFO ][cluster.metadata         ] [node_0] [index3] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:18,080][INFO ][cluster.metadata         ] [node_0] [index1] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:18,086][INFO ][cluster.metadata         ] [node_0] [index2] update_mapping [type2] (dynamic)
+[2014-02-18 15:44:18,092][INFO ][cluster.metadata         ] [node_0] [index3] update_mapping [type3] (dynamic)
+[2014-02-18 15:44:18,227][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:18,273][INFO ][search.query             ] [SimpleQueryTests#testIndicesQuery]: cleaning up after test
+[2014-02-18 15:44:18,274][INFO ][cluster.metadata         ] [node_0] [index1] deleting index
+[2014-02-18 15:44:18,308][INFO ][cluster.metadata         ] [node_0] [index3] deleting index
+[2014-02-18 15:44:18,341][INFO ][cluster.metadata         ] [node_0] [index2] deleting index
+[2014-02-18 15:44:18,374][INFO ][search.query             ] [SimpleQueryTests#testIndicesQuery]: cleaned up after test
+[2014-02-18 15:44:18,387][INFO ][test                     ] Test testIndicesQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:18,388][INFO ][test                     ] Test testQuotedQueryStringWithBoost(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:18,393][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:18,416][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:18,438][INFO ][search.query             ] [SimpleQueryTests#testQuotedQueryStringWithBoost]: before test
+[2014-02-18 15:44:18,447][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:18,463][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:18,479][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:18,502][INFO ][search.query             ] [SimpleQueryTests#testQuotedQueryStringWithBoost]: cleaning up after test
+[2014-02-18 15:44:18,504][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:18,550][INFO ][search.query             ] [SimpleQueryTests#testQuotedQueryStringWithBoost]: cleaned up after test
+[2014-02-18 15:44:18,558][INFO ][test                     ] Test testQuotedQueryStringWithBoost(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:18,558][INFO ][test                     ] Test testSpanMultiTermQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:18,565][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:18,596][INFO ][search.query             ] [SimpleQueryTests#testSpanMultiTermQuery]: before test
+[2014-02-18 15:44:18,605][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:44:18,626][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:44:18,674][INFO ][search.query             ] [SimpleQueryTests#testSpanMultiTermQuery]: cleaning up after test
+[2014-02-18 15:44:18,676][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:18,687][INFO ][search.query             ] [SimpleQueryTests#testSpanMultiTermQuery]: cleaned up after test
+[2014-02-18 15:44:18,692][INFO ][test                     ] Test testSpanMultiTermQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:18,692][INFO ][test                     ] Test testNumericRangeFilter_2826(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:18,699][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:18,726][INFO ][search.query             ] [SimpleQueryTests#testNumericRangeFilter_2826]: before test
+[2014-02-18 15:44:18,737][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type1]
+[2014-02-18 15:44:18,756][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:18,783][INFO ][search.query             ] [SimpleQueryTests#testNumericRangeFilter_2826]: cleaning up after test
+[2014-02-18 15:44:18,785][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:18,795][INFO ][search.query             ] [SimpleQueryTests#testNumericRangeFilter_2826]: cleaned up after test
+[2014-02-18 15:44:18,801][INFO ][test                     ] Test testNumericRangeFilter_2826(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:18,802][INFO ][test                     ] Test testFieldDataTermsFilter(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:18,807][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:18,834][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:18,861][INFO ][search.query             ] [SimpleQueryTests#testFieldDataTermsFilter]: before test
+[2014-02-18 15:44:18,872][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:44:19,452][INFO ][search.query             ] [SimpleQueryTests#testFieldDataTermsFilter]: cleaning up after test
+[2014-02-18 15:44:19,453][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:19,498][INFO ][search.query             ] [SimpleQueryTests#testFieldDataTermsFilter]: cleaned up after test
+[2014-02-18 15:44:19,507][INFO ][test                     ] Test testFieldDataTermsFilter(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:19,507][INFO ][test                     ] Test testSimpleDFSQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:19,513][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:19,561][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:19,594][INFO ][search.query             ] [SimpleQueryTests#testSimpleDFSQuery]: before test
+[2014-02-18 15:44:19,610][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[0], mappings [s, bs]
+[2014-02-18 15:44:19,888][INFO ][search.query             ] [SimpleQueryTests#testSimpleDFSQuery]: cleaning up after test
+[2014-02-18 15:44:19,889][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:19,931][INFO ][search.query             ] [SimpleQueryTests#testSimpleDFSQuery]: cleaned up after test
+[2014-02-18 15:44:19,938][INFO ][test                     ] Test testSimpleDFSQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:19,939][INFO ][test                     ] Test passQueryAsStringTest(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:19,944][INFO ][search.query             ] [SimpleQueryTests#passQueryAsStringTest]: before test
+[2014-02-18 15:44:19,953][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:20,000][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:20,102][INFO ][search.query             ] [SimpleQueryTests#passQueryAsStringTest]: cleaning up after test
+[2014-02-18 15:44:20,105][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:20,144][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:20,166][INFO ][search.query             ] [SimpleQueryTests#passQueryAsStringTest]: cleaned up after test
+[2014-02-18 15:44:20,170][INFO ][test                     ] Test passQueryAsStringTest(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:20,171][INFO ][test                     ] Test testIndicesFilterSkipParsing(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:20,175][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:20,204][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:20,234][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilterSkipParsing]: before test
+[2014-02-18 15:44:20,236][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:20,271][INFO ][cluster.metadata         ] [node_0] [simple] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:20,513][INFO ][cluster.metadata         ] [node_0] [related] creating index, cause [api], shards [5]/[1], mappings [child]
+[2014-02-18 15:44:20,984][INFO ][cluster.metadata         ] [node_0] [simple] update_mapping [lone] (dynamic)
+[2014-02-18 15:44:20,989][INFO ][cluster.metadata         ] [node_0] [related] update_mapping [parent] (dynamic)
+[2014-02-18 15:44:21,006][INFO ][cluster.metadata         ] [node_0] [related] update_mapping [child] (dynamic)
+[2014-02-18 15:44:21,228][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilterSkipParsing]: cleaning up after test
+[2014-02-18 15:44:21,230][INFO ][cluster.metadata         ] [node_0] [related] deleting index
+[2014-02-18 15:44:21,308][INFO ][cluster.metadata         ] [node_0] [simple] deleting index
+[2014-02-18 15:44:21,397][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilterSkipParsing]: cleaned up after test
+[2014-02-18 15:44:21,422][INFO ][test                     ] Test testIndicesFilterSkipParsing(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:21,422][INFO ][test                     ] Test testIndicesFilterMissingIndices(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:21,429][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:21,470][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:21,515][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:21,549][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilterMissingIndices]: before test
+[2014-02-18 15:44:21,569][INFO ][cluster.metadata         ] [node_0] [index1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:22,179][INFO ][cluster.metadata         ] [node_0] [index2] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:22,760][INFO ][cluster.metadata         ] [node_0] [index1] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:22,822][INFO ][cluster.metadata         ] [node_0] [index2] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:22,873][INFO ][cluster.metadata         ] [node_0] [index3] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:44:23,200][INFO ][cluster.metadata         ] [node_0] [index3] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:23,398][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilterMissingIndices]: cleaning up after test
+[2014-02-18 15:44:23,400][INFO ][cluster.metadata         ] [node_0] [index1] deleting index
+[2014-02-18 15:44:23,481][INFO ][cluster.metadata         ] [node_0] [index3] deleting index
+[2014-02-18 15:44:23,522][INFO ][cluster.metadata         ] [node_0] [index2] deleting index
+[2014-02-18 15:44:23,568][INFO ][search.query             ] [SimpleQueryTests#testIndicesFilterMissingIndices]: cleaned up after test
+[2014-02-18 15:44:23,595][INFO ][test                     ] Test testIndicesFilterMissingIndices(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:23,595][INFO ][test                     ] Test testMatchQueryZeroTermsQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:23,609][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:23,658][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryZeroTermsQuery]: before test
+[2014-02-18 15:44:23,660][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:23,703][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:23,770][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryZeroTermsQuery]: cleaning up after test
+[2014-02-18 15:44:23,771][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:23,794][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryZeroTermsQuery]: cleaned up after test
+[2014-02-18 15:44:23,802][INFO ][test                     ] Test testMatchQueryZeroTermsQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:23,802][INFO ][test                     ] Test testMinScore(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:23,809][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:23,838][INFO ][search.query             ] [SimpleQueryTests#testMinScore]: before test
+[2014-02-18 15:44:23,848][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:24,149][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:44:24,228][INFO ][search.query             ] [SimpleQueryTests#testMinScore]: cleaning up after test
+[2014-02-18 15:44:24,230][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:24,265][INFO ][search.query             ] [SimpleQueryTests#testMinScore]: cleaned up after test
+[2014-02-18 15:44:24,268][INFO ][test                     ] Test testMinScore(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:24,269][INFO ][test                     ] Test testSimpleQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:24,274][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:24,295][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:24,324][INFO ][search.query             ] [SimpleQueryTests#testSimpleQueryString]: before test
+[2014-02-18 15:44:24,334][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:24,369][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:24,409][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:24,435][INFO ][search.query             ] [SimpleQueryTests#testSimpleQueryString]: cleaning up after test
+[2014-02-18 15:44:24,436][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:24,449][INFO ][search.query             ] [SimpleQueryTests#testSimpleQueryString]: cleaned up after test
+[2014-02-18 15:44:24,456][INFO ][test                     ] Test testSimpleQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:24,457][INFO ][test                     ] Test testMatchQueryWithStackedStems(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:24,462][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryWithStackedStems]: before test
+[2014-02-18 15:44:24,472][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [test]
+[2014-02-18 15:44:24,528][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryWithStackedStems]: cleaning up after test
+[2014-02-18 15:44:24,529][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:24,537][INFO ][search.query             ] [SimpleQueryTests#testMatchQueryWithStackedStems]: cleaned up after test
+[2014-02-18 15:44:24,537][INFO ][test                     ] Test testMatchQueryWithStackedStems(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:24,538][INFO ][test                     ] Test testBasicQueryById(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:24,542][INFO ][search.query             ] [SimpleQueryTests#testBasicQueryById]: before test
+[2014-02-18 15:44:24,550][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:24,856][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:24,862][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type2] (dynamic)
+[2014-02-18 15:44:24,910][INFO ][search.query             ] [SimpleQueryTests#testBasicQueryById]: cleaning up after test
+[2014-02-18 15:44:24,910][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:24,941][INFO ][search.query             ] [SimpleQueryTests#testBasicQueryById]: cleaned up after test
+[2014-02-18 15:44:24,941][INFO ][test                     ] Test testBasicQueryById(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:24,942][INFO ][test                     ] Test queryStringAnalyzedWildcard(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:24,947][INFO ][search.query             ] [SimpleQueryTests#queryStringAnalyzedWildcard]: before test
+[2014-02-18 15:44:24,954][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:24,987][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:25,034][INFO ][search.query             ] [SimpleQueryTests#queryStringAnalyzedWildcard]: cleaning up after test
+[2014-02-18 15:44:25,035][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:25,066][INFO ][search.query             ] [SimpleQueryTests#queryStringAnalyzedWildcard]: cleaned up after test
+[2014-02-18 15:44:25,067][INFO ][test                     ] Test queryStringAnalyzedWildcard(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:25,067][INFO ][test                     ] Test testEmptyQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:25,076][INFO ][search.query             ] [SimpleQueryTests#testEmptyQueryString]: before test
+[2014-02-18 15:44:25,092][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:25,285][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:25,380][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:25,573][INFO ][search.query             ] [SimpleQueryTests#testEmptyQueryString]: cleaning up after test
+[2014-02-18 15:44:25,574][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:25,665][INFO ][search.query             ] [SimpleQueryTests#testEmptyQueryString]: cleaned up after test
+[2014-02-18 15:44:25,666][INFO ][test                     ] Test testEmptyQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:25,667][INFO ][test                     ] Test testCommonTermsQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:25,674][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:25,719][INFO ][search.query             ] [SimpleQueryTests#testCommonTermsQuery]: before test
+[2014-02-18 15:44:25,740][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:25,784][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:25,842][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:25,992][INFO ][search.query             ] [SimpleQueryTests#testCommonTermsQuery]: cleaning up after test
+[2014-02-18 15:44:25,996][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:26,159][INFO ][search.query             ] [SimpleQueryTests#testCommonTermsQuery]: cleaned up after test
+[2014-02-18 15:44:26,165][INFO ][test                     ] Test testCommonTermsQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:26,166][INFO ][test                     ] Test testTermsLookupFilter(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:26,175][INFO ][search.query             ] [SimpleQueryTests#testTermsLookupFilter]: before test
+[2014-02-18 15:44:26,191][INFO ][cluster.metadata         ] [node_0] [lookup] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:44:26,507][INFO ][cluster.metadata         ] [node_0] [lookup2] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:44:27,015][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:44:27,523][INFO ][search.query             ] Index [11] docs async: [true] bulk: [false]
+[2014-02-18 15:44:27,820][INFO ][search.query             ] [SimpleQueryTests#testTermsLookupFilter]: cleaning up after test
+[2014-02-18 15:44:27,821][INFO ][cluster.metadata         ] [node_0] [lookup2] deleting index
+[2014-02-18 15:44:27,863][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:27,916][INFO ][cluster.metadata         ] [node_0] [lookup] deleting index
+[2014-02-18 15:44:27,960][INFO ][search.query             ] [SimpleQueryTests#testTermsLookupFilter]: cleaned up after test
+[2014-02-18 15:44:27,962][INFO ][test                     ] Test testTermsLookupFilter(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:27,963][INFO ][test                     ] Test testQueryStringWithSlopAndFields(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:27,971][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:28,048][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:28,113][INFO ][search.query             ] [SimpleQueryTests#testQueryStringWithSlopAndFields]: before test
+[2014-02-18 15:44:28,134][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:28,264][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:28,546][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [customer] (dynamic)
+[2014-02-18 15:44:28,561][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [product] (dynamic)
+[2014-02-18 15:44:28,697][INFO ][search.query             ] [SimpleQueryTests#testQueryStringWithSlopAndFields]: cleaning up after test
+[2014-02-18 15:44:28,700][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:28,736][INFO ][search.query             ] [SimpleQueryTests#testQueryStringWithSlopAndFields]: cleaned up after test
+[2014-02-18 15:44:28,751][INFO ][test                     ] Test testQueryStringWithSlopAndFields(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:28,752][INFO ][test                     ] Test testMultiMatchQueryZeroTermsQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:28,759][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:28,792][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:28,824][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:28,862][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQueryZeroTermsQuery]: before test
+[2014-02-18 15:44:28,878][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:29,009][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQueryZeroTermsQuery]: cleaning up after test
+[2014-02-18 15:44:29,013][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:29,033][INFO ][search.query             ] [SimpleQueryTests#testMultiMatchQueryZeroTermsQuery]: cleaned up after test
+[2014-02-18 15:44:29,048][INFO ][test                     ] Test testMultiMatchQueryZeroTermsQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:29,049][INFO ][test                     ] Test testEmptyTopLevelFilter(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:29,054][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:29,079][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:29,107][INFO ][search.query             ] [SimpleQueryTests#testEmptyTopLevelFilter]: before test
+[2014-02-18 15:44:29,119][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:44:29,238][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:44:29,455][INFO ][search.query             ] [SimpleQueryTests#testEmptyTopLevelFilter]: cleaning up after test
+[2014-02-18 15:44:29,457][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:29,515][INFO ][search.query             ] [SimpleQueryTests#testEmptyTopLevelFilter]: cleaned up after test
+[2014-02-18 15:44:29,523][INFO ][test                     ] Test testEmptyTopLevelFilter(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:29,524][INFO ][test                     ] Test testLimitFilter(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:29,530][INFO ][search.query             ] [SimpleQueryTests#testLimitFilter]: before test
+[2014-02-18 15:44:29,539][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:29,562][INFO ][search.query             ] Index [4] docs async: [true] bulk: [false]
+[2014-02-18 15:44:29,583][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:29,682][INFO ][search.query             ] [SimpleQueryTests#testLimitFilter]: cleaning up after test
+[2014-02-18 15:44:29,683][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:29,766][INFO ][search.query             ] [SimpleQueryTests#testLimitFilter]: cleaned up after test
+[2014-02-18 15:44:29,767][INFO ][test                     ] Test testLimitFilter(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:29,767][INFO ][test                     ] Test testQueryStringWithSynonyms(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:29,772][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:29,801][INFO ][search.query             ] [SimpleQueryTests#testQueryStringWithSynonyms]: before test
+[2014-02-18 15:44:29,813][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [test]
+[2014-02-18 15:44:29,891][INFO ][search.query             ] [SimpleQueryTests#testQueryStringWithSynonyms]: cleaning up after test
+[2014-02-18 15:44:29,892][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:29,911][INFO ][search.query             ] [SimpleQueryTests#testQueryStringWithSynonyms]: cleaned up after test
+[2014-02-18 15:44:29,915][INFO ][test                     ] Test testQueryStringWithSynonyms(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:29,916][INFO ][test                     ] Test testOmitTermFreqsAndPositions(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:29,921][INFO ][search.query             ] [SimpleQueryTests#testOmitTermFreqsAndPositions]: before test
+[2014-02-18 15:44:29,941][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:29,961][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:29,977][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,003][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:30,037][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:30,061][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:30,076][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,115][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:30,156][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:30,178][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:30,195][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,222][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:30,265][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:30,289][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:30,310][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,333][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:30,438][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:30,482][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:30,525][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,565][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:30,711][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:30,762][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:30,789][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,845][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:30,895][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:30,916][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:30,936][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:30,959][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,045][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:31,063][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:31,081][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:31,108][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,177][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:31,200][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:31,216][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:31,266][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,298][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:31,318][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:31,336][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:31,469][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,507][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:31,531][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:31,551][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:31,574][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,675][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:31,704][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:31,727][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:31,756][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,814][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:31,846][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:31,869][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:31,940][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:31,979][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:32,001][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:32,022][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:32,126][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:32,157][INFO ][search.query             ] [SimpleQueryTests#testOmitTermFreqsAndPositions]: cleaning up after test
+[2014-02-18 15:44:32,161][INFO ][search.query             ] [SimpleQueryTests#testOmitTermFreqsAndPositions]: cleaned up after test
+[2014-02-18 15:44:32,162][INFO ][test                     ] Test testOmitTermFreqsAndPositions(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:32,162][INFO ][test                     ] Test testIndicesQuerySkipParsing(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:32,168][INFO ][search.query             ] [SimpleQueryTests#testIndicesQuerySkipParsing]: before test
+[2014-02-18 15:44:32,181][INFO ][cluster.metadata         ] [node_0] [simple] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:32,354][INFO ][cluster.metadata         ] [node_0] [related] creating index, cause [api], shards [5]/[1], mappings [child]
+[2014-02-18 15:44:32,903][INFO ][cluster.metadata         ] [node_0] [simple] update_mapping [lone] (dynamic)
+[2014-02-18 15:44:32,907][INFO ][cluster.metadata         ] [node_0] [related] update_mapping [parent] (dynamic)
+[2014-02-18 15:44:32,913][INFO ][cluster.metadata         ] [node_0] [related] update_mapping [child] (dynamic)
+[2014-02-18 15:44:33,073][INFO ][search.query             ] [SimpleQueryTests#testIndicesQuerySkipParsing]: cleaning up after test
+[2014-02-18 15:44:33,074][INFO ][cluster.metadata         ] [node_0] [related] deleting index
+[2014-02-18 15:44:33,150][INFO ][cluster.metadata         ] [node_0] [simple] deleting index
+[2014-02-18 15:44:33,230][INFO ][search.query             ] [SimpleQueryTests#testIndicesQuerySkipParsing]: cleaned up after test
+[2014-02-18 15:44:33,231][INFO ][test                     ] Test testIndicesQuerySkipParsing(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:33,232][INFO ][test                     ] Test testIssue3177(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:33,246][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:33,314][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:33,363][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:33,418][INFO ][search.query             ] [SimpleQueryTests#testIssue3177]: before test
+[2014-02-18 15:44:33,430][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:33,484][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:33,810][INFO ][search.query             ] [SimpleQueryTests#testIssue3177]: cleaning up after test
+[2014-02-18 15:44:33,814][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:33,832][INFO ][search.query             ] [SimpleQueryTests#testIssue3177]: cleaned up after test
+[2014-02-18 15:44:33,850][INFO ][test                     ] Test testIssue3177(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:33,851][INFO ][test                     ] Test testLowercaseExpandedTerms(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:33,858][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:33,923][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:33,989][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:34,054][INFO ][search.query             ] [SimpleQueryTests#testLowercaseExpandedTerms]: before test
+[2014-02-18 15:44:34,069][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:34,141][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:34,203][INFO ][search.query             ] [SimpleQueryTests#testLowercaseExpandedTerms]: cleaning up after test
+[2014-02-18 15:44:34,204][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:34,278][INFO ][search.query             ] [SimpleQueryTests#testLowercaseExpandedTerms]: cleaned up after test
+[2014-02-18 15:44:34,292][INFO ][test                     ] Test testLowercaseExpandedTerms(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:34,292][INFO ][test                     ] Test testFuzzyQueryString(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:34,300][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:34,333][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:34,376][INFO ][search.query             ] [SimpleQueryTests#testFuzzyQueryString]: before test
+[2014-02-18 15:44:34,391][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:34,441][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:34,479][INFO ][search.query             ] [SimpleQueryTests#testFuzzyQueryString]: cleaning up after test
+[2014-02-18 15:44:34,481][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:34,524][INFO ][search.query             ] [SimpleQueryTests#testFuzzyQueryString]: cleaned up after test
+[2014-02-18 15:44:34,534][INFO ][test                     ] Test testFuzzyQueryString(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:34,535][INFO ][test                     ] Test filterExistsMissingTests(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:34,542][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:34,587][INFO ][search.query             ] [SimpleQueryTests#filterExistsMissingTests]: before test
+[2014-02-18 15:44:34,601][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 15:44:34,674][INFO ][search.query             ] Index [4] docs async: [false] bulk: [true]
+[2014-02-18 15:44:34,727][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:34,798][INFO ][search.query             ] [SimpleQueryTests#filterExistsMissingTests]: cleaning up after test
+[2014-02-18 15:44:34,799][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:34,909][INFO ][search.query             ] [SimpleQueryTests#filterExistsMissingTests]: cleaned up after test
+[2014-02-18 15:44:34,914][INFO ][test                     ] Test filterExistsMissingTests(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:34,914][INFO ][test                     ] Test idsFilterTestsIdIndexed(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:34,922][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:34,954][INFO ][search.query             ] [SimpleQueryTests#idsFilterTestsIdIndexed]: before test
+[2014-02-18 15:44:34,965][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:34,986][INFO ][search.query             ] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:44:35,007][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:35,068][INFO ][search.query             ] [SimpleQueryTests#idsFilterTestsIdIndexed]: cleaning up after test
+[2014-02-18 15:44:35,070][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:35,133][INFO ][search.query             ] [SimpleQueryTests#idsFilterTestsIdIndexed]: cleaned up after test
+[2014-02-18 15:44:35,137][INFO ][test                     ] Test idsFilterTestsIdIndexed(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:35,138][INFO ][test                     ] Test testNumericTermsAndRanges(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:35,143][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:35,169][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:35,209][INFO ][search.query             ] [SimpleQueryTests#testNumericTermsAndRanges]: before test
+[2014-02-18 15:44:35,217][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [type1]
+[2014-02-18 15:44:35,238][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:35,490][INFO ][search.query             ] --> term query on 1
+[2014-02-18 15:44:35,501][INFO ][search.query             ] --> terms query on 1
+[2014-02-18 15:44:35,514][INFO ][search.query             ] --> term filter on 1
+[2014-02-18 15:44:35,525][INFO ][search.query             ] --> terms filter on 1
+[2014-02-18 15:44:35,535][INFO ][search.query             ] [SimpleQueryTests#testNumericTermsAndRanges]: cleaning up after test
+[2014-02-18 15:44:35,538][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:35,555][INFO ][search.query             ] [SimpleQueryTests#testNumericTermsAndRanges]: cleaned up after test
+[2014-02-18 15:44:35,564][INFO ][test                     ] Test testNumericTermsAndRanges(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:35,565][INFO ][test                     ] Test testConstantScoreQuery(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:35,570][INFO ][search.query             ] [SimpleQueryTests#testConstantScoreQuery]: before test
+[2014-02-18 15:44:35,581][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:35,651][INFO ][search.query             ] Index [2] docs async: [true] bulk: [false]
+[2014-02-18 15:44:35,693][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:44:35,896][INFO ][cluster.metadata         ] [node_0] [test_1] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:44:36,028][INFO ][search.query             ] Index [147] docs async: [true] bulk: [false]
+[2014-02-18 15:44:37,690][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type] (dynamic)
+[2014-02-18 15:44:37,907][INFO ][search.query             ] [SimpleQueryTests#testConstantScoreQuery]: cleaning up after test
+[2014-02-18 15:44:37,908][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:37,978][INFO ][cluster.metadata         ] [node_0] [test_1] deleting index
+[2014-02-18 15:44:38,021][INFO ][search.query             ] [SimpleQueryTests#testConstantScoreQuery]: cleaned up after test
+[2014-02-18 15:44:38,023][INFO ][test                     ] Test testConstantScoreQuery(org.elasticsearch.search.query.SimpleQueryTests) finished
+[2014-02-18 15:44:38,024][INFO ][test                     ] Test testSimpleSpan(org.elasticsearch.search.query.SimpleQueryTests) started
+[2014-02-18 15:44:38,032][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:44:38,081][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:44:38,136][INFO ][search.query             ] [SimpleQueryTests#testSimpleSpan]: before test
+[2014-02-18 15:44:38,149][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:44:38,191][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:44:38,220][INFO ][search.query             ] Index [4] docs async: [true] bulk: [false]
+[2014-02-18 15:44:38,222][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [test] (dynamic)
+[2014-02-18 15:44:38,258][INFO ][search.query             ] [SimpleQueryTests#testSimpleSpan]: cleaning up after test
+[2014-02-18 15:44:38,259][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:44:38,294][INFO ][search.query             ] [SimpleQueryTests#testSimpleSpan]: cleaned up after test
+[2014-02-18 15:44:38,309][INFO ][test                     ] Test testSimpleSpan(org.elasticsearch.search.query.SimpleQueryTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

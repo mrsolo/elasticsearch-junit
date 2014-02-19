@@ -1,0 +1,211 @@
+<testsuite errors="0" failures="0" tests="4" skipped="0" name="org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest" hostname="nohost.nodomain" time="7.519" timestamp="2014-02-18T15:59:33">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest" name="testSettingLoadBloomFilterDefaultFalse" time="0.215"/>
+   <testcase classname="org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest" name="test4093" time="0.58"/>
+   <testcase classname="org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest" name="testSetIndexCompoundOnFlush" time="6.522"/>
+   <testcase classname="org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest" name="testSettingLoadBloomFilterDefaultTrue" time="0.189"/>
+   <system-out><![CDATA[[2014-02-18 15:59:33,776][INFO ][test                     ] Test testSettingLoadBloomFilterDefaultFalse(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) started
+[2014-02-18 15:59:33,778][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 15:59:33,781][INFO ][discovery.zen            ] [node_1] master_left [[node_0][QFOr7SOHRwucQjzu30jxKg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]], reason [shut_down]
+[2014-02-18 15:59:33,782][INFO ][cluster.service          ] [node_1] master {new [node_1][BqRK2DI_RmuB5mAXVTvSsQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9304]], previous [node_0][QFOr7SOHRwucQjzu30jxKg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]}, removed {[node_0][QFOr7SOHRwucQjzu30jxKg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]],}, reason: zen-disco-master_failed ([node_0][QFOr7SOHRwucQjzu30jxKg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]])
+[2014-02-18 15:59:33,787][INFO ][node                     ] [node_0] stopped
+[2014-02-18 15:59:33,788][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 15:59:33,789][INFO ][node                     ] [node_0] closed
+[2014-02-18 15:59:33,789][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:59:33,794][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:59:33,795][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:59:33,796][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:59:33,798][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:33,820][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:33,847][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSettingLoadBloomFilterDefaultFalse]: before test
+[2014-02-18 15:59:33,855][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:59:33,886][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [foo] (dynamic)
+[2014-02-18 15:59:33,904][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:33,929][INFO ][index.engine.internal    ] segments without bloom: 310
+[2014-02-18 15:59:33,929][INFO ][index.engine.internal    ] updating the setting to load bloom filters
+[2014-02-18 15:59:33,931][INFO ][test.engine              ] [node_1] [test][0] updating index.codec.bloom.load from [false] to [true]
+[2014-02-18 15:59:33,940][INFO ][index.engine.internal    ] waiting for memory to match with blooms
+[2014-02-18 15:59:33,943][INFO ][index.engine.internal    ] trying segments with bloom: 310
+[2014-02-18 15:59:33,943][INFO ][index.engine.internal    ] updating the setting to unload bloom filters
+[2014-02-18 15:59:33,945][INFO ][test.engine              ] [node_1] [test][0] updating index.codec.bloom.load from [true] to [false]
+[2014-02-18 15:59:33,965][INFO ][index.engine.internal    ] waiting for memory to match without blooms
+[2014-02-18 15:59:33,968][INFO ][index.engine.internal    ] trying segments without bloom: 310
+[2014-02-18 15:59:33,968][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSettingLoadBloomFilterDefaultFalse]: cleaning up after test
+[2014-02-18 15:59:33,969][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:33,981][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSettingLoadBloomFilterDefaultFalse]: cleaned up after test
+[2014-02-18 15:59:33,991][INFO ][test                     ] Test testSettingLoadBloomFilterDefaultFalse(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) finished
+[2014-02-18 15:59:33,992][INFO ][test                     ] Test test4093(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) started
+[2014-02-18 15:59:33,996][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:34,030][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:34,057][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#test4093]: before test
+[2014-02-18 15:59:34,058][INFO ][test                     ] reducing cluster size from 2 to 1
+[2014-02-18 15:59:34,061][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 15:59:34,064][INFO ][cluster.service          ] [node_0] removed {[node_1][YhvSpkX-RFGNafHqA5ra1w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]],}, reason: zen-disco-node_left([node_1][YhvSpkX-RFGNafHqA5ra1w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]])
+[2014-02-18 15:59:34,066][INFO ][cluster.service          ] [node_2] removed {[node_1][YhvSpkX-RFGNafHqA5ra1w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]],}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 15:59:34,068][INFO ][node                     ] [node_1] stopped
+[2014-02-18 15:59:34,068][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 15:59:34,090][INFO ][node                     ] [node_1] closed
+[2014-02-18 15:59:34,090][INFO ][node                     ] [node_2] stopping ...
+[2014-02-18 15:59:34,092][INFO ][cluster.service          ] [node_0] removed {[node_2][FMinfbhkR0qkv0gqZ8eWZw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9302]],}, reason: zen-disco-node_left([node_2][FMinfbhkR0qkv0gqZ8eWZw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9302]])
+[2014-02-18 15:59:34,096][INFO ][node                     ] [node_2] stopped
+[2014-02-18 15:59:34,096][INFO ][node                     ] [node_2] closing ...
+[2014-02-18 15:59:34,099][INFO ][node                     ] [node_2] closed
+[2014-02-18 15:59:34,124][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:59:34,147][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:34,549][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#test4093]: cleaning up after test
+[2014-02-18 15:59:34,550][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:34,567][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#test4093]: cleaned up after test
+[2014-02-18 15:59:34,572][INFO ][test                     ] Test test4093(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) finished
+[2014-02-18 15:59:34,573][INFO ][test                     ] Test testSetIndexCompoundOnFlush(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) started
+[2014-02-18 15:59:34,576][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:59:34,576][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 15:59:34,577][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 15:59:34,616][INFO ][node                     ] [node_1] initialized
+[2014-02-18 15:59:34,617][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 15:59:34,621][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9301]}, publish_address {inet[/10.1.10.75:9301]}
+[2014-02-18 15:59:37,649][INFO ][cluster.service          ] [node_0] added {[node_1][t8Mqv-hjRzqYCBodDxtrKQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]],}, reason: zen-disco-receive(join from node[[node_1][t8Mqv-hjRzqYCBodDxtrKQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]]])
+[2014-02-18 15:59:37,650][INFO ][cluster.service          ] [node_1] detected_master [node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]], added {[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]],}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 15:59:37,667][INFO ][discovery                ] [node_1] shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/t8Mqv-hjRzqYCBodDxtrKQ
+[2014-02-18 15:59:37,672][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9201]}, publish_address {inet[/10.1.10.75:9201]}
+[2014-02-18 15:59:37,673][INFO ][node                     ] [node_1] started
+[2014-02-18 15:59:37,673][INFO ][test                     ] Start Shared Node [node_1] not shared
+[2014-02-18 15:59:37,674][INFO ][node                     ] [node_2] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 15:59:37,674][INFO ][node                     ] [node_2] initializing ...
+[2014-02-18 15:59:37,675][INFO ][plugins                  ] [node_2] loaded [], sites []
+[2014-02-18 15:59:37,727][INFO ][node                     ] [node_2] initialized
+[2014-02-18 15:59:37,728][INFO ][node                     ] [node_2] starting ...
+[2014-02-18 15:59:37,739][INFO ][transport                ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9302]}, publish_address {inet[/10.1.10.75:9302]}
+[2014-02-18 15:59:40,758][INFO ][cluster.service          ] [node_0] added {[node_2][q75XUfcITqG3o93Z8EOFnw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9302]],}, reason: zen-disco-receive(join from node[[node_2][q75XUfcITqG3o93Z8EOFnw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9302]]])
+[2014-02-18 15:59:40,759][INFO ][cluster.service          ] [node_1] added {[node_2][q75XUfcITqG3o93Z8EOFnw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9302]],}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 15:59:40,759][INFO ][cluster.service          ] [node_2] detected_master [node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]], added {[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]],[node_1][t8Mqv-hjRzqYCBodDxtrKQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]],}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 15:59:40,793][INFO ][discovery                ] [node_2] shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/q75XUfcITqG3o93Z8EOFnw
+[2014-02-18 15:59:40,798][INFO ][http                     ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9202]}, publish_address {inet[/10.1.10.75:9202]}
+[2014-02-18 15:59:40,799][INFO ][node                     ] [node_2] started
+[2014-02-18 15:59:40,799][INFO ][test                     ] Start Shared Node [node_2] not shared
+[2014-02-18 15:59:40,801][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:40,836][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:40,864][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSetIndexCompoundOnFlush]: before test
+[2014-02-18 15:59:40,875][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:59:40,924][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [foo] (dynamic)
+[2014-02-18 15:59:40,954][INFO ][test.engine              ] [node_1] [test][0] updating index.compound_on_flush from [true] to [false]
+[2014-02-18 15:59:40,995][INFO ][test.engine              ] [node_1] [test][0] updating index.compound_on_flush from [false] to [true]
+[2014-02-18 15:59:41,064][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSetIndexCompoundOnFlush]: cleaning up after test
+[2014-02-18 15:59:41,068][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:41,084][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSetIndexCompoundOnFlush]: cleaned up after test
+[2014-02-18 15:59:41,084][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d2/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/1, data/d2/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/2, data/d2/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/0, data/d0/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/1, data/d1/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/0, data/d0/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/2, data/d1/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/1, data/d1/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/2, data/d0/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/0]
+[2014-02-18 15:59:41,095][INFO ][test                     ] Test testSetIndexCompoundOnFlush(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) finished
+[2014-02-18 15:59:41,095][INFO ][test                     ] Test testSettingLoadBloomFilterDefaultTrue(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) started
+[2014-02-18 15:59:41,103][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSettingLoadBloomFilterDefaultTrue]: before test
+[2014-02-18 15:59:41,116][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings []
+[2014-02-18 15:59:41,166][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [foo] (dynamic)
+[2014-02-18 15:59:41,198][INFO ][index.engine.internal    ] segments with bloom: 430
+[2014-02-18 15:59:41,199][INFO ][index.engine.internal    ] updating the setting to unload bloom filters
+[2014-02-18 15:59:41,200][INFO ][test.engine              ] [node_1] [test][0] updating index.codec.bloom.load from [true] to [false]
+[2014-02-18 15:59:41,241][INFO ][index.engine.internal    ] waiting for memory to match without blooms
+[2014-02-18 15:59:41,245][INFO ][index.engine.internal    ] trying segments without bloom: 358
+[2014-02-18 15:59:41,246][INFO ][index.engine.internal    ] updating the setting to load bloom filters
+[2014-02-18 15:59:41,248][INFO ][test.engine              ] [node_1] [test][0] updating index.codec.bloom.load from [false] to [true]
+[2014-02-18 15:59:41,259][INFO ][index.engine.internal    ] waiting for memory to match with blooms
+[2014-02-18 15:59:41,262][INFO ][index.engine.internal    ] trying segments with bloom: 430
+[2014-02-18 15:59:41,262][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSettingLoadBloomFilterDefaultTrue]: cleaning up after test
+[2014-02-18 15:59:41,264][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:41,282][INFO ][index.engine.internal    ] [InternalEngineIntegrationTest#testSettingLoadBloomFilterDefaultTrue]: cleaned up after test
+[2014-02-18 15:59:41,283][INFO ][test                     ] Test testSettingLoadBloomFilterDefaultTrue(org.elasticsearch.index.engine.internal.InternalEngineIntegrationTest) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

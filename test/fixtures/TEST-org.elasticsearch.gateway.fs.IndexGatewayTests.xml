@@ -1,0 +1,367 @@
+<testsuite errors="0" failures="0" tests="5" skipped="2" name="org.elasticsearch.gateway.fs.IndexGatewayTests" hostname="nohost.nodomain" time="30.957" timestamp="2014-02-18T16:01:04">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.gateway.fs.IndexGatewayTests" name="testSnapshotOperations" time="16.413"/>
+   <testcase classname="org.elasticsearch.gateway.fs.IndexGatewayTests" name="testLoadWithReuseRecovery" time="0.002">
+      <skipped></skipped>
+   </testcase>
+   <testcase classname="org.elasticsearch.gateway.fs.IndexGatewayTests" name="testRandom" time="8.278"/>
+   <testcase classname="org.elasticsearch.gateway.fs.IndexGatewayTests" name="testIndexActions" time="6.247"/>
+   <testcase classname="org.elasticsearch.gateway.fs.IndexGatewayTests" name="testLoadWithFullRecovery" time="0.002">
+      <skipped></skipped>
+   </testcase>
+   <system-out><![CDATA[[2014-02-18 16:01:04,174][INFO ][test                     ] Test testSnapshotOperations(org.elasticsearch.gateway.fs.IndexGatewayTests) started
+[2014-02-18 16:01:04,176][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]] with seed [44289D7ACA0F345A] using [0] nodes
+[2014-02-18 16:01:04,177][INFO ][gateway.fs               ] [IndexGatewayTests#testSnapshotOperations]: before test
+[2014-02-18 16:01:04,180][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:04,180][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 16:01:04,181][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 16:01:04,250][WARN ][gateway.fs               ] [node_0] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:04,250][WARN ][gateway.fs               ] [node_0] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:04,254][INFO ][node                     ] [node_0] initialized
+[2014-02-18 16:01:04,255][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 16:01:04,262][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:07,272][INFO ][cluster.service          ] [node_0] new_master [node_0][Cj4qHEz4RHa55GW3Nsh47w][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:07,285][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]/Cj4qHEz4RHa55GW3Nsh47w
+[2014-02-18 16:01:07,295][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 16:01:07,296][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:07,297][INFO ][node                     ] [node_0] started
+[2014-02-18 16:01:07,297][INFO ][gateway.fs               ] Running Cluster Health (waiting for node to startup properly)
+[2014-02-18 16:01:07,298][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:01:07,320][INFO ][gateway.fs               ] Done Cluster Health, status GREEN
+[2014-02-18 16:01:07,321][INFO ][gateway.fs               ] Creating index [test]
+[2014-02-18 16:01:07,333][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:01:07,352][INFO ][cluster.metadata         ] [node_0] [test] create_mapping [type1]
+[2014-02-18 16:01:07,356][INFO ][gateway.fs               ] Indexing #1
+[2014-02-18 16:01:07,359][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:01:07,360][INFO ][gateway.fs               ] Indexing #2
+[2014-02-18 16:01:07,362][INFO ][gateway.fs               ] Gateway Snapshot
+[2014-02-18 16:01:07,370][INFO ][gateway.fs               ] Deleting #1
+[2014-02-18 16:01:07,371][INFO ][gateway.fs               ] Gateway Snapshot
+[2014-02-18 16:01:07,375][INFO ][gateway.fs               ] Gateway Snapshot (should be a no op)
+[2014-02-18 16:01:07,375][INFO ][gateway.fs               ] Closing the server
+[2014-02-18 16:01:07,375][INFO ][test                     ] Closing random node [node_0] 
+[2014-02-18 16:01:07,378][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 16:01:07,386][INFO ][node                     ] [node_0] stopped
+[2014-02-18 16:01:07,386][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 16:01:07,388][INFO ][node                     ] [node_0] closed
+[2014-02-18 16:01:07,388][INFO ][gateway.fs               ] Starting the server, should recover from the gateway (only translog should be populated)
+[2014-02-18 16:01:07,389][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:07,389][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 16:01:07,390][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 16:01:07,421][WARN ][gateway.fs               ] [node_1] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:07,422][WARN ][gateway.fs               ] [node_1] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:07,424][INFO ][node                     ] [node_1] initialized
+[2014-02-18 16:01:07,425][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 16:01:07,430][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:10,435][INFO ][cluster.service          ] [node_1] new_master [node_1][mTex9oghSxCX_H4Wdm4BVg][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:10,448][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]/mTex9oghSxCX_H4Wdm4BVg
+[2014-02-18 16:01:10,453][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:10,466][INFO ][gateway                  ] [node_1] recovered [1] indices into cluster_state
+[2014-02-18 16:01:10,466][INFO ][node                     ] [node_1] started
+[2014-02-18 16:01:10,466][INFO ][gateway.fs               ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 16:01:10,469][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:01:10,702][INFO ][gateway.fs               ] Done Cluster Health, status YELLOW
+[2014-02-18 16:01:10,703][INFO ][gateway.fs               ] Getting #1, should not exists
+[2014-02-18 16:01:10,704][INFO ][gateway.fs               ] Getting #2
+[2014-02-18 16:01:10,706][INFO ][gateway.fs               ] Flushing, so we have actual content in the index files (#2 should be in the index)
+[2014-02-18 16:01:10,707][INFO ][gateway.fs               ] Indexing #3, so we have something in the translog as well
+[2014-02-18 16:01:10,709][INFO ][gateway.fs               ] Gateway Snapshot
+[2014-02-18 16:01:10,714][INFO ][gateway.fs               ] Gateway Snapshot (should be a no op)
+[2014-02-18 16:01:10,714][INFO ][gateway.fs               ] Closing the server
+[2014-02-18 16:01:10,714][INFO ][test                     ] Closing random node [node_1] 
+[2014-02-18 16:01:10,718][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 16:01:10,726][INFO ][node                     ] [node_1] stopped
+[2014-02-18 16:01:10,727][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 16:01:10,728][INFO ][node                     ] [node_1] closed
+[2014-02-18 16:01:10,728][INFO ][gateway.fs               ] Starting the server, should recover from the gateway (both index and translog) and reuse work dir
+[2014-02-18 16:01:10,730][INFO ][node                     ] [node_2] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:10,731][INFO ][node                     ] [node_2] initializing ...
+[2014-02-18 16:01:10,731][INFO ][plugins                  ] [node_2] loaded [], sites []
+[2014-02-18 16:01:10,775][WARN ][gateway.fs               ] [node_2] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:10,775][WARN ][gateway.fs               ] [node_2] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:10,779][INFO ][node                     ] [node_2] initialized
+[2014-02-18 16:01:10,779][INFO ][node                     ] [node_2] starting ...
+[2014-02-18 16:01:10,785][INFO ][transport                ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:13,791][INFO ][cluster.service          ] [node_2] new_master [node_2][apBlZFG9QjeWOKauKsZklA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:13,805][INFO ][discovery                ] [node_2] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]/apBlZFG9QjeWOKauKsZklA
+[2014-02-18 16:01:13,809][INFO ][http                     ] [node_2] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:13,820][INFO ][gateway                  ] [node_2] recovered [1] indices into cluster_state
+[2014-02-18 16:01:13,821][INFO ][node                     ] [node_2] started
+[2014-02-18 16:01:13,821][INFO ][gateway.fs               ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 16:01:14,022][INFO ][gateway.fs               ] Done Cluster Health, status YELLOW
+[2014-02-18 16:01:14,023][INFO ][gateway.fs               ] Getting #1, should not exists
+[2014-02-18 16:01:14,023][INFO ][gateway.fs               ] Getting #2 (not from the translog, but from the index)
+[2014-02-18 16:01:14,024][INFO ][gateway.fs               ] Getting #3 (from the translog)
+[2014-02-18 16:01:14,025][INFO ][gateway.fs               ] Closing the server
+[2014-02-18 16:01:14,025][INFO ][test                     ] Closing random node [node_2] 
+[2014-02-18 16:01:14,025][INFO ][node                     ] [node_2] stopping ...
+[2014-02-18 16:01:14,035][INFO ][node                     ] [node_2] stopped
+[2014-02-18 16:01:14,036][INFO ][node                     ] [node_2] closing ...
+[2014-02-18 16:01:14,037][INFO ][node                     ] [node_2] closed
+[2014-02-18 16:01:14,037][INFO ][gateway.fs               ] Clearing cluster data dir, so there will be a full recovery from the gateway
+[2014-02-18 16:01:14,041][INFO ][gateway.fs               ] Starting the server, should recover from the gateway (both index and translog) without reusing work dir
+[2014-02-18 16:01:14,044][INFO ][node                     ] [node_3] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:14,044][INFO ][node                     ] [node_3] initializing ...
+[2014-02-18 16:01:14,044][INFO ][plugins                  ] [node_3] loaded [], sites []
+[2014-02-18 16:01:14,078][WARN ][gateway.fs               ] [node_3] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:14,079][WARN ][gateway.fs               ] [node_3] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:14,081][INFO ][node                     ] [node_3] initialized
+[2014-02-18 16:01:14,082][INFO ][node                     ] [node_3] starting ...
+[2014-02-18 16:01:14,087][INFO ][transport                ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:17,091][INFO ][cluster.service          ] [node_3] new_master [node_3][DUs28WVGTXyOFVzRN94Ohw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:17,107][INFO ][discovery                ] [node_3] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]/DUs28WVGTXyOFVzRN94Ohw
+[2014-02-18 16:01:17,114][INFO ][http                     ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:17,129][INFO ][gateway                  ] [node_3] recovered [1] indices into cluster_state
+[2014-02-18 16:01:17,129][INFO ][node                     ] [node_3] started
+[2014-02-18 16:01:17,129][INFO ][gateway.fs               ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 16:01:17,132][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 16:01:17,362][INFO ][gateway.fs               ] Done Cluster Health, status YELLOW
+[2014-02-18 16:01:17,363][INFO ][gateway.fs               ] Getting #1, should not exists
+[2014-02-18 16:01:17,364][INFO ][gateway.fs               ] Getting #2 (not from the translog, but from the index)
+[2014-02-18 16:01:17,365][INFO ][gateway.fs               ] Getting #3 (from the translog)
+[2014-02-18 16:01:17,366][INFO ][gateway.fs               ] Flushing, so we have actual content in the index files (#3 should be in the index now as well)
+[2014-02-18 16:01:17,367][INFO ][gateway.fs               ] Gateway Snapshot
+[2014-02-18 16:01:17,371][INFO ][gateway.fs               ] Gateway Snapshot (should be a no op)
+[2014-02-18 16:01:17,371][INFO ][gateway.fs               ] Closing the server
+[2014-02-18 16:01:17,371][INFO ][test                     ] Closing random node [node_3] 
+[2014-02-18 16:01:17,374][INFO ][node                     ] [node_3] stopping ...
+[2014-02-18 16:01:17,381][INFO ][node                     ] [node_3] stopped
+[2014-02-18 16:01:17,381][INFO ][node                     ] [node_3] closing ...
+[2014-02-18 16:01:17,383][INFO ][node                     ] [node_3] closed
+[2014-02-18 16:01:17,383][INFO ][gateway.fs               ] Starting the server, should recover from the gateway (just from the index, nothing in the translog)
+[2014-02-18 16:01:17,385][INFO ][node                     ] [node_4] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:17,385][INFO ][node                     ] [node_4] initializing ...
+[2014-02-18 16:01:17,385][INFO ][plugins                  ] [node_4] loaded [], sites []
+[2014-02-18 16:01:17,432][WARN ][gateway.fs               ] [node_4] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:17,433][WARN ][gateway.fs               ] [node_4] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:17,437][INFO ][node                     ] [node_4] initialized
+[2014-02-18 16:01:17,437][INFO ][node                     ] [node_4] starting ...
+[2014-02-18 16:01:17,443][INFO ][transport                ] [node_4] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:20,449][INFO ][cluster.service          ] [node_4] new_master [node_4][3yoxaVmHTqiHOjpw1ctFfA][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:20,484][INFO ][discovery                ] [node_4] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]/3yoxaVmHTqiHOjpw1ctFfA
+[2014-02-18 16:01:20,490][INFO ][http                     ] [node_4] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:20,520][INFO ][gateway                  ] [node_4] recovered [1] indices into cluster_state
+[2014-02-18 16:01:20,520][INFO ][node                     ] [node_4] started
+[2014-02-18 16:01:20,521][INFO ][gateway.fs               ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 16:01:20,523][INFO ][plugins                  ] [transport_client_node_4] loaded [], sites []
+[2014-02-18 16:01:20,556][INFO ][gateway.fs               ] Done Cluster Health, status YELLOW
+[2014-02-18 16:01:20,557][INFO ][gateway.fs               ] Getting #1, should not exists
+[2014-02-18 16:01:20,559][INFO ][gateway.fs               ] Getting #2 (not from the translog, but from the index)
+[2014-02-18 16:01:20,560][INFO ][gateway.fs               ] Getting #3 (not from the translog, but from the index)
+[2014-02-18 16:01:20,561][INFO ][gateway.fs               ] Deleting the index
+[2014-02-18 16:01:20,562][INFO ][cluster.metadata         ] [node_4] [test] deleting index
+[2014-02-18 16:01:20,572][INFO ][gateway.fs               ] [IndexGatewayTests#testSnapshotOperations]: cleaning up after test
+[2014-02-18 16:01:20,578][INFO ][node                     ] [node_4] stopping ...
+[2014-02-18 16:01:20,584][INFO ][node                     ] [node_4] stopped
+[2014-02-18 16:01:20,584][INFO ][node                     ] [node_4] closing ...
+[2014-02-18 16:01:20,586][INFO ][node                     ] [node_4] closed
+[2014-02-18 16:01:20,586][INFO ][gateway.fs               ] [IndexGatewayTests#testSnapshotOperations]: cleaned up after test
+[2014-02-18 16:01:20,586][INFO ][test                     ] Wipe data directory for all nodes locations: [/Users/bhwang/elasticsearch/target/J0/data/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[4911348544349090906]-HASH=[13541B2CD7C4D188]/nodes/0]
+[2014-02-18 16:01:20,587][INFO ][test                     ] Test testSnapshotOperations(org.elasticsearch.gateway.fs.IndexGatewayTests) finished
+[2014-02-18 16:01:20,587][INFO ][test                     ] Test testLoadWithReuseRecovery(org.elasticsearch.gateway.fs.IndexGatewayTests) started
+[2014-02-18 16:01:20,589][INFO ][test                     ] Test testLoadWithReuseRecovery(org.elasticsearch.gateway.fs.IndexGatewayTests) finished
+[2014-02-18 16:01:20,590][INFO ][test                     ] Test testRandom(org.elasticsearch.gateway.fs.IndexGatewayTests) started
+[2014-02-18 16:01:20,591][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]] with seed [7BE9B02233C2FEE7] using [0] nodes
+[2014-02-18 16:01:20,592][INFO ][gateway.fs               ] [IndexGatewayTests#testRandom]: before test
+[2014-02-18 16:01:20,592][INFO ][gateway.fs               ] Running with fullRecover [false]
+[2014-02-18 16:01:20,595][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:20,595][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 16:01:20,596][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 16:01:20,636][WARN ][gateway.fs               ] [node_0] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:20,636][WARN ][gateway.fs               ] [node_0] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:20,639][INFO ][node                     ] [node_0] initialized
+[2014-02-18 16:01:20,639][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 16:01:20,646][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:23,652][INFO ][cluster.service          ] [node_0] new_master [node_0][BwnH_uZvRe2aMcIcv3AfSQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:23,666][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]/BwnH_uZvRe2aMcIcv3AfSQ
+[2014-02-18 16:01:23,667][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 16:01:23,669][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:23,670][INFO ][node                     ] [node_0] started
+[2014-02-18 16:01:23,670][INFO ][gateway.fs               ] Running Cluster Health (waiting for node to startup properly)
+[2014-02-18 16:01:23,671][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:01:23,697][INFO ][gateway.fs               ] Done Cluster Health, status GREEN
+[2014-02-18 16:01:23,697][INFO ][gateway.fs               ] --> creating test index ...
+[2014-02-18 16:01:23,706][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:01:23,721][INFO ][gateway.fs               ] Running Cluster Health (wait for the shards to startup)
+[2014-02-18 16:01:23,923][INFO ][gateway.fs               ] Done Cluster Health, status YELLOW
+[2014-02-18 16:01:23,923][INFO ][gateway.fs               ] --> refreshing and checking count
+[2014-02-18 16:01:23,925][INFO ][gateway.fs               ] --> indexing 1234 docs
+[2014-02-18 16:01:23,927][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:01:25,488][INFO ][gateway.fs               ] --> refreshing and checking count
+[2014-02-18 16:01:25,500][INFO ][gateway.fs               ] --> closing the server
+[2014-02-18 16:01:25,501][INFO ][test                     ] Closing random node [node_0] 
+[2014-02-18 16:01:25,503][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 16:01:25,515][INFO ][node                     ] [node_0] stopped
+[2014-02-18 16:01:25,516][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 16:01:25,518][INFO ][node                     ] [node_0] closed
+[2014-02-18 16:01:25,521][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:25,521][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 16:01:25,522][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 16:01:25,564][WARN ][gateway.fs               ] [node_1] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:25,565][WARN ][gateway.fs               ] [node_1] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:25,568][INFO ][node                     ] [node_1] initialized
+[2014-02-18 16:01:25,568][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 16:01:25,574][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:28,579][INFO ][cluster.service          ] [node_1] new_master [node_1][VAnPfw2PQg-nwCZHA1ZYlw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:28,593][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]/VAnPfw2PQg-nwCZHA1ZYlw
+[2014-02-18 16:01:28,597][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:28,611][INFO ][gateway                  ] [node_1] recovered [1] indices into cluster_state
+[2014-02-18 16:01:28,612][INFO ][node                     ] [node_1] started
+[2014-02-18 16:01:28,612][INFO ][gateway.fs               ] --> running Cluster Health (wait for the shards to startup)
+[2014-02-18 16:01:28,613][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:01:28,838][INFO ][gateway.fs               ] --> done Cluster Health, status YELLOW
+[2014-02-18 16:01:28,838][INFO ][gateway.fs               ] --> checking count
+[2014-02-18 16:01:28,839][INFO ][gateway.fs               ] --> checking reuse / recovery status
+[2014-02-18 16:01:28,840][INFO ][gateway.fs               ] [IndexGatewayTests#testRandom]: cleaning up after test
+[2014-02-18 16:01:28,843][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 16:01:28,854][INFO ][node                     ] [node_1] stopped
+[2014-02-18 16:01:28,855][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 16:01:28,856][INFO ][node                     ] [node_1] closed
+[2014-02-18 16:01:28,857][INFO ][gateway.fs               ] [IndexGatewayTests#testRandom]: cleaned up after test
+[2014-02-18 16:01:28,857][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]/nodes/0, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]/nodes/0, data/d3/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]/nodes/0, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[8928861397182512871]-HASH=[13541B30AA2D5660]/nodes/0]
+[2014-02-18 16:01:28,868][INFO ][test                     ] Test testRandom(org.elasticsearch.gateway.fs.IndexGatewayTests) finished
+[2014-02-18 16:01:28,869][INFO ][test                     ] Test testIndexActions(org.elasticsearch.gateway.fs.IndexGatewayTests) started
+[2014-02-18 16:01:28,870][INFO ][test                     ] Setup TestCluster [TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2639768281625412134]-HASH=[13541B3297A0C728]] with seed [24A257441BA04226] using [0] nodes
+[2014-02-18 16:01:28,870][INFO ][gateway.fs               ] [IndexGatewayTests#testIndexActions]: before test
+[2014-02-18 16:01:28,872][INFO ][node                     ] [node_0] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:28,872][INFO ][node                     ] [node_0] initializing ...
+[2014-02-18 16:01:28,872][INFO ][plugins                  ] [node_0] loaded [], sites []
+[2014-02-18 16:01:28,907][WARN ][gateway.fs               ] [node_0] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:28,907][WARN ][gateway.fs               ] [node_0] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:28,909][INFO ][node                     ] [node_0] initialized
+[2014-02-18 16:01:28,910][INFO ][node                     ] [node_0] starting ...
+[2014-02-18 16:01:28,915][INFO ][transport                ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:31,919][INFO ][cluster.service          ] [node_0] new_master [node_0][mF6uSYNpSfqJoTE1cE_MxQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:31,933][INFO ][discovery                ] [node_0] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2639768281625412134]-HASH=[13541B3297A0C728]/mF6uSYNpSfqJoTE1cE_MxQ
+[2014-02-18 16:01:31,934][INFO ][gateway                  ] [node_0] recovered [0] indices into cluster_state
+[2014-02-18 16:01:31,937][INFO ][http                     ] [node_0] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:31,937][INFO ][node                     ] [node_0] started
+[2014-02-18 16:01:31,937][INFO ][gateway.fs               ] Running Cluster Health (waiting for node to startup properly)
+[2014-02-18 16:01:31,937][INFO ][gateway.fs               ] Done Cluster Health, status GREEN
+[2014-02-18 16:01:31,951][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings []
+[2014-02-18 16:01:31,971][INFO ][test                     ] Closing random node [node_0] 
+[2014-02-18 16:01:31,971][INFO ][node                     ] [node_0] stopping ...
+[2014-02-18 16:01:31,985][INFO ][node                     ] [node_0] stopped
+[2014-02-18 16:01:31,986][INFO ][node                     ] [node_0] closing ...
+[2014-02-18 16:01:31,988][INFO ][node                     ] [node_0] closed
+[2014-02-18 16:01:31,991][INFO ][node                     ] [node_1] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:01:31,991][INFO ][node                     ] [node_1] initializing ...
+[2014-02-18 16:01:31,992][INFO ][plugins                  ] [node_1] loaded [], sites []
+[2014-02-18 16:01:32,034][WARN ][gateway.fs               ] [node_1] shared gateway has been deprecated, please use the (default) local gateway
+[2014-02-18 16:01:32,034][WARN ][gateway.fs               ] [node_1] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:01:32,038][INFO ][node                     ] [node_1] initialized
+[2014-02-18 16:01:32,038][INFO ][node                     ] [node_1] starting ...
+[2014-02-18 16:01:32,052][INFO ][transport                ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:01:35,058][INFO ][cluster.service          ] [node_1] new_master [node_1][YlryKreqTg22iunvldF8nQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]], reason: zen-disco-join (elected_as_master)
+[2014-02-18 16:01:35,073][INFO ][discovery                ] [node_1] TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2639768281625412134]-HASH=[13541B3297A0C728]/YlryKreqTg22iunvldF8nQ
+[2014-02-18 16:01:35,078][INFO ][http                     ] [node_1] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:01:35,089][INFO ][gateway                  ] [node_1] recovered [1] indices into cluster_state
+[2014-02-18 16:01:35,090][INFO ][node                     ] [node_1] started
+[2014-02-18 16:01:35,097][INFO ][gateway.fs               ] [IndexGatewayTests#testIndexActions]: cleaning up after test
+[2014-02-18 16:01:35,097][INFO ][node                     ] [node_1] stopping ...
+[2014-02-18 16:01:35,107][INFO ][node                     ] [node_1] stopped
+[2014-02-18 16:01:35,108][INFO ][node                     ] [node_1] closing ...
+[2014-02-18 16:01:35,109][INFO ][node                     ] [node_1] closed
+[2014-02-18 16:01:35,110][INFO ][gateway.fs               ] [IndexGatewayTests#testIndexActions]: cleaned up after test
+[2014-02-18 16:01:35,110][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d2/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2639768281625412134]-HASH=[13541B3297A0C728]/nodes/0, data/d1/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2639768281625412134]-HASH=[13541B3297A0C728]/nodes/0, data/d0/TEST-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[2639768281625412134]-HASH=[13541B3297A0C728]/nodes/0]
+[2014-02-18 16:01:35,116][INFO ][test                     ] Test testIndexActions(org.elasticsearch.gateway.fs.IndexGatewayTests) finished
+[2014-02-18 16:01:35,116][INFO ][test                     ] Test testLoadWithFullRecovery(org.elasticsearch.gateway.fs.IndexGatewayTests) started
+[2014-02-18 16:01:35,118][INFO ][test                     ] Test testLoadWithFullRecovery(org.elasticsearch.gateway.fs.IndexGatewayTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

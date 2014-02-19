@@ -1,0 +1,208 @@
+<testsuite errors="0" failures="0" tests="7" skipped="0" name="org.elasticsearch.mlt.MoreLikeThisActionTests" hostname="nohost.nodomain" time="6.351" timestamp="2014-02-18T16:09:48">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testMoreLikeThisWithAliases" time="3.753"/>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testMoreLikeWithCustomRouting" time="0.463"/>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testSimpleMoreLikeThis" time="0.569"/>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testSimpleMoreLikeOnLongField" time="0.54"/>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testMoreLikeThisIssue2197" time="0.377"/>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testMoreLikeThisIssueRoutingNotSerialized" time="0.149"/>
+   <testcase classname="org.elasticsearch.mlt.MoreLikeThisActionTests" name="testNumericField" time="0.487"/>
+   <system-out><![CDATA[[2014-02-18 16:09:48,118][INFO ][test                     ] Test testMoreLikeThisWithAliases(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:48,120][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:09:48,145][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisWithAliases]: before test
+[2014-02-18 16:09:48,146][INFO ][mlt                      ] Creating index test
+[2014-02-18 16:09:48,154][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:09:48,204][INFO ][mlt                      ] Creating aliases alias release
+[2014-02-18 16:09:48,264][INFO ][mlt                      ] Running Cluster Health
+[2014-02-18 16:09:48,465][INFO ][mlt                      ] Indexing...
+[2014-02-18 16:09:48,649][INFO ][mlt                      ] Running moreLikeThis on index
+[2014-02-18 16:09:48,655][INFO ][mlt                      ] Running moreLikeThis on beta shard
+[2014-02-18 16:09:48,657][INFO ][mlt                      ] Running moreLikeThis on release shard
+[2014-02-18 16:09:48,660][INFO ][mlt                      ] Running moreLikeThis on alias with node client
+[2014-02-18 16:09:48,662][INFO ][node                     ] [node_3] version[1.0.0], pid[6815], build[a46900e/2014-02-18T23:32:25Z]
+[2014-02-18 16:09:48,662][INFO ][node                     ] [node_3] initializing ...
+[2014-02-18 16:09:48,662][INFO ][plugins                  ] [node_3] loaded [], sites []
+[2014-02-18 16:09:48,712][INFO ][node                     ] [node_3] initialized
+[2014-02-18 16:09:48,712][INFO ][node                     ] [node_3] starting ...
+[2014-02-18 16:09:48,720][INFO ][transport                ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/10.1.10.75:9303]}
+[2014-02-18 16:09:51,752][INFO ][cluster.service          ] [node_0] added {[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false},}, reason: zen-disco-receive(join from node[[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false}])
+[2014-02-18 16:09:51,754][INFO ][cluster.service          ] [node_1] added {[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false},}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 16:09:51,754][INFO ][cluster.service          ] [node_2] added {[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false},}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 16:09:51,754][INFO ][cluster.service          ] [node_3] detected_master [node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]], added {[node_2][q75XUfcITqG3o93Z8EOFnw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9302]],[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]],[node_1][t8Mqv-hjRzqYCBodDxtrKQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9301]],}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 16:09:51,791][INFO ][discovery                ] [node_3] shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/DDoq3HmKSvug051UR3IufQ
+[2014-02-18 16:09:51,796][INFO ][http                     ] [node_3] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/10.1.10.75:9203]}
+[2014-02-18 16:09:51,796][INFO ][node                     ] [node_3] started
+[2014-02-18 16:09:51,798][INFO ][plugins                  ] [transport_client_node_3] loaded [], sites []
+[2014-02-18 16:09:51,829][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisWithAliases]: cleaning up after test
+[2014-02-18 16:09:51,830][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:09:51,865][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisWithAliases]: cleaned up after test
+[2014-02-18 16:09:51,871][INFO ][test                     ] Test testMoreLikeThisWithAliases(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+[2014-02-18 16:09:51,872][INFO ][test                     ] Test testMoreLikeWithCustomRouting(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:51,873][INFO ][node                     ] [node_3] stopping ...
+[2014-02-18 16:09:51,875][INFO ][cluster.service          ] [node_0] removed {[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false},}, reason: zen-disco-node_left([node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false})
+[2014-02-18 16:09:51,877][INFO ][cluster.service          ] [node_1] removed {[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false},}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 16:09:51,877][INFO ][cluster.service          ] [node_2] removed {[node_3][DDoq3HmKSvug051UR3IufQ][Bills-MacBook-Pro.local][inet[/10.1.10.75:9303]]{client=true, data=false},}, reason: zen-disco-receive(from master [[node_0][tbUF3y2YTPm1TPdTF8YBYw][Bills-MacBook-Pro.local][inet[/10.1.10.75:9300]]])
+[2014-02-18 16:09:51,880][INFO ][node                     ] [node_3] stopped
+[2014-02-18 16:09:51,880][INFO ][node                     ] [node_3] closing ...
+[2014-02-18 16:09:51,881][INFO ][node                     ] [node_3] closed
+[2014-02-18 16:09:51,884][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeWithCustomRouting]: before test
+[2014-02-18 16:09:51,892][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings [bar]
+[2014-02-18 16:09:52,212][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 16:09:52,298][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeWithCustomRouting]: cleaning up after test
+[2014-02-18 16:09:52,298][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:09:52,329][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeWithCustomRouting]: cleaned up after test
+[2014-02-18 16:09:52,330][INFO ][test                     ] Wipe data directory for all nodes locations: [data/d2/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/1, data/d2/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/2, data/d2/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/0, data/d0/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/1, data/d1/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/0, data/d0/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/2, data/d1/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/1, data/d1/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/2, data/d0/shared-Bills-MacBook-Pro.local-CHILD_VM=[0]-CLUSTER_SEED=[1392766407945050000]-HASH=[135419AB41B95588]/nodes/0]
+[2014-02-18 16:09:52,335][INFO ][test                     ] Test testMoreLikeWithCustomRouting(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+[2014-02-18 16:09:52,335][INFO ][test                     ] Test testSimpleMoreLikeThis(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:52,339][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:09:52,360][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:09:52,385][INFO ][mlt                      ] [MoreLikeThisActionTests#testSimpleMoreLikeThis]: before test
+[2014-02-18 16:09:52,385][INFO ][mlt                      ] Creating index test
+[2014-02-18 16:09:52,393][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 16:09:52,459][INFO ][mlt                      ] Running Cluster Health
+[2014-02-18 16:09:52,729][INFO ][mlt                      ] Indexing...
+[2014-02-18 16:09:52,735][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:09:52,861][INFO ][mlt                      ] Running moreLikeThis
+[2014-02-18 16:09:52,863][INFO ][mlt                      ] [MoreLikeThisActionTests#testSimpleMoreLikeThis]: cleaning up after test
+[2014-02-18 16:09:52,865][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:09:52,894][INFO ][mlt                      ] [MoreLikeThisActionTests#testSimpleMoreLikeThis]: cleaned up after test
+[2014-02-18 16:09:52,904][INFO ][test                     ] Test testSimpleMoreLikeThis(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+[2014-02-18 16:09:52,904][INFO ][test                     ] Test testSimpleMoreLikeOnLongField(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:52,907][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:09:52,928][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:09:52,956][INFO ][mlt                      ] [MoreLikeThisActionTests#testSimpleMoreLikeOnLongField]: before test
+[2014-02-18 16:09:52,957][INFO ][mlt                      ] Creating index test
+[2014-02-18 16:09:52,958][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:09:52,998][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 16:09:53,056][INFO ][mlt                      ] Running Cluster Health
+[2014-02-18 16:09:53,295][INFO ][mlt                      ] Indexing...
+[2014-02-18 16:09:53,296][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 16:09:53,302][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type2] (dynamic)
+[2014-02-18 16:09:53,391][INFO ][mlt                      ] Running moreLikeThis
+[2014-02-18 16:09:53,394][INFO ][mlt                      ] [MoreLikeThisActionTests#testSimpleMoreLikeOnLongField]: cleaning up after test
+[2014-02-18 16:09:53,396][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:09:53,433][INFO ][mlt                      ] [MoreLikeThisActionTests#testSimpleMoreLikeOnLongField]: cleaned up after test
+[2014-02-18 16:09:53,444][INFO ][test                     ] Test testSimpleMoreLikeOnLongField(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+[2014-02-18 16:09:53,445][INFO ][test                     ] Test testMoreLikeThisIssue2197(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:53,448][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisIssue2197]: before test
+[2014-02-18 16:09:53,459][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [5]/[1], mappings [bar]
+[2014-02-18 16:09:53,675][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 16:09:53,767][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisIssue2197]: cleaning up after test
+[2014-02-18 16:09:53,768][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:09:53,821][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisIssue2197]: cleaned up after test
+[2014-02-18 16:09:53,822][INFO ][test                     ] Test testMoreLikeThisIssue2197(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+[2014-02-18 16:09:53,823][INFO ][test                     ] Test testMoreLikeThisIssueRoutingNotSerialized(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:53,826][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:09:53,850][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:09:53,873][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisIssueRoutingNotSerialized]: before test
+[2014-02-18 16:09:53,881][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [api], shards [2]/[0], mappings [bar]
+[2014-02-18 16:09:53,920][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 16:09:53,938][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisIssueRoutingNotSerialized]: cleaning up after test
+[2014-02-18 16:09:53,942][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 16:09:53,963][INFO ][mlt                      ] [MoreLikeThisActionTests#testMoreLikeThisIssueRoutingNotSerialized]: cleaned up after test
+[2014-02-18 16:09:53,971][INFO ][test                     ] Test testMoreLikeThisIssueRoutingNotSerialized(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+[2014-02-18 16:09:53,972][INFO ][test                     ] Test testNumericField(org.elasticsearch.mlt.MoreLikeThisActionTests) started
+[2014-02-18 16:09:53,980][INFO ][mlt                      ] [MoreLikeThisActionTests#testNumericField]: before test
+[2014-02-18 16:09:53,993][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:09:54,429][INFO ][mlt                      ] [MoreLikeThisActionTests#testNumericField]: cleaning up after test
+[2014-02-18 16:09:54,429][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 16:09:54,458][INFO ][mlt                      ] [MoreLikeThisActionTests#testNumericField]: cleaned up after test
+[2014-02-18 16:09:54,459][INFO ][test                     ] Test testNumericField(org.elasticsearch.mlt.MoreLikeThisActionTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

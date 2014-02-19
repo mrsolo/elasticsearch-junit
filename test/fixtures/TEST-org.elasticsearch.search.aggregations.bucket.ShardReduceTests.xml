@@ -1,0 +1,276 @@
+<testsuite errors="0" failures="0" tests="14" skipped="0" name="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" hostname="nohost.nodomain" time="8.324" timestamp="2014-02-18T15:59:55">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testGlobal" time="0.619"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testIpRange" time="0.799"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testDoubleTerms" time="0.662"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testMissing" time="0.718"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testNested" time="0.847"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testFilter" time="0.459"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testDateHistogram" time="0.484"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testGlobalWithFilterWithMissing" time="0.473"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testRange" time="0.56"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testStringTerms" time="0.792"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testDateRange" time="0.594"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testLongTerms" time="0.272"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testHistogram" time="0.555"/>
+   <testcase classname="org.elasticsearch.search.aggregations.bucket.ShardReduceTests" name="testGeoHashGrid" time="0.465"/>
+   <system-out><![CDATA[[2014-02-18 15:59:55,526][INFO ][test                     ] Test testGlobal(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:55,532][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:55,562][INFO ][search.aggregations.bucket] [ShardReduceTests#testGlobal]: before test
+[2014-02-18 15:59:55,574][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:55,631][INFO ][search.aggregations.bucket] Index [3] docs async: [false] bulk: [true]
+[2014-02-18 15:59:55,730][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:59:56,065][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 6643)
+[2014-02-18 15:59:56,069][INFO ][search.aggregations.bucket] [ShardReduceTests#testGlobal]: cleaning up after test
+[2014-02-18 15:59:56,071][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:59:56,135][INFO ][search.aggregations.bucket] [ShardReduceTests#testGlobal]: cleaned up after test
+[2014-02-18 15:59:56,144][INFO ][test                     ] Test testGlobal(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 15:59:56,145][INFO ][test                     ] Test testIpRange(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:56,151][INFO ][search.aggregations.bucket] [ShardReduceTests#testIpRange]: before test
+[2014-02-18 15:59:56,166][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:56,323][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:59:56,466][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:59:56,902][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 6654)
+[2014-02-18 15:59:56,904][INFO ][search.aggregations.bucket] [ShardReduceTests#testIpRange]: cleaning up after test
+[2014-02-18 15:59:56,905][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:59:56,943][INFO ][search.aggregations.bucket] [ShardReduceTests#testIpRange]: cleaned up after test
+[2014-02-18 15:59:56,943][INFO ][test                     ] Test testIpRange(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 15:59:56,944][INFO ][test                     ] Test testDoubleTerms(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:56,947][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:56,983][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:57,020][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:57,048][INFO ][search.aggregations.bucket] [ShardReduceTests#testDoubleTerms]: before test
+[2014-02-18 15:59:57,057][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:57,106][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:59:57,152][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:59:57,554][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6665)
+[2014-02-18 15:59:57,556][INFO ][search.aggregations.bucket] [ShardReduceTests#testDoubleTerms]: cleaning up after test
+[2014-02-18 15:59:57,557][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:59:57,597][INFO ][search.aggregations.bucket] [ShardReduceTests#testDoubleTerms]: cleaned up after test
+[2014-02-18 15:59:57,606][INFO ][test                     ] Test testDoubleTerms(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 15:59:57,606][INFO ][test                     ] Test testMissing(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:57,610][INFO ][search.aggregations.bucket] [ShardReduceTests#testMissing]: before test
+[2014-02-18 15:59:57,618][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:57,681][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:59:57,715][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:59:58,243][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6676)
+[2014-02-18 15:59:58,245][INFO ][search.aggregations.bucket] [ShardReduceTests#testMissing]: cleaning up after test
+[2014-02-18 15:59:58,246][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:59:58,323][INFO ][search.aggregations.bucket] [ShardReduceTests#testMissing]: cleaned up after test
+[2014-02-18 15:59:58,324][INFO ][test                     ] Test testMissing(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 15:59:58,325][INFO ][test                     ] Test testNested(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:58,330][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:58,375][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:58,415][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:58,447][INFO ][search.aggregations.bucket] [ShardReduceTests#testNested]: before test
+[2014-02-18 15:59:58,459][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:58,536][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:59:58,649][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:59:59,113][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [t8Mqv-hjRzqYCBodDxtrKQ][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6687)
+[2014-02-18 15:59:59,116][INFO ][search.aggregations.bucket] [ShardReduceTests#testNested]: cleaning up after test
+[2014-02-18 15:59:59,117][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:59:59,161][INFO ][search.aggregations.bucket] [ShardReduceTests#testNested]: cleaned up after test
+[2014-02-18 15:59:59,171][INFO ][test                     ] Test testNested(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 15:59:59,172][INFO ][test                     ] Test testFilter(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:59,177][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:59,214][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:59,256][INFO ][search.aggregations.bucket] [ShardReduceTests#testFilter]: before test
+[2014-02-18 15:59:59,273][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:59,395][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 15:59:59,428][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 15:59:59,578][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6698)
+[2014-02-18 15:59:59,580][INFO ][search.aggregations.bucket] [ShardReduceTests#testFilter]: cleaning up after test
+[2014-02-18 15:59:59,581][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 15:59:59,620][INFO ][search.aggregations.bucket] [ShardReduceTests#testFilter]: cleaned up after test
+[2014-02-18 15:59:59,630][INFO ][test                     ] Test testFilter(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 15:59:59,631][INFO ][test                     ] Test testDateHistogram(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 15:59:59,637][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:59,669][INFO ][search.aggregations.bucket] [ShardReduceTests#testDateHistogram]: before test
+[2014-02-18 15:59:59,670][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:59,711][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:59:59,776][INFO ][search.aggregations.bucket] Index [3] docs async: [false] bulk: [true]
+[2014-02-18 15:59:59,824][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:00,069][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6709)
+[2014-02-18 16:00:00,072][INFO ][search.aggregations.bucket] [ShardReduceTests#testDateHistogram]: cleaning up after test
+[2014-02-18 16:00:00,072][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:00,108][INFO ][search.aggregations.bucket] [ShardReduceTests#testDateHistogram]: cleaned up after test
+[2014-02-18 16:00:00,114][INFO ][test                     ] Test testDateHistogram(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:00,115][INFO ][test                     ] Test testGlobalWithFilterWithMissing(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:00,120][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:00:00,144][INFO ][search.aggregations.bucket] [ShardReduceTests#testGlobalWithFilterWithMissing]: before test
+[2014-02-18 16:00:00,145][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:00:00,177][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:00,229][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 16:00:00,265][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:00,549][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6720)
+[2014-02-18 16:00:00,551][INFO ][search.aggregations.bucket] [ShardReduceTests#testGlobalWithFilterWithMissing]: cleaning up after test
+[2014-02-18 16:00:00,552][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:00,582][INFO ][search.aggregations.bucket] [ShardReduceTests#testGlobalWithFilterWithMissing]: cleaned up after test
+[2014-02-18 16:00:00,588][INFO ][test                     ] Test testGlobalWithFilterWithMissing(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:00,589][INFO ][test                     ] Test testRange(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:00,592][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:00:00,615][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:00:00,640][INFO ][search.aggregations.bucket] [ShardReduceTests#testRange]: before test
+[2014-02-18 16:00:00,649][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:00,703][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:00:00,739][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 16:00:00,770][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:01,031][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6730)
+[2014-02-18 16:00:01,033][INFO ][search.aggregations.bucket] [ShardReduceTests#testRange]: cleaning up after test
+[2014-02-18 16:00:01,034][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:01,133][INFO ][search.aggregations.bucket] [ShardReduceTests#testRange]: cleaned up after test
+[2014-02-18 16:00:01,149][INFO ][test                     ] Test testRange(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:01,150][INFO ][test                     ] Test testStringTerms(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:01,153][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:00:01,233][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:00:01,280][INFO ][search.aggregations.bucket] [ShardReduceTests#testStringTerms]: before test
+[2014-02-18 16:00:01,283][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:00:01,336][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:01,425][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 16:00:01,476][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:01,854][TRACE][action.search.type       ] [node_2] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6741)
+[2014-02-18 16:00:01,856][INFO ][search.aggregations.bucket] [ShardReduceTests#testStringTerms]: cleaning up after test
+[2014-02-18 16:00:01,858][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:01,915][INFO ][search.aggregations.bucket] [ShardReduceTests#testStringTerms]: cleaned up after test
+[2014-02-18 16:00:01,942][INFO ][test                     ] Test testStringTerms(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:01,943][INFO ][test                     ] Test testDateRange(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:01,952][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:00:02,081][INFO ][search.aggregations.bucket] [ShardReduceTests#testDateRange]: before test
+[2014-02-18 16:00:02,097][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:02,203][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 16:00:02,277][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:02,477][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [tbUF3y2YTPm1TPdTF8YBYw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 6752)
+[2014-02-18 16:00:02,478][INFO ][search.aggregations.bucket] [ShardReduceTests#testDateRange]: cleaning up after test
+[2014-02-18 16:00:02,479][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:02,528][INFO ][search.aggregations.bucket] [ShardReduceTests#testDateRange]: cleaned up after test
+[2014-02-18 16:00:02,536][INFO ][test                     ] Test testDateRange(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:02,537][INFO ][test                     ] Test testLongTerms(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:02,546][INFO ][search.aggregations.bucket] [ShardReduceTests#testLongTerms]: before test
+[2014-02-18 16:00:02,568][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:02,638][INFO ][search.aggregations.bucket] Index [3] docs async: [false] bulk: [true]
+[2014-02-18 16:00:02,719][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:02,768][TRACE][action.search.type       ] [node_1] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[t8Mqv-hjRzqYCBodDxtrKQ][idx][3],[t8Mqv-hjRzqYCBodDxtrKQ][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[t8Mqv-hjRzqYCBodDxtrKQ][idx][0] (cluster state version: 6762)
+[2014-02-18 16:00:02,770][INFO ][search.aggregations.bucket] [ShardReduceTests#testLongTerms]: cleaning up after test
+[2014-02-18 16:00:02,770][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:02,807][INFO ][search.aggregations.bucket] [ShardReduceTests#testLongTerms]: cleaned up after test
+[2014-02-18 16:00:02,808][INFO ][test                     ] Test testLongTerms(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:02,809][INFO ][test                     ] Test testHistogram(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:02,814][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:00:02,844][INFO ][search.aggregations.bucket] [ShardReduceTests#testHistogram]: before test
+[2014-02-18 16:00:02,846][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:00:02,880][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:02,937][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 16:00:02,985][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:03,318][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[q75XUfcITqG3o93Z8EOFnw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6773)
+[2014-02-18 16:00:03,321][INFO ][search.aggregations.bucket] [ShardReduceTests#testHistogram]: cleaning up after test
+[2014-02-18 16:00:03,323][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:03,356][INFO ][search.aggregations.bucket] [ShardReduceTests#testHistogram]: cleaned up after test
+[2014-02-18 16:00:03,364][INFO ][test                     ] Test testHistogram(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+[2014-02-18 16:00:03,364][INFO ][test                     ] Test testGeoHashGrid(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) started
+[2014-02-18 16:00:03,368][INFO ][search.aggregations.bucket] [ShardReduceTests#testGeoHashGrid]: before test
+[2014-02-18 16:00:03,385][INFO ][cluster.metadata         ] [node_0] [idx] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 16:00:03,434][INFO ][search.aggregations.bucket] Index [3] docs async: [true] bulk: [false]
+[2014-02-18 16:00:03,469][INFO ][cluster.metadata         ] [node_0] [idx] update_mapping [type] (dynamic)
+[2014-02-18 16:00:03,753][TRACE][action.search.type       ] [node_0] Moving to second phase, based on results from: [q75XUfcITqG3o93Z8EOFnw][idx][4],[q75XUfcITqG3o93Z8EOFnw][idx][3],[tbUF3y2YTPm1TPdTF8YBYw][idx][2],[tbUF3y2YTPm1TPdTF8YBYw][idx][1],[tbUF3y2YTPm1TPdTF8YBYw][idx][0] (cluster state version: 6784)
+[2014-02-18 16:00:03,755][INFO ][search.aggregations.bucket] [ShardReduceTests#testGeoHashGrid]: cleaning up after test
+[2014-02-18 16:00:03,756][INFO ][cluster.metadata         ] [node_0] [idx] deleting index
+[2014-02-18 16:00:03,828][INFO ][search.aggregations.bucket] [ShardReduceTests#testGeoHashGrid]: cleaned up after test
+[2014-02-18 16:00:03,829][INFO ][test                     ] Test testGeoHashGrid(org.elasticsearch.search.aggregations.bucket.ShardReduceTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

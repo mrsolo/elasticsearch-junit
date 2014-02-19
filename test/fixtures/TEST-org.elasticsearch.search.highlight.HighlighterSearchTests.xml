@@ -1,0 +1,815 @@
+<testsuite errors="0" failures="0" tests="68" skipped="0" name="org.elasticsearch.search.highlight.HighlighterSearchTests" hostname="nohost.nodomain" time="42.254" timestamp="2014-02-18T15:58:45">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighterMultipleFields" time="0.554"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterNumberOfFragments" time="0.594"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighterManyDocs" time="3.189"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPlainHighlightDifferentFragmenter" time="0.224"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testEscapeHtml_vector" time="0.844"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterMultiMapperWithStore" time="0.475"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testSameContent" time="0.63"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testNgramHighlighting" time="0.495"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testSourceLookupHighlightingUsingFastVectorHighlighter" time="0.78"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterBoostingQuery" time="0.719"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterOrderByScore" time="0.993"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterShouldFailIfNoOffsets" time="0.692"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterCustomIndexName" time="0.591"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterEscapeHtml" time="0.364"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testNgramHighlightingPreLucene42" time="0.441"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterRequireFieldMatch" time="0.558"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighlightUsesHighlightQuery" time="0.654"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testResetTwice" time="0.462"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testDisableFastVectorHighlighter" time="0.447"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighlightNoMatchSize" time="0.409"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterMultiMapperFromSource" time="0.318"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighterCustomIndexName" time="0.567"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighlightIssue1994" time="0.381"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterTermRangeQuery" time="0.55"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMultiMapperVectorWithStore" time="0.605"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testCommonTermsQuery" time="1.035"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighTermFrequencyDoc" time="0.66"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPhrasePrefix" time="1.564"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighterOffsetParameter" time="0.386"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMatchedFieldsFvhRequireFieldMatch" time="0.866"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testEscapeHtml" time="0.615"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testBoostingQuery" time="0.478"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighlightingOnWildcardFields" time="0.484"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighlightNoMatchSizeNumberOfFragments" time="0.664"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMultiPhraseCutoff" time="0.18"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testCommonTermsTermVector" time="0.432"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPlainHighlighterCustomIndexName" time="0.589"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterFuzzyQuery" time="0.577"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMultiMapperNoVectorWithStore" time="0.356"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testNumericHighlighting" time="0.547"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMatchedFieldsFvhNoRequireFieldMatch" time="0.714"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testNgramHighlightingWithBrokenPositions" time="0.187"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighter" time="0.489"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterRegexpQuery" time="0.635"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testGlobalHighlightingSettingsOverriddenAtFieldLevel" time="0.7"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFVHManyMatches" time="1.6"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighter" time="0.529"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testHighlightNoMatchSizeWithMultivaluedFields" time="0.764"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMultiMapperNoVectorFromSource" time="0.397"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighterPhraseBoost" time="0.74"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPlainHighlighter" time="0.658"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterQueryString" time="0.447"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPlainHighlighterMultipleFields" time="0.506"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMultiMapperVectorFromSource" time="0.439"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFSHHighlightAllMvFragments" time="0.071"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterPhraseBoost" time="0.556"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPlainHighlighterForceSource" time="0.652"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testSourceLookupHighlightingUsingPostingsHighlighter" time="0.463"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterPrefixQuery" time="0.514"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterCommonTermsQuery" time="0.527"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testFastVectorHighlighterShouldFailIfNoTermVectors" time="0.564"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterWildcardQuery" time="0.481"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterMultipleFields" time="0.54"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testEnsureNoNegativeOffsets" time="0.212"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testBoostingQueryTermVector" time="0.504"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testMissingStoredField" time="0.205"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testPostingsHighlighterManyDocs" time="1.751"/>
+   <testcase classname="org.elasticsearch.search.highlight.HighlighterSearchTests" name="testSourceLookupHighlightingUsingPlainHighlighter" time="0.381"/>
+   <system-out><![CDATA[[2014-02-18 15:58:45,195][INFO ][test                     ] Test testFastVectorHighlighterMultipleFields(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:45,199][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:45,226][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:45,255][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterMultipleFields]: before test
+[2014-02-18 15:58:45,270][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:45,329][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:45,692][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterMultipleFields]: cleaning up after test
+[2014-02-18 15:58:45,694][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:45,736][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterMultipleFields]: cleaned up after test
+[2014-02-18 15:58:45,749][INFO ][test                     ] Test testFastVectorHighlighterMultipleFields(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:45,750][INFO ][test                     ] Test testPostingsHighlighterNumberOfFragments(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:45,759][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterNumberOfFragments]: before test
+[2014-02-18 15:58:45,773][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:46,183][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:58:46,281][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterNumberOfFragments]: cleaning up after test
+[2014-02-18 15:58:46,281][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:46,343][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterNumberOfFragments]: cleaned up after test
+[2014-02-18 15:58:46,344][INFO ][test                     ] Test testPostingsHighlighterNumberOfFragments(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:46,344][INFO ][test                     ] Test testFastVectorHighlighterManyDocs(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:46,350][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:46,384][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:46,414][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:46,440][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterManyDocs]: before test
+[2014-02-18 15:58:46,451][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:46,847][INFO ][search.highlight         ] --> indexing docs
+[2014-02-18 15:58:46,847][INFO ][search.highlight         ] Index [68] docs async: [true] bulk: [false]
+[2014-02-18 15:58:48,656][INFO ][search.highlight         ] --> searching explicitly on field1 and highlighting on it
+[2014-02-18 15:58:48,968][INFO ][search.highlight         ] --> searching explicitly on field1 and highlighting on it, with DFS
+[2014-02-18 15:58:49,289][INFO ][search.highlight         ] --> searching explicitly _all and highlighting on _all
+[2014-02-18 15:58:49,401][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterManyDocs]: cleaning up after test
+[2014-02-18 15:58:49,402][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:49,516][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterManyDocs]: cleaned up after test
+[2014-02-18 15:58:49,533][INFO ][test                     ] Test testFastVectorHighlighterManyDocs(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:49,534][INFO ][test                     ] Test testPlainHighlightDifferentFragmenter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:49,542][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:49,580][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:49,613][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlightDifferentFragmenter]: before test
+[2014-02-18 15:58:49,615][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:49,661][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type1]
+[2014-02-18 15:58:49,726][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlightDifferentFragmenter]: cleaning up after test
+[2014-02-18 15:58:49,728][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:49,740][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlightDifferentFragmenter]: cleaned up after test
+[2014-02-18 15:58:49,758][INFO ][test                     ] Test testPlainHighlightDifferentFragmenter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:49,759][INFO ][test                     ] Test testEscapeHtml_vector(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:49,767][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:49,815][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:49,852][INFO ][search.highlight         ] [HighlighterSearchTests#testEscapeHtml_vector]: before test
+[2014-02-18 15:58:49,853][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:49,900][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:50,024][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:58:50,473][INFO ][search.highlight         ] [HighlighterSearchTests#testEscapeHtml_vector]: cleaning up after test
+[2014-02-18 15:58:50,475][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:50,587][INFO ][search.highlight         ] [HighlighterSearchTests#testEscapeHtml_vector]: cleaned up after test
+[2014-02-18 15:58:50,602][INFO ][test                     ] Test testEscapeHtml_vector(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:50,603][INFO ][test                     ] Test testPostingsHighlighterMultiMapperWithStore(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:50,610][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultiMapperWithStore]: before test
+[2014-02-18 15:58:50,612][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:50,654][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:51,040][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultiMapperWithStore]: cleaning up after test
+[2014-02-18 15:58:51,041][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:51,071][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultiMapperWithStore]: cleaned up after test
+[2014-02-18 15:58:51,077][INFO ][test                     ] Test testPostingsHighlighterMultiMapperWithStore(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:51,078][INFO ][test                     ] Test testSameContent(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:51,086][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:51,118][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:51,160][INFO ][search.highlight         ] [HighlighterSearchTests#testSameContent]: before test
+[2014-02-18 15:58:51,177][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:51,317][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:58:51,650][INFO ][search.highlight         ] [HighlighterSearchTests#testSameContent]: cleaning up after test
+[2014-02-18 15:58:51,653][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:51,700][INFO ][search.highlight         ] [HighlighterSearchTests#testSameContent]: cleaned up after test
+[2014-02-18 15:58:51,707][INFO ][test                     ] Test testSameContent(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:51,708][INFO ][test                     ] Test testNgramHighlighting(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:51,715][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:51,748][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlighting]: before test
+[2014-02-18 15:58:51,749][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:51,802][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [test]
+[2014-02-18 15:58:52,172][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlighting]: cleaning up after test
+[2014-02-18 15:58:52,173][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:52,194][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlighting]: cleaned up after test
+[2014-02-18 15:58:52,203][INFO ][test                     ] Test testNgramHighlighting(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:52,203][INFO ][test                     ] Test testSourceLookupHighlightingUsingFastVectorHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:52,211][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingFastVectorHighlighter]: before test
+[2014-02-18 15:58:52,224][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:52,289][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:52,339][INFO ][search.highlight         ] Index [5] docs async: [false] bulk: [false]
+[2014-02-18 15:58:52,940][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingFastVectorHighlighter]: cleaning up after test
+[2014-02-18 15:58:52,941][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:52,973][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingFastVectorHighlighter]: cleaned up after test
+[2014-02-18 15:58:52,982][INFO ][test                     ] Test testSourceLookupHighlightingUsingFastVectorHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:52,984][INFO ][test                     ] Test testPostingsHighlighterBoostingQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:52,993][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:53,038][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterBoostingQuery]: before test
+[2014-02-18 15:58:53,054][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:53,626][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:58:53,638][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterBoostingQuery]: cleaning up after test
+[2014-02-18 15:58:53,642][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:53,697][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterBoostingQuery]: cleaned up after test
+[2014-02-18 15:58:53,702][INFO ][test                     ] Test testPostingsHighlighterBoostingQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:53,703][INFO ][test                     ] Test testPostingsHighlighterOrderByScore(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:53,710][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterOrderByScore]: before test
+[2014-02-18 15:58:53,727][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:54,586][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:58:54,595][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterOrderByScore]: cleaning up after test
+[2014-02-18 15:58:54,596][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:54,695][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterOrderByScore]: cleaned up after test
+[2014-02-18 15:58:54,696][INFO ][test                     ] Test testPostingsHighlighterOrderByScore(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:54,697][INFO ][test                     ] Test testPostingsHighlighterShouldFailIfNoOffsets(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:54,707][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterShouldFailIfNoOffsets]: before test
+[2014-02-18 15:58:54,725][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:55,033][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:58:55,363][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterShouldFailIfNoOffsets]: cleaning up after test
+[2014-02-18 15:58:55,364][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:55,388][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterShouldFailIfNoOffsets]: cleaned up after test
+[2014-02-18 15:58:55,389][INFO ][test                     ] Test testPostingsHighlighterShouldFailIfNoOffsets(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:55,390][INFO ][test                     ] Test testPostingsHighlighterCustomIndexName(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:55,397][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterCustomIndexName]: before test
+[2014-02-18 15:58:55,410][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:55,941][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterCustomIndexName]: cleaning up after test
+[2014-02-18 15:58:55,942][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:55,980][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterCustomIndexName]: cleaned up after test
+[2014-02-18 15:58:55,981][INFO ][test                     ] Test testPostingsHighlighterCustomIndexName(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:55,981][INFO ][test                     ] Test testPostingsHighlighterEscapeHtml(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:55,986][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:56,016][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:56,043][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterEscapeHtml]: before test
+[2014-02-18 15:58:56,056][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:56,118][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:58:56,265][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterEscapeHtml]: cleaning up after test
+[2014-02-18 15:58:56,268][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:56,336][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterEscapeHtml]: cleaned up after test
+[2014-02-18 15:58:56,344][INFO ][test                     ] Test testPostingsHighlighterEscapeHtml(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:56,345][INFO ][test                     ] Test testNgramHighlightingPreLucene42(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:56,351][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:56,376][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlightingPreLucene42]: before test
+[2014-02-18 15:58:56,396][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [test]
+[2014-02-18 15:58:56,501][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:56,731][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlightingPreLucene42]: cleaning up after test
+[2014-02-18 15:58:56,734][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:56,776][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlightingPreLucene42]: cleaned up after test
+[2014-02-18 15:58:56,786][INFO ][test                     ] Test testNgramHighlightingPreLucene42(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:56,787][INFO ][test                     ] Test testPostingsHighlighterRequireFieldMatch(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:56,796][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterRequireFieldMatch]: before test
+[2014-02-18 15:58:56,810][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:57,290][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:58:57,293][INFO ][search.highlight         ] --> highlighting and searching on field1 and field2 - require field match set to false
+[2014-02-18 15:58:57,297][INFO ][search.highlight         ] --> highlighting and searching on field1 and field2 via multi_match query
+[2014-02-18 15:58:57,302][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterRequireFieldMatch]: cleaning up after test
+[2014-02-18 15:58:57,303][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:57,344][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterRequireFieldMatch]: cleaned up after test
+[2014-02-18 15:58:57,345][INFO ][test                     ] Test testPostingsHighlighterRequireFieldMatch(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:57,345][INFO ][test                     ] Test testHighlightUsesHighlightQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:57,352][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:57,389][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:57,442][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightUsesHighlightQuery]: before test
+[2014-02-18 15:58:57,455][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:57,949][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightUsesHighlightQuery]: cleaning up after test
+[2014-02-18 15:58:57,950][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:57,992][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightUsesHighlightQuery]: cleaned up after test
+[2014-02-18 15:58:57,999][INFO ][test                     ] Test testHighlightUsesHighlightQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:57,999][INFO ][test                     ] Test testResetTwice(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:58,004][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:58,033][INFO ][search.highlight         ] [HighlighterSearchTests#testResetTwice]: before test
+[2014-02-18 15:58:58,047][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type]
+[2014-02-18 15:58:58,391][INFO ][search.highlight         ] [HighlighterSearchTests#testResetTwice]: cleaning up after test
+[2014-02-18 15:58:58,393][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:58,457][INFO ][search.highlight         ] [HighlighterSearchTests#testResetTwice]: cleaned up after test
+[2014-02-18 15:58:58,461][INFO ][test                     ] Test testResetTwice(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:58,461][INFO ][test                     ] Test testDisableFastVectorHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:58,466][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:58,489][INFO ][search.highlight         ] [HighlighterSearchTests#testDisableFastVectorHighlighter]: before test
+[2014-02-18 15:58:58,498][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:58,767][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:58:58,886][INFO ][search.highlight         ] [HighlighterSearchTests#testDisableFastVectorHighlighter]: cleaning up after test
+[2014-02-18 15:58:58,887][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:58,905][INFO ][search.highlight         ] [HighlighterSearchTests#testDisableFastVectorHighlighter]: cleaned up after test
+[2014-02-18 15:58:58,908][INFO ][test                     ] Test testDisableFastVectorHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:58,909][INFO ][test                     ] Test testHighlightNoMatchSize(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:58,915][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSize]: before test
+[2014-02-18 15:58:58,923][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:58:59,285][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSize]: cleaning up after test
+[2014-02-18 15:58:59,285][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:59,317][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSize]: cleaned up after test
+[2014-02-18 15:58:59,318][INFO ][test                     ] Test testHighlightNoMatchSize(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:59,319][INFO ][test                     ] Test testPostingsHighlighterMultiMapperFromSource(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:59,325][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultiMapperFromSource]: before test
+[2014-02-18 15:58:59,334][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:58:59,617][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultiMapperFromSource]: cleaning up after test
+[2014-02-18 15:58:59,617][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:58:59,635][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultiMapperFromSource]: cleaned up after test
+[2014-02-18 15:58:59,635][INFO ][test                     ] Test testPostingsHighlighterMultiMapperFromSource(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:58:59,636][INFO ][test                     ] Test testFastVectorHighlighterCustomIndexName(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:58:59,641][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:58:59,675][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:58:59,707][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:58:59,745][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterCustomIndexName]: before test
+[2014-02-18 15:58:59,763][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:00,154][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterCustomIndexName]: cleaning up after test
+[2014-02-18 15:59:00,156][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:00,194][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterCustomIndexName]: cleaned up after test
+[2014-02-18 15:59:00,203][INFO ][test                     ] Test testFastVectorHighlighterCustomIndexName(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:00,203][INFO ][test                     ] Test testHighlightIssue1994(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:00,209][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightIssue1994]: before test
+[2014-02-18 15:59:00,219][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:00,276][INFO ][search.highlight         ] Index [1] docs async: [true] bulk: [false]
+[2014-02-18 15:59:00,296][INFO ][search.highlight         ] Index [1] docs async: [true] bulk: [false]
+[2014-02-18 15:59:00,535][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightIssue1994]: cleaning up after test
+[2014-02-18 15:59:00,537][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:00,583][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightIssue1994]: cleaned up after test
+[2014-02-18 15:59:00,584][INFO ][test                     ] Test testHighlightIssue1994(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:00,584][INFO ][test                     ] Test testPostingsHighlighterTermRangeQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:00,591][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterTermRangeQuery]: before test
+[2014-02-18 15:59:00,602][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:01,078][INFO ][search.highlight         ] --> highlighting and searching on field2
+[2014-02-18 15:59:01,080][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterTermRangeQuery]: cleaning up after test
+[2014-02-18 15:59:01,081][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:01,133][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterTermRangeQuery]: cleaned up after test
+[2014-02-18 15:59:01,134][INFO ][test                     ] Test testPostingsHighlighterTermRangeQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:01,135][INFO ][test                     ] Test testMultiMapperVectorWithStore(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:01,146][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:01,181][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:01,209][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperVectorWithStore]: before test
+[2014-02-18 15:59:01,210][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:01,241][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:01,690][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperVectorWithStore]: cleaning up after test
+[2014-02-18 15:59:01,693][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:01,723][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperVectorWithStore]: cleaned up after test
+[2014-02-18 15:59:01,739][INFO ][test                     ] Test testMultiMapperVectorWithStore(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:01,740][INFO ][test                     ] Test testCommonTermsQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:01,746][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:01,820][INFO ][search.highlight         ] [HighlighterSearchTests#testCommonTermsQuery]: before test
+[2014-02-18 15:59:01,837][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:59:02,402][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:02,689][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:02,697][INFO ][search.highlight         ] [HighlighterSearchTests#testCommonTermsQuery]: cleaning up after test
+[2014-02-18 15:59:02,698][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:02,769][INFO ][search.highlight         ] [HighlighterSearchTests#testCommonTermsQuery]: cleaned up after test
+[2014-02-18 15:59:02,774][INFO ][test                     ] Test testCommonTermsQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:02,775][INFO ][test                     ] Test testHighTermFrequencyDoc(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:02,783][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:02,840][INFO ][search.highlight         ] [HighlighterSearchTests#testHighTermFrequencyDoc]: before test
+[2014-02-18 15:59:02,859][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [test]
+[2014-02-18 15:59:03,371][INFO ][search.highlight         ] [HighlighterSearchTests#testHighTermFrequencyDoc]: cleaning up after test
+[2014-02-18 15:59:03,373][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:03,426][INFO ][search.highlight         ] [HighlighterSearchTests#testHighTermFrequencyDoc]: cleaned up after test
+[2014-02-18 15:59:03,435][INFO ][test                     ] Test testHighTermFrequencyDoc(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:03,436][INFO ][test                     ] Test testPhrasePrefix(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:03,442][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:03,477][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:03,541][INFO ][search.highlight         ] [HighlighterSearchTests#testPhrasePrefix]: before test
+[2014-02-18 15:59:03,561][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1, type2]
+[2014-02-18 15:59:03,954][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:04,399][INFO ][search.highlight         ] --> highlighting and searching on field0
+[2014-02-18 15:59:04,405][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:04,928][INFO ][search.highlight         ] --> highlighting and searching on field4
+[2014-02-18 15:59:04,933][INFO ][search.highlight         ] --> highlighting and searching on field4
+[2014-02-18 15:59:04,941][INFO ][search.highlight         ] [HighlighterSearchTests#testPhrasePrefix]: cleaning up after test
+[2014-02-18 15:59:04,945][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:04,994][INFO ][search.highlight         ] [HighlighterSearchTests#testPhrasePrefix]: cleaned up after test
+[2014-02-18 15:59:05,000][INFO ][test                     ] Test testPhrasePrefix(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:05,001][INFO ][test                     ] Test testFastVectorHighlighterOffsetParameter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:05,008][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterOffsetParameter]: before test
+[2014-02-18 15:59:05,018][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:05,095][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:59:05,318][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterOffsetParameter]: cleaning up after test
+[2014-02-18 15:59:05,320][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:05,386][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterOffsetParameter]: cleaned up after test
+[2014-02-18 15:59:05,387][INFO ][test                     ] Test testFastVectorHighlighterOffsetParameter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:05,388][INFO ][test                     ] Test testMatchedFieldsFvhRequireFieldMatch(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:05,395][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:05,424][INFO ][search.highlight         ] [HighlighterSearchTests#testMatchedFieldsFvhRequireFieldMatch]: before test
+[2014-02-18 15:59:05,435][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:05,829][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:06,202][INFO ][search.highlight         ] [HighlighterSearchTests#testMatchedFieldsFvhRequireFieldMatch]: cleaning up after test
+[2014-02-18 15:59:06,204][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:06,246][INFO ][search.highlight         ] [HighlighterSearchTests#testMatchedFieldsFvhRequireFieldMatch]: cleaned up after test
+[2014-02-18 15:59:06,254][INFO ][test                     ] Test testMatchedFieldsFvhRequireFieldMatch(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:06,254][INFO ][test                     ] Test testEscapeHtml(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:06,263][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:06,292][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:06,318][INFO ][search.highlight         ] [HighlighterSearchTests#testEscapeHtml]: before test
+[2014-02-18 15:59:06,329][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:06,377][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:06,479][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:59:06,767][INFO ][search.highlight         ] [HighlighterSearchTests#testEscapeHtml]: cleaning up after test
+[2014-02-18 15:59:06,769][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:06,860][INFO ][search.highlight         ] [HighlighterSearchTests#testEscapeHtml]: cleaned up after test
+[2014-02-18 15:59:06,869][INFO ][test                     ] Test testEscapeHtml(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:06,870][INFO ][test                     ] Test testBoostingQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:06,874][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:06,898][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:06,924][INFO ][search.highlight         ] [HighlighterSearchTests#testBoostingQuery]: before test
+[2014-02-18 15:59:06,934][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:59:07,260][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:07,285][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:07,288][INFO ][search.highlight         ] [HighlighterSearchTests#testBoostingQuery]: cleaning up after test
+[2014-02-18 15:59:07,291][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:07,339][INFO ][search.highlight         ] [HighlighterSearchTests#testBoostingQuery]: cleaned up after test
+[2014-02-18 15:59:07,348][INFO ][test                     ] Test testBoostingQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:07,349][INFO ][test                     ] Test testHighlightingOnWildcardFields(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:07,356][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:07,385][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightingOnWildcardFields]: before test
+[2014-02-18 15:59:07,394][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:59:07,732][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:07,752][INFO ][search.highlight         ] --> highlighting and searching on field*
+[2014-02-18 15:59:07,755][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightingOnWildcardFields]: cleaning up after test
+[2014-02-18 15:59:07,756][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:07,829][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightingOnWildcardFields]: cleaned up after test
+[2014-02-18 15:59:07,833][INFO ][test                     ] Test testHighlightingOnWildcardFields(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:07,834][INFO ][test                     ] Test testHighlightNoMatchSizeNumberOfFragments(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:07,851][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:07,879][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:07,904][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:07,928][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSizeNumberOfFragments]: before test
+[2014-02-18 15:59:07,941][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:08,452][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSizeNumberOfFragments]: cleaning up after test
+[2014-02-18 15:59:08,454][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:08,489][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSizeNumberOfFragments]: cleaned up after test
+[2014-02-18 15:59:08,498][INFO ][test                     ] Test testHighlightNoMatchSizeNumberOfFragments(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:08,499][INFO ][test                     ] Test testMultiPhraseCutoff(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:08,503][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:08,526][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:08,556][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiPhraseCutoff]: before test
+[2014-02-18 15:59:08,574][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [test]
+[2014-02-18 15:59:08,643][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiPhraseCutoff]: cleaning up after test
+[2014-02-18 15:59:08,646][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:08,671][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiPhraseCutoff]: cleaned up after test
+[2014-02-18 15:59:08,679][INFO ][test                     ] Test testMultiPhraseCutoff(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:08,680][INFO ][test                     ] Test testCommonTermsTermVector(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:08,687][INFO ][search.highlight         ] [HighlighterSearchTests#testCommonTermsTermVector]: before test
+[2014-02-18 15:59:08,699][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:09,038][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:09,042][INFO ][search.highlight         ] [HighlighterSearchTests#testCommonTermsTermVector]: cleaning up after test
+[2014-02-18 15:59:09,045][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:09,111][INFO ][search.highlight         ] [HighlighterSearchTests#testCommonTermsTermVector]: cleaned up after test
+[2014-02-18 15:59:09,112][INFO ][test                     ] Test testCommonTermsTermVector(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:09,112][INFO ][test                     ] Test testPlainHighlighterCustomIndexName(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:09,117][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:09,145][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:09,167][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterCustomIndexName]: before test
+[2014-02-18 15:59:09,176][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:09,657][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterCustomIndexName]: cleaning up after test
+[2014-02-18 15:59:09,658][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:09,694][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterCustomIndexName]: cleaned up after test
+[2014-02-18 15:59:09,700][INFO ][test                     ] Test testPlainHighlighterCustomIndexName(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:09,701][INFO ][test                     ] Test testPostingsHighlighterFuzzyQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:09,706][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:09,728][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:09,752][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterFuzzyQuery]: before test
+[2014-02-18 15:59:09,760][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:10,212][INFO ][search.highlight         ] --> highlighting and searching on field2
+[2014-02-18 15:59:10,217][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterFuzzyQuery]: cleaning up after test
+[2014-02-18 15:59:10,220][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:10,272][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterFuzzyQuery]: cleaned up after test
+[2014-02-18 15:59:10,278][INFO ][test                     ] Test testPostingsHighlighterFuzzyQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:10,278][INFO ][test                     ] Test testMultiMapperNoVectorWithStore(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:10,284][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperNoVectorWithStore]: before test
+[2014-02-18 15:59:10,297][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:10,613][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperNoVectorWithStore]: cleaning up after test
+[2014-02-18 15:59:10,613][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:10,633][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperNoVectorWithStore]: cleaned up after test
+[2014-02-18 15:59:10,634][INFO ][test                     ] Test testMultiMapperNoVectorWithStore(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:10,634][INFO ][test                     ] Test testNumericHighlighting(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:10,638][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:10,661][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:10,683][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:10,707][INFO ][search.highlight         ] [HighlighterSearchTests#testNumericHighlighting]: before test
+[2014-02-18 15:59:10,716][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [test]
+[2014-02-18 15:59:11,096][INFO ][search.highlight         ] [HighlighterSearchTests#testNumericHighlighting]: cleaning up after test
+[2014-02-18 15:59:11,098][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:11,171][INFO ][search.highlight         ] [HighlighterSearchTests#testNumericHighlighting]: cleaned up after test
+[2014-02-18 15:59:11,181][INFO ][test                     ] Test testNumericHighlighting(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:11,181][INFO ][test                     ] Test testMatchedFieldsFvhNoRequireFieldMatch(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:11,187][INFO ][search.highlight         ] [HighlighterSearchTests#testMatchedFieldsFvhNoRequireFieldMatch]: before test
+[2014-02-18 15:59:11,195][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:11,535][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:11,850][INFO ][search.highlight         ] [HighlighterSearchTests#testMatchedFieldsFvhNoRequireFieldMatch]: cleaning up after test
+[2014-02-18 15:59:11,851][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:11,890][INFO ][search.highlight         ] [HighlighterSearchTests#testMatchedFieldsFvhNoRequireFieldMatch]: cleaned up after test
+[2014-02-18 15:59:11,895][INFO ][test                     ] Test testMatchedFieldsFvhNoRequireFieldMatch(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:11,896][INFO ][test                     ] Test testNgramHighlightingWithBrokenPositions(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:11,902][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:11,931][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:11,955][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlightingWithBrokenPositions]: before test
+[2014-02-18 15:59:11,971][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[1], mappings [test]
+[2014-02-18 15:59:12,045][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlightingWithBrokenPositions]: cleaning up after test
+[2014-02-18 15:59:12,047][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:12,076][INFO ][search.highlight         ] [HighlighterSearchTests#testNgramHighlightingWithBrokenPositions]: cleaned up after test
+[2014-02-18 15:59:12,083][INFO ][test                     ] Test testNgramHighlightingWithBrokenPositions(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:12,084][INFO ][test                     ] Test testFastVectorHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:12,090][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighter]: before test
+[2014-02-18 15:59:12,100][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:12,495][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:12,497][INFO ][search.highlight         ] --> searching on _all, highlighting on field1
+[2014-02-18 15:59:12,500][INFO ][search.highlight         ] --> searching on _all, highlighting on field2
+[2014-02-18 15:59:12,503][INFO ][search.highlight         ] --> searching on _all, highlighting on field2
+[2014-02-18 15:59:12,506][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighter]: cleaning up after test
+[2014-02-18 15:59:12,508][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:12,572][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighter]: cleaned up after test
+[2014-02-18 15:59:12,573][INFO ][test                     ] Test testFastVectorHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:12,574][INFO ][test                     ] Test testPostingsHighlighterRegexpQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:12,582][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:12,620][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterRegexpQuery]: before test
+[2014-02-18 15:59:12,635][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:12,976][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:13,031][INFO ][search.highlight         ] --> highlighting and searching on field2
+[2014-02-18 15:59:13,073][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterRegexpQuery]: cleaning up after test
+[2014-02-18 15:59:13,076][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:13,199][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterRegexpQuery]: cleaned up after test
+[2014-02-18 15:59:13,209][INFO ][test                     ] Test testPostingsHighlighterRegexpQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:13,210][INFO ][test                     ] Test testGlobalHighlightingSettingsOverriddenAtFieldLevel(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:13,218][INFO ][search.highlight         ] [HighlighterSearchTests#testGlobalHighlightingSettingsOverriddenAtFieldLevel]: before test
+[2014-02-18 15:59:13,231][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:59:13,723][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:13,779][INFO ][search.highlight         ] --> highlighting and searching on field1 and field2 produces different tags
+[2014-02-18 15:59:13,794][INFO ][search.highlight         ] [HighlighterSearchTests#testGlobalHighlightingSettingsOverriddenAtFieldLevel]: cleaning up after test
+[2014-02-18 15:59:13,794][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:13,909][INFO ][search.highlight         ] [HighlighterSearchTests#testGlobalHighlightingSettingsOverriddenAtFieldLevel]: cleaned up after test
+[2014-02-18 15:59:13,910][INFO ][test                     ] Test testGlobalHighlightingSettingsOverriddenAtFieldLevel(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:13,911][INFO ][test                     ] Test testFVHManyMatches(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:13,919][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:13,955][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:14,003][INFO ][search.highlight         ] [HighlighterSearchTests#testFVHManyMatches]: before test
+[2014-02-18 15:59:14,017][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:14,111][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:15,405][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:15,465][INFO ][search.highlight         ] --> done
+[2014-02-18 15:59:15,466][INFO ][search.highlight         ] [HighlighterSearchTests#testFVHManyMatches]: cleaning up after test
+[2014-02-18 15:59:15,468][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:15,502][INFO ][search.highlight         ] [HighlighterSearchTests#testFVHManyMatches]: cleaned up after test
+[2014-02-18 15:59:15,511][INFO ][test                     ] Test testFVHManyMatches(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:15,511][INFO ][test                     ] Test testPostingsHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:15,516][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:15,541][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighter]: before test
+[2014-02-18 15:59:15,549][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:15,935][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:15,981][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:15,984][INFO ][search.highlight         ] --> searching on _all, highlighting on field1
+[2014-02-18 15:59:15,986][INFO ][search.highlight         ] --> searching on _all, highlighting on field2
+[2014-02-18 15:59:15,988][INFO ][search.highlight         ] --> searching on _all, highlighting on field2
+[2014-02-18 15:59:15,991][INFO ][search.highlight         ] --> searching on _all, highlighting on field2, falling back to the plain highlighter
+[2014-02-18 15:59:15,994][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighter]: cleaning up after test
+[2014-02-18 15:59:15,996][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:16,033][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighter]: cleaned up after test
+[2014-02-18 15:59:16,040][INFO ][test                     ] Test testPostingsHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:16,040][INFO ][test                     ] Test testHighlightNoMatchSizeWithMultivaluedFields(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:16,045][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:16,071][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSizeWithMultivaluedFields]: before test
+[2014-02-18 15:59:16,081][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:16,730][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSizeWithMultivaluedFields]: cleaning up after test
+[2014-02-18 15:59:16,732][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:16,799][INFO ][search.highlight         ] [HighlighterSearchTests#testHighlightNoMatchSizeWithMultivaluedFields]: cleaned up after test
+[2014-02-18 15:59:16,804][INFO ][test                     ] Test testHighlightNoMatchSizeWithMultivaluedFields(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:16,804][INFO ][test                     ] Test testMultiMapperNoVectorFromSource(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:16,811][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperNoVectorFromSource]: before test
+[2014-02-18 15:59:16,825][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:17,182][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperNoVectorFromSource]: cleaning up after test
+[2014-02-18 15:59:17,182][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:17,200][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperNoVectorFromSource]: cleaned up after test
+[2014-02-18 15:59:17,201][INFO ][test                     ] Test testMultiMapperNoVectorFromSource(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:17,202][INFO ][test                     ] Test testFastVectorHighlighterPhraseBoost(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:17,208][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:17,236][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:17,266][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterPhraseBoost]: before test
+[2014-02-18 15:59:17,275][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:17,686][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:17,848][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterPhraseBoost]: cleaning up after test
+[2014-02-18 15:59:17,850][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:17,929][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterPhraseBoost]: cleaned up after test
+[2014-02-18 15:59:17,942][INFO ][test                     ] Test testFastVectorHighlighterPhraseBoost(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:17,943][INFO ][test                     ] Test testPlainHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:17,950][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:17,991][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:18,032][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighter]: before test
+[2014-02-18 15:59:18,045][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:59:18,174][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:18,469][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:18,535][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:18,537][INFO ][search.highlight         ] --> searching on _all, highlighting on field1
+[2014-02-18 15:59:18,540][INFO ][search.highlight         ] --> searching on _all, highlighting on field2
+[2014-02-18 15:59:18,544][INFO ][search.highlight         ] --> searching on _all, highlighting on field2
+[2014-02-18 15:59:18,548][INFO ][search.highlight         ] --> searching on _all with constant score, highlighting on field2
+[2014-02-18 15:59:18,551][INFO ][search.highlight         ] --> searching on _all with constant score, highlighting on field2
+[2014-02-18 15:59:18,554][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighter]: cleaning up after test
+[2014-02-18 15:59:18,556][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:18,591][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighter]: cleaned up after test
+[2014-02-18 15:59:18,601][INFO ][test                     ] Test testPlainHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:18,602][INFO ][test                     ] Test testPostingsHighlighterQueryString(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:18,617][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterQueryString]: before test
+[2014-02-18 15:59:18,628][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:18,985][INFO ][search.highlight         ] --> highlighting and searching on field2
+[2014-02-18 15:59:19,003][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterQueryString]: cleaning up after test
+[2014-02-18 15:59:19,004][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:19,048][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterQueryString]: cleaned up after test
+[2014-02-18 15:59:19,049][INFO ][test                     ] Test testPostingsHighlighterQueryString(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:19,049][INFO ][test                     ] Test testPlainHighlighterMultipleFields(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:19,054][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:19,083][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:19,111][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterMultipleFields]: before test
+[2014-02-18 15:59:19,122][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings []
+[2014-02-18 15:59:19,452][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:19,478][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterMultipleFields]: cleaning up after test
+[2014-02-18 15:59:19,480][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:19,548][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterMultipleFields]: cleaned up after test
+[2014-02-18 15:59:19,555][INFO ][test                     ] Test testPlainHighlighterMultipleFields(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:19,555][INFO ][test                     ] Test testMultiMapperVectorFromSource(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:19,559][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:19,586][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperVectorFromSource]: before test
+[2014-02-18 15:59:19,597][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:19,957][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperVectorFromSource]: cleaning up after test
+[2014-02-18 15:59:19,960][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:19,988][INFO ][search.highlight         ] [HighlighterSearchTests#testMultiMapperVectorFromSource]: cleaned up after test
+[2014-02-18 15:59:19,994][INFO ][test                     ] Test testMultiMapperVectorFromSource(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:19,994][INFO ][test                     ] Test testFSHHighlightAllMvFragments(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:20,000][INFO ][search.highlight         ] [HighlighterSearchTests#testFSHHighlightAllMvFragments]: before test
+[2014-02-18 15:59:20,013][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type1]
+[2014-02-18 15:59:20,056][INFO ][search.highlight         ] [HighlighterSearchTests#testFSHHighlightAllMvFragments]: cleaning up after test
+[2014-02-18 15:59:20,057][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:20,065][INFO ][search.highlight         ] [HighlighterSearchTests#testFSHHighlightAllMvFragments]: cleaned up after test
+[2014-02-18 15:59:20,065][INFO ][test                     ] Test testFSHHighlightAllMvFragments(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:20,066][INFO ][test                     ] Test testPostingsHighlighterPhraseBoost(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:20,070][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:20,098][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:20,126][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterPhraseBoost]: before test
+[2014-02-18 15:59:20,137][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:20,571][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterPhraseBoost]: cleaning up after test
+[2014-02-18 15:59:20,571][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:20,614][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterPhraseBoost]: cleaned up after test
+[2014-02-18 15:59:20,622][INFO ][test                     ] Test testPostingsHighlighterPhraseBoost(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:20,622][INFO ][test                     ] Test testPlainHighlighterForceSource(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:20,629][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:20,660][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:20,693][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:20,726][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterForceSource]: before test
+[2014-02-18 15:59:20,736][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:21,183][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterForceSource]: cleaning up after test
+[2014-02-18 15:59:21,185][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:21,259][INFO ][search.highlight         ] [HighlighterSearchTests#testPlainHighlighterForceSource]: cleaned up after test
+[2014-02-18 15:59:21,274][INFO ][test                     ] Test testPlainHighlighterForceSource(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:21,275][INFO ][test                     ] Test testSourceLookupHighlightingUsingPostingsHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:21,284][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:21,324][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:21,365][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:21,402][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingPostingsHighlighter]: before test
+[2014-02-18 15:59:21,417][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:21,488][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:59:21,600][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingPostingsHighlighter]: cleaning up after test
+[2014-02-18 15:59:21,602][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:21,726][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingPostingsHighlighter]: cleaned up after test
+[2014-02-18 15:59:21,738][INFO ][test                     ] Test testSourceLookupHighlightingUsingPostingsHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:21,739][INFO ][test                     ] Test testPostingsHighlighterPrefixQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:21,747][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:21,773][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterPrefixQuery]: before test
+[2014-02-18 15:59:21,783][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:22,194][INFO ][search.highlight         ] --> highlighting and searching on field2
+[2014-02-18 15:59:22,212][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterPrefixQuery]: cleaning up after test
+[2014-02-18 15:59:22,213][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:22,249][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterPrefixQuery]: cleaned up after test
+[2014-02-18 15:59:22,252][INFO ][test                     ] Test testPostingsHighlighterPrefixQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:22,253][INFO ][test                     ] Test testPostingsHighlighterCommonTermsQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:22,258][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:22,282][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:22,304][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:22,328][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterCommonTermsQuery]: before test
+[2014-02-18 15:59:22,337][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:22,729][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:22,732][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterCommonTermsQuery]: cleaning up after test
+[2014-02-18 15:59:22,734][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:22,770][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterCommonTermsQuery]: cleaned up after test
+[2014-02-18 15:59:22,780][INFO ][test                     ] Test testPostingsHighlighterCommonTermsQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:22,780][INFO ][test                     ] Test testFastVectorHighlighterShouldFailIfNoTermVectors(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:22,784][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:22,806][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:22,831][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterShouldFailIfNoTermVectors]: before test
+[2014-02-18 15:59:22,832][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:22,868][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:23,155][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:59:23,310][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterShouldFailIfNoTermVectors]: cleaning up after test
+[2014-02-18 15:59:23,311][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:23,333][INFO ][search.highlight         ] [HighlighterSearchTests#testFastVectorHighlighterShouldFailIfNoTermVectors]: cleaned up after test
+[2014-02-18 15:59:23,344][INFO ][test                     ] Test testFastVectorHighlighterShouldFailIfNoTermVectors(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:23,344][INFO ][test                     ] Test testPostingsHighlighterWildcardQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:23,350][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterWildcardQuery]: before test
+[2014-02-18 15:59:23,361][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:23,732][INFO ][search.highlight         ] --> highlighting and searching on field2
+[2014-02-18 15:59:23,784][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterWildcardQuery]: cleaning up after test
+[2014-02-18 15:59:23,785][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:23,824][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterWildcardQuery]: cleaned up after test
+[2014-02-18 15:59:23,824][INFO ][test                     ] Test testPostingsHighlighterWildcardQuery(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:23,825][INFO ][test                     ] Test testPostingsHighlighterMultipleFields(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:23,829][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:23,862][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:23,886][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:23,915][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultipleFields]: before test
+[2014-02-18 15:59:23,927][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:24,291][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultipleFields]: cleaning up after test
+[2014-02-18 15:59:24,294][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:24,354][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterMultipleFields]: cleaned up after test
+[2014-02-18 15:59:24,365][INFO ][test                     ] Test testPostingsHighlighterMultipleFields(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:24,365][INFO ][test                     ] Test testEnsureNoNegativeOffsets(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:24,370][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:24,394][INFO ][search.highlight         ] [HighlighterSearchTests#testEnsureNoNegativeOffsets]: before test
+[2014-02-18 15:59:24,404][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:24,554][INFO ][search.highlight         ] [HighlighterSearchTests#testEnsureNoNegativeOffsets]: cleaning up after test
+[2014-02-18 15:59:24,555][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:24,573][INFO ][search.highlight         ] [HighlighterSearchTests#testEnsureNoNegativeOffsets]: cleaned up after test
+[2014-02-18 15:59:24,577][INFO ][test                     ] Test testEnsureNoNegativeOffsets(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:24,577][INFO ][test                     ] Test testBoostingQueryTermVector(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:24,582][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:24,608][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:24,632][INFO ][search.highlight         ] [HighlighterSearchTests#testBoostingQueryTermVector]: before test
+[2014-02-18 15:59:24,644][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:25,024][INFO ][search.highlight         ] --> highlighting and searching on field1
+[2014-02-18 15:59:25,027][INFO ][search.highlight         ] [HighlighterSearchTests#testBoostingQueryTermVector]: cleaning up after test
+[2014-02-18 15:59:25,029][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:25,073][INFO ][search.highlight         ] [HighlighterSearchTests#testBoostingQueryTermVector]: cleaned up after test
+[2014-02-18 15:59:25,080][INFO ][test                     ] Test testBoostingQueryTermVector(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:25,081][INFO ][test                     ] Test testMissingStoredField(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:25,085][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:59:25,118][INFO ][search.highlight         ] [HighlighterSearchTests#testMissingStoredField]: before test
+[2014-02-18 15:59:25,120][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:59:25,170][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [1]/[0], mappings [type1]
+[2014-02-18 15:59:25,199][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:59:25,206][INFO ][cluster.metadata         ] [node_0] [test] update_mapping [type1] (dynamic)
+[2014-02-18 15:59:25,253][INFO ][search.highlight         ] [HighlighterSearchTests#testMissingStoredField]: cleaning up after test
+[2014-02-18 15:59:25,255][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:25,274][INFO ][search.highlight         ] [HighlighterSearchTests#testMissingStoredField]: cleaned up after test
+[2014-02-18 15:59:25,286][INFO ][test                     ] Test testMissingStoredField(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:25,286][INFO ][test                     ] Test testPostingsHighlighterManyDocs(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:25,293][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterManyDocs]: before test
+[2014-02-18 15:59:25,304][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [5]/[1], mappings [type1]
+[2014-02-18 15:59:25,708][INFO ][search.highlight         ] --> indexing docs
+[2014-02-18 15:59:25,708][INFO ][search.highlight         ] Index [51] docs async: [true] bulk: [false]
+[2014-02-18 15:59:26,910][INFO ][search.highlight         ] --> searching explicitly on field1 and highlighting on it
+[2014-02-18 15:59:26,917][INFO ][search.highlight         ] --> searching explicitly on field1 and highlighting on it, with DFS
+[2014-02-18 15:59:26,925][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterManyDocs]: cleaning up after test
+[2014-02-18 15:59:26,926][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:27,035][INFO ][search.highlight         ] [HighlighterSearchTests#testPostingsHighlighterManyDocs]: cleaned up after test
+[2014-02-18 15:59:27,036][INFO ][test                     ] Test testPostingsHighlighterManyDocs(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+[2014-02-18 15:59:27,037][INFO ][test                     ] Test testSourceLookupHighlightingUsingPlainHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) started
+[2014-02-18 15:59:27,045][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingPlainHighlighter]: before test
+[2014-02-18 15:59:27,058][INFO ][cluster.metadata         ] [node_0] [test] creating index, cause [api], shards [2]/[1], mappings [type1]
+[2014-02-18 15:59:27,155][INFO ][search.highlight         ] Index [5] docs async: [true] bulk: [false]
+[2014-02-18 15:59:27,352][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingPlainHighlighter]: cleaning up after test
+[2014-02-18 15:59:27,354][INFO ][cluster.metadata         ] [node_0] [test] deleting index
+[2014-02-18 15:59:27,417][INFO ][search.highlight         ] [HighlighterSearchTests#testSourceLookupHighlightingUsingPlainHighlighter]: cleaned up after test
+[2014-02-18 15:59:27,418][INFO ][test                     ] Test testSourceLookupHighlightingUsingPlainHighlighter(org.elasticsearch.search.highlight.HighlighterSearchTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

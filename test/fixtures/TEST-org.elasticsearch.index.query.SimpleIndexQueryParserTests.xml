@@ -1,0 +1,577 @@
+<testsuite errors="0" failures="0" tests="159" skipped="0" name="org.elasticsearch.index.query.SimpleIndexQueryParserTests" hostname="nohost.nodomain" time="1.506" timestamp="2014-02-18T16:05:34">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanFirstQuery" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMoreLikeThisField" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringBoostsBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testDisMaxBuilder" time="0.078"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoPolygonFilter1" time="0.012"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryString" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRangeQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFields3" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRange2Query" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testWildcardQuery" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilterNamed" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter1" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFQueryFilter" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFieldsMatch" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="assureMalformedThrowsException" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testWildcardBoostQuery" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermQueryBuilder" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNumericRangeFilteredQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFilteredQuery4" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilter4" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermsWithNameFilterQuery" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testAndFilteredQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNotFilteredQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermFilterQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFields1" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMultiMatchQueryWithFieldsAsString" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRangeFilteredQueryBuilder" time="0.005"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFields3Builder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testAndNamedFilteredQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFields2Builder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilter2" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBoolQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoPolygonFilter2" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixQueryBoostQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFilterParsing" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter12" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBoostingQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMoreLikeThis" time="0.017"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNotFilteredQuery" time="0.012"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilter3" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanOrQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testConstantScoreQuery" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryFilterBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBoostingQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNumericRangeFilteredQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testOrFilteredQueryBuilder" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyQueryWithFieldsBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBoolQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixQueryWithUnknownField" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermsFilterQueryBuilder" time="0.005"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermWithBoostQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanFirstQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFieldMaskingSpanQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFields2" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFuzzyNumeric" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNotFilteredQuery3" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanMultiTermWildcardQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSimpleQueryString" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermNamedFilterQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter5" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter7" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoShapeQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilter5" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCustomBoostFactorQueryBuilder_withFunctionScoreWithoutQueryGiven" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRegexpBoostQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyLikeThisBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMoreLikeThisBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermsFilterQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBadTypeMultiMatchQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixFilteredQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter3" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanOrQuery2" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRegexpFilteredQuery" time="0.012"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNamedAndCachedRegexpWithFlagsFilteredQuery" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyQueryWithFields" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanMultiTermPrefixQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCustomBoostFactorQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testWildcardQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoPolygonFilter4" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyLikeFieldThisBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRegexpWithFlagsFilteredQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanTermQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testLimitFilter" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilter6" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNamedRegexpFilteredQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyLikeThis" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testAndFilteredQuery2" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRangeQueryBuilder" time="0.005"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter8" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringFields1Builder" time="0.005"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMultiMatchQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanMultiTermFuzzyTermQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermsQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCommonTermsQuery1" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryStringBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermsQueryBuilder" time="0.005"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBoolFilteredQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRangeNamedFilteredQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCustomBoostFactorQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter2" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanMultiTermFuzzyRangeQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFilteredQuery3" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter10" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBadTypeMatchQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testConstantScoreQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilterNamed" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanOrQueryBuilder" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCommonTermsQuery3" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRangeFilteredQueryBuilder_executionFieldData" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCustomBoostFactorQueryBuilder_withFunctionScore" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMatchAllEmpty1" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMatchAllBuilder" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testOrFilteredQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixFilteredQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testDisMax2" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanMultiTermTermRangeQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRangeFilteredQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter4" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanMultiTermNumericRangeQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testAndFilteredQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testTermWithBoostQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoPolygonNamedFilter" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter9" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoPolygonFilter3" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanNearQueryBuilder" time="0.005"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixNamedFilteredQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFilteredQuery2" time="0.012"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyQueryWithFields2" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFilteredQuery" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testNotFilteredQuery2" time="0.01"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testBoolFilteredQuery" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter11" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRegexpQueryBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testInQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testStarColonStar" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanNotQueryBuilder" time="0.011"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixQueryBoostQueryBuilder" time="0.008"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanTermQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFilteredQueryBuilder" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyLikeThisField" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanNotQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoBoundingBoxFilter1" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoDistanceFilter6" time="0.007"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testOrFilteredQuery2" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testFuzzyQuery" time="0.009"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMoreLikeThisFieldBuilder" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMatchAllEmpty2" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testSpanNearQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testGeoShapeFilter" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testDisMax" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testQueryFilter" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testCommonTermsQuery2" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixBoostQuery" time="0.012"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testMatchAll" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testRegexpQuery" time="0.006"/>
+   <testcase classname="org.elasticsearch.index.query.SimpleIndexQueryParserTests" name="testPrefixQuery" time="0.007"/>
+   <system-out><![CDATA[[2014-02-18 16:05:34,855][INFO ][test                     ] Test testSpanFirstQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,865][INFO ][test                     ] Test testSpanFirstQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,866][INFO ][test                     ] Test testMoreLikeThisField(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,875][INFO ][test                     ] Test testMoreLikeThisField(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,876][INFO ][test                     ] Test testQueryStringBoostsBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,882][INFO ][test                     ] Test testQueryStringBoostsBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,883][INFO ][test                     ] Test testDisMaxBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,961][INFO ][test                     ] Test testDisMaxBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,962][INFO ][test                     ] Test testGeoPolygonFilter1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,973][INFO ][test                     ] Test testGeoPolygonFilter1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,974][INFO ][test                     ] Test testQueryString(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,985][INFO ][test                     ] Test testQueryString(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,985][INFO ][test                     ] Test testRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:34,991][INFO ][test                     ] Test testRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:34,992][INFO ][test                     ] Test testQueryStringFields3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,001][INFO ][test                     ] Test testQueryStringFields3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,002][INFO ][test                     ] Test testRange2Query(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,011][INFO ][test                     ] Test testRange2Query(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,012][INFO ][test                     ] Test testWildcardQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,022][INFO ][test                     ] Test testWildcardQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,023][INFO ][test                     ] Test testGeoBoundingBoxFilterNamed(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,033][INFO ][test                     ] Test testGeoBoundingBoxFilterNamed(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,034][INFO ][test                     ] Test testGeoDistanceFilter1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,042][INFO ][test                     ] Test testGeoDistanceFilter1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,043][INFO ][test                     ] Test testFQueryFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,052][INFO ][test                     ] Test testFQueryFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,053][INFO ][test                     ] Test testQueryStringFieldsMatch(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,062][INFO ][test                     ] Test testQueryStringFieldsMatch(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,063][INFO ][test                     ] Test assureMalformedThrowsException(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,072][INFO ][test                     ] Test assureMalformedThrowsException(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,072][INFO ][test                     ] Test testWildcardBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,083][INFO ][test                     ] Test testWildcardBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,084][INFO ][test                     ] Test testTermQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,092][INFO ][test                     ] Test testTermQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,093][INFO ][test                     ] Test testNumericRangeFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,102][INFO ][test                     ] Test testNumericRangeFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,103][INFO ][test                     ] Test testFilteredQuery4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,113][INFO ][test                     ] Test testFilteredQuery4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,113][INFO ][test                     ] Test testGeoBoundingBoxFilter4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,122][INFO ][test                     ] Test testGeoBoundingBoxFilter4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,122][INFO ][test                     ] Test testTermsWithNameFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,130][INFO ][test                     ] Test testTermsWithNameFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,131][INFO ][test                     ] Test testAndFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,138][INFO ][test                     ] Test testAndFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,138][INFO ][test                     ] Test testNotFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,144][INFO ][test                     ] Test testNotFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,145][INFO ][test                     ] Test testTermFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,154][INFO ][test                     ] Test testTermFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,154][INFO ][test                     ] Test testQueryStringFields1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,161][INFO ][test                     ] Test testQueryStringFields1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,161][INFO ][test                     ] Test testMultiMatchQueryWithFieldsAsString(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,168][INFO ][test                     ] Test testMultiMatchQueryWithFieldsAsString(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,169][INFO ][test                     ] Test testRangeFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,174][INFO ][test                     ] Test testRangeFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,174][INFO ][test                     ] Test testQueryStringFields3Builder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,180][INFO ][test                     ] Test testQueryStringFields3Builder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,181][INFO ][test                     ] Test testAndNamedFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,187][INFO ][test                     ] Test testAndNamedFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,188][INFO ][test                     ] Test testQueryStringFields2Builder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,193][INFO ][test                     ] Test testQueryStringFields2Builder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,194][INFO ][test                     ] Test testGeoBoundingBoxFilter2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,201][INFO ][test                     ] Test testGeoBoundingBoxFilter2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,202][INFO ][test                     ] Test testBoolQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,209][INFO ][test                     ] Test testBoolQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,209][INFO ][test                     ] Test testGeoPolygonFilter2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,219][INFO ][test                     ] Test testGeoPolygonFilter2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,220][INFO ][test                     ] Test testPrefixQueryBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,227][INFO ][test                     ] Test testPrefixQueryBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,227][INFO ][test                     ] Test testFilterParsing(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,238][INFO ][test                     ] Test testFilterParsing(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,239][INFO ][test                     ] Test testGeoDistanceFilter12(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,248][INFO ][test                     ] Test testGeoDistanceFilter12(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,248][INFO ][test                     ] Test testBoostingQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,255][INFO ][test                     ] Test testBoostingQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,255][INFO ][test                     ] Test testMoreLikeThis(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,271][INFO ][test                     ] Test testMoreLikeThis(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,272][INFO ][test                     ] Test testNotFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,283][INFO ][test                     ] Test testNotFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,284][INFO ][test                     ] Test testGeoBoundingBoxFilter3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,291][INFO ][test                     ] Test testGeoBoundingBoxFilter3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,292][INFO ][test                     ] Test testSpanOrQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,301][INFO ][test                     ] Test testSpanOrQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,301][INFO ][test                     ] Test testConstantScoreQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,309][INFO ][test                     ] Test testConstantScoreQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,309][INFO ][test                     ] Test testFuzzyQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,315][INFO ][test                     ] Test testFuzzyQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,316][INFO ][test                     ] Test testQueryFilterBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,323][INFO ][test                     ] Test testQueryFilterBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,323][INFO ][test                     ] Test testBoostingQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,330][INFO ][test                     ] Test testBoostingQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,331][INFO ][test                     ] Test testNumericRangeFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,338][INFO ][test                     ] Test testNumericRangeFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,339][INFO ][test                     ] Test testOrFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,347][INFO ][test                     ] Test testOrFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,347][INFO ][test                     ] Test testFuzzyQueryWithFieldsBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,353][INFO ][test                     ] Test testFuzzyQueryWithFieldsBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,354][INFO ][test                     ] Test testBoolQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,360][INFO ][test                     ] Test testBoolQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,360][INFO ][test                     ] Test testPrefixQueryWithUnknownField(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,366][INFO ][test                     ] Test testPrefixQueryWithUnknownField(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,366][INFO ][test                     ] Test testTermsFilterQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,371][INFO ][test                     ] Test testTermsFilterQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,372][INFO ][test                     ] Test testTermWithBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,378][INFO ][test                     ] Test testTermWithBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,379][INFO ][test                     ] Test testSpanFirstQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,385][INFO ][test                     ] Test testSpanFirstQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,386][INFO ][test                     ] Test testFieldMaskingSpanQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,393][INFO ][test                     ] Test testFieldMaskingSpanQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,394][INFO ][test                     ] Test testQueryStringFields2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,400][INFO ][test                     ] Test testQueryStringFields2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,401][INFO ][test                     ] Test testQueryStringFuzzyNumeric(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,407][INFO ][test                     ] Test testQueryStringFuzzyNumeric(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,408][INFO ][test                     ] Test testNotFilteredQuery3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,414][INFO ][test                     ] Test testNotFilteredQuery3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,415][INFO ][test                     ] Test testSpanMultiTermWildcardQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,422][INFO ][test                     ] Test testSpanMultiTermWildcardQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,422][INFO ][test                     ] Test testSimpleQueryString(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,429][INFO ][test                     ] Test testSimpleQueryString(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,430][INFO ][test                     ] Test testTermNamedFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,436][INFO ][test                     ] Test testTermNamedFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,436][INFO ][test                     ] Test testGeoDistanceFilter5(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,444][INFO ][test                     ] Test testGeoDistanceFilter5(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,444][INFO ][test                     ] Test testGeoDistanceFilter7(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,451][INFO ][test                     ] Test testGeoDistanceFilter7(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,451][INFO ][test                     ] Test testGeoShapeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,458][INFO ][test                     ] Test testGeoShapeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,458][INFO ][test                     ] Test testGeoBoundingBoxFilter5(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,464][INFO ][test                     ] Test testGeoBoundingBoxFilter5(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,465][INFO ][test                     ] Test testCustomBoostFactorQueryBuilder_withFunctionScoreWithoutQueryGiven(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,472][INFO ][test                     ] Test testCustomBoostFactorQueryBuilder_withFunctionScoreWithoutQueryGiven(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,472][INFO ][test                     ] Test testRegexpBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,478][INFO ][test                     ] Test testRegexpBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,479][INFO ][test                     ] Test testFuzzyLikeThisBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,485][INFO ][test                     ] Test testFuzzyLikeThisBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,485][INFO ][test                     ] Test testMoreLikeThisBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,492][INFO ][test                     ] Test testMoreLikeThisBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,492][INFO ][test                     ] Test testTermsFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,499][INFO ][test                     ] Test testTermsFilterQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,499][INFO ][test                     ] Test testBadTypeMultiMatchQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,505][INFO ][test                     ] Test testBadTypeMultiMatchQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,505][INFO ][test                     ] Test testPrefixFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,512][INFO ][test                     ] Test testPrefixFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,512][INFO ][test                     ] Test testGeoDistanceFilter3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,519][INFO ][test                     ] Test testGeoDistanceFilter3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,519][INFO ][test                     ] Test testSpanOrQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,526][INFO ][test                     ] Test testSpanOrQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,527][INFO ][test                     ] Test testRegexpFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,538][INFO ][test                     ] Test testRegexpFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,538][INFO ][test                     ] Test testNamedAndCachedRegexpWithFlagsFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,548][INFO ][test                     ] Test testNamedAndCachedRegexpWithFlagsFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,549][INFO ][test                     ] Test testFuzzyQueryWithFields(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,556][INFO ][test                     ] Test testFuzzyQueryWithFields(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,557][INFO ][test                     ] Test testSpanMultiTermPrefixQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,565][INFO ][test                     ] Test testSpanMultiTermPrefixQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,565][INFO ][test                     ] Test testCustomBoostFactorQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,574][INFO ][test                     ] Test testCustomBoostFactorQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,575][INFO ][test                     ] Test testWildcardQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,582][INFO ][test                     ] Test testWildcardQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,582][INFO ][test                     ] Test testGeoPolygonFilter4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,590][INFO ][test                     ] Test testGeoPolygonFilter4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,591][INFO ][test                     ] Test testFuzzyLikeFieldThisBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,597][INFO ][test                     ] Test testFuzzyLikeFieldThisBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,597][INFO ][test                     ] Test testRegexpWithFlagsFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,606][INFO ][test                     ] Test testRegexpWithFlagsFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,607][INFO ][test                     ] Test testSpanTermQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,614][INFO ][test                     ] Test testSpanTermQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,615][INFO ][test                     ] Test testLimitFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,624][INFO ][test                     ] Test testLimitFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,624][INFO ][test                     ] Test testGeoBoundingBoxFilter6(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,630][INFO ][test                     ] Test testGeoBoundingBoxFilter6(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,631][INFO ][test                     ] Test testNamedRegexpFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,637][INFO ][test                     ] Test testNamedRegexpFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,637][INFO ][test                     ] Test testFuzzyLikeThis(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,643][INFO ][test                     ] Test testFuzzyLikeThis(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,644][INFO ][test                     ] Test testAndFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,650][INFO ][test                     ] Test testAndFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,651][INFO ][test                     ] Test testRangeQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,656][INFO ][test                     ] Test testRangeQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,656][INFO ][test                     ] Test testGeoDistanceFilter8(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,663][INFO ][test                     ] Test testGeoDistanceFilter8(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,664][INFO ][test                     ] Test testQueryStringFields1Builder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,669][INFO ][test                     ] Test testQueryStringFields1Builder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,670][INFO ][test                     ] Test testMultiMatchQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,676][INFO ][test                     ] Test testMultiMatchQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,677][INFO ][test                     ] Test testTermQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,683][INFO ][test                     ] Test testTermQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,683][INFO ][test                     ] Test testSpanMultiTermFuzzyTermQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,689][INFO ][test                     ] Test testSpanMultiTermFuzzyTermQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,690][INFO ][test                     ] Test testTermsQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,695][INFO ][test                     ] Test testTermsQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,696][INFO ][test                     ] Test testCommonTermsQuery1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,702][INFO ][test                     ] Test testCommonTermsQuery1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,702][INFO ][test                     ] Test testQueryStringBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,708][INFO ][test                     ] Test testQueryStringBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,708][INFO ][test                     ] Test testPrefixQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,713][INFO ][test                     ] Test testPrefixQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,714][INFO ][test                     ] Test testTermsQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,719][INFO ][test                     ] Test testTermsQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,720][INFO ][test                     ] Test testBoolFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,726][INFO ][test                     ] Test testBoolFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,726][INFO ][test                     ] Test testRangeNamedFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,733][INFO ][test                     ] Test testRangeNamedFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,733][INFO ][test                     ] Test testCustomBoostFactorQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,739][INFO ][test                     ] Test testCustomBoostFactorQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,740][INFO ][test                     ] Test testGeoDistanceFilter2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,748][INFO ][test                     ] Test testGeoDistanceFilter2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,748][INFO ][test                     ] Test testSpanMultiTermFuzzyRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,755][INFO ][test                     ] Test testSpanMultiTermFuzzyRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,755][INFO ][test                     ] Test testFilteredQuery3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,762][INFO ][test                     ] Test testFilteredQuery3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,762][INFO ][test                     ] Test testGeoDistanceFilter10(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,770][INFO ][test                     ] Test testGeoDistanceFilter10(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,770][INFO ][test                     ] Test testBadTypeMatchQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,779][INFO ][test                     ] Test testBadTypeMatchQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,779][INFO ][test                     ] Test testConstantScoreQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,785][INFO ][test                     ] Test testConstantScoreQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,786][INFO ][test                     ] Test testGeoDistanceFilterNamed(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,795][INFO ][test                     ] Test testGeoDistanceFilterNamed(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,795][INFO ][test                     ] Test testSpanOrQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,803][INFO ][test                     ] Test testSpanOrQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,804][INFO ][test                     ] Test testCommonTermsQuery3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,812][INFO ][test                     ] Test testCommonTermsQuery3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,812][INFO ][test                     ] Test testRangeFilteredQueryBuilder_executionFieldData(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,819][INFO ][test                     ] Test testRangeFilteredQueryBuilder_executionFieldData(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,819][INFO ][test                     ] Test testCustomBoostFactorQueryBuilder_withFunctionScore(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,828][INFO ][test                     ] Test testCustomBoostFactorQueryBuilder_withFunctionScore(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,829][INFO ][test                     ] Test testMatchAllEmpty1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,838][INFO ][test                     ] Test testMatchAllEmpty1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,839][INFO ][test                     ] Test testMatchAllBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,846][INFO ][test                     ] Test testMatchAllBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,847][INFO ][test                     ] Test testOrFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,856][INFO ][test                     ] Test testOrFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,857][INFO ][test                     ] Test testPrefixFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,863][INFO ][test                     ] Test testPrefixFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,864][INFO ][test                     ] Test testDisMax2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,870][INFO ][test                     ] Test testDisMax2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,870][INFO ][test                     ] Test testSpanMultiTermTermRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,876][INFO ][test                     ] Test testSpanMultiTermTermRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,877][INFO ][test                     ] Test testRangeFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,883][INFO ][test                     ] Test testRangeFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,883][INFO ][test                     ] Test testGeoDistanceFilter4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,889][INFO ][test                     ] Test testGeoDistanceFilter4(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,890][INFO ][test                     ] Test testSpanMultiTermNumericRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,899][INFO ][test                     ] Test testSpanMultiTermNumericRangeQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,899][INFO ][test                     ] Test testAndFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,905][INFO ][test                     ] Test testAndFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,906][INFO ][test                     ] Test testTermWithBoostQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,911][INFO ][test                     ] Test testTermWithBoostQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,911][INFO ][test                     ] Test testGeoPolygonNamedFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,918][INFO ][test                     ] Test testGeoPolygonNamedFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,918][INFO ][test                     ] Test testGeoDistanceFilter9(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,926][INFO ][test                     ] Test testGeoDistanceFilter9(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,926][INFO ][test                     ] Test testGeoPolygonFilter3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,932][INFO ][test                     ] Test testGeoPolygonFilter3(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,933][INFO ][test                     ] Test testSpanNearQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,938][INFO ][test                     ] Test testSpanNearQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,939][INFO ][test                     ] Test testPrefixNamedFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,945][INFO ][test                     ] Test testPrefixNamedFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,945][INFO ][test                     ] Test testFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,956][INFO ][test                     ] Test testFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,957][INFO ][test                     ] Test testFuzzyQueryWithFields2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,968][INFO ][test                     ] Test testFuzzyQueryWithFields2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,968][INFO ][test                     ] Test testFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,979][INFO ][test                     ] Test testFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,979][INFO ][test                     ] Test testNotFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,989][INFO ][test                     ] Test testNotFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,990][INFO ][test                     ] Test testBoolFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:35,997][INFO ][test                     ] Test testBoolFilteredQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:35,997][INFO ][test                     ] Test testGeoDistanceFilter11(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,003][INFO ][test                     ] Test testGeoDistanceFilter11(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,004][INFO ][test                     ] Test testRegexpQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,010][INFO ][test                     ] Test testRegexpQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,010][INFO ][test                     ] Test testInQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,016][INFO ][test                     ] Test testInQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,016][INFO ][test                     ] Test testStarColonStar(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,022][INFO ][test                     ] Test testStarColonStar(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,023][INFO ][test                     ] Test testSpanNotQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,034][INFO ][test                     ] Test testSpanNotQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,034][INFO ][test                     ] Test testPrefixQueryBoostQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,041][INFO ][test                     ] Test testPrefixQueryBoostQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,042][INFO ][test                     ] Test testSpanTermQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,049][INFO ][test                     ] Test testSpanTermQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,050][INFO ][test                     ] Test testFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,056][INFO ][test                     ] Test testFilteredQueryBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,057][INFO ][test                     ] Test testFuzzyLikeThisField(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,064][INFO ][test                     ] Test testFuzzyLikeThisField(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,064][INFO ][test                     ] Test testSpanNotQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,072][INFO ][test                     ] Test testSpanNotQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,073][INFO ][test                     ] Test testGeoBoundingBoxFilter1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,080][INFO ][test                     ] Test testGeoBoundingBoxFilter1(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,081][INFO ][test                     ] Test testGeoDistanceFilter6(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,087][INFO ][test                     ] Test testGeoDistanceFilter6(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,088][INFO ][test                     ] Test testOrFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,097][INFO ][test                     ] Test testOrFilteredQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,097][INFO ][test                     ] Test testFuzzyQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,105][INFO ][test                     ] Test testFuzzyQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,106][INFO ][test                     ] Test testMoreLikeThisFieldBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,111][INFO ][test                     ] Test testMoreLikeThisFieldBuilder(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,112][INFO ][test                     ] Test testMatchAllEmpty2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,118][INFO ][test                     ] Test testMatchAllEmpty2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,118][INFO ][test                     ] Test testSpanNearQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,124][INFO ][test                     ] Test testSpanNearQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,125][INFO ][test                     ] Test testGeoShapeFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,131][INFO ][test                     ] Test testGeoShapeFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,131][INFO ][test                     ] Test testDisMax(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,137][INFO ][test                     ] Test testDisMax(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,138][INFO ][test                     ] Test testQueryFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,144][INFO ][test                     ] Test testQueryFilter(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,144][INFO ][test                     ] Test testCommonTermsQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,150][INFO ][test                     ] Test testCommonTermsQuery2(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,151][INFO ][test                     ] Test testPrefixBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,163][INFO ][test                     ] Test testPrefixBoostQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,164][INFO ][test                     ] Test testMatchAll(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,170][INFO ][test                     ] Test testMatchAll(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,170][INFO ][test                     ] Test testRegexpQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,176][INFO ][test                     ] Test testRegexpQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+[2014-02-18 16:05:36,176][INFO ][test                     ] Test testPrefixQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) started
+[2014-02-18 16:05:36,182][INFO ][test                     ] Test testPrefixQuery(org.elasticsearch.index.query.SimpleIndexQueryParserTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

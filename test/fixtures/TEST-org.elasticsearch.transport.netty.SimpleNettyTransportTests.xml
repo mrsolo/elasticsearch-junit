@@ -1,0 +1,303 @@
+<testsuite errors="0" failures="0" tests="12" skipped="0" name="org.elasticsearch.transport.netty.SimpleNettyTransportTests" hostname="nohost.nodomain" time="1.703" timestamp="2014-02-18T16:14:39">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testVoidMessageCompressed" time="0.083"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testVersion_from0to1" time="0.087"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testVersion_from1to0" time="0.083"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testHelloWorld" time="0.066"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testConnectException" time="0.083"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testTimeoutSendExceptionWithDelayedResponse" time="0.644"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testHelloWorldCompressed" time="0.071"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testDisconnectListener" time="0.097"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testVersion_from1to1" time="0.083"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testTimeoutSendExceptionWithNeverSendingBackResponse" time="0.181"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testErrorMessage" time="0.089"/>
+   <testcase classname="org.elasticsearch.transport.netty.SimpleNettyTransportTests" name="testVersion_from0to0" time="0.121"/>
+   <system-out><![CDATA[[2014-02-18 16:14:39,935][INFO ][test                     ] Test testVoidMessageCompressed(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:39,941][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11004]}, publish_address {inet[/10.1.10.75:11004]}
+[2014-02-18 16:14:39,946][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11017]}, publish_address {inet[/10.1.10.75:11017]}
+[2014-02-18 16:14:40,017][INFO ][test                     ] Test testVoidMessageCompressed(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:40,018][INFO ][test                     ] Test testVersion_from0to1(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:40,030][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11025]}, publish_address {inet[/10.1.10.75:11025]}
+[2014-02-18 16:14:40,036][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11254]}, publish_address {inet[/10.1.10.75:11254]}
+[2014-02-18 16:14:40,105][INFO ][test                     ] Test testVersion_from0to1(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:40,106][INFO ][test                     ] Test testVersion_from1to0(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:40,114][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11239]}, publish_address {inet[/10.1.10.75:11239]}
+[2014-02-18 16:14:40,119][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11157]}, publish_address {inet[/10.1.10.75:11157]}
+[2014-02-18 16:14:40,189][INFO ][test                     ] Test testVersion_from1to0(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:40,190][INFO ][test                     ] Test testHelloWorld(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:40,196][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11141]}, publish_address {inet[/10.1.10.75:11141]}
+[2014-02-18 16:14:40,201][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11016]}, publish_address {inet[/10.1.10.75:11016]}
+[2014-02-18 16:14:40,256][INFO ][test                     ] Test testHelloWorld(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:40,257][INFO ][test                     ] Test testConnectException(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:40,263][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11150]}, publish_address {inet[/10.1.10.75:11150]}
+[2014-02-18 16:14:40,267][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11058]}, publish_address {inet[/10.1.10.75:11058]}
+[2014-02-18 16:14:40,340][INFO ][test                     ] Test testConnectException(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:40,340][INFO ][test                     ] Test testTimeoutSendExceptionWithDelayedResponse(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:40,342][DEBUG][threadpool               ] creating thread_pool [generic], type [cached], keep_alive [30s]
+[2014-02-18 16:14:40,343][DEBUG][threadpool               ] creating thread_pool [index], type [fixed], size [4], queue_size [200]
+[2014-02-18 16:14:40,343][DEBUG][threadpool               ] creating thread_pool [bulk], type [fixed], size [4], queue_size [50]
+[2014-02-18 16:14:40,343][DEBUG][threadpool               ] creating thread_pool [get], type [fixed], size [4], queue_size [1k]
+[2014-02-18 16:14:40,343][DEBUG][threadpool               ] creating thread_pool [search], type [fixed], size [12], queue_size [1k]
+[2014-02-18 16:14:40,343][DEBUG][threadpool               ] creating thread_pool [suggest], type [fixed], size [4], queue_size [1k]
+[2014-02-18 16:14:40,344][DEBUG][threadpool               ] creating thread_pool [percolate], type [fixed], size [4], queue_size [1k]
+[2014-02-18 16:14:40,344][DEBUG][threadpool               ] creating thread_pool [management], type [scaling], min [1], size [5], keep_alive [5m]
+[2014-02-18 16:14:40,344][DEBUG][threadpool               ] creating thread_pool [flush], type [scaling], min [1], size [2], keep_alive [5m]
+[2014-02-18 16:14:40,344][DEBUG][threadpool               ] creating thread_pool [merge], type [scaling], min [1], size [2], keep_alive [5m]
+[2014-02-18 16:14:40,344][DEBUG][threadpool               ] creating thread_pool [refresh], type [scaling], min [1], size [2], keep_alive [5m]
+[2014-02-18 16:14:40,344][DEBUG][threadpool               ] creating thread_pool [warmer], type [scaling], min [1], size [2], keep_alive [5m]
+[2014-02-18 16:14:40,345][DEBUG][threadpool               ] creating thread_pool [snapshot], type [scaling], min [1], size [2], keep_alive [5m]
+[2014-02-18 16:14:40,345][DEBUG][threadpool               ] creating thread_pool [optimize], type [fixed], size [1], queue_size [null]
+[2014-02-18 16:14:40,346][DEBUG][transport.netty          ] [TS_A] using worker_count[8], port[11025-11035], bind_host[null], publish_host[null], compress[false], connect_timeout[30s], connections_per_node[2/3/6/1/1], receive_predictor[512kb->512kb]
+[2014-02-18 16:14:40,355][DEBUG][transport.netty          ] [TS_A] Bound to address [/0:0:0:0:0:0:0:0:11025]
+[2014-02-18 16:14:40,356][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11025]}, publish_address {inet[/10.1.10.75:11025]}
+[2014-02-18 16:14:40,356][DEBUG][transport.netty          ] [TS_B] using worker_count[8], port[11054-11064], bind_host[null], publish_host[null], compress[false], connect_timeout[30s], connections_per_node[2/3/6/1/1], receive_predictor[512kb->512kb]
+[2014-02-18 16:14:40,360][DEBUG][transport.netty          ] [TS_B] Bound to address [/0:0:0:0:0:0:0:0:11054]
+[2014-02-18 16:14:40,361][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11054]}, publish_address {inet[/10.1.10.75:11054]}
+[2014-02-18 16:14:40,364][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x0cdb5856, /10.1.10.75:54338 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,370][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x513849ad, /10.1.10.75:54339 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,371][DEBUG][transport.netty          ] [TS_A] connected to node [[TS_B][TS_B][Bills-MacBook-Pro.local][inet[/10.1.10.75:11054]]]
+[2014-02-18 16:14:40,371][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x465deb71, /10.1.10.75:54340 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,373][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xc1db5978, /10.1.10.75:54341 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,373][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x29c888e4, /10.1.10.75:54351 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,375][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x00e854c4, /10.1.10.75:54342 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,378][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xa939b263, /10.1.10.75:54352 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,379][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x94e8959c, /10.1.10.75:54343 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,381][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xb913fe4c, /10.1.10.75:54353 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,382][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x894eb313, /10.1.10.75:54344 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,384][DEBUG][transport.netty          ] [TS_A] connected to node [[TS_A][TS_A][Bills-MacBook-Pro.local][inet[/10.1.10.75:11025]]]
+[2014-02-18 16:14:40,384][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x5f229e1b, /10.1.10.75:54354 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,385][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x8b881355, /10.1.10.75:54345 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,386][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x4d362398, /10.1.10.75:54355 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,388][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xcf896612, /10.1.10.75:54346 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,389][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xf5ca2b99, /10.1.10.75:54356 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,391][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x4bb38e04, /10.1.10.75:54347 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,395][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xc3c4620b, /10.1.10.75:54357 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,396][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x2e944fb3, /10.1.10.75:54348 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,396][DEBUG][transport.netty          ] [TS_B] connected to node [[TS_A][TS_A][Bills-MacBook-Pro.local][inet[/10.1.10.75:11025]]]
+[2014-02-18 16:14:40,397][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xf28095b6, /10.1.10.75:54349 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,397][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x7f5d7674, /10.1.10.75:54358 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,399][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xb2d2b4ec, /10.1.10.75:54350 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,401][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x5c592881, /10.1.10.75:54359 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,405][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xb52492ad, /10.1.10.75:54360 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,405][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xda68a574, /10.1.10.75:54377 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,409][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xd724f6e7, /10.1.10.75:54361 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,413][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x80dabffe, /10.1.10.75:54362 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,413][DEBUG][transport.netty          ] [TS_B] connected to node [[TS_B][TS_B][Bills-MacBook-Pro.local][inet[/10.1.10.75:11054]]]
+[2014-02-18 16:14:40,413][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x9b6cc567, /10.1.10.75:54378 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,414][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xb9c4a8a7, /10.1.10.75:54363 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,415][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x10e1a57b, /10.1.10.75:54379 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,416][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xb9ff7bde, /10.1.10.75:54364 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,417][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xebc36d85, /10.1.10.75:54380 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,418][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xca898f0f, /10.1.10.75:54365 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,418][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x53ec3308, /10.1.10.75:54381 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,419][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x39c67f5d, /10.1.10.75:54366 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,420][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xa6492990, /10.1.10.75:54382 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,420][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x15a34cda, /10.1.10.75:54367 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,421][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xc2b263a7, /10.1.10.75:54383 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,421][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xd7e76e27, /10.1.10.75:54368 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,422][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x38a8d77e, /10.1.10.75:54384 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,423][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x13a5ff25, /10.1.10.75:54369 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,424][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xf470c980, /10.1.10.75:54385 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,424][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xc5c8dd40, /10.1.10.75:54370 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,425][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xdc6d70c6, /10.1.10.75:54386 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,426][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x0d665b2c, /10.1.10.75:54371 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,426][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xcadfcf87, /10.1.10.75:54387 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,427][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x29f8fefc, /10.1.10.75:54372 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,428][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0x80bde9f5, /10.1.10.75:54388 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,429][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x8495c8ff, /10.1.10.75:54373 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,429][TRACE][transport.netty          ] [TS_B] channel opened: [id: 0xf298d025, /10.1.10.75:54389 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,430][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0xb4bf9ed2, /10.1.10.75:54374 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,431][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x3435e3f7, /10.1.10.75:54375 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,432][TRACE][transport.netty          ] [TS_A] channel opened: [id: 0x56f8f575, /10.1.10.75:54376 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,726][WARN ][transport                ] [TS_B] Received response for a request that has timed out, sent [312ms] ago, timed out [211ms] ago, action [sayHelloTimeoutDelayedResponse], node [[TS_A][TS_A][Bills-MacBook-Pro.local][inet[/10.1.10.75:11025]]], id [0]
+[2014-02-18 16:14:40,970][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x513849ad, /10.1.10.75:54339 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,970][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xb4bf9ed2, /10.1.10.75:54374 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,971][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x4d362398, /10.1.10.75:54355 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,971][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xd724f6e7, /10.1.10.75:54361 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,972][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x0d665b2c, /10.1.10.75:54371 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,972][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xb9c4a8a7, /10.1.10.75:54363 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,973][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x80dabffe, /10.1.10.75:54362 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,973][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xa939b263, /10.1.10.75:54352 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,973][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xc3c4620b, /10.1.10.75:54357 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x8495c8ff, /10.1.10.75:54373 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x39c67f5d, /10.1.10.75:54366 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xc5c8dd40, /10.1.10.75:54370 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x29c888e4, /10.1.10.75:54351 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x13a5ff25, /10.1.10.75:54369 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,975][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xd7e76e27, /10.1.10.75:54368 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,975][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x56f8f575, /10.1.10.75:54376 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,975][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x29f8fefc, /10.1.10.75:54372 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,975][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x15a34cda, /10.1.10.75:54367 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,976][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x5f229e1b, /10.1.10.75:54354 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,976][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xb52492ad, /10.1.10.75:54360 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,976][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x3435e3f7, /10.1.10.75:54375 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,976][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xca898f0f, /10.1.10.75:54365 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,976][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xb9ff7bde, /10.1.10.75:54364 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,970][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x0cdb5856, /10.1.10.75:54338 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,977][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xcf896612, /10.1.10.75:54346 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,977][DEBUG][transport.netty          ] [TS_B] disconnected from [[TS_A][TS_A][Bills-MacBook-Pro.local][inet[/10.1.10.75:11025]]], channel closed event
+[2014-02-18 16:14:40,977][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x7f5d7674, /10.1.10.75:54358 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,976][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xf5ca2b99, /10.1.10.75:54356 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,975][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0xb913fe4c, /10.1.10.75:54353 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,975][TRACE][transport.netty          ] [TS_A] channel closed: [id: 0x5c592881, /10.1.10.75:54359 => /10.1.10.75:11025]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x94e8959c, /10.1.10.75:54343 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,974][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x00e854c4, /10.1.10.75:54342 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,973][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x894eb313, /10.1.10.75:54344 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,973][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x8b881355, /10.1.10.75:54345 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,972][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xf28095b6, /10.1.10.75:54349 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,971][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x465deb71, /10.1.10.75:54340 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,970][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x4bb38e04, /10.1.10.75:54347 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,979][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x2e944fb3, /10.1.10.75:54348 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,979][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xc1db5978, /10.1.10.75:54341 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x9b6cc567, /10.1.10.75:54378 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xa6492990, /10.1.10.75:54382 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,978][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xb2d2b4ec, /10.1.10.75:54350 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xdc6d70c6, /10.1.10.75:54386 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x53ec3308, /10.1.10.75:54381 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x80bde9f5, /10.1.10.75:54388 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xc2b263a7, /10.1.10.75:54383 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x10e1a57b, /10.1.10.75:54379 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,980][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xda68a574, /10.1.10.75:54377 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,981][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xcadfcf87, /10.1.10.75:54387 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,981][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xebc36d85, /10.1.10.75:54380 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,981][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xf298d025, /10.1.10.75:54389 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,981][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0x38a8d77e, /10.1.10.75:54384 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,981][TRACE][transport.netty          ] [TS_B] channel closed: [id: 0xf470c980, /10.1.10.75:54385 => /10.1.10.75:11054]
+[2014-02-18 16:14:40,984][INFO ][test                     ] Test testTimeoutSendExceptionWithDelayedResponse(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:40,984][INFO ][test                     ] Test testHelloWorldCompressed(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:40,990][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11083]}, publish_address {inet[/10.1.10.75:11083]}
+[2014-02-18 16:14:40,995][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11031]}, publish_address {inet[/10.1.10.75:11031]}
+[2014-02-18 16:14:41,055][INFO ][test                     ] Test testHelloWorldCompressed(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:41,055][INFO ][test                     ] Test testDisconnectListener(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:41,066][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11189]}, publish_address {inet[/10.1.10.75:11189]}
+[2014-02-18 16:14:41,072][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11198]}, publish_address {inet[/10.1.10.75:11198]}
+[2014-02-18 16:14:41,146][WARN ][netty.channel.socket.nio.AbstractNioSelector] Failed to initialize an accepted socket.
+java.lang.NullPointerException: handler
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.<init>(DefaultChannelPipeline.java:725)
+	at org.jboss.netty.channel.DefaultChannelPipeline.init(DefaultChannelPipeline.java:667)
+	at org.jboss.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:96)
+	at org.elasticsearch.transport.netty.NettyTransport$2.getPipeline(NettyTransport.java:319)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.registerAcceptedChannel(NioServerBoss.java:134)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.process(NioServerBoss.java:104)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:318)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+[2014-02-18 16:14:41,152][INFO ][test                     ] Test testDisconnectListener(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:41,152][INFO ][test                     ] Test testVersion_from1to1(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:41,159][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11249]}, publish_address {inet[/10.1.10.75:11249]}
+[2014-02-18 16:14:41,166][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11188]}, publish_address {inet[/10.1.10.75:11188]}
+[2014-02-18 16:14:41,234][INFO ][test                     ] Test testVersion_from1to1(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:41,235][INFO ][test                     ] Test testTimeoutSendExceptionWithNeverSendingBackResponse(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:41,241][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11028]}, publish_address {inet[/10.1.10.75:11028]}
+[2014-02-18 16:14:41,246][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11184]}, publish_address {inet[/10.1.10.75:11184]}
+[2014-02-18 16:14:41,416][INFO ][test                     ] Test testTimeoutSendExceptionWithNeverSendingBackResponse(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:41,416][INFO ][test                     ] Test testErrorMessage(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:41,422][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11004]}, publish_address {inet[/10.1.10.75:11004]}
+[2014-02-18 16:14:41,427][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11052]}, publish_address {inet[/10.1.10.75:11052]}
+[2014-02-18 16:14:41,505][INFO ][test                     ] Test testErrorMessage(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+[2014-02-18 16:14:41,505][INFO ][test                     ] Test testVersion_from0to0(org.elasticsearch.transport.netty.SimpleNettyTransportTests) started
+[2014-02-18 16:14:41,514][INFO ][transport                ] [TS_A] bound_address {inet[/0:0:0:0:0:0:0:0:11015]}, publish_address {inet[/10.1.10.75:11015]}
+[2014-02-18 16:14:41,523][INFO ][transport                ] [TS_B] bound_address {inet[/0:0:0:0:0:0:0:0:11248]}, publish_address {inet[/10.1.10.75:11248]}
+[2014-02-18 16:14:41,626][INFO ][test                     ] Test testVersion_from0to0(org.elasticsearch.transport.netty.SimpleNettyTransportTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

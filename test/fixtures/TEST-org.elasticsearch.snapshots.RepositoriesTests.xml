@@ -1,0 +1,235 @@
+<testsuite errors="0" failures="0" tests="3" skipped="0" name="org.elasticsearch.snapshots.RepositoriesTests" hostname="nohost.nodomain" time="0.239" timestamp="2014-02-18T16:14:38">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.snapshots.RepositoriesTests" name="testMisconfiguredRepository" time="0.057"/>
+   <testcase classname="org.elasticsearch.snapshots.RepositoriesTests" name="testRepositoryCreation" time="0.08"/>
+   <testcase classname="org.elasticsearch.snapshots.RepositoriesTests" name="repositoryAckTimeoutTest" time="0.091"/>
+   <system-out><![CDATA[[2014-02-18 16:14:38,647][INFO ][test                     ] Test testMisconfiguredRepository(org.elasticsearch.snapshots.RepositoriesTests) started
+[2014-02-18 16:14:38,652][INFO ][snapshots                ] [RepositoriesTests#testMisconfiguredRepository]: before test
+[2014-02-18 16:14:38,658][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:14:38,683][INFO ][snapshots                ] --> trying creating repository with incorrect settings
+[2014-02-18 16:14:38,683][WARN ][repositories.fs          ] [node_0] using local fs location for gateway, should be changed to be a shared location across nodes
+[2014-02-18 16:14:38,684][WARN ][repositories             ] [node_0] failed to create repository [fs][test-repo]
+org.elasticsearch.common.inject.CreationException: Guice creation errors:
+
+1) Error injecting constructor, org.elasticsearch.repositories.RepositoryException: [test-repo] missing location
+  at org.elasticsearch.repositories.fs.FsRepository.<init>(Unknown Source)
+  while locating org.elasticsearch.repositories.fs.FsRepository
+  while locating org.elasticsearch.repositories.Repository
+
+1 error
+	at org.elasticsearch.common.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:344)
+	at org.elasticsearch.common.inject.InjectorBuilder.injectDynamically(InjectorBuilder.java:178)
+	at org.elasticsearch.common.inject.InjectorBuilder.build(InjectorBuilder.java:110)
+	at org.elasticsearch.common.inject.InjectorImpl.createChildInjector(InjectorImpl.java:131)
+	at org.elasticsearch.common.inject.ModulesBuilder.createChildInjector(ModulesBuilder.java:69)
+	at org.elasticsearch.repositories.RepositoriesService.createRepositoryHolder(RepositoriesService.java:384)
+	at org.elasticsearch.repositories.RepositoriesService.registerRepository(RepositoriesService.java:345)
+	at org.elasticsearch.repositories.RepositoriesService.access$100(RepositoriesService.java:55)
+	at org.elasticsearch.repositories.RepositoriesService$1.execute(RepositoriesService.java:95)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.repositories.RepositoryException: [test-repo] missing location
+	at org.elasticsearch.repositories.fs.FsRepository.<init>(FsRepository.java:77)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.elasticsearch.common.inject.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:54)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:86)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.FactoryProxy.get(FactoryProxy.java:52)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:837)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:57)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:200)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:830)
+	at org.elasticsearch.common.inject.InjectorBuilder.loadEagerSingletons(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorBuilder.injectDynamically(InjectorBuilder.java:175)
+	... 12 more
+[2014-02-18 16:14:38,686][WARN ][repositories             ] [node_0] failed to create repository [test-repo]
+org.elasticsearch.repositories.RepositoryException: [test-repo] failed to create repository
+	at org.elasticsearch.repositories.RepositoriesService.createRepositoryHolder(RepositoriesService.java:394)
+	at org.elasticsearch.repositories.RepositoriesService.registerRepository(RepositoriesService.java:345)
+	at org.elasticsearch.repositories.RepositoriesService.access$100(RepositoriesService.java:55)
+	at org.elasticsearch.repositories.RepositoriesService$1.execute(RepositoriesService.java:95)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:308)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:134)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.elasticsearch.common.inject.CreationException: Guice creation errors:
+
+1) Error injecting constructor, org.elasticsearch.repositories.RepositoryException: [test-repo] missing location
+  at org.elasticsearch.repositories.fs.FsRepository.<init>(Unknown Source)
+  while locating org.elasticsearch.repositories.fs.FsRepository
+  while locating org.elasticsearch.repositories.Repository
+
+1 error
+	at org.elasticsearch.common.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:344)
+	at org.elasticsearch.common.inject.InjectorBuilder.injectDynamically(InjectorBuilder.java:178)
+	at org.elasticsearch.common.inject.InjectorBuilder.build(InjectorBuilder.java:110)
+	at org.elasticsearch.common.inject.InjectorImpl.createChildInjector(InjectorImpl.java:131)
+	at org.elasticsearch.common.inject.ModulesBuilder.createChildInjector(ModulesBuilder.java:69)
+	at org.elasticsearch.repositories.RepositoriesService.createRepositoryHolder(RepositoriesService.java:384)
+	... 8 more
+Caused by: org.elasticsearch.repositories.RepositoryException: [test-repo] missing location
+	at org.elasticsearch.repositories.fs.FsRepository.<init>(FsRepository.java:77)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.elasticsearch.common.inject.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:54)
+	at org.elasticsearch.common.inject.ConstructorInjector.construct(ConstructorInjector.java:86)
+	at org.elasticsearch.common.inject.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:98)
+	at org.elasticsearch.common.inject.FactoryProxy.get(FactoryProxy.java:52)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:837)
+	at org.elasticsearch.common.inject.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:42)
+	at org.elasticsearch.common.inject.Scopes$1$1.get(Scopes.java:57)
+	at org.elasticsearch.common.inject.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:45)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:200)
+	at org.elasticsearch.common.inject.InjectorBuilder$1.call(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorImpl.callInContext(InjectorImpl.java:830)
+	at org.elasticsearch.common.inject.InjectorBuilder.loadEagerSingletons(InjectorBuilder.java:193)
+	at org.elasticsearch.common.inject.InjectorBuilder.injectDynamically(InjectorBuilder.java:175)
+	... 12 more
+[2014-02-18 16:14:38,695][INFO ][snapshots                ] [RepositoriesTests#testMisconfiguredRepository]: cleaning up after test
+[2014-02-18 16:14:38,700][INFO ][snapshots                ] [RepositoriesTests#testMisconfiguredRepository]: cleaned up after test
+[2014-02-18 16:14:38,704][INFO ][test                     ] Test testMisconfiguredRepository(org.elasticsearch.snapshots.RepositoriesTests) finished
+[2014-02-18 16:14:38,705][INFO ][test                     ] Test testRepositoryCreation(org.elasticsearch.snapshots.RepositoriesTests) started
+[2014-02-18 16:14:38,710][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:14:38,741][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 16:14:38,763][INFO ][snapshots                ] [RepositoriesTests#testRepositoryCreation]: before test
+[2014-02-18 16:14:38,764][INFO ][snapshots                ] -->  creating repository
+[2014-02-18 16:14:38,765][INFO ][repositories             ] [node_0] put repository [test-repo-1]
+[2014-02-18 16:14:38,766][INFO ][snapshots                ] --> check that repository is really there
+[2014-02-18 16:14:38,767][INFO ][snapshots                ] -->  creating anoter repository
+[2014-02-18 16:14:38,768][INFO ][repositories             ] [node_0] put repository [test-repo-2]
+[2014-02-18 16:14:38,770][INFO ][snapshots                ] --> check that both repositories are in cluster state
+[2014-02-18 16:14:38,771][INFO ][snapshots                ] --> check that both repositories can be retrieved by getRepositories query
+[2014-02-18 16:14:38,771][INFO ][snapshots                ] --> delete repository test-repo-1
+[2014-02-18 16:14:38,771][INFO ][repositories             ] [node_0] delete repository [test-repo-1]
+[2014-02-18 16:14:38,772][INFO ][snapshots                ] --> delete repository test-repo-2
+[2014-02-18 16:14:38,773][INFO ][repositories             ] [node_0] delete repository [test-repo-2]
+[2014-02-18 16:14:38,774][INFO ][snapshots                ] [RepositoriesTests#testRepositoryCreation]: cleaning up after test
+[2014-02-18 16:14:38,779][INFO ][snapshots                ] [RepositoriesTests#testRepositoryCreation]: cleaned up after test
+[2014-02-18 16:14:38,785][INFO ][test                     ] Test testRepositoryCreation(org.elasticsearch.snapshots.RepositoriesTests) finished
+[2014-02-18 16:14:38,785][INFO ][test                     ] Test repositoryAckTimeoutTest(org.elasticsearch.snapshots.RepositoriesTests) started
+[2014-02-18 16:14:38,788][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 16:14:38,817][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 16:14:38,850][INFO ][snapshots                ] [RepositoriesTests#repositoryAckTimeoutTest]: before test
+[2014-02-18 16:14:38,850][INFO ][snapshots                ] -->  creating repository test-repo-1 with 0s timeout - shouldn't ack
+[2014-02-18 16:14:38,852][INFO ][repositories             ] [node_0] put repository [test-repo-1]
+[2014-02-18 16:14:38,853][INFO ][snapshots                ] -->  creating repository test-repo-2 with standard timeout - should ack
+[2014-02-18 16:14:38,855][INFO ][repositories             ] [node_0] put repository [test-repo-2]
+[2014-02-18 16:14:38,859][INFO ][snapshots                ] -->  deleting repository test-repo-2 with 0s timeout - shouldn't ack
+[2014-02-18 16:14:38,860][INFO ][repositories             ] [node_0] delete repository [test-repo-2]
+[2014-02-18 16:14:38,862][INFO ][snapshots                ] -->  deleting repository test-repo-1 with standard timeout - should ack
+[2014-02-18 16:14:38,863][INFO ][repositories             ] [node_0] delete repository [test-repo-1]
+[2014-02-18 16:14:38,865][INFO ][snapshots                ] [RepositoriesTests#repositoryAckTimeoutTest]: cleaning up after test
+[2014-02-18 16:14:38,869][INFO ][snapshots                ] [RepositoriesTests#repositoryAckTimeoutTest]: cleaned up after test
+[2014-02-18 16:14:38,876][INFO ][test                     ] Test repositoryAckTimeoutTest(org.elasticsearch.snapshots.RepositoriesTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>

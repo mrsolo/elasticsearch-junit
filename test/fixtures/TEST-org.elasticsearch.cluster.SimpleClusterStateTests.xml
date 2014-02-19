@@ -1,0 +1,183 @@
+<testsuite errors="0" failures="0" tests="5" skipped="0" name="org.elasticsearch.cluster.SimpleClusterStateTests" hostname="nohost.nodomain" time="5.368" timestamp="2014-02-18T15:49:43">
+   <properties class="java.util.ArrayList">
+      <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+      <property name="es.logger.level" value="INFO"/>
+      <property name="es.logger.prefix" value=""/>
+      <property name="es.node.local" value=""/>
+      <property name="es.node.mode" value=""/>
+      <property name="file.encoding" value="UTF-8"/>
+      <property name="file.encoding.pkg" value="sun.io"/>
+      <property name="file.separator" value="/"/>
+      <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="gopherProxySet" value="false"/>
+      <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+      <property name="java.awt.headless" value="true"/>
+      <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+      <property name="java.class.path" value="/Users/bhwang/elasticsearch/target/test-classes:/Users/bhwang/elasticsearch/target/classes:/Users/bhwang/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/randomizedtesting-runner/2.0.15/randomizedtesting-runner-2.0.15.jar:/Users/bhwang/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-test-framework/4.6.1/lucene-test-framework-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-expressions/4.6.1/lucene-expressions-4.6.1.jar:/Users/bhwang/.m2/repository/org/antlr/antlr-runtime/3.5/antlr-runtime-3.5.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/bhwang/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/Users/bhwang/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/Users/bhwang/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/bhwang/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-core/4.6.1/lucene-core-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.6.1/lucene-analyzers-common-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-codecs/4.6.1/lucene-codecs-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queries/4.6.1/lucene-queries-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-memory/4.6.1/lucene-memory-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-highlighter/4.6.1/lucene-highlighter-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-queryparser/4.6.1/lucene-queryparser-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-sandbox/4.6.1/lucene-sandbox-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-suggest/4.6.1/lucene-suggest-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-misc/4.6.1/lucene-misc-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-join/4.6.1/lucene-join-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-grouping/4.6.1/lucene-grouping-4.6.1.jar:/Users/bhwang/.m2/repository/org/apache/lucene/lucene-spatial/4.6.1/lucene-spatial-4.6.1.jar:/Users/bhwang/.m2/repository/com/spatial4j/spatial4j/0.3/spatial4j-0.3.jar:/Users/bhwang/.m2/repository/com/vividsolutions/jts/1.12/jts-1.12.jar:/Users/bhwang/.m2/repository/com/google/guava/guava/16.0/guava-16.0.jar:/Users/bhwang/.m2/repository/com/carrotsearch/hppc/0.5.3/hppc-0.5.3.jar:/Users/bhwang/.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar:/Users/bhwang/.m2/repository/org/joda/joda-convert/1.2/joda-convert-1.2.jar:/Users/bhwang/.m2/repository/org/mvel/mvel2/2.1.5.Final/mvel2-2.1.5.Final.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.0/jackson-core-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.0/jackson-dataformat-smile-2.3.0.jar:/Users/bhwang/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.3.0/jackson-dataformat-yaml-2.3.0.jar:/Users/bhwang/.m2/repository/io/netty/netty/3.9.0.Final/netty-3.9.0.Final.jar:/Users/bhwang/.m2/repository/com/ning/compress-lzf/0.9.6/compress-lzf-0.9.6.jar:/Users/bhwang/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/bhwang/.m2/repository/org/slf4j/slf4j-api/1.6.2/slf4j-api-1.6.2.jar:/Users/bhwang/.m2/repository/net/java/dev/jna/jna/3.3.0/jna-3.3.0.jar:/Users/bhwang/.m2/repository/org/fusesource/sigar/1.6.4/sigar-1.6.4.jar:/Users/bhwang/.m2/repository/com/carrotsearch/randomizedtesting/junit4-ant/2.0.15/junit4-ant-2.0.15.jar"/>
+      <property name="java.class.version" value="51.0"/>
+      <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
+      <property name="java.ext.dirs" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+      <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre"/>
+      <property name="java.io.tmpdir" value="."/>
+      <property name="java.library.path" value="/Users/bhwang/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+      <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+      <property name="java.runtime.version" value="1.7.0_45-b18"/>
+      <property name="java.security.policy" value="/Users/bhwang/elasticsearch/dev-tools/tests.policy"/>
+      <property name="java.specification.name" value="Java Platform API Specification"/>
+      <property name="java.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.specification.version" value="1.7"/>
+      <property name="java.vendor" value="Oracle Corporation"/>
+      <property name="java.vendor.url" value="http://java.oracle.com/"/>
+      <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+      <property name="java.version" value="1.7.0_45"/>
+      <property name="java.vm.info" value="mixed mode"/>
+      <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+      <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+      <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.specification.version" value="1.7"/>
+      <property name="java.vm.vendor" value="Oracle Corporation"/>
+      <property name="java.vm.version" value="24.45-b08"/>
+      <property name="junit4.childvm.cwd" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="junit4.childvm.id" value="0"/>
+      <property name="junit4.memory.total" value="128974848"/>
+      <property name="junit4.pidString" value="6815@Bills-MacBook-Pro.local"/>
+      <property name="junit4.processors" value="4"/>
+      <property name="junit4.tempDir" value="/Users/bhwang/elasticsearch/target"/>
+      <property name="line.separator" value="
+"/>
+      <property name="os.arch" value="x86_64"/>
+      <property name="os.name" value="Mac OS X"/>
+      <property name="os.version" value="10.9.1"/>
+      <property name="path.separator" value=":"/>
+      <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+      <property name="sun.arch.data.model" value="64"/>
+      <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
+      <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
+      <property name="sun.cpu.endian" value="little"/>
+      <property name="sun.cpu.isalist" value=""/>
+      <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+      <property name="sun.java.command" value="com.carrotsearch.ant.tasks.junit4.slave.SlaveMainSafe -flush -eventsfile /Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.events @/Users/bhwang/elasticsearch/target/junit4-J0-20140218_153326_767.suites -stdin"/>
+      <property name="sun.java.launcher" value="SUN_STANDARD"/>
+      <property name="sun.jnu.encoding" value="UTF-8"/>
+      <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+      <property name="sun.os.patch.level" value="unknown"/>
+      <property name="tests.appendseed" value=""/>
+      <property name="tests.assertion.disabled" value=""/>
+      <property name="tests.awaitsfix" value=""/>
+      <property name="tests.badapples" value=""/>
+      <property name="tests.class" value=""/>
+      <property name="tests.client.ratio" value=""/>
+      <property name="tests.cluster_seed" value=""/>
+      <property name="tests.enable_mock_modules" value=""/>
+      <property name="tests.failfast" value=""/>
+      <property name="tests.integration" value=""/>
+      <property name="tests.iters" value=""/>
+      <property name="tests.jvm.argline" value=""/>
+      <property name="tests.maxfailures" value=""/>
+      <property name="tests.method" value=""/>
+      <property name="tests.network" value=""/>
+      <property name="tests.nightly" value=""/>
+      <property name="tests.prefix" value="tests"/>
+      <property name="tests.rest" value=""/>
+      <property name="tests.rest.spec" value=""/>
+      <property name="tests.rest.suite" value=""/>
+      <property name="tests.security.manager" value=""/>
+      <property name="tests.seed" value="A89B4FF56754358E"/>
+      <property name="tests.showSuccess" value=""/>
+      <property name="tests.slow" value=""/>
+      <property name="tests.timeoutSuite" value=""/>
+      <property name="tests.weekly" value=""/>
+      <property name="user.country" value="US"/>
+      <property name="user.dir" value="/Users/bhwang/elasticsearch/target/J0"/>
+      <property name="user.home" value="/Users/bhwang"/>
+      <property name="user.language" value="en"/>
+      <property name="user.name" value="bhwang"/>
+      <property name="user.timezone" value=""/>
+   </properties>
+   <testcase classname="org.elasticsearch.cluster.SimpleClusterStateTests" name="testThatFilteringByIndexWorksForMetadataAndRoutingTable" time="1.267"/>
+   <testcase classname="org.elasticsearch.cluster.SimpleClusterStateTests" name="testNodes" time="1.066"/>
+   <testcase classname="org.elasticsearch.cluster.SimpleClusterStateTests" name="testRoutingTable" time="0.988"/>
+   <testcase classname="org.elasticsearch.cluster.SimpleClusterStateTests" name="testIndexTemplates" time="0.751"/>
+   <testcase classname="org.elasticsearch.cluster.SimpleClusterStateTests" name="testMetadata" time="1.278"/>
+   <system-out><![CDATA[[2014-02-18 15:49:43,876][INFO ][test                     ] Test testThatFilteringByIndexWorksForMetadataAndRoutingTable(org.elasticsearch.cluster.SimpleClusterStateTests) started
+[2014-02-18 15:49:43,879][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:43,922][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:43,951][INFO ][cluster                  ] [SimpleClusterStateTests#testThatFilteringByIndexWorksForMetadataAndRoutingTable]: before test
+[2014-02-18 15:49:43,959][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:44,165][INFO ][cluster.metadata         ] [node_0] [fuu] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:44,450][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 15:49:44,455][INFO ][cluster.metadata         ] [node_0] [fuu] update_mapping [buu] (dynamic)
+[2014-02-18 15:49:44,479][INFO ][cluster.metadata         ] [node_0] [baz] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:44,774][INFO ][cluster.metadata         ] [node_0] [baz] update_mapping [baz] (dynamic)
+[2014-02-18 15:49:44,942][INFO ][cluster                  ] [SimpleClusterStateTests#testThatFilteringByIndexWorksForMetadataAndRoutingTable]: cleaning up after test
+[2014-02-18 15:49:44,944][INFO ][cluster.metadata         ] [node_0] [fuu] deleting index
+[2014-02-18 15:49:45,043][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 15:49:45,100][INFO ][cluster.metadata         ] [node_0] [baz] deleting index
+[2014-02-18 15:49:45,136][INFO ][cluster                  ] [SimpleClusterStateTests#testThatFilteringByIndexWorksForMetadataAndRoutingTable]: cleaned up after test
+[2014-02-18 15:49:45,143][INFO ][test                     ] Test testThatFilteringByIndexWorksForMetadataAndRoutingTable(org.elasticsearch.cluster.SimpleClusterStateTests) finished
+[2014-02-18 15:49:45,144][INFO ][test                     ] Test testNodes(org.elasticsearch.cluster.SimpleClusterStateTests) started
+[2014-02-18 15:49:45,147][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:49:45,177][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:45,204][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:45,230][INFO ][cluster                  ] [SimpleClusterStateTests#testNodes]: before test
+[2014-02-18 15:49:45,244][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:45,361][INFO ][cluster.metadata         ] [node_0] [fuu] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:45,533][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 15:49:45,577][INFO ][cluster.metadata         ] [node_0] [fuu] update_mapping [buu] (dynamic)
+[2014-02-18 15:49:45,604][INFO ][cluster.metadata         ] [node_0] [baz] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:45,779][INFO ][cluster.metadata         ] [node_0] [baz] update_mapping [baz] (dynamic)
+[2014-02-18 15:49:45,925][INFO ][cluster                  ] [SimpleClusterStateTests#testNodes]: cleaning up after test
+[2014-02-18 15:49:45,928][INFO ][cluster.metadata         ] [node_0] [fuu] deleting index
+[2014-02-18 15:49:46,103][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 15:49:46,159][INFO ][cluster.metadata         ] [node_0] [baz] deleting index
+[2014-02-18 15:49:46,199][INFO ][cluster                  ] [SimpleClusterStateTests#testNodes]: cleaned up after test
+[2014-02-18 15:49:46,210][INFO ][test                     ] Test testNodes(org.elasticsearch.cluster.SimpleClusterStateTests) finished
+[2014-02-18 15:49:46,211][INFO ][test                     ] Test testRoutingTable(org.elasticsearch.cluster.SimpleClusterStateTests) started
+[2014-02-18 15:49:46,213][INFO ][cluster                  ] [SimpleClusterStateTests#testRoutingTable]: before test
+[2014-02-18 15:49:46,222][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:46,361][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 15:49:46,381][INFO ][cluster.metadata         ] [node_0] [fuu] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:46,646][INFO ][cluster.metadata         ] [node_0] [fuu] update_mapping [buu] (dynamic)
+[2014-02-18 15:49:46,667][INFO ][cluster.metadata         ] [node_0] [baz] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:46,932][INFO ][cluster.metadata         ] [node_0] [baz] update_mapping [baz] (dynamic)
+[2014-02-18 15:49:47,106][INFO ][cluster                  ] [SimpleClusterStateTests#testRoutingTable]: cleaning up after test
+[2014-02-18 15:49:47,107][INFO ][cluster.metadata         ] [node_0] [fuu] deleting index
+[2014-02-18 15:49:47,137][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 15:49:47,164][INFO ][cluster.metadata         ] [node_0] [baz] deleting index
+[2014-02-18 15:49:47,198][INFO ][cluster                  ] [SimpleClusterStateTests#testRoutingTable]: cleaned up after test
+[2014-02-18 15:49:47,199][INFO ][test                     ] Test testRoutingTable(org.elasticsearch.cluster.SimpleClusterStateTests) finished
+[2014-02-18 15:49:47,199][INFO ][test                     ] Test testIndexTemplates(org.elasticsearch.cluster.SimpleClusterStateTests) started
+[2014-02-18 15:49:47,203][INFO ][cluster                  ] [SimpleClusterStateTests#testIndexTemplates]: before test
+[2014-02-18 15:49:47,211][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:47,339][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 15:49:47,358][INFO ][cluster.metadata         ] [node_0] [fuu] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:47,536][INFO ][cluster.metadata         ] [node_0] [fuu] update_mapping [buu] (dynamic)
+[2014-02-18 15:49:47,574][INFO ][cluster.metadata         ] [node_0] [baz] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:47,729][INFO ][cluster.metadata         ] [node_0] [baz] update_mapping [baz] (dynamic)
+[2014-02-18 15:49:47,822][INFO ][cluster                  ] [SimpleClusterStateTests#testIndexTemplates]: cleaning up after test
+[2014-02-18 15:49:47,823][INFO ][cluster.metadata         ] [node_0] [fuu] deleting index
+[2014-02-18 15:49:47,875][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 15:49:47,911][INFO ][cluster.metadata         ] [node_0] [baz] deleting index
+[2014-02-18 15:49:47,948][INFO ][cluster                  ] [SimpleClusterStateTests#testIndexTemplates]: cleaned up after test
+[2014-02-18 15:49:47,949][INFO ][test                     ] Test testIndexTemplates(org.elasticsearch.cluster.SimpleClusterStateTests) finished
+[2014-02-18 15:49:47,950][INFO ][test                     ] Test testMetadata(org.elasticsearch.cluster.SimpleClusterStateTests) started
+[2014-02-18 15:49:47,955][INFO ][plugins                  ] [transport_client_node_1] loaded [], sites []
+[2014-02-18 15:49:47,994][INFO ][plugins                  ] [transport_client_node_0] loaded [], sites []
+[2014-02-18 15:49:48,038][INFO ][cluster                  ] [SimpleClusterStateTests#testMetadata]: before test
+[2014-02-18 15:49:48,040][INFO ][plugins                  ] [transport_client_node_2] loaded [], sites []
+[2014-02-18 15:49:48,087][INFO ][cluster.metadata         ] [node_0] [foo] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:48,285][INFO ][cluster.metadata         ] [node_0] [fuu] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:48,594][INFO ][cluster.metadata         ] [node_0] [baz] creating index, cause [auto(index api)], shards [5]/[1], mappings []
+[2014-02-18 15:49:48,926][INFO ][cluster.metadata         ] [node_0] [baz] update_mapping [baz] (dynamic)
+[2014-02-18 15:49:48,926][INFO ][cluster.metadata         ] [node_0] [foo] update_mapping [bar] (dynamic)
+[2014-02-18 15:49:48,927][INFO ][cluster.metadata         ] [node_0] [fuu] update_mapping [buu] (dynamic)
+[2014-02-18 15:49:49,111][INFO ][cluster                  ] [SimpleClusterStateTests#testMetadata]: cleaning up after test
+[2014-02-18 15:49:49,115][INFO ][cluster.metadata         ] [node_0] [fuu] deleting index
+[2014-02-18 15:49:49,148][INFO ][cluster.metadata         ] [node_0] [foo] deleting index
+[2014-02-18 15:49:49,180][INFO ][cluster.metadata         ] [node_0] [baz] deleting index
+[2014-02-18 15:49:49,217][INFO ][cluster                  ] [SimpleClusterStateTests#testMetadata]: cleaned up after test
+[2014-02-18 15:49:49,228][INFO ][test                     ] Test testMetadata(org.elasticsearch.cluster.SimpleClusterStateTests) finished
+]]></system-out>
+   <system-err><![CDATA[]]></system-err>
+</testsuite>
